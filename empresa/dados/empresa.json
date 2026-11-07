@@ -5,10 +5,10 @@
   "produto": {
     "nome": "Barraca",
     "pitch": "A página de turnos da tua festa de aldeia: a comissão cria, o povo inscreve-se com um toque, ninguém fica sozinho na grelha às 3 da manhã.",
-    "estado": "MVP em construção (ciclo 0)"
+    "estado": "v0.1 publicada · próximo: provar concorrência e tempo real"
   },
   "ciclo_atual": 0,
-  "proximo_ciclo": null,
+  "proximo_ciclo": "2026-11-07T18:39:00Z",
   "links": {
     "produto": "../",
     "demo": "../festa.html?f=demonstracao",
@@ -17,5 +17,11 @@
     "issues_donos": "https://github.com/davidcacote/empresa-autonoma/issues/new?labels=donos",
     "orcamento": "https://github.com/davidcacote/empresa-autonoma/edit/main/empresa/dados/orcamento.json"
   },
-  "stack": ["HTML/CSS/JS sem build", "Supabase (Postgres, RLS, RPC, Realtime, pg_cron)", "GitHub Actions", "GitHub Pages"]
+  "stack": [
+    "HTML/CSS/JS sem build",
+    "Supabase (Postgres, RLS, RPC, Realtime, pg_cron)",
+    "GitHub Actions",
+    "GitHub Pages"
+  ],
+  "agendamento": "Tarefa agendada às 00:39, 06:39, 12:39 e 18:39 (hora de Lisboa)"
 }

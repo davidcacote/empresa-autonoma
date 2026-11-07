@@ -1,36 +1,206 @@
 [
-  { "id": "B-001", "titulo": "Página pública da festa com inscrição num toque", "estado": "em_curso", "prioridade": 1, "estimativa": "M", "ciclo": 0,
-    "quem": "Voluntário com o link da festa", "porque": "Inscrever-se sem conta e sem perguntar no WhatsApp",
-    "criterios": ["Separadores por dia, cartões por posto, uma linha por turno", "Estados livre/quase cheio/completo com forma, texto e cor", "Inscrição pede primeiro nome e confirmação de maioridade", "Confirmação escrita depois de inscrever", "Indicador 'Em direto' ou 'Atualizado às…' sempre visível", "Nomes com HTML aparecem como texto"] },
-  { "id": "B-002", "titulo": "Criar festa com postos e turnos", "estado": "em_curso", "prioridade": 1, "estimativa": "M", "ciclo": 0,
-    "quem": "Coordenador(a) da comissão", "porque": "Pôr a grelha de turnos online em minutos",
-    "criterios": ["Formulário com nome, localidade, datas, postos e turnos", "Turno que passa a meia-noite fica no dia seguinte", "Mostra link para voluntários e link de gestão com botão Copiar"] },
-  { "id": "B-003", "titulo": "Gestão por link secreto: ver e remover inscrições", "estado": "em_curso", "prioridade": 1, "estimativa": "P", "ciclo": 0,
-    "quem": "Coordenador(a)", "porque": "Tirar inscrições falsas ou desistências",
-    "criterios": ["Chave inválida mostra mensagem clara", "Lista inscritos por turno", "Remover pede confirmação e liberta a vaga"] },
-  { "id": "B-004", "titulo": "Partilhar a festa no WhatsApp com texto pronto", "estado": "a_fazer", "prioridade": 2, "estimativa": "P",
-    "quem": "Coordenador(a)", "porque": "O WhatsApp é onde a comissão já está",
-    "criterios": ["Botão 'Partilhar no WhatsApp' na página da festa e no ecrã de sucesso", "Texto inclui nome, datas e link", "Meta tags Open Graph para pré-visualização"] },
-  { "id": "B-005", "titulo": "Vista 'buracos por preencher' para o organizador", "estado": "a_fazer", "prioridade": 2, "estimativa": "M",
-    "quem": "Coordenador(a)", "porque": "Ver logo os turnos mais urgentes",
-    "criterios": ["Lista turnos com vagas, ordenados por proximidade no tempo", "Destaque para turnos nas próximas 48 h com vagas"] },
-  { "id": "B-006", "titulo": "Adicionar o meu turno ao calendário (.ics)", "estado": "a_fazer", "prioridade": 3, "estimativa": "P",
-    "quem": "Voluntário", "porque": "Não se esquecer do turno",
-    "criterios": ["Botão na confirmação gera .ics com hora certa em Europe/Lisbon", "Funciona em iPhone e Android"] },
-  { "id": "B-007", "titulo": "Folha A4 da grelha para afixar na sede", "estado": "a_fazer", "prioridade": 3, "estimativa": "P",
-    "quem": "Coordenador(a)", "porque": "Muita gente da aldeia ainda olha para o papel",
-    "criterios": ["CSS de impressão legível a preto e branco", "Uma página por dia"] },
-  { "id": "B-008", "titulo": "Duplicar uma festa e modelos de postos", "estado": "ideia", "prioridade": 4, "estimativa": "M",
-    "quem": "Coordenador(a)", "porque": "A festa repete-se todos os anos", "criterios": [] },
-  { "id": "B-009", "titulo": "Listagem pública de festas por concelho (fusão com o Arraial)", "estado": "ideia", "prioridade": 4, "estimativa": "G",
-    "quem": "Quem procura o que há no fim de semana", "porque": "Descobrir festas perto", "criterios": [] },
-  { "id": "B-010", "titulo": "Migrar alojamento para Cloudflare Pages", "estado": "ideia", "prioridade": 5, "estimativa": "P",
-    "quem": "Donos", "porque": "Pedido inicial dos donos; depende de secrets no repositório", "criterios": [] },
-  { "id": "B-011", "titulo": "Supabase local no CI para testar RLS e concorrência", "estado": "a_fazer", "prioridade": 3, "estimativa": "M",
-    "quem": "QA", "porque": "Condição da Sofia na fundação",
-    "criterios": ["CI arranca Postgres com as migrações", "Corre tests/sql/seguranca.sql", "Teste com duas inscrições em paralelo na última vaga"] },
-  { "id": "B-012", "titulo": "Cloudflare Turnstile se houver abuso", "estado": "ideia", "prioridade": 5, "estimativa": "M",
-    "quem": "CTO", "porque": "Plano B contra spam", "criterios": [] },
-  { "id": "B-013", "titulo": "Modo escuro", "estado": "ideia", "prioridade": 5, "estimativa": "P",
-    "quem": "Design", "porque": "Festas acontecem à noite", "criterios": [] }
+  {
+    "id": "B-001",
+    "titulo": "Página pública da festa com inscrição num toque",
+    "estado": "feito",
+    "prioridade": 1,
+    "estimativa": "M",
+    "ciclo": 0,
+    "quem": "Voluntário com o link da festa",
+    "porque": "Inscrever-se sem conta e sem perguntar no WhatsApp",
+    "criterios": [
+      "Separadores por dia, cartões por posto, uma linha por turno",
+      "Estados livre/quase cheio/completo com forma, texto e cor",
+      "Inscrição pede primeiro nome e confirmação de maioridade",
+      "Confirmação escrita depois de inscrever",
+      "Indicador 'Em direto' ou 'Atualizado às…' sempre visível",
+      "Nomes com HTML aparecem como texto"
+    ]
+  },
+  {
+    "id": "B-002",
+    "titulo": "Criar festa com postos e turnos",
+    "estado": "feito",
+    "prioridade": 1,
+    "estimativa": "M",
+    "ciclo": 0,
+    "quem": "Coordenador(a) da comissão",
+    "porque": "Pôr a grelha de turnos online em minutos",
+    "criterios": [
+      "Formulário com nome, localidade, datas, postos e turnos",
+      "Turno que passa a meia-noite fica no dia seguinte",
+      "Mostra link para voluntários e link de gestão com botão Copiar"
+    ]
+  },
+  {
+    "id": "B-003",
+    "titulo": "Gestão por link secreto: ver e remover inscrições",
+    "estado": "feito",
+    "prioridade": 1,
+    "estimativa": "P",
+    "ciclo": 0,
+    "quem": "Coordenador(a)",
+    "porque": "Tirar inscrições falsas ou desistências",
+    "criterios": [
+      "Chave inválida mostra mensagem clara",
+      "Lista inscritos por turno",
+      "Remover pede confirmação e liberta a vaga"
+    ]
+  },
+  {
+    "id": "B-004",
+    "titulo": "Partilhar a festa no WhatsApp com texto pronto",
+    "estado": "a_fazer",
+    "prioridade": 2,
+    "estimativa": "P",
+    "quem": "Coordenador(a)",
+    "porque": "O WhatsApp é onde a comissão já está",
+    "criterios": [
+      "Botão 'Partilhar no WhatsApp' na página da festa e no ecrã de sucesso",
+      "Texto inclui nome, datas e link",
+      "Meta tags Open Graph para pré-visualização"
+    ]
+  },
+  {
+    "id": "B-005",
+    "titulo": "Vista 'buracos por preencher' para o organizador",
+    "estado": "a_fazer",
+    "prioridade": 2,
+    "estimativa": "M",
+    "quem": "Coordenador(a)",
+    "porque": "Ver logo os turnos mais urgentes",
+    "criterios": [
+      "Lista turnos com vagas, ordenados por proximidade no tempo",
+      "Destaque para turnos nas próximas 48 h com vagas"
+    ]
+  },
+  {
+    "id": "B-006",
+    "titulo": "Adicionar o meu turno ao calendário (.ics)",
+    "estado": "a_fazer",
+    "prioridade": 3,
+    "estimativa": "P",
+    "quem": "Voluntário",
+    "porque": "Não se esquecer do turno",
+    "criterios": [
+      "Botão na confirmação gera .ics com hora certa em Europe/Lisbon",
+      "Funciona em iPhone e Android"
+    ]
+  },
+  {
+    "id": "B-007",
+    "titulo": "Folha A4 da grelha para afixar na sede",
+    "estado": "a_fazer",
+    "prioridade": 3,
+    "estimativa": "P",
+    "quem": "Coordenador(a)",
+    "porque": "Muita gente da aldeia ainda olha para o papel",
+    "criterios": [
+      "CSS de impressão legível a preto e branco",
+      "Uma página por dia"
+    ]
+  },
+  {
+    "id": "B-008",
+    "titulo": "Duplicar uma festa e modelos de postos",
+    "estado": "ideia",
+    "prioridade": 4,
+    "estimativa": "M",
+    "quem": "Coordenador(a)",
+    "porque": "A festa repete-se todos os anos",
+    "criterios": []
+  },
+  {
+    "id": "B-009",
+    "titulo": "Listagem pública de festas por concelho (fusão com o Arraial)",
+    "estado": "ideia",
+    "prioridade": 4,
+    "estimativa": "G",
+    "quem": "Quem procura o que há no fim de semana",
+    "porque": "Descobrir festas perto",
+    "criterios": []
+  },
+  {
+    "id": "B-010",
+    "titulo": "Migrar alojamento para Cloudflare Pages",
+    "estado": "ideia",
+    "prioridade": 5,
+    "estimativa": "P",
+    "quem": "Donos",
+    "porque": "Pedido inicial dos donos; depende de secrets no repositório",
+    "criterios": []
+  },
+  {
+    "id": "B-011",
+    "titulo": "Provar concorrência e tempo real: Supabase local no CI",
+    "estado": "a_fazer",
+    "prioridade": 1,
+    "estimativa": "M",
+    "quem": "QA",
+    "porque": "Prioridade da CEO: a lotação e o tempo real são a promessa central e ainda não foram provados a sério",
+    "criterios": [
+      "O CI arranca um Postgres/Supabase local com as migrações de supabase/migrations/",
+      "Corre tests/sql/seguranca.sql e falha se algum caso der ok=false",
+      "Teste com duas inscrições em paralelo na última vaga: exatamente uma passa",
+      "Verificação do tempo real (evento recebido após uma inscrição) ou registo explícito do que ficou por provar"
+    ]
+  },
+  {
+    "id": "B-012",
+    "titulo": "Cloudflare Turnstile se houver abuso",
+    "estado": "ideia",
+    "prioridade": 5,
+    "estimativa": "M",
+    "quem": "CTO",
+    "porque": "Plano B contra spam",
+    "criterios": []
+  },
+  {
+    "id": "B-013",
+    "titulo": "Modo escuro",
+    "estado": "ideia",
+    "prioridade": 5,
+    "estimativa": "P",
+    "quem": "Design",
+    "porque": "Festas acontecem à noite",
+    "criterios": []
+  },
+  {
+    "id": "B-014",
+    "titulo": "gerir.html: decodeURIComponent na chave do fragmento",
+    "estado": "a_fazer",
+    "prioridade": 2,
+    "estimativa": "P",
+    "quem": "Coordenador(a)",
+    "porque": "Ressalva 3 da QA: chaves com caracteres codificados falham",
+    "criterios": [
+      "A chave lida do # passa por decodeURIComponent dentro de try/catch",
+      "Teste unitário com uma chave codificada"
+    ]
+  },
+  {
+    "id": "B-015",
+    "titulo": "Alvos de toque com pelo menos 44px em todos os links",
+    "estado": "a_fazer",
+    "prioridade": 3,
+    "estimativa": "P",
+    "quem": "Utilizadores no telemóvel",
+    "porque": "Ressalva 2 da QA: link 'Barraca' do cabeçalho (20px) e 'saltar para o conteúdo' (43px)",
+    "criterios": [
+      "Todos os elementos interativos medem ≥44×44px (verificado por script Playwright)"
+    ]
+  },
+  {
+    "id": "B-016",
+    "titulo": "Contraste de 7:1 no texto, como pedido pela Design",
+    "estado": "a_fazer",
+    "prioridade": 4,
+    "estimativa": "P",
+    "quem": "Pessoas de 55+ anos ao sol",
+    "porque": "Ressalva 1 da QA: branco/vermelho 5,34:1 e tinta/âmbar 6,29:1",
+    "criterios": [
+      "Texto corrido e botões com contraste ≥7:1",
+      "Paleta continua reconhecível (aprovação da Inês)"
+    ]
+  }
 ]

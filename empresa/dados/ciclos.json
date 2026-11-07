@@ -2,12 +2,21 @@
   {
     "n": 0,
     "inicio": "2026-11-07T11:25:00Z",
-    "fim": null,
+    "fim": "2026-11-07T14:00:00Z",
     "tipo": "fundação",
     "objetivo": "Fundar a empresa, escolher o produto e pôr o MVP da Barraca no ar com CI/CD.",
-    "resultado": "em_curso",
-    "agentes": ["ceo", "produto", "cto", "design", "dev", "qa"],
-    "chamadas_agentes": 11,
-    "notas": "Ciclo de fundação: mais agentes do que o limite normal (4), por ser a reunião inicial."
+    "resultado": "concluido",
+    "agentes": [
+      "ceo",
+      "produto",
+      "cto",
+      "design",
+      "dev",
+      "qa"
+    ],
+    "chamadas_agentes": 13,
+    "notas": "Ciclo de fundação: mais agentes do que o limite normal (4). Propostas (6), avaliação e aprovação da CEO (3), respostas de CTO/Design/QA (3), Dev (1), QA (1).",
+    "entregue": "Empresa fundada (constituição, 6 papéis, manual do ciclo), produto escolhido (Barraca), base de dados com RLS e 17 testes de segurança, MVP com 4 páginas, CI/CD com validação, testes unitários, smoke e e2e, painel HQ, e tarefa agendada de 6 em 6 horas.",
+    "retro": "Correu bem: a decisão de produto foi rápida e as condições de cada papel viraram critérios testáveis. Correu mal: o ambiente não tem rede, por isso o tempo real e a concorrência só estão provados no papel. Muda: o próximo ciclo prova-os no CI (B-011) antes de qualquer funcionalidade nova."
   }
 ]

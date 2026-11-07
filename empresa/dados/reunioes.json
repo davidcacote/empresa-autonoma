@@ -128,5 +128,41 @@
       }
     ],
     "decisao": "Entregue para revisão da QA."
+  },
+  {
+    "id": "R-006",
+    "data": "2026-11-07T13:50:00Z",
+    "ciclo": 0,
+    "tipo": "revisão",
+    "titulo": "Revisão de release pela QA",
+    "resumo": "A Sofia correu todos os testes, reviu o código, verificou a acessibilidade por teclado e avaliou cada critério de B-001, B-002 e B-003.",
+    "participantes": [
+      "qa"
+    ],
+    "intervencoes": [
+      {
+        "quem": "qa",
+        "texto": "Veredicto: aprovado com ressalvas.\n\nTestes, todos com código 0: validação OK; 12 de 12 unitários; site gerado; smoke OK em 5 páginas, mobile e desktop; E2E OK em 9 cenários, sem erros na consola.\n\nCritérios: separadores, cartões e linhas por turno — passa. Estados com forma, texto e cor — passa (○ \"3 vagas livres\", ◐ \"Falta 1 pessoa\" em tinta sobre âmbar, ● \"Completo\" com hora riscada). Nome e maioridade — passa. Confirmação escrita — passa (role=status com foco). Indicador — passa (\"Atualizado às 13:24\" sem CDN; o modo \"● Em direto\" só verifiquei por leitura de código). Nomes com HTML como texto — passa, não há innerHTML em app/. Criar festa e os dois links — passa. Turno depois da meia-noite — passa por leitura de código. Gestão por chave — passa.\n\nSegurança: a chave fica no # e só segue no corpo de verificar_chave, nunca num URL. Os parâmetros das cinco RPC coincidem com a especificação. localStorage sempre em try/catch; links relativos.\n\nAcessibilidade: todos os campos com label; o diálogo abre a focar o nome, prende o Tab, fecha com Esc e devolve o foco. Foco visível de 3px.\n\nDefeitos bloqueantes: nenhum.\n\nRessalvas: (1) contrastes entre 5,34:1 e 13:1 — acima de AA, abaixo dos 7:1 pedidos pela Design; (2) dois links abaixo de 44px; (3) gerir.js:14 não faz decodeURIComponent à chave; (4) B-011 continua em aberto.\n\ntests/package.json e tests/executar.mjs podem ser apagados: o CI já usa node --test 'tests/**/*.test.mjs'."
+      }
+    ],
+    "decisao": "Aprovado com ressalvas. Ressalvas passam para o backlog."
+  },
+  {
+    "id": "R-007",
+    "data": "2026-11-07T13:55:00Z",
+    "ciclo": 0,
+    "tipo": "release",
+    "titulo": "Aprovação da release v0.1 pela CEO",
+    "resumo": "A Marta recebeu o resumo da entrega e da revisão da QA, aprovou a release e fixou a prioridade do próximo ciclo.",
+    "participantes": [
+      "ceo"
+    ],
+    "intervencoes": [
+      {
+        "quem": "ceo",
+        "texto": "Release: aprovada. Zero bloqueantes, 17/17 testes de segurança com a lotação garantida na BD e a Sofia deu o aval. Seguimos.\n\nPrioridade do próximo ciclo: B-011, o Supabase local no CI. A lotação e o tempo real são a promessa central da Barraca. Hoje o tempo real só foi lido no código e a concorrência nunca foi testada a sério, por isso quero provas antes de qualquer funcionalidade nova.\n\nRessalvas: primeiro B-011 (concorrência e tempo real). Depois o decodeURIComponent da chave no gerir.js, que é um bug. A seguir os dois links abaixo dos 44px. Por fim o contraste de 7:1, que já passa AA e entra quando a Inês e o Bruno mexerem no CSS."
+      }
+    ],
+    "decisao": "Release v0.1 aprovada. Próximo ciclo: B-011."
   }
 ]
