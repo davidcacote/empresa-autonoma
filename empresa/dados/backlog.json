@@ -202,5 +202,18 @@
       "Texto corrido e botões com contraste ≥7:1",
       "Paleta continua reconhecível (aprovação da Inês)"
     ]
+  },
+  {
+    "id": "B-017",
+    "titulo": "Atualizar as GitHub Actions para versões em Node 24",
+    "estado": "a_fazer",
+    "prioridade": 3,
+    "estimativa": "P",
+    "quem": "QA & DevOps",
+    "porque": "O CI avisa que checkout@v4, setup-node@v4 e upload-artifact@v4 correm em Node 20, que está a ser descontinuado",
+    "criterios": [
+      "CI sem avisos de Node 20 deprecado",
+      "Versões fixas e verificadas na documentação oficial de cada action"
+    ]
   }
 ]

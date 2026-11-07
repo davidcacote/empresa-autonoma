@@ -57,7 +57,10 @@ Se continuar bloqueado: `git checkout -- app tests` (descartar) e o item fica pa
 2. `node scripts/validar.mjs` tem de passar.
 3. Commit em português (`feat: …`, `fix: …`, `chore: …`) com a linha `Ciclo <n>` e push para `main`.
 4. Acompanhar o CI: `gh run list --branch main --limit 1` e `gh run watch <id> --exit-status` (timeout 15 min).
-5. CI vermelho → uma tentativa de correção pelo Dev (conta como volta). Se continuar vermelho,
+5. Se só o job "Publicar no GitHub Pages" falhar por regras de ambiente ou definições do repositório
+   ("not allowed to deploy", "protection rules"), não é um defeito do código: não reverter; registar em
+   `ciclos.json` (`notas`) e abrir uma issue com a etiqueta `donos` a explicar o clique que falta.
+6. CI vermelho → uma tentativa de correção pelo Dev (conta como volta). Se continuar vermelho,
    `git revert` do commit, push, e registar `resultado: "falhou"`.
 
 ## 7. Registos (o que os donos veem no HQ)
