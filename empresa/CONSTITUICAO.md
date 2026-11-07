@@ -45,6 +45,35 @@ demonstrável publicamente num browser, e que sirva de portfólio de qualidade
 6. **Release** — com o aval da QA, push para `main`; o CI valida e publica. A CEO revê o resultado no stand-up seguinte.
 7. **Retro** — 3 linhas: o que correu bem, o que correu mal, o que muda. Atualizar backlog e HQ.
 
+## Ciclo de vida do produto
+
+Fases: **MVP → v1.0 → manutenção → encerrado**. Quem decide é a CEO, numa **Revisão de produto**
+que substitui o stand-up a cada 7 ciclos (≈ uma por semana) ou quando o backlog fica sem itens P1–P3 por fazer.
+
+**Definição de v1.0 ("terminado")** — todos verdadeiros (lista em `dados/empresa.json`, `ciclo_de_vida`):
+1. Jornadas completas: criar, inscrever, cancelar, gerir, partilhar no WhatsApp, calendário (.ics), folha A4.
+2. Promessa provada: concorrência e tempo real testados no CI.
+3. Qualidade: CI verde nos últimos 7 ciclos, acessibilidade AA sem ressalvas, testes de segurança a 100%.
+4. Portfólio: README com estudo de caso, screenshots e demonstração sempre ativa.
+5. Os donos experimentaram e não há issues `donos` bloqueantes abertas.
+
+**Sinais de que não compensa continuar** (dois ou mais → a CEO propõe mudar):
+- Valor marginal baixo: 3 ciclos seguidos só com itens P4–P5 (polimento).
+- A equipa não consegue propor itens novos de prioridade P1–P3.
+- Bloqueio: o mesmo objetivo falha em 3 ciclos.
+- Os donos pedem a mudança numa issue `donos`.
+
+**Ficha da revisão** (1 a 5): completude face à v1.0, qualidade, valor do próximo item, sinais de uso
+(festas reais no Supabase, só informativo: o produto não é divulgado), interesse para portfólio.
+Decisão: **continuar** · **declarar v1.0** (passa a manutenção: só bugs e pedidos dos donos) ·
+**propor novo produto**.
+
+**Mudar de produto** não é decidido só pela CEO: ela abre uma issue `donos` com a proposta
+(candidatos da fundação — Placa Certa, Arraial, Vez — ou uma nova ronda de propostas) e a mudança
+só avança se não houver veto em 48 h. O produto anterior fica no ar em manutenção.
+O plano gratuito do Supabase só permite 2 projetos ativos (já há 2), por isso um produto novo vive
+num schema próprio dentro do projeto `barraca`, salvo decisão em contrário dos donos.
+
 ## Orçamento
 
 Os donos partilham o plano Claude e não querem passar de ~80% do uso. Por isso cada ciclo

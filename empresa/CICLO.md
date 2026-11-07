@@ -21,6 +21,13 @@ Supabase `barraca`), não o fazer: registar como pendente para os donos.
 - Pedidos dos donos: `gh api "repos/davidcacote/empresa-autonoma/issues?labels=donos&state=open" --jq '.[] | {number, title, body}'`.
 - Backlog (`backlog.json`): itens `em_curso` e os 5 `a_fazer` de maior prioridade.
 - Supabase (projeto `dlnqbgsrwuscppnjkogy`): `get_advisors` (security) — contar avisos novos (os 5 das RPC públicas e os 4 de tabelas privadas sem políticas são esperados, ver ADR-004).
+- Sinais de uso (só informativo): `select count(*) filter (where not demo and slug not like 'teste-%') as festas_reais from public.festas;`
+  e o total de inscrições nessas festas.
+- **É ciclo de Revisão de produto?** Sim se `n` for múltiplo de 7 ou se não houver itens P1–P3 `a_fazer`.
+  Nesse caso o passo 2 segue sempre o caminho B e a CEO recebe também `ciclo_de_vida` (`empresa.json`) e a secção
+  "Ciclo de vida do produto" da constituição; devolve a ficha (1–5), a decisão e quais critérios da v1.0 estão cumpridos.
+  O orquestrador atualiza `ciclo_de_vida` com o resultado. "Propor novo produto" → abrir a issue `donos` e
+  continuar o produto atual até haver resposta ou passarem 48 h.
 - Escrever este resumo em `empresa/atas/ciclo-<n>.md` (secção "Estado").
 
 ## 2. Quem decide o objetivo (1 agente: CEO **ou** especialista)

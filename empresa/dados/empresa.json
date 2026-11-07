@@ -23,5 +23,44 @@
     "GitHub Actions",
     "GitHub Pages"
   ],
-  "agendamento": "Um ciclo por noite, às 01:39 (hora de Lisboa)"
+  "agendamento": "Um ciclo por noite, às 01:39 (hora de Lisboa)",
+  "ciclo_de_vida": {
+    "fase": "mvp",
+    "proxima_revisao_ciclo": 7,
+    "ultima_revisao": null,
+    "criterios_v1": [
+      {
+        "criterio": "Jornadas completas: criar, inscrever, cancelar, gerir",
+        "feito": true
+      },
+      {
+        "criterio": "Partilhar no WhatsApp (B-004)",
+        "feito": false
+      },
+      {
+        "criterio": "Calendário .ics (B-006) e folha A4 (B-007)",
+        "feito": false
+      },
+      {
+        "criterio": "Concorrência e tempo real provados no CI (B-011)",
+        "feito": false
+      },
+      {
+        "criterio": "CI verde nos últimos 7 ciclos",
+        "feito": false
+      },
+      {
+        "criterio": "Acessibilidade AA sem ressalvas (B-015, B-016)",
+        "feito": false
+      },
+      {
+        "criterio": "README com estudo de caso, screenshots e demo ativa",
+        "feito": false
+      },
+      {
+        "criterio": "Os donos experimentaram, sem issues bloqueantes",
+        "feito": false
+      }
+    ]
+  }
 }

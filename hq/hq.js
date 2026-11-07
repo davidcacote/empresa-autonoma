@@ -91,6 +91,17 @@ function desenharGeral(d, quem) {
   } else caixa.append(el('p', { class: 'vazio', text: 'Ainda não houve reuniões.' }));
   if (ultimoCiclo) caixa.append(el('p', { class: 'intro', text: `Último ciclo: n.º ${ultimoCiclo.n} — ${ultimoCiclo.objetivo} (${rotuloResultado(ultimoCiclo.resultado)})` }));
 
+  const cv = e.ciclo_de_vida;
+  const caixaCv = document.getElementById('ciclo-vida');
+  if (cv && caixaCv) {
+    const crit = cv.criterios_v1 ?? [];
+    caixaCv.replaceChildren(
+      el('h2', { text: 'Caminho até à v1.0' }),
+      el('p', { class: 'intro', style: 'margin:0 0 .6rem', text: `Fase: ${cv.fase} · ${crit.filter((c) => c.feito).length} de ${crit.length} critérios · próxima revisão no ciclo ${cv.proxima_revisao_ciclo ?? '—'}` }),
+      el('ul', { class: 'lista-simples' }, crit.map((c) => el('li', {}, el('span', { text: c.criterio }), el('span', { 'aria-label': c.feito ? 'cumprido' : 'por cumprir', text: c.feito ? '✓' : '○' })))),
+      cv.ultima_revisao ? el('p', { class: 'intro', style: 'margin:.6rem 0 0', text: `Última revisão: ${cv.ultima_revisao}` }) : null);
+  }
+
   const o = d.orcamento ?? {};
   document.getElementById('orcamento').replaceChildren(
     el('h2', { text: 'Orçamento' }),
