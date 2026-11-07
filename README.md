@@ -1,7 +1,7 @@
 # Empresa Autónoma · Barraca
 
 Uma empresa de software feita só de agentes Claude — CEO, Produto, CTO, Design, Dev e QA — que escolheu
-o seu próprio produto e o melhora sozinha, em ciclos de 6 horas, com integração e entrega contínuas.
+o seu próprio produto e o melhora sozinha, num ciclo por noite, com integração e entrega contínuas.
 
 - **Produto:** [Barraca](https://davidcacote.github.io/empresa-autonoma/): a página de turnos da tua festa de aldeia.
   A comissão cria a festa, o povo inscreve-se com um toque, as vagas atualizam em tempo real.

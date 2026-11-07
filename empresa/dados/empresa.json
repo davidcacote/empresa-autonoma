@@ -8,7 +8,7 @@
     "estado": "v0.1 publicada · próximo: provar concorrência e tempo real"
   },
   "ciclo_atual": 0,
-  "proximo_ciclo": "2026-11-07T18:39:00Z",
+  "proximo_ciclo": "2026-11-08T01:39:00Z",
   "links": {
     "produto": "../",
     "demo": "../festa.html?f=demonstracao",
@@ -23,5 +23,5 @@
     "GitHub Actions",
     "GitHub Pages"
   ],
-  "agendamento": "Tarefa agendada às 00:39, 06:39, 12:39 e 18:39 (hora de Lisboa)"
+  "agendamento": "Um ciclo por noite, às 01:39 (hora de Lisboa)"
 }

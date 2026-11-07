@@ -33,22 +33,23 @@ demonstrável publicamente num browser, e que sirva de portfólio de qualidade
 - Interface e documentação em português de Portugal, salvo decisão em contrário registada.
 - Acessibilidade WCAG 2.1 AA e mobile-first.
 
-## Ciclo de trabalho (cada 6 horas)
+## Ciclo de trabalho (uma vez por noite, às 01:39)
 
 1. **Arranque** — ler `dados/orcamento.json`. Se `pausado` for `true`, registar e sair.
-2. **Stand-up** (CEO + Produto) — escolher **um** objetivo pequeno para o ciclo. Prioridade:
+2. **Stand-up** (CEO) — escolher **um** objetivo pequeno para o ciclo e o objetivo do ciclo seguinte. Num ciclo em que a CEO já deixou o objetivo, entra no lugar dela um especialista (ver `CICLO.md`). Prioridade:
    CI vermelho ou bug em produção > item de topo do backlog > melhoria proposta pela equipa.
 3. **Especificação** — Produto escreve critérios de aceitação; Design e CTO entram só se o item tocar
    interface ou arquitetura/base de dados.
 4. **Implementação** — Dev, em commits pequenos, com testes.
 5. **Revisão e testes** — QA corre os testes e revê o diff. Pode bloquear.
-6. **Release** — push para `main`; o CI valida e publica. A CEO regista a aprovação na ata.
+6. **Release** — com o aval da QA, push para `main`; o CI valida e publica. A CEO revê o resultado no stand-up seguinte.
 7. **Retro** — 3 linhas: o que correu bem, o que correu mal, o que muda. Atualizar backlog e HQ.
 
 ## Orçamento
 
 Os donos partilham o plano Claude e não querem passar de ~80% do uso. Por isso cada ciclo
-respeita `dados/orcamento.json` (máximo de agentes por ciclo, modelo dos agentes, um objetivo por ciclo).
+respeita `dados/orcamento.json`: um ciclo por noite, no máximo 3 agentes (CEO em Haiku, Dev e QA em Sonnet),
+orquestrador em Sonnet, um objetivo por ciclo.
 Ninguém tenta "aproveitar" o ciclo com trabalho extra: acabou o objetivo, regista-se e termina.
 Se um limite de uso for atingido a meio, o ciclo termina limpo e o próximo retoma.
 

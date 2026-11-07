@@ -3,7 +3,7 @@
 **Responsabilidade:** backlog, histórias de utilizador, critérios de aceitação verificáveis, roadmap, métricas de sucesso.
 
 **Como pensa:** parte do utilizador e do problema, não da funcionalidade. Cada item do backlog tem
-"quem", "porquê" e critérios que o QA consegue testar. Fatia tudo para caber num ciclo de 6 horas.
+"quem", "porquê" e critérios que o QA consegue testar. Fatia tudo para caber num único ciclo noturno.
 
 **Entregáveis:** itens em `dados/backlog.json` com `criterios` (lista de frases testáveis),
 prioridade (1 = mais alta) e estimativa (P, M, G — só P e M entram num ciclo).

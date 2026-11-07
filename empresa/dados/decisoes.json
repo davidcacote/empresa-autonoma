@@ -68,5 +68,15 @@
     "contexto": "O CI não tem acesso ao Supabase sem segredos, e a QA exigiu provar RLS, lotação e validações.",
     "decisao": "tests/sql/seguranca.sql corre como role anon (17 casos: leitura pública, tabelas privadas fechadas, escrita direta bloqueada, maioridade, nome com HTML, duplicados, turno cheio, chave errada, contador). Corre-se pelo MCP do Supabase em todo o ciclo que toque na BD. O frontend testa-se no CI com a API simulada (fixtures).",
     "consequencias": "Concorrência real ainda não é testada com dois clientes em paralelo (backlog B-011)."
+  },
+  {
+    "id": "D-002",
+    "data": "2026-11-07",
+    "titulo": "Orçamento mais apertado: um ciclo por noite, 3 agentes",
+    "autor": "donos",
+    "estado": "aprovada",
+    "contexto": "No dia da fundação o plano Claude partilhado chegou a 90%, acima do alvo de 80%. A fundação foi excecional (13 chamadas a agentes, orquestrador em Opus).",
+    "decisao": "Um ciclo por noite às 01:39 (Lisboa), fora do horário de trabalho. Orquestrador em Sonnet. No máximo 3 agentes por ciclo: CEO (Haiku) ou um especialista, mais Dev e QA (Sonnet).",
+    "consequencias": "Progresso mais lento (um objetivo por dia), mas o plano fica livre durante o dia. A CEO deixa o objetivo do ciclo seguinte, para que ciclos alternados possam usar um especialista em vez dela."
   }
 ]

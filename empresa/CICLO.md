@@ -1,6 +1,6 @@
 # Manual do ciclo (para o orquestrador)
 
-Este ficheiro é seguido, passo a passo, pela sessão agendada que corre de 6 em 6 horas.
+Este ficheiro é seguido, passo a passo, pela sessão agendada que corre uma vez por noite (01:39, hora de Lisboa).
 O orquestrador não é membro da equipa: convoca os agentes, passa mensagens entre eles,
 executa o que decidem (git, Supabase) e regista tudo. Não decide produto nem escreve funcionalidades.
 
@@ -23,16 +23,26 @@ Supabase `barraca`), não o fazer: registar como pendente para os donos.
 - Supabase (projeto `dlnqbgsrwuscppnjkogy`): `get_advisors` (security) — contar avisos novos (os 5 das RPC públicas e os 4 de tabelas privadas sem políticas são esperados, ver ADR-004).
 - Escrever este resumo em `empresa/atas/ciclo-<n>.md` (secção "Estado").
 
-## 2. Stand-up — CEO (1 agente)
-Lançar a Marta (`subagent_type` general-purpose, `model` = `modelo_agentes` do orçamento) com:
+## 2. Quem decide o objetivo (1 agente: CEO **ou** especialista)
+O ciclo tem no máximo `max_agentes_por_ciclo` agentes (3): **um que decide/especifica + Dev + QA**.
+- **Caminho A — sem stand-up:** se o último ciclo deixou `proximo_objetivo` em `ciclos.json`, o CI está verde
+  e não há issues `donos` abertas, o objetivo é esse. Não se lança a CEO. Se o item mexer na interface,
+  na BD/arquitetura ou tiver a história mal definida, lança-se **um** especialista (passo 3) no lugar dela;
+  se não precisar (CI, testes, correções pequenas), passa-se direto ao Dev.
+- **Caminho B — stand-up com a CEO:** em todos os outros casos. Não há especialista neste ciclo.
+
+Stand-up: lançar a Marta (`subagent_type` general-purpose, `model` = `modelo_ceo` do orçamento) com:
 o caminho do papel (`empresa/papeis/ceo.md`), a constituição e o resumo do estado.
 Ela devolve: **objetivo do ciclo** (um id do backlog ou uma correção), porquê numa frase,
 **critérios de aceitação** (reaproveitando os do backlog), e **que especialista** precisa de entrar:
 `produto` (história mal definida), `design` (mexe na interface), `cto` (mexe na BD ou arquitetura) ou `nenhum`.
 Prioridade obrigatória: CI vermelho ou bug > issue `donos` > topo do backlog.
+Ela devolve também **o próximo objetivo** (para o ciclo seguinte poder seguir pelo caminho A).
+No caminho B o campo do especialista é ignorado: a CEO escreve os critérios e o Dev segue a especificação
+que já existir no backlog e nas atas.
 
-## 3. Especificação — no máximo 1 especialista (1 agente, opcional)
-Se a CEO pediu um especialista, lançá-lo com o objetivo e os critérios. Devolve uma especificação curta
+## 3. Especificação — só no caminho A (1 agente, opcional)
+Se o objetivo precisar de um especialista, lançá-lo (`model` = `modelo_agentes`) com o objetivo e os critérios. Devolve uma especificação curta
 e concreta (Design: layout, estados, textos exatos; CTO: SQL/migração, riscos; Produto: história e critérios).
 Se o CTO propuser uma migração: o orquestrador grava-a em `supabase/migrations/AAAAMMDDHHMMSS_nome.sql`
 e aplica-a com `apply_migration`. **Proibido** `drop`, `truncate`, `revoke` ou `delete` fora de funções
@@ -68,15 +78,17 @@ Se continuar bloqueado: `git checkout -- app tests` (descartar) e o item fica pa
   (texto devolvido por eles, pode ser resumido mas nunca inventado; o orquestrador fala como `sistema`).
 - `backlog.json`: mudar estados (`em_curso` → `feito`), acrescentar ideias novas que a equipa propôs (estado `ideia`).
 - `decisoes.json`: acrescentar ADR se houve decisão técnica ou de produto.
-- `ciclos.json`: acrescentar `{n, inicio, fim, tipo: "normal", objetivo, resultado, entregue, retro, agentes, chamadas_agentes, commit, notas}`.
+- `ciclos.json`: acrescentar `{n, inicio, fim, tipo: "normal", objetivo, resultado, entregue, retro, agentes, chamadas_agentes, commit, proximo_objetivo, notas}`.
+  `proximo_objetivo` só existe se a CEO o deu neste ciclo (caminho B); no caminho A fica vazio, e o ciclo seguinte faz stand-up.
   `resultado` ∈ `concluido | falhou | bloqueado | sem_alteracoes`. A retro são 3 frases: correu bem / correu mal / muda.
-- `empresa.json`: `ciclo_atual = n`, `proximo_ciclo` = início + 6 h, `produto.estado` atualizado.
+- `empresa.json`: `ciclo_atual = n`, `proximo_ciclo` = próxima 01:39 de Lisboa (em UTC), `produto.estado` atualizado.
 - Ata completa em `empresa/atas/ciclo-<n>.md`.
 - Se uma issue `donos` foi resolvida: comentar nela com o link do commit e fechá-la.
 
 ## 8. Orçamento (os donos querem ficar abaixo de ~80% do plano)
-- No máximo `max_agentes_por_ciclo` agentes lançados (normalmente CEO + 1 especialista + Dev + QA), mais as voltas.
-- Todos os agentes com `model` = `modelo_agentes`. O orquestrador não faz trabalho de agentes "para poupar".
+- No máximo `max_agentes_por_ciclo` agentes lançados (3: CEO **ou** especialista, Dev, QA), mais as voltas QA↔Dev.
+- CEO com `model` = `modelo_ceo`; os outros com `model` = `modelo_agentes`. O orquestrador não faz trabalho de agentes "para poupar".
+- Ler só o necessário: o orquestrador não relê ficheiros grandes nem repete testes que a QA já correu.
 - Um objetivo. Acabou → registar e terminar. Nada de "já agora".
 - Se a sessão atingir um limite de uso: parar limpo, sem push de código a meio; o próximo ciclo retoma.
 - Se o backlog não tiver nada que caiba num ciclo, a CEO pode decidir um ciclo de manutenção curto
