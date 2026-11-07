@@ -1,0 +1,14 @@
+/* Criar festa: blocos do formulário e links finais. */
+.bloco { background: var(--papel); border: var(--linha); border-radius: var(--raio); padding: var(--e4); margin: 0 0 var(--e5); min-width: 0; }
+.bloco legend { font: 800 1.25rem var(--fonte-titulo); padding-inline: var(--e2); }
+.bloco h2 { font-size: 1.5rem; }
+.turno-form { border-top: 2px dashed var(--tinta-suave); padding-top: var(--e4); margin-top: var(--e3); }
+.turno-form:first-child { border-top: 0; padding-top: 0; margin-top: 0; }
+.turno-form .botao--texto { margin-bottom: var(--e2); }
+.acoes-linha { display: flex; gap: var(--e3); flex-wrap: wrap; align-items: center; margin-top: var(--e4); }
+#mais-posto { margin-bottom: var(--e4); }
+.link-caixa { border: 2px dashed var(--tinta-suave); border-radius: var(--raio); padding: var(--e4); margin-bottom: var(--e4); }
+.link-caixa--gestao { border-style: solid; border-color: var(--vermelho-escuro); }
+.link-caixa h3 { font-size: 1.125rem; }
+.link-gerado { display: block; margin-bottom: var(--e3); font-weight: 700; word-break: break-all; }
+.copiado { min-height: 1.5rem; font-weight: 700; color: var(--pinho); }

@@ -1,0 +1,72 @@
+[
+  {
+    "id": "D-001",
+    "data": "2026-11-07",
+    "titulo": "O produto da empresa é a Barraca",
+    "autor": "ceo",
+    "estado": "aprovada",
+    "contexto": "Seis propostas na reunião de fundação (Barraca, Arraial, Vez, Placa Certa, Bilha Certa, Pontual.pt), avaliadas em utilidade, encaixe em ciclos de 6 h, demo, risco e uso do Supabase.",
+    "decisao": "Barraca (20 pontos, empatada com a Placa Certa, que quase não usa backend). O Arraial entra por fusão mais tarde, como listagem pública de festas.",
+    "consequencias": "CTO, Design e QA votaram a favor com condições: lotação garantida na BD, inscrição só para adultos, confirmação escrita e estado de atualização visível, testes de abuso automatizados."
+  },
+  {
+    "id": "ADR-001",
+    "data": "2026-11-07",
+    "titulo": "Lotação dos turnos garantida na base de dados",
+    "autor": "cto",
+    "estado": "aprovada",
+    "contexto": "Dois cliques simultâneos na última vaga não podem gerar sobrelotação.",
+    "decisao": "Trigger BEFORE INSERT em inscricoes faz UPDATE turnos SET ocupadas = ocupadas + 1 WHERE ocupadas < vagas; se nenhuma linha for afetada, falha com turno_cheio. O bloqueio da linha serializa pedidos concorrentes. CHECK (ocupadas <= vagas) como rede de segurança.",
+    "consequencias": "Vale mesmo para inserções fora da API. Contador ocupadas fica sempre igual ao número de inscrições (testado)."
+  },
+  {
+    "id": "ADR-002",
+    "data": "2026-11-07",
+    "titulo": "Gestão da festa por link secreto, não por magic link (no MVP)",
+    "autor": "cto",
+    "estado": "aprovada",
+    "contexto": "O envio de e-mail por omissão do Supabase só entrega a membros da organização, por isso o magic link não serviria organizadores reais sem SMTP próprio.",
+    "decisao": "criar_festa devolve uma chave aleatória (guardada só como hash). O organizador gere a festa em gerir.html?f=<slug>#<chave>. A chave vai no fragmento do URL, que não é enviado para servidores.",
+    "consequencias": "Sem contas nem e-mails no MVP. Quem perder o link perde a gestão (a mitigar: guardar em localStorage e avisar claramente). Reavaliar contas quando houver SMTP."
+  },
+  {
+    "id": "ADR-003",
+    "data": "2026-11-07",
+    "titulo": "Inscrição anónima por RPC com limites em SQL",
+    "autor": "cto",
+    "estado": "aprovada",
+    "contexto": "A proposta inicial era uma Edge Function com service_role a chamar a RPC. Para o MVP, menos peças é melhor.",
+    "decisao": "RPC inscrever (security definer, search_path vazio) valida nome, maioridade e dispositivo, e limita por hash do IP (30/h) e por hash do dispositivo (12/h). Um dispositivo só se inscreve uma vez por turno. IPs nunca guardados em claro.",
+    "consequencias": "Se houver abuso real, acrescentar Cloudflare Turnstile numa Edge Function (backlog B-012)."
+  },
+  {
+    "id": "ADR-004",
+    "data": "2026-11-07",
+    "titulo": "Tabelas e funções internas no schema privado",
+    "autor": "cto",
+    "estado": "aprovada",
+    "contexto": "Uma migração com REVOKE pediu confirmação de 'operação destrutiva' que não pode ser respondida num ciclo autónomo.",
+    "decisao": "Chaves, hashes de dispositivo, limites, sal e funções auxiliares vivem no schema privado, que a API não expõe. Nas tabelas públicas: RLS só com leitura; nenhuma política de escrita.",
+    "consequencias": "Migrações futuras evitam DROP/REVOKE/TRUNCATE; preferem criar novo e migrar. O aviso do Supabase sobre funções security definer públicas refere-se às 5 RPC que são públicas por desenho."
+  },
+  {
+    "id": "ADR-005",
+    "data": "2026-11-07",
+    "titulo": "Alojamento no GitHub Pages, com migração para Cloudflare prevista",
+    "autor": "cto",
+    "estado": "aprovada",
+    "contexto": "O conector Cloudflare não está ligado e não faz deploy de código.",
+    "decisao": "GitHub Actions valida, testa e publica no GitHub Pages: produto em /, painel HQ em /hq/.",
+    "consequencias": "Quando os donos adicionarem CLOUDFLARE_API_TOKEN e CLOUDFLARE_ACCOUNT_ID aos secrets do repositório, o CI passa a publicar no Cloudflare Pages (backlog B-010)."
+  },
+  {
+    "id": "ADR-006",
+    "data": "2026-11-07",
+    "titulo": "Testes da base de dados como visitante anónimo, via SQL",
+    "autor": "qa",
+    "estado": "aprovada",
+    "contexto": "O CI não tem acesso ao Supabase sem segredos, e a QA exigiu provar RLS, lotação e validações.",
+    "decisao": "tests/sql/seguranca.sql corre como role anon (17 casos: leitura pública, tabelas privadas fechadas, escrita direta bloqueada, maioridade, nome com HTML, duplicados, turno cheio, chave errada, contador). Corre-se pelo MCP do Supabase em todo o ciclo que toque na BD. O frontend testa-se no CI com a API simulada (fixtures).",
+    "consequencias": "Concorrência real ainda não é testada com dois clientes em paralelo (backlog B-011)."
+  }
+]

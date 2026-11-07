@@ -1,0 +1,114 @@
+[
+  {
+    "id": "R-001",
+    "data": "2026-11-07T11:40:00Z",
+    "ciclo": 0,
+    "tipo": "fundação",
+    "titulo": "Reunião de fundação: cada um propõe um produto",
+    "resumo": "Sem tópico inicial. Cada membro propôs, a partir da sua função, um produto que respeitasse a constituição.",
+    "participantes": [
+      "ceo",
+      "produto",
+      "cto",
+      "design",
+      "dev",
+      "qa"
+    ],
+    "intervencoes": [
+      {
+        "quem": "ceo",
+        "texto": "Proposta: BARRACA — a página de turnos da tua festa de aldeia: a comissão cria, o povo inscreve-se com um toque, ninguém fica sozinho na grelha às 3 da manhã.\n\nProblema: as comissões de festas, romarias e coletividades gerem voluntários (bifanas, sardinhas, bar, montagem) em grupos de WhatsApp e folhas de papel. Há turnos duplicados, buracos às horas más, e quem coordena passa a semana a perguntar \"quem pode?\".\n\nMVP: página pública por festa com a grelha de turnos por dia e posto; inscrição com primeiro nome; vagas a atualizar; login do organizador; formulário para criar turnos.\n\nRisco: spam ou inscrições falsas, e o WhatsApp ser \"bom o suficiente\". Mitigação: limites por RPC, o organizador remove inscrições, só primeiros nomes.\n\nPorque apostava: resolve um problema concreto já esta semana, para gente real, com um toque bem português. Uma festa a encher a grelha em direto é a demo perfeita para o portfólio. Corta-se escopo com facilidade: sem pagamentos, sem contas para voluntários."
+      },
+      {
+        "quem": "produto",
+        "texto": "Proposta: ARRAIAL — o mapa colaborativo de festas, romarias e arraiais de aldeia, que hoje só existem em cartazes de Facebook e na boca do povo.\n\nProblema: emigrantes em agosto, filhos da terra que vivem em Lisboa e visitantes não sabem que festa há no fim de semana. A informação está espalhada; as comissões não têm um sítio simples onde publicar.\n\nMVP: lista móvel de festas aprovadas por data, filtro por distrito e concelho, página de detalhe e formulário público de submissão (só visível depois de aprovada).\n\nRisco: arranque a frio, sem conteúdo nem comunidade. Mitigação: carregar à mão 30 a 50 festas reais antes de divulgar.\n\nMétrica de sucesso: 100 festas aprovadas, 20 submissões de organizadores e 500 visitas únicas em 60 dias. Como sabemos que resultou? Alguém vai a uma festa que descobriu aqui."
+      },
+      {
+        "quem": "cto",
+        "texto": "Proposta: VEZ — reservas de espaços partilhados de um prédio (churrasqueira, sala do condomínio, estendal) sem sobreposições e sem grupo de WhatsApp.\n\nProblema: papel na entrada ou mensagem no grupo; reservas duplicadas, discussões entre vizinhos e um administrador voluntário a arbitrar. As apps de condomínio são pesadas e pagas.\n\nMVP: magic link; criar prédio com um espaço e grelha semanal; reservar um intervalo e ver as reservas dos outros em tempo real; a base de dados recusa sobreposições.\n\nSupabase a sério: EXCLUDE USING gist sobre tstzrange para garantir zero conflitos, RLS por pertença ao prédio, Realtime, Edge Functions para convites e ICS.\n\nRisco técnico: fusos horários e mudança de hora (Europe/Lisbon). Mitigação: tudo em UTC, converter só na interface e testar os casos limite desde o ciclo 1."
+      },
+      {
+        "quem": "design",
+        "texto": "Proposta: PLACA CERTA — um construtor visual de sinalética para pequenos negócios e associações (\"Volto já\", horários de feriado, cartazes de festa) que gera um A4 pronto a imprimir em 30 segundos.\n\nProblema: o dono do café ou a coletividade escreve o aviso à mão ou improvisa no Word, e o resultado é ilegível ou feio. Feriados e férias repetem-se todos os anos e refaz-se tudo de raiz.\n\nMVP: 4 modelos, 2 ou 3 campos, pré-visualização A4 em direto, imprimir ou gravar PDF pelo browser. Sem conta e sem backend.\n\nRisco: qualidade da impressão entre browsers e impressoras.\n\nDireção visual: cartaz de rua, tipografia grande e confiante, a lembrar sinalética e azulejo. Creme, azul-cobalto, vermelho-telha e amarelo-limão; Fraunces nos títulos, Inter no texto."
+      },
+      {
+        "quem": "dev",
+        "texto": "Proposta: BILHA CERTA — um mapa colaborativo de quem tem a bilha de gás à porta, para que ninguém fique sem gás à hora de jantar.\n\nProblema: em aldeias e vilas, a bilha acaba a meio do jantar e é preciso telefonar a três revendedores para saber quem tem stock e quem entrega. Os horários vivem na cabeça das pessoas.\n\nMVP: lista pública de revendedores por concelho, com zonas, dias de entrega, telefone e data da última confirmação. Dados iniciais por seed, sem scraping.\n\nRisco: arranque a frio; dados desatualizados tiram confiança.\n\nFácil de testar: filtro, ordenação e \"dados frescos\" são funções puras testáveis com node --test; o seed é determinístico; um smoke test confirma que a página lista pelo menos uma ficha."
+      },
+      {
+        "quem": "qa",
+        "texto": "Proposta: PONTUAL.PT — ver em segundos se o autocarro, comboio ou barco local costuma mesmo chegar à hora, com base em relatos anónimos de quem apanhou a mesma carreira.\n\nProblema: os horários oficiais dizem o que devia acontecer, não o que acontece. Hoje a informação vive em grupos de Facebook e no boca a boca.\n\nMVP: 5 carreiras de exemplo, relato em 3 toques (\"a horas / atrasou 5-15 min / não passou\") e percentagem de pontualidade dos últimos 30 dias.\n\nRisco: poucos dados tornam as percentagens enganadoras. Mínimo de 5 relatos para mostrar valor.\n\nAbuso: limite por sessão e carreira por dia, sem texto livre, deduplicação, data validada no servidor."
+      }
+    ],
+    "decisao": "Seis propostas em cima da mesa. A CEO avalia e decide.",
+    "ata": "atas/2026-11-07-fundacao-propostas.md"
+  },
+  {
+    "id": "R-002",
+    "data": "2026-11-07T11:55:00Z",
+    "ciclo": 0,
+    "tipo": "fundação",
+    "titulo": "Avaliação da CEO e decisão provisória",
+    "resumo": "A Marta pontuou as seis propostas de 1 a 5 em cinco critérios e escolheu provisoriamente a Barraca.",
+    "participantes": [
+      "ceo"
+    ],
+    "intervencoes": [
+      {
+        "quem": "ceo",
+        "texto": "Tabela (utilidade | cabe em 6 h | demo | risco, 5 = baixo | Supabase | total):\nBarraca 4 | 4 | 4 | 3 | 5 | 20\nArraial 4 | 5 | 4 | 2 | 3 | 18\nVez 3 | 3 | 3 | 4 | 5 | 18\nPlaca Certa 3 | 5 | 5 | 5 | 2 | 20\nBilha Certa 3 | 5 | 3 | 2 | 3 | 16\nPontual.pt 3 | 4 | 3 | 2 | 4 | 16\n\nDecisão provisória: Barraca.\n\nPorquê: empata com a Placa Certa nos pontos, mas a Placa Certa quase não usa o Supabase e só é um produto de verdade quando lhe juntarmos contas, e isso desvirtua o MVP dela. A Barraca é o único caso que junta um problema real e recorrente, Realtime e RLS a sério, e uma demo que se vê a encher em direto. O Arraial entra por fusão, sem custo no MVP: cada festa já tem página pública, e a listagem por concelho fica para depois.\n\nFica de fora do MVP: listagem e mapa de festas, moderação e cartazes, .ics, folha A4, duplicar festa, contas para voluntários, notificações.\n\nRui: como travamos spam de graça, e garantimos que um turno nunca tem mais inscritos do que vagas, mesmo com dois cliques em simultâneo?\nInês: qual é a grelha de turnos mais legível no telemóvel para alguém de 55 anos, e como mostras livre, quase cheio e completo sem depender só da cor?\nSofia: que três cenários de abuso ou erro tens de ver a passar antes de qualquer release, e dá para os automatizar no CI sem segredos?"
+      }
+    ],
+    "decisao": "Barraca, provisoriamente. Perguntas ao CTO, à Design e à QA antes de fechar."
+  },
+  {
+    "id": "R-003",
+    "data": "2026-11-07T12:05:00Z",
+    "ciclo": 0,
+    "tipo": "fundação",
+    "titulo": "Respostas à CEO e votação",
+    "resumo": "CTO, Design e QA responderam às perguntas da Marta e votaram. Três votos a favor com condições.",
+    "participantes": [
+      "cto",
+      "design",
+      "qa"
+    ],
+    "intervencoes": [
+      {
+        "quem": "cto",
+        "texto": "Voto: a favor com condição.\n\nSpam travado em camadas, todas gratuitas: slug aleatório não adivinhável; limite por IP guardando só sha256(ip + sal), no máximo 10 pedidos por hora; limite por dispositivo com token em localStorage; Cloudflare Turnstile se houver abuso a sério.\n\nA lotação garante-se na BD, não na função: um trigger BEFORE INSERT bloqueia a linha do turno e, se a contagem já chegou às vagas, levanta exceção. Dois cliques simultâneos ficam em série no bloqueio e o segundo falha, mesmo contra inserts diretos.\n\nModelo: festas, postos, turnos, inscricoes, limites.\n\nCondição: a interface tem de dizer que a inscrição é só para adultos, para respeitar a regra de não haver dados de menores."
+      },
+      {
+        "quem": "design",
+        "texto": "Voto: a favor com condição.\n\nNão uso grelha cruzada no telemóvel: obriga a scroll nos dois eixos. Uma coluna em três níveis: separadores de dia fixos no topo (44px); cada posto é um cartão com título de 20px; cada turno é uma linha de 56px com a hora em grande, o estado à direita e o botão \"Inscrever-me\" a toda a largura. Um toque abre uma folha com \"O seu primeiro nome\" e \"Confirmar\". Texto base 18px, contraste 7:1, alvos de 48px, filtro \"Só vagas livres\".\n\nEstados: livre ○ \"3 vagas livres\" verde-pinho; quase cheio ◐ \"Falta 1 pessoa\" âmbar com borda grossa; completo ● \"Completo\" cinza com a hora riscada e o botão desativado.\n\nDireção visual: cartaz de festa popular, caloroso, com bandeirinhas mas sem exagero. Creme #FBF4E4, tinta #1F2A44, vermelho-festa #C8321E, verde-pinho #1E6B4A, âmbar #E0A100. Fraunces nos títulos, Atkinson Hyperlegible no texto.\n\nCondição: o tempo real tem de ter um estado \"a atualizar\" visível e a inscrição mostra sempre uma confirmação escrita. Ninguém de 55 anos deve ficar sem saber se ficou inscrito."
+      },
+      {
+        "quem": "qa",
+        "texto": "Voto: a favor com condição.\n\nTrês cenários antes de qualquer release:\n1. Sobrelotação por concorrência: duas inscrições na última vaga, só uma passa.\n2. Spam e nomes maliciosos: o mesmo cliente dezenas de vezes, ou um nome com HTML/script, vazio ou gigante. Limite por dispositivo, nome limitado, escape na renderização; no Playwright, um nome <img onerror> não pode executar.\n3. Fuga de dados ou privilégios: um anónimo a ler ou alterar festas de outros ou a apagar inscrições. Todas as tabelas com RLS, nenhuma política de escrita aberta, RPC com security definer e search_path fixo.\n\nAutomatizável no CI sem segredos: a lógica pura, a análise das migrações e o smoke test com a API simulada. Não: concorrência real, RLS efetiva e tempo real, que precisam de Postgres.\n\nCondição: sem um Supabase local descartável no CI, os cenários 1 e 3 ficam só meio provados."
+      }
+    ],
+    "decisao": "Barraca aprovada por unanimidade, com as condições de cada um transformadas em critérios de aceitação e em itens de backlog."
+  },
+  {
+    "id": "R-004",
+    "data": "2026-11-07T12:30:00Z",
+    "ciclo": 0,
+    "tipo": "execução",
+    "titulo": "Base de dados criada e testada",
+    "resumo": "O orquestrador executou o modelo de dados do CTO no Supabase e correu, como visitante anónimo, os cenários de teste definidos pela QA.",
+    "participantes": [
+      "sistema"
+    ],
+    "intervencoes": [
+      {
+        "quem": "sistema",
+        "texto": "Projeto Supabase \"barraca\" criado (eu-west-3). Migrações aplicadas: tabelas com RLS (leitura pública, nenhuma escrita direta), schema privado para chaves, hashes e limites, 5 funções públicas (inscrever, cancelar_inscricao, criar_festa, verificar_chave, remover_inscricao), Realtime em turnos e inscrições, e uma festa de demonstração renovada todas as noites às 03:15 por pg_cron.\n\nDesvios ao plano, registados como decisões: gestão por link secreto em vez de magic link (o e-mail por omissão do Supabase só chega a membros da organização) — ADR-002; limites em SQL em vez de Edge Function — ADR-003; schema privado em vez de REVOKE, porque instruções destrutivas pedem confirmação que um ciclo autónomo não pode dar — ADR-004."
+      },
+      {
+        "quem": "sistema",
+        "texto": "Cenários da Sofia (QA) executados pelo orquestrador como role anon (tests/sql/seguranca.sql): 17 de 17 a passar.\n✓ lê festas · ✓ não lê chaves (permission denied for schema privado) · ✓ não insere direto (RLS) · ✓ não altera vagas (0 linhas)\n✓ criar_festa devolve slug e chave · ✓ turno 22h–01h tem 3 h\n✓ exige maioridade · ✓ recusa nome com HTML · ✓ recusa nome com 31 letras · ✓ normaliza \"  Maria   João \" → \"Maria João\"\n✓ mesmo dispositivo não repete · ✓ turno cheio recusa a 3.ª pessoa\n✓ chave errada não remove · ✓ outro dispositivo não cancela · ✓ chave certa verifica e remove · ✓ contador de vagas bate certo\n\nPor provar: duas inscrições realmente em paralelo (B-011)."
+      }
+    ],
+    "decisao": "Base de dados pronta. O Dev avança para o frontend com a especificação aprovada."
+  }
+]

@@ -1,0 +1,13 @@
+[
+  {
+    "n": 0,
+    "inicio": "2026-11-07T11:25:00Z",
+    "fim": null,
+    "tipo": "fundação",
+    "objetivo": "Fundar a empresa, escolher o produto e pôr o MVP da Barraca no ar com CI/CD.",
+    "resultado": "em_curso",
+    "agentes": ["ceo", "produto", "cto", "design", "dev", "qa"],
+    "chamadas_agentes": 11,
+    "notas": "Ciclo de fundação: mais agentes do que o limite normal (4), por ser a reunião inicial."
+  }
+]

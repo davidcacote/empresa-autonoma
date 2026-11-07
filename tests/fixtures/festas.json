@@ -1,0 +1,12 @@
+[
+  {
+    "id": "00000000-0000-4000-8000-000000000001",
+    "slug": "demonstracao",
+    "nome": "Festas de Verão da Ribeira",
+    "localidade": "Aldeia da Ribeira",
+    "data_inicio": "2030-06-22",
+    "data_fim": "2030-06-23",
+    "descricao": "Festa de demonstração: o fim de semana de arraial da aldeia. Aqui pode experimentar a Barraca à vontade.",
+    "demo": true
+  }
+]

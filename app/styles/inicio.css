@@ -1,0 +1,16 @@
+/* Página inicial: cartaz de festa. */
+.inicio .bandeirinhas--grande { height: 44px; background-size: 120px 44px; margin-bottom: 0; }
+.cartaz { margin-block: var(--e5) var(--e6); padding: var(--e6) var(--e4); background: var(--papel); border: 3px solid var(--tinta); border-radius: var(--raio); box-shadow: 6px 6px 0 var(--vermelho); text-align: center; position: relative; }
+.cartaz::before { content: ''; position: absolute; inset: 6px; border: 2px dashed var(--tinta-suave); border-radius: 8px; pointer-events: none; }
+.cartaz__sobre { font-size: var(--texto-pequeno); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--tinta-suave); margin-bottom: var(--e2); }
+.cartaz__marca { font: 800 clamp(3.5rem, 20vw, 5.5rem)/1 var(--fonte-titulo); color: var(--vermelho-escuro); margin: 0 0 var(--e4); letter-spacing: -0.01em; }
+.cartaz__pitch { font-size: var(--texto-grande); max-width: 30rem; margin-inline: auto; margin-bottom: var(--e5); }
+.cartaz__acoes { display: grid; gap: var(--e3); max-width: 24rem; margin-inline: auto; position: relative; }
+
+.bilhetes { list-style: none; margin: 0 0 var(--e6); padding: 0; display: grid; gap: var(--e4); }
+.bilhete { background: var(--creme-2); border: var(--linha); border-left: 10px solid var(--pinho); border-radius: 8px var(--raio) var(--raio) 8px; padding: var(--e3) var(--e4); }
+.bilhete:nth-child(2) { border-left-color: var(--ambar); }
+.bilhete:nth-child(3) { border-left-color: var(--vermelho); }
+.bilhete h3 { font-size: 1.25rem; margin-bottom: var(--e1); }
+.bilhete p { margin: 0; }
+@media (min-width: 700px) { .bilhetes { grid-template-columns: repeat(3, 1fr); } .contentor { max-width: 52rem; } }

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Sede · Empresa Autónoma</title>
+  <meta name="description" content="Painel da Empresa Autónoma: uma equipa de agentes Claude, de CEO a Dev, a construir e melhorar a Barraca em ciclos de 6 horas.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="hq.css">
+</head>
+<body>
+  <a class="saltar" href="#conteudo">Saltar para o conteúdo</a>
+  <header class="topo">
+    <div class="topo-linha">
+      <div class="marca">
+        <span class="marca-sinal" aria-hidden="true"></span>
+        <div>
+          <p class="marca-nome" id="nome-empresa">Empresa Autónoma</p>
+          <p class="marca-sub">Sede · painel dos donos</p>
+        </div>
+      </div>
+      <p class="estado" id="estado-empresa" data-estado="a-carregar">A carregar…</p>
+    </div>
+    <nav class="separadores" aria-label="Secções do painel">
+      <a href="#geral" data-sec="geral">Visão geral</a>
+      <a href="#reunioes" data-sec="reunioes">Reuniões</a>
+      <a href="#decisoes" data-sec="decisoes">Decisões</a>
+      <a href="#backlog" data-sec="backlog">Backlog</a>
+      <a href="#ciclos" data-sec="ciclos">Ciclos</a>
+      <a href="#equipa" data-sec="equipa">Equipa</a>
+    </nav>
+  </header>
+
+  <main id="conteudo" tabindex="-1">
+    <section id="sec-geral" data-sec="geral" aria-labelledby="t-geral">
+      <h1 id="t-geral" class="vh">Visão geral</h1>
+      <div class="produto" id="produto"></div>
+      <div class="indicadores" id="indicadores"></div>
+      <div class="duas-colunas">
+        <article class="cartao" id="ultima-reuniao"><h2>Última reunião</h2></article>
+        <div class="coluna">
+          <article class="cartao" id="orcamento"><h2>Orçamento</h2></article>
+          <article class="cartao" id="intervir"><h2>Como intervir</h2></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="sec-reunioes" data-sec="reunioes" aria-labelledby="t-reunioes" hidden>
+      <h1 id="t-reunioes">Reuniões</h1>
+      <p class="intro">Tudo o que cada agente disse, por ordem. As mais recentes primeiro.</p>
+      <div id="lista-reunioes"></div>
+    </section>
+
+    <section id="sec-decisoes" data-sec="decisoes" aria-labelledby="t-decisoes" hidden>
+      <h1 id="t-decisoes">Decisões</h1>
+      <p class="intro">Decisões de produto e técnicas (ADR). Para vetar, mudem o estado para <code>vetada</code> em <code>empresa/dados/decisoes.json</code>.</p>
+      <div id="lista-decisoes" class="grelha-cartoes"></div>
+    </section>
+
+    <section id="sec-backlog" data-sec="backlog" aria-labelledby="t-backlog" hidden>
+      <h1 id="t-backlog">Backlog</h1>
+      <p class="intro">O que está a ser feito, o que vem a seguir e as ideias em espera.</p>
+      <div id="quadro" class="quadro"></div>
+    </section>
+
+    <section id="sec-ciclos" data-sec="ciclos" aria-labelledby="t-ciclos" hidden>
+      <h1 id="t-ciclos">Ciclos</h1>
+      <p class="intro">Cada ciclo corre de 6 em 6 horas: stand-up, especificação, implementação, testes, release e retro.</p>
+      <ol id="lista-ciclos" class="linha-tempo"></ol>
+    </section>
+
+    <section id="sec-equipa" data-sec="equipa" aria-labelledby="t-equipa" hidden>
+      <h1 id="t-equipa">Equipa</h1>
+      <p class="intro">Seis agentes Claude, cada um com um papel escrito em <code>empresa/papeis/</code>. Um orquestrador convoca as reuniões e executa o que decidem.</p>
+      <div id="lista-equipa" class="grelha-cartoes"></div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p id="rodape-build">—</p>
+  </footer>
+  <script type="module" src="hq.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "nome": "Empresa Autónoma",
+  "missao": "Escolher, construir e melhorar continuamente um produto web útil para pessoas reais, com agentes Claude em todos os papéis, de CEO a Dev.",
+  "fundada_em": "2026-11-07",
+  "produto": {
+    "nome": "Barraca",
+    "pitch": "A página de turnos da tua festa de aldeia: a comissão cria, o povo inscreve-se com um toque, ninguém fica sozinho na grelha às 3 da manhã.",
+    "estado": "MVP em construção (ciclo 0)"
+  },
+  "ciclo_atual": 0,
+  "proximo_ciclo": null,
+  "links": {
+    "produto": "../",
+    "demo": "../festa.html?f=demonstracao",
+    "repositorio": "https://github.com/davidcacote/empresa-autonoma",
+    "ci": "https://github.com/davidcacote/empresa-autonoma/actions",
+    "issues_donos": "https://github.com/davidcacote/empresa-autonoma/issues/new?labels=donos",
+    "orcamento": "https://github.com/davidcacote/empresa-autonoma/edit/main/empresa/dados/orcamento.json"
+  },
+  "stack": ["HTML/CSS/JS sem build", "Supabase (Postgres, RLS, RPC, Realtime, pg_cron)", "GitHub Actions", "GitHub Pages"]
+}

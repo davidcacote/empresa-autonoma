@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gerir festa · Barraca</title>
+  <meta name="robots" content="noindex">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#FBF4E4">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M2 6h28L16 28z' fill='%23C8321E'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fraunces:opsz,wght@9..144,600;9..144,800&display=swap" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/festa.css">
+  <script type="module" src="js/gerir.js"></script>
+</head>
+<body>
+  <a class="saltar" href="#conteudo">Saltar para os turnos</a>
+  <div class="bandeirinhas" aria-hidden="true"></div>
+
+  <header class="contentor cabecalho">
+    <a class="cabecalho__marca" href="index.html">Barraca</a>
+    <h1 id="titulo" class="cabecalho__titulo">Gerir a festa</h1>
+    <p id="detalhes" class="cabecalho__detalhes"></p>
+    <p id="ligacao" class="ligacao" hidden>A atualizar…</p>
+  </header>
+
+  <main class="contentor" id="principal">
+    <div id="aviso" class="aviso aviso--erro" role="alert" hidden></div>
+    <div id="confirmacao" class="aviso aviso--sucesso" role="status" tabindex="-1" hidden></div>
+    <p id="publica" class="publica" hidden><a id="link-publica" href="#">Ver a página dos voluntários</a></p>
+    <div id="controlos" hidden>
+      <nav id="dias" class="dias" aria-label="Dia da festa"></nav>
+    </div>
+    <div id="conteudo" tabindex="-1"></div>
+  </main>
+
+  <footer class="contentor rodape">
+    <p>Este link é só seu: quem o tiver pode remover inscrições. <a href="index.html">Início</a></p>
+  </footer>
+</body>
+</html>

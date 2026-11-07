@@ -1,0 +1,33 @@
+/* Tokens de design da Barraca (cartaz de festa popular). Modo escuro: fora desta fase. */
+:root {
+  /* Paleta */
+  --creme: #FBF4E4;          /* fundo */
+  --creme-2: #F3E8CC;       /* faixas e cabeçalhos de cartão */
+  --papel: #FFFDF7;         /* cartões e campos */
+  --tinta: #1F2A44;         /* texto (contraste 13:1 sobre o creme) */
+  --tinta-suave: #4A5167;   /* texto secundário (7:1 sobre o creme) */
+  --vermelho: #C8321E;      /* ação primária (texto branco em cima: 5,3:1) */
+  --vermelho-escuro: #9E2412; /* links e perigo (7:1 sobre o creme) */
+  --pinho: #1E6B4A;         /* livre */
+  --ambar: #E0A100;         /* quase cheio: só como fundo/borda */
+  --cinza: #E4DECF;         /* completo / terminado */
+  --cinza-texto: #3F465A;
+
+  /* Tipografia (Google Fonts com alternativas do sistema) */
+  --fonte-titulo: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --fonte-texto: 'Atkinson Hyperlegible', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --texto-base: 1.125rem;   /* 18px */
+  --texto-pequeno: 1rem;
+  --texto-grande: 1.25rem;
+
+  /* Espaçamento e forma */
+  --e1: 0.25rem; --e2: 0.5rem; --e3: 0.75rem; --e4: 1rem; --e5: 1.5rem; --e6: 2rem; --e7: 3rem;
+  --raio: 14px;
+  --alvo: 3rem;             /* alvo de toque mínimo: 48px */
+  --linha: 2px solid var(--tinta);
+  --sombra-cartaz: 4px 4px 0 var(--tinta);
+  --largura: 40rem;
+  --gutter: 1rem;           /* 16px de cada lado no telemóvel */
+
+  --foco: 3px solid var(--tinta);
+}

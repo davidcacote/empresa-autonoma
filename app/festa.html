@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Festa · Barraca</title>
+  <meta name="description" content="Escolha o seu turno e inscreva-se com um toque. Sem contas, sem WhatsApp caótico.">
+  <meta name="theme-color" content="#FBF4E4">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M2 6h28L16 28z' fill='%23C8321E'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fraunces:opsz,wght@9..144,600;9..144,800&display=swap" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/festa.css">
+  <script type="module" src="js/festa.js"></script>
+</head>
+<body>
+  <a class="saltar" href="#conteudo">Saltar para os turnos</a>
+  <div class="bandeirinhas" aria-hidden="true"></div>
+
+  <header class="contentor cabecalho">
+    <a class="cabecalho__marca" href="index.html">Barraca</a>
+    <h1 id="titulo" class="cabecalho__titulo">A carregar a festa…</h1>
+    <p id="detalhes" class="cabecalho__detalhes"></p>
+    <p id="descricao" class="cabecalho__descricao" hidden></p>
+    <p id="ligacao" class="ligacao">A atualizar…</p>
+  </header>
+
+  <main class="contentor" id="principal">
+    <div id="aviso" class="aviso aviso--erro" role="alert" hidden></div>
+    <div id="confirmacao" class="aviso aviso--sucesso" role="status" tabindex="-1" hidden></div>
+
+    <div id="controlos" hidden>
+      <nav id="dias" class="dias" aria-label="Dia da festa"></nav>
+      <label class="interruptor">
+        <input type="checkbox" id="so-livres" role="switch">
+        <span class="interruptor__pista" aria-hidden="true"></span>
+        <span>Só vagas livres</span>
+      </label>
+    </div>
+
+    <div id="conteudo" tabindex="-1"></div>
+
+    <section id="minhas" class="minhas" aria-labelledby="minhas-titulo" hidden>
+      <h2 id="minhas-titulo">As minhas inscrições neste dispositivo</h2>
+      <ul id="minhas-lista" class="minhas__lista"></ul>
+    </section>
+  </main>
+
+  <footer class="contentor rodape">
+    <p>Feito com a <a href="index.html">Barraca</a> · <a href="criar.html">Criar a minha festa</a></p>
+  </footer>
+
+  <dialog id="dlg" class="folha" aria-labelledby="dlg-titulo">
+    <form id="form-inscricao" class="folha__corpo" novalidate>
+      <h2 id="dlg-titulo" class="folha__titulo">Inscrever-me</h2>
+      <p id="dlg-resumo" class="folha__resumo"></p>
+
+      <label class="campo">
+        <span class="campo__rotulo">O seu primeiro nome</span>
+        <input id="dlg-nome" name="nome" type="text" autocomplete="given-name" maxlength="30" required aria-describedby="dlg-erro">
+      </label>
+
+      <label class="caixa">
+        <input id="dlg-maior" name="maior" type="checkbox" aria-describedby="dlg-erro">
+        <span>Tenho 18 anos ou mais</span>
+      </label>
+
+      <p id="dlg-erro" class="erro-campo" role="alert"></p>
+
+      <div class="folha__acoes">
+        <button type="button" id="dlg-cancelar" class="botao botao--secundario">Cancelar</button>
+        <button type="submit" id="dlg-confirmar" class="botao botao--primario">Confirmar</button>
+      </div>
+    </form>
+  </dialog>
+</body>
+</html>

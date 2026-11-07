@@ -1,0 +1,66 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  validar-testar:
+    name: Validar e testar
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validar dados e segredos
+        run: node scripts/validar.mjs
+      - name: Testes unitários
+        run: node --test tests/
+      - name: Gerar site
+        run: node scripts/build.mjs
+      - name: Instalar Playwright
+        run: |
+          npm install --no-save --no-package-lock playwright@1.49.1
+          npx playwright install --with-deps chromium
+      - name: Smoke test no browser
+        run: node scripts/smoke.mjs --screenshots screenshots
+      - name: Testes de fluxo (e2e)
+        run: |
+          shopt -s nullglob
+          for f in tests/e2e/*.e2e.mjs; do echo "▶ $f"; node "$f"; done
+      - name: Guardar screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshots
+          path: screenshots
+          if-no-files-found: ignore
+      - name: Preparar artefacto do Pages
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  publicar:
+    name: Publicar no GitHub Pages
+    needs: validar-testar
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4
