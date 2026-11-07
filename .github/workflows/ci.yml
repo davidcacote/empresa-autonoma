@@ -27,7 +27,7 @@ jobs:
       - name: Validar dados e segredos
         run: node scripts/validar.mjs
       - name: Testes unitários
-        run: node --test tests/
+        run: node --test 'tests/**/*.test.mjs'
       - name: Gerar site
         run: node scripts/build.mjs
       - name: Instalar Playwright

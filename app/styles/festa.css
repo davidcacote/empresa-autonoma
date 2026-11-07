@@ -50,3 +50,5 @@
 .inscritos { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--e2); }
 .inscritos__item { display: flex; align-items: center; justify-content: space-between; gap: var(--e3); }
 .inscritos__nome { font-weight: 700; }
+.inscritos .botao { flex: none; white-space: nowrap; }
+.inscritos__nome { min-width: 0; }

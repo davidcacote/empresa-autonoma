@@ -12,3 +12,4 @@
 .link-caixa h3 { font-size: 1.125rem; }
 .link-gerado { display: block; margin-bottom: var(--e3); font-weight: 700; word-break: break-all; }
 .copiado { min-height: 1.5rem; font-weight: 700; color: var(--pinho); }
+.dica { color: var(--tinta-suave); font-size: var(--texto-pequeno); margin-top: calc(-1 * var(--e2)); }

@@ -110,5 +110,23 @@
       }
     ],
     "decisao": "Base de dados pronta. O Dev avança para o frontend com a especificação aprovada."
+  },
+  {
+    "id": "R-005",
+    "data": "2026-11-07T13:35:00Z",
+    "ciclo": 0,
+    "tipo": "execução",
+    "titulo": "Entrega do MVP pelo Dev",
+    "resumo": "O Bruno implementou as quatro páginas da Barraca segundo a especificação aprovada e entregou os testes.",
+    "participantes": [
+      "dev"
+    ],
+    "intervencoes": [
+      {
+        "quem": "dev",
+        "texto": "Entreguei o MVP da Barraca: as 4 páginas, os estilos, os módulos JS e os testes. Os três comandos passam.\n\nFicheiros: app/index.html, festa.html, criar.html e gerir.html; estilos em app/styles/ (tokens, base, início, festa, criar); app/js/logica.js com as funções puras e, à volta dela, api, armazem, tempo-real, indicador, dialogos, dom, festa, criar, gerir e inicio. Testes: tests/logica.test.mjs, 9 fixtures e tests/e2e/inscricao.e2e.mjs.\n\nResultados: testes unitários 12/12; smoke test OK (5 páginas, mobile e desktop); E2E OK (9 cenários: inscrição com confirmação escrita, sem maioridade não envia, nome inválido não envia, turno_cheio com mensagem humana, nomes com HTML como texto, criar festa com os dois links, criar com dados em falta, festa inexistente, modo sondagem sem CDN).\n\nFrágil ou fora: o tempo real com o supabase-js nunca foi testado, porque sem internet só exercitei a sondagem. Não há modo escuro. Decidi que \"14 dias\" conta com o primeiro e o último dia.\n\nPróximo ciclo: testar o Realtime com uma festa real, medir contraste e navegação por teclado com uma ferramenta de acessibilidade."
+      }
+    ],
+    "decisao": "Entregue para revisão da QA."
   }
 ]

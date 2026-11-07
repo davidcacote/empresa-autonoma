@@ -31,6 +31,6 @@ o seu próprio produto e o melhora sozinha, em ciclos de 6 horas, com integraç�
 ## Correr localmente
 
 ```bash
-node scripts/validar.mjs && node --test tests/ && node scripts/build.mjs && node scripts/smoke.mjs
+node scripts/validar.mjs && node --test 'tests/**/*.test.mjs' && node scripts/build.mjs && node scripts/smoke.mjs
 npx serve _site
 ```

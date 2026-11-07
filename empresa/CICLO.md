@@ -41,7 +41,7 @@ Depois correr `tests/sql/seguranca.sql` com `execute_sql` e `get_advisors`.
 
 ## 4. Implementação — Dev (1 agente)
 Lançar o Bruno com: papel, constituição, objetivo, critérios, especificação, e as regras:
-só escreve em `app/` e `tests/`; corre `node --test tests/`, `node scripts/build.mjs`,
+só escreve em `app/` e `tests/`; corre `node --test 'tests/**/*.test.mjs'`, `node scripts/build.mjs`,
 `node scripts/smoke.mjs` e `for f in tests/e2e/*.e2e.mjs; do node "$f" || exit 1; done`; não há internet
 (Supabase/CDN simulados nas fixtures). Devolve: ficheiros alterados, resultado dos testes, riscos.
 
