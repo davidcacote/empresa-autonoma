@@ -215,5 +215,31 @@
       "CI sem avisos de Node 20 deprecado",
       "Versões fixas e verificadas na documentação oficial de cada action"
     ]
+  },
+  {
+    "id": "B-018",
+    "titulo": "Mudar a Barraca para /barraca/ e pôr a montra do estúdio na raiz",
+    "estado": "a_fazer",
+    "prioridade": 1,
+    "estimativa": "M",
+    "quem": "Donos e futuros produtos",
+    "porque": "Pedido dos donos (ADR-007); fazer antes de haver links de festas reais a circular. Entra logo depois do B-011.",
+    "criterios": [
+      "app/ passa para apps/barraca/ e scripts/build.mjs publica cada apps/<nome>/ em /<nome>/",
+      "A raiz mostra a montra do estúdio: lista de produtos (a partir de empresa.json) e link para o painel /hq/",
+      "festa.html, criar.html e gerir.html na raiz redirecionam para /barraca/… preservando ?query e #hash (a chave de gestão tem de sobreviver)",
+      "Fixtures, smoke, e2e e validar.mjs atualizados para os novos caminhos; CI verde",
+      "Links do painel (empresa.json), README, CONSTITUICAO.md, CICLO.md e papéis atualizados para apps/<nome>/"
+    ]
+  },
+  {
+    "id": "B-019",
+    "titulo": "Painel HQ com um separador por produto",
+    "estado": "ideia",
+    "prioridade": 4,
+    "estimativa": "P",
+    "quem": "Donos",
+    "porque": "Quando houver um segundo produto (ADR-007)",
+    "criterios": []
   }
 ]

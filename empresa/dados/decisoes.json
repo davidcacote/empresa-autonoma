@@ -78,5 +78,15 @@
     "contexto": "No dia da fundação o plano Claude partilhado chegou a 90%, acima do alvo de 80%. A fundação foi excecional (13 chamadas a agentes, orquestrador em Opus).",
     "decisao": "Um ciclo por noite às 01:39 (Lisboa), fora do horário de trabalho. Orquestrador em Sonnet. No máximo 3 agentes por ciclo: CEO (Haiku) ou um especialista, mais Dev e QA (Sonnet).",
     "consequencias": "Progresso mais lento (um objetivo por dia), mas o plano fica livre durante o dia. A CEO deixa o objetivo do ciclo seguinte, para que ciclos alternados possam usar um especialista em vez dela."
+  },
+  {
+    "id": "ADR-007",
+    "data": "2026-11-07",
+    "titulo": "Várias apps no mesmo site e no mesmo Supabase: um caminho e um schema por app",
+    "autor": "donos",
+    "estado": "aprovada",
+    "contexto": "Os donos perguntaram como acomodar produtos futuros sem novos sites nem novos projetos Supabase (o plano gratuito só permite 2 projetos ativos e já há 2).",
+    "decisao": "Site: a raiz passa a ser a montra do estúdio e cada app vive num caminho próprio (/barraca/, /<nova-app>/), com o painel em /hq/. Repositório: apps/<nome>/ com testes e CI partilhados. Supabase: o projeto barraca acolhe todas as apps; cada app nova tem o seu schema (tabelas, funções, RLS) exposto em 'Exposed schemas' pelos donos, ou só RPC com prefixo em public. A Barraca fica em public + privado, onde já está testada. Tabs só no painel HQ, um separador por produto.",
+    "consequencias": "Mudar a Barraca para /barraca/ agora, antes de haver links reais a circular (B-018), com redirecionamento dos URLs antigos a preservar ?query e #chave. Utilizadores de Auth e limites do plano gratuito passam a ser partilhados entre apps."
   }
 ]
