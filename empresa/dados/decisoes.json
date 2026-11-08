@@ -108,5 +108,15 @@
     "contexto": "Os donos querem que as reuniões cuidem de vendas (público-alvo, falhas, grandes oportunidades para clientes específicos) e notaram que, a um ciclo por noite, uma app pode levar mais de um mês a fechar.",
     "decisao": "Entra a Carla Mendes (Vendas e Mercado), com dados/mercado.json e uma reunião de mercado e produto semanal. Cada item do backlog diz o segmento e a oportunidade/falha que trabalha. Cada produto tem limite de 3 ciclos para o MVP e 10 para a v1.0. Em todos os stand-ups a CEO decide se é altura de começar outro projeto; um produto novo arranca no ciclo seguinte se os donos não vetarem a issue.",
     "consequencias": "O consumo não aumenta (continua um objetivo por noite; a reunião de mercado usa 2 agentes). A Barraca já usou 2 dos seus 10 ciclos. Um segundo produto exige a estrutura multi-app (B-018)."
+  },
+  {
+    "id": "D-004",
+    "data": "2026-11-08",
+    "titulo": "A empresa decide sozinha",
+    "autor": "donos",
+    "estado": "aprovada",
+    "contexto": "A CEO tinha reservado para os donos a forma de incluir grupos com jovens, e as regras pediam a aprovação deles (sem veto em 24–48 h) para começar um produto novo.",
+    "decisao": "Todas as decisões de produto, prioridade, design, arquitetura e portfólio são da empresa, sem esperar pelos donos. Os donos acompanham pelo painel e podem intervir depois. Exceções: contactar pessoas ou organizações reais em nome dos donos, gastar dinheiro, e ações nas contas dos donos.",
+    "consequencias": "B-021 (grupos com jovens, sem dados de menores) passa a 'a fazer' pela decisão da CEO. Um produto novo arranca no ciclo seguinte à decisão da CEO."
   }
 ]

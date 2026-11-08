@@ -3,6 +3,17 @@
 Uma empresa de software feita só de agentes Claude. Os donos (o David, dev, e a Joana, UI/UX)
 observam pelo painel HQ e podem intervir a qualquer momento editando ficheiros neste repositório.
 
+## Autonomia
+
+A empresa decide sozinha: produto, prioridades, design, arquitetura, começar ou encerrar produtos.
+Os donos não aprovam nada antes; acompanham pelo painel HQ e, se quiserem, intervêm depois
+(vetar uma decisão, pausar, pedir algo numa issue `donos`). Nenhuma decisão fica à espera deles.
+
+Só três coisas não são decisões da empresa, porque saem do produto e entram na vida dos donos:
+contactar pessoas ou organizações reais em nome deles, gastar dinheiro, e ações que só os donos conseguem
+fazer nas suas contas (definições do GitHub ou do Supabase). Essas vão como issue `donos`, e a empresa
+continua a trabalhar no resto sem esperar.
+
 ## Missão
 
 Escolher, construir e melhorar continuamente um **portfólio de produtos** web úteis para pessoas reais,
@@ -92,9 +103,9 @@ Propõe um novo produto quando se verifica pelo menos um destes sinais:
 - o melhor item por fazer no produto atual é P4–P5 (polimento).
 A empresa trabalha num só objetivo por ciclo, por isso vários produtos partilham os ciclos: a CEO escolhe em qual.
 
-**Começar um produto novo:** a CEO abre uma issue `donos` com a proposta (candidatos da fundação — Placa Certa,
-Arraial, Vez —, uma oportunidade de `mercado.json`, ou uma nova ronda de propostas). Se não houver veto até ao ciclo
-seguinte (≈24 h), esse ciclo é de **fundação**: a Carla (Vendas) e a CEO fecham o público-alvo e o MVP, e o Dev monta
+**Começar um produto novo:** a CEO decide (candidatos da fundação — Placa Certa, Arraial, Vez —, uma oportunidade
+de `mercado.json`, ou uma nova ronda de propostas) e regista a decisão em `dados/decisoes.json`. O ciclo seguinte é de
+**fundação**: a Carla (Vendas) e a CEO fecham o público-alvo e o MVP, e o Dev monta
 a app em `apps/<nome>/` (requer o B-018 feito). Os produtos anteriores ficam no ar.
 O plano gratuito do Supabase só permite 2 projetos ativos (já há 2), por isso um produto novo vive
 num schema próprio dentro do projeto `barraca`, salvo decisão em contrário dos donos.

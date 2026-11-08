@@ -34,8 +34,8 @@ Supabase `barraca`), não o fazer: registar como pendente para os donos.
 2. Lançar a Marta (CEO, `model` = `modelo_ceo`) com a apresentação da Carla, `ciclo_de_vida` (`empresa.json`) e a secção
    "Ciclo de vida do produto" da constituição. Devolve: a ficha (1–5, incluindo potencial comercial), a decisão
    (continuar / declarar v1.0 / propor novo produto), até 3 itens novos de backlog com `segmento` e `mercado`, e o `proximo_objetivo`.
-3. O orquestrador atualiza `ciclo_de_vida` e o backlog. "Propor novo produto" → abrir a issue `donos` e
-   continuar o produto atual até haver resposta ou passarem 48 h. Propostas de contactar clientes reais → issue `donos`.
+3. O orquestrador atualiza `ciclo_de_vida` e o backlog. "Novo produto" → registar a decisão em `decisoes.json`;
+   o ciclo seguinte é de fundação. Propostas de contactar clientes reais → issue `donos` (a empresa não espera pela resposta).
 - Escrever este resumo em `empresa/atas/ciclo-<n>.md` (secção "Estado").
 
 ## 2. Quem decide o objetivo (1 agente: CEO **ou** especialista)
@@ -62,8 +62,8 @@ Prioridade obrigatória: CI vermelho ou bug > issue `donos` > topo do backlog.
 Ela devolve também **o próximo objetivo** (para o ciclo seguinte poder seguir pelo caminho A) e a resposta a
 **"começamos outro projeto?"** (sim/não, com o sinal da constituição que o justifica e, se sim, qual produto).
 O orquestrador passa-lhe `ciclo_de_vida` (fase, `ciclos_usados` e limites) de cada produto para ela poder decidir.
-Se for "sim": abrir a issue `donos` com a proposta; se não houver veto até ao ciclo seguinte, esse ciclo é de fundação
-(ver "Começar um produto novo" na constituição).
+Se for "sim": registar a decisão em `decisoes.json`; o ciclo seguinte é de fundação
+(ver "Começar um produto novo" na constituição). A empresa não pede autorização aos donos para decisões de produto.
 No caminho B o campo do especialista é ignorado: a CEO escreve os critérios e o Dev segue a especificação
 que já existir no backlog e nas atas.
 

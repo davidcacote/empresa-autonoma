@@ -280,11 +280,11 @@
   {
     "id": "B-021",
     "titulo": "Grupos com jovens: o adulto responsável inscreve-se e indica quantos jovens leva (sem nomes de menores)",
-    "estado": "ideia",
+    "estado": "a_fazer",
     "prioridade": 3,
     "estimativa": "M",
     "quem": "Escuteiros, paróquias, escolas e associações juvenis",
-    "porque": "Falha F-2: só maiores de idade exclui os 14–25 anos. A constituição proíbe dados de menores, por isso a forma tem de ser aprovada pelos donos antes do Dev.",
+    "porque": "Falha F-2: só maiores de idade exclui os 14–25 anos. Decisão da empresa (CEO, 8 nov): o adulto responsável inscreve-se e indica só quantos jovens leva, sem nomes, respeitando a regra de não guardar dados de menores.",
     "segmento": [
       "S-2",
       "S-4"
@@ -293,7 +293,11 @@
       "F-2",
       "O-4"
     ],
-    "criterios": [],
-    "requer_donos": true
+    "criterios": [
+      "A organização pode permitir, por festa, que um adulto indique quantos jovens leva (0–10)",
+      "Nenhum nome, idade ou contacto de menores é pedido nem guardado",
+      "Cada jovem ocupa uma vaga do turno; a lotação continua garantida pela base de dados",
+      "O texto explica que o adulto é o responsável pelo grupo"
+    ]
   }
 ]
