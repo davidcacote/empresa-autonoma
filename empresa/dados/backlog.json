@@ -51,7 +51,7 @@
     "id": "B-004",
     "titulo": "Partilhar a festa no WhatsApp com texto pronto",
     "estado": "a_fazer",
-    "prioridade": 2,
+    "prioridade": 1,
     "estimativa": "P",
     "quem": "Coordenador(a)",
     "porque": "O WhatsApp é onde a comissão já está",
@@ -59,6 +59,15 @@
       "Botão 'Partilhar no WhatsApp' na página da festa e no ecrã de sucesso",
       "Texto inclui nome, datas e link",
       "Meta tags Open Graph para pré-visualização"
+    ],
+    "segmento": [
+      "S-1",
+      "S-2"
+    ],
+    "mercado": [
+      "F-1",
+      "O-3",
+      "O-4"
     ]
   },
   {
@@ -103,12 +112,22 @@
   {
     "id": "B-008",
     "titulo": "Duplicar uma festa e modelos de postos",
-    "estado": "ideia",
-    "prioridade": 4,
+    "estado": "a_fazer",
+    "prioridade": 2,
     "estimativa": "M",
     "quem": "Coordenador(a)",
-    "porque": "A festa repete-se todos os anos",
-    "criterios": []
+    "porque": "A festa repete-se todos os anos; os Santos Populares planeiam-se de março a maio e um modelo \"recolha de alimentos\" serve a O-1 sem produto novo.",
+    "criterios": [],
+    "segmento": [
+      "S-1",
+      "S-2",
+      "S-3"
+    ],
+    "mercado": [
+      "F-4",
+      "O-5",
+      "O-1"
+    ]
   },
   {
     "id": "B-009",
@@ -223,14 +242,20 @@
     "prioridade": 1,
     "estimativa": "M",
     "quem": "Donos e futuros produtos",
-    "porque": "Pedido dos donos (ADR-007); fazer antes de haver links de festas reais a circular. Entra logo depois do B-011.",
+    "porque": "Pedido dos donos (ADR-007); fazer antes de haver links de festas reais a circular. Entra logo depois do B-011. A CEO pô-lo primeiro: os links partilhados no WhatsApp não podem mudar de endereço depois.",
     "criterios": [
       "app/ passa para apps/barraca/ e scripts/build.mjs publica cada apps/<nome>/ em /<nome>/",
       "A raiz mostra a montra do estúdio: lista de produtos (a partir de empresa.json) e link para o painel /hq/",
       "festa.html, criar.html e gerir.html na raiz redirecionam para /barraca/… preservando ?query e #hash (a chave de gestão tem de sobreviver)",
       "Fixtures, smoke, e2e e validar.mjs atualizados para os novos caminhos; CI verde",
       "Links do painel (empresa.json), README, CONSTITUICAO.md, CICLO.md e papéis atualizados para apps/<nome>/"
-    ]
+    ],
+    "segmento": [
+      "S-1",
+      "S-2",
+      "S-3"
+    ],
+    "mercado": []
   },
   {
     "id": "B-019",
@@ -251,5 +276,24 @@
     "quem": "QA",
     "porque": "Ficou por provar no B-011, ver tests/TEMPO-REAL.md",
     "criterios": []
+  },
+  {
+    "id": "B-021",
+    "titulo": "Grupos com jovens: o adulto responsável inscreve-se e indica quantos jovens leva (sem nomes de menores)",
+    "estado": "ideia",
+    "prioridade": 3,
+    "estimativa": "M",
+    "quem": "Escuteiros, paróquias, escolas e associações juvenis",
+    "porque": "Falha F-2: só maiores de idade exclui os 14–25 anos. A constituição proíbe dados de menores, por isso a forma tem de ser aprovada pelos donos antes do Dev.",
+    "segmento": [
+      "S-2",
+      "S-4"
+    ],
+    "mercado": [
+      "F-2",
+      "O-4"
+    ],
+    "criterios": [],
+    "requer_donos": true
   }
 ]

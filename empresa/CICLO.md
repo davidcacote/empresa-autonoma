@@ -44,6 +44,10 @@ O ciclo tem no máximo `max_agentes_por_ciclo` agentes (3): **um que decide/espe
   e não há issues `donos` abertas, o objetivo é esse. Não se lança a CEO. Se o item mexer na interface,
   na BD/arquitetura ou tiver a história mal definida, lança-se **um** especialista (passo 3) no lugar dela;
   se não precisar (CI, testes, correções pequenas), passa-se direto ao Dev.
+  **Antes de seguir pelo caminho A**, o orquestrador verifica os sinais de portfólio da constituição
+  (produto na v1.0 ou nos últimos 2 ciclos do limite; oportunidade alta e com prazo em `mercado.json` que nenhum
+  produto serve; melhor item por fazer P4–P5). Se algum se verificar, segue pelo caminho B para a CEO decidir
+  "começamos outro projeto?". Assim a pergunta é feita em todos os ciclos sem gastar um agente quando não há sinais.
 - **Caminho B — stand-up com a CEO:** em todos os outros casos. Não há especialista neste ciclo.
 
 Stand-up: lançar a Marta (`subagent_type` general-purpose, `model` = `modelo_ceo` do orçamento) com:

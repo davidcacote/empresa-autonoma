@@ -35,7 +35,7 @@
     ],
     "chamadas_agentes": 3,
     "commit": "1593818",
-    "proximo_objetivo": "",
+    "proximo_objetivo": "B-018",
     "notas": "Caminho A sem especialista. Uma volta Dev (migração privado). CI verde (inclui o job base-de-dados em runner real)."
   }
 ]

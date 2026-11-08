@@ -191,5 +191,28 @@
         "texto": "Aprovado. Todos os critérios com evidência; testes 12/12, build, smoke, e2e (9) e validar verdes. Sem falhas bloqueantes."
       }
     ]
+  },
+  {
+    "id": "R-009",
+    "data": "2026-11-08T13:05:00Z",
+    "ciclo": 1,
+    "tipo": "mercado",
+    "titulo": "1.ª Reunião de mercado e produto",
+    "resumo": "A Carla (Vendas) apresentou a primeira análise de mercado com fontes públicas; a Marta (CEO) avaliou o produto e decidiu o backlog e a questão do portfólio.",
+    "participantes": [
+      "vendas",
+      "ceo"
+    ],
+    "intervencoes": [
+      {
+        "quem": "vendas",
+        "texto": "Público-alvo: 1) comissões de festas e arraiais — o nosso cliente natural: turnos de barraca, madrugada, hoje em WhatsApp (dimensão estimada, sem número verificado); 2) escuteiros, paróquias e associações de pais — repetem os mesmos eventos todos os anos (ex.: arraiais dos Escuteiros de Tavira) e têm muitos voluntários.\n\n3 maiores oportunidades:\n- O-1: modelo \"recolha de alimentos\" para equipas locais. A campanha do Banco Alimentar costuma ser no fim de novembro e de maio (data de 2026 não confirmada).\n- O-5: arraiais e Santos Populares em junho, com planeamento de março a maio.\n- O-2: Feira da Serra de São Brás de Alportel (programa de 2026 com 70 jovens e inscrição em papel, em julho) como estudo de caso na demonstração, sem contactar ninguém.\n\n3 falhas que mais travam:\n- Não se partilha no WhatsApp (B-004).\n- Só maiores de idade exclui os 14–25 anos (Feira da Serra, escuteiros, escolas).\n- Só o primeiro nome: o coordenador não sabe quem é quem nem avisa ninguém; faltam confiança, privacidade e recuperação do link de gestão.\n\nProposta à CEO: B-004 para prioridade 1; B-008 de 4 para 2; novo item de idade mínima configurável por festa, sem dados de menores.\n\nRessalva: as pesquisas devolveram sobretudo títulos; li na íntegra três páginas e não consegui verificar preços nem limites do SignUpGenius e do Doodle. O resto está marcado como estimativa."
+      },
+      {
+        "quem": "ceo",
+        "texto": "Ficha (1–5): completude 2 | qualidade 3 | valor do próximo item 3 | potencial comercial 3 | sinais de uso 1 | portfólio 4.\n\nDecisão: continuar. São 2 de 10 ciclos e 1 de 8 critérios da v1.0, e a Barraca ainda não serve bem S-1 nem S-2 (sem WhatsApp, sem menores).\n\nBacklog:\n- B-018 prioridade 1, feito primeiro: os links partilhados no WhatsApp não podem mudar de endereço depois.\n- B-004 prioridade 1, logo a seguir: é a ponte para o grupo onde a comissão já está.\n- B-008 de 4 para 2: os Santos Populares planeiam-se de março a maio, e um modelo \"recolha de alimentos\" serve a O-1 sem produto novo.\n- Novo: idade mínima por festa sem dados de menores — o adulto responsável inscreve-se e indica quantos jovens leva, sem nomes. A constituição proíbe dados de menores, por isso a forma vai aos donos antes do Dev.\n\nPróximo objetivo (ciclo 2, esta noite): B-018 — pedido dos donos, e tem de estar feito antes de qualquer link de festa circular no WhatsApp.\n\nComeçamos outro projeto? Não. Nenhum sinal da constituição se aplica: a Barraca não está na v1.0 nem nos últimos 2 ciclos do limite, a O-1 é servida pela Barraca, e o melhor item por fazer é P1–P2. Reavaliar na próxima reunião de mercado (≈7 ciclos) ou se o B-008 não estiver pronto antes de março."
+      }
+    ],
+    "decisao": "Continuar a Barraca. Ordem: B-018 → B-004 → B-008. Item novo B-021 (grupos com jovens) aguarda aprovação dos donos. Não começar outro projeto por agora."
   }
 ]

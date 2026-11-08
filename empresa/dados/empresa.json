@@ -26,8 +26,8 @@
   "agendamento": "Um ciclo por noite, às 01:39 (hora de Lisboa)",
   "ciclo_de_vida": {
     "fase": "mvp",
-    "proxima_revisao_ciclo": 7,
-    "ultima_revisao": null,
+    "proxima_revisao_ciclo": 8,
+    "ultima_revisao": "8 nov 2026 — continuar (ficha: completude 2, qualidade 3, próximo item 3, comercial 3, uso 1, portfólio 4)",
     "criterios_v1": [
       {
         "criterio": "Jornadas completas: criar, inscrever, cancelar, gerir",
