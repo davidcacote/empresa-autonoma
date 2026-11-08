@@ -133,7 +133,7 @@
   {
     "id": "B-011",
     "titulo": "Provar concorrência e tempo real: Supabase local no CI",
-    "estado": "a_fazer",
+    "estado": "feito",
     "prioridade": 1,
     "estimativa": "M",
     "quem": "QA",
@@ -240,6 +240,16 @@
     "estimativa": "P",
     "quem": "Donos",
     "porque": "Quando houver um segundo produto (ADR-007)",
+    "criterios": []
+  },
+  {
+    "id": "B-020",
+    "titulo": "Provar o Realtime ao vivo (WebSocket, RLS do Realtime, réplica de identidade) e concorrência via PostgREST",
+    "estado": "ideia",
+    "prioridade": 3,
+    "estimativa": "M",
+    "quem": "QA",
+    "porque": "Ficou por provar no B-011, ver tests/TEMPO-REAL.md",
     "criterios": []
   }
 ]

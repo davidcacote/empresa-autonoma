@@ -1,16 +1,20 @@
 -- Barraca — MVP (ciclo 0)
 -- Decisões: ADR-001 (lotação garantida na BD), ADR-002 (gestão por link secreto), ADR-003 (inscrição por RPC com limites)
+-- Tabelas e funções internas vivem no schema privado (ADR-004).
 -- Regras: RLS em todas as tabelas; escrita só através de funções security definer com search_path vazio.
 
 create extension if not exists pgcrypto with schema extensions;
 
+-- Schema interno (ADR-004): a API não o expõe e anon/authenticated não têm USAGE nele.
+create schema if not exists privado;
+
 -- ── Configuração privada (sal para hashes) ───────────────────────────────────
-create table public.config_privada (
+create table privado.config_privada (
   chave text primary key,
   valor text not null
 );
-alter table public.config_privada enable row level security;
-insert into public.config_privada (chave, valor)
+alter table privado.config_privada enable row level security;
+insert into privado.config_privada (chave, valor)
 values ('sal_hash', encode(extensions.gen_random_bytes(32), 'hex'));
 
 -- ── Tabelas públicas ─────────────────────────────────────────────────────────
@@ -61,19 +65,19 @@ create index inscricoes_turno_idx on public.inscricoes(turno_id);
 create index inscricoes_festa_idx on public.inscricoes(festa_id);
 
 -- ── Tabelas privadas (sem políticas = inacessíveis pela API) ─────────────────
-create table public.festas_chaves (
+create table privado.festas_chaves (
   festa_id uuid primary key references public.festas(id) on delete cascade,
   chave_hash text not null
 );
 
-create table public.inscricoes_privado (
+create table privado.inscricoes_privado (
   inscricao_id uuid primary key references public.inscricoes(id) on delete cascade,
   turno_id uuid not null references public.turnos(id) on delete cascade,
   dispositivo_hash text not null,
   unique (turno_id, dispositivo_hash)
 );
 
-create table public.limites (
+create table privado.limites (
   chave text not null,
   janela timestamptz not null,
   contagem int not null default 0,
@@ -85,9 +89,9 @@ alter table public.festas enable row level security;
 alter table public.postos enable row level security;
 alter table public.turnos enable row level security;
 alter table public.inscricoes enable row level security;
-alter table public.festas_chaves enable row level security;
-alter table public.inscricoes_privado enable row level security;
-alter table public.limites enable row level security;
+alter table privado.festas_chaves enable row level security;
+alter table privado.inscricoes_privado enable row level security;
+alter table privado.limites enable row level security;
 
 create policy "festas: leitura pública" on public.festas for select to anon, authenticated using (true);
 create policy "postos: leitura pública" on public.postos for select to anon, authenticated using (true);
@@ -96,7 +100,6 @@ create policy "inscricoes: leitura pública" on public.inscricoes for select to 
 
 -- Defesa em profundidade: a API nunca escreve diretamente nas tabelas
 revoke insert, update, delete, truncate on all tables in schema public from anon, authenticated;
-revoke select on public.festas_chaves, public.inscricoes_privado, public.limites, public.config_privada from anon, authenticated;
 
 -- ── Lotação garantida na BD (ADR-001) ────────────────────────────────────────
 create or replace function public.tg_inscricao_ocupar()
@@ -127,13 +130,13 @@ create trigger inscricao_libertar after delete on public.inscricoes
   for each row execute function public.tg_inscricao_libertar();
 
 -- ── Utilitários internos ─────────────────────────────────────────────────────
-create or replace function public._hash(p text)
+create or replace function privado.hash(p text)
 returns text language sql stable security definer set search_path = '' as $$
   select encode(extensions.digest(
-    p || (select valor from public.config_privada where chave = 'sal_hash'), 'sha256'), 'hex');
+    p || (select valor from privado.config_privada where chave = 'sal_hash'), 'sha256'), 'hex');
 $$;
 
-create or replace function public._ip_hash()
+create or replace function privado.ip_hash()
 returns text language plpgsql stable security definer set search_path = '' as $$
 declare v_ip text;
 begin
@@ -141,15 +144,15 @@ begin
     (current_setting('request.headers', true)::json ->> 'x-forwarded-for'),
     (current_setting('request.headers', true)::json ->> 'cf-connecting-ip'),
     'desconhecido'), ',', 1);
-  return public._hash('ip:' || btrim(v_ip));
+  return privado.hash('ip:' || btrim(v_ip));
 end $$;
 
 -- Conta um pedido na janela da hora atual; falha se passar do máximo
-create or replace function public._limitar(p_chave text, p_max int)
+create or replace function privado.limitar(p_chave text, p_max int)
 returns void language plpgsql security definer set search_path = '' as $$
 declare v_contagem int;
 begin
-  insert into public.limites as l (chave, janela, contagem)
+  insert into privado.limites as l (chave, janela, contagem)
   values (p_chave, date_trunc('hour', now()), 1)
   on conflict (chave, janela) do update set contagem = l.contagem + 1
   returning contagem into v_contagem;
@@ -158,7 +161,7 @@ begin
   end if;
 end $$;
 
-create or replace function public._nome_valido(p text)
+create or replace function privado.nome_valido(p text)
 returns text language plpgsql immutable set search_path = '' as $$
 declare v text;
 begin
@@ -188,11 +191,11 @@ begin
   if p_dispositivo is null or char_length(p_dispositivo) not between 16 and 100 then
     raise exception 'dispositivo_invalido' using errcode = 'P0001';
   end if;
-  v_nome := public._nome_valido(p_nome);
-  v_disp := public._hash('disp:' || p_dispositivo);
+  v_nome := privado.nome_valido(p_nome);
+  v_disp := privado.hash('disp:' || p_dispositivo);
 
-  perform public._limitar('ins-ip:' || public._ip_hash(), 30);
-  perform public._limitar('ins-disp:' || v_disp, 12);
+  perform privado.limitar('ins-ip:' || privado.ip_hash(), 30);
+  perform privado.limitar('ins-disp:' || v_disp, 12);
 
   select * into v_turno from public.turnos where id = p_turno;
   if not found then
@@ -201,7 +204,7 @@ begin
   if v_turno.fim < now() then
     raise exception 'turno_terminado' using errcode = 'P0001';
   end if;
-  if exists (select 1 from public.inscricoes_privado where turno_id = p_turno and dispositivo_hash = v_disp) then
+  if exists (select 1 from privado.inscricoes_privado where turno_id = p_turno and dispositivo_hash = v_disp) then
     raise exception 'ja_inscrito' using errcode = 'P0001';
   end if;
 
@@ -210,7 +213,7 @@ begin
   returning id into v_id;
 
   begin
-    insert into public.inscricoes_privado (inscricao_id, turno_id, dispositivo_hash)
+    insert into privado.inscricoes_privado (inscricao_id, turno_id, dispositivo_hash)
     values (v_id, p_turno, v_disp);
   exception when unique_violation then
     raise exception 'ja_inscrito' using errcode = 'P0001';
@@ -225,9 +228,9 @@ returns boolean language plpgsql security definer set search_path = '' as $$
 declare v_apagadas int;
 begin
   delete from public.inscricoes i
-   using public.inscricoes_privado p
+   using privado.inscricoes_privado p
    where i.id = p_inscricao and p.inscricao_id = i.id
-     and p.dispositivo_hash = public._hash('disp:' || coalesce(p_dispositivo, ''));
+     and p.dispositivo_hash = privado.hash('disp:' || coalesce(p_dispositivo, ''));
   get diagnostics v_apagadas = row_count;
   return v_apagadas > 0;
 end $$;
@@ -253,7 +256,7 @@ declare
   v_inicio_f date := (p_festa ->> 'data_inicio')::date;
   v_fim_f date := (p_festa ->> 'data_fim')::date;
 begin
-  perform public._limitar('festa-ip:' || public._ip_hash(), 6);
+  perform privado.limitar('festa-ip:' || privado.ip_hash(), 6);
 
   if json_array_length(coalesce(p_festa -> 'postos', '[]'::json)) not between 1 and 12 then
     raise exception 'postos_invalidos' using errcode = 'P0001';
@@ -273,7 +276,7 @@ begin
           v_inicio_f, v_fim_f, nullif(btrim(coalesce(p_festa ->> 'descricao', '')), ''))
   returning id into v_festa_id;
 
-  insert into public.festas_chaves (festa_id, chave_hash) values (v_festa_id, public._hash('chave:' || v_chave));
+  insert into privado.festas_chaves (festa_id, chave_hash) values (v_festa_id, privado.hash('chave:' || v_chave));
 
   for v_posto in select * from json_array_elements(p_festa -> 'postos') loop
     insert into public.postos (festa_id, nome, ordem)
@@ -309,29 +312,29 @@ begin
 end $$;
 
 -- ── API do organizador (link secreto) ────────────────────────────────────────
-create or replace function public._festa_por_chave(p_slug text, p_chave text)
+create or replace function privado.festa_por_chave(p_slug text, p_chave text)
 returns uuid language plpgsql stable security definer set search_path = '' as $$
 declare v_id uuid;
 begin
   select f.id into v_id
-    from public.festas f join public.festas_chaves c on c.festa_id = f.id
-   where f.slug = p_slug and c.chave_hash = public._hash('chave:' || coalesce(p_chave, ''));
+    from public.festas f join privado.festas_chaves c on c.festa_id = f.id
+   where f.slug = p_slug and c.chave_hash = privado.hash('chave:' || coalesce(p_chave, ''));
   return v_id;
 end $$;
 
 create or replace function public.verificar_chave(p_slug text, p_chave text)
 returns boolean language plpgsql security definer set search_path = '' as $$
 begin
-  perform public._limitar('chave-ip:' || public._ip_hash(), 30);
-  return public._festa_por_chave(p_slug, p_chave) is not null;
+  perform privado.limitar('chave-ip:' || privado.ip_hash(), 30);
+  return privado.festa_por_chave(p_slug, p_chave) is not null;
 end $$;
 
 create or replace function public.remover_inscricao(p_slug text, p_chave text, p_inscricao uuid)
 returns boolean language plpgsql security definer set search_path = '' as $$
 declare v_festa uuid; v_apagadas int;
 begin
-  perform public._limitar('chave-ip:' || public._ip_hash(), 30);
-  v_festa := public._festa_por_chave(p_slug, p_chave);
+  perform privado.limitar('chave-ip:' || privado.ip_hash(), 30);
+  v_festa := privado.festa_por_chave(p_slug, p_chave);
   if v_festa is null then
     raise exception 'chave_invalida' using errcode = 'P0001';
   end if;

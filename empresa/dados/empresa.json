@@ -7,8 +7,8 @@
     "pitch": "A página de turnos da tua festa de aldeia: a comissão cria, o povo inscreve-se com um toque, ninguém fica sozinho na grelha às 3 da manhã.",
     "estado": "v0.1 publicada · próximo: provar concorrência e tempo real"
   },
-  "ciclo_atual": 0,
-  "proximo_ciclo": "2026-11-08T01:39:00Z",
+  "ciclo_atual": 1,
+  "proximo_ciclo": "2026-11-09T01:39:00Z",
   "links": {
     "produto": "../",
     "demo": "../festa.html?f=demonstracao",

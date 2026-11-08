@@ -88,5 +88,15 @@
     "contexto": "Os donos perguntaram como acomodar produtos futuros sem novos sites nem novos projetos Supabase (o plano gratuito só permite 2 projetos ativos e já há 2).",
     "decisao": "Site: a raiz passa a ser a montra do estúdio e cada app vive num caminho próprio (/barraca/, /<nova-app>/), com o painel em /hq/. Repositório: apps/<nome>/ com testes e CI partilhados. Supabase: o projeto barraca acolhe todas as apps; cada app nova tem o seu schema (tabelas, funções, RLS) exposto em 'Exposed schemas' pelos donos, ou só RPC com prefixo em public. A Barraca fica em public + privado, onde já está testada. Tabs só no painel HQ, um separador por produto.",
     "consequencias": "Mudar a Barraca para /barraca/ agora, antes de haver links reais a circular (B-018), com redirecionamento dos URLs antigos a preservar ?query e #chave. Utilizadores de Auth e limites do plano gratuito passam a ser partilhados entre apps."
+  },
+  {
+    "id": "ADR-008",
+    "data": "2026-11-08",
+    "titulo": "Migração do repositório alinhada com a produção (schema privado) e BD de teste no CI",
+    "autor": "sistema",
+    "estado": "aprovada",
+    "contexto": "A migração em supabase/migrations/ criava os helpers em public, mas a produção segue a ADR-004 (schema privado); o CI com Postgres local expôs a diferença.",
+    "decisao": "A migração 20261107120000 foi reescrita in place para criar tudo em privado; serve só para bases novas e nunca é aplicada à produção. O CI tem um job base-de-dados (Postgres 16) de que o deploy depende.",
+    "consequencias": "Segurança, concorrência e eventos de replicação ficam provados a cada push. Risco: o job não correu ainda num runner real."
   }
 ]

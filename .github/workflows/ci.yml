@@ -53,9 +53,26 @@ jobs:
         with:
           path: _site
 
+  base-de-dados:
+    name: Base de dados (Postgres local)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Arrancar Postgres e aplicar supabase/migrations/
+        run: bash scripts/bd/iniciar.sh
+      - name: Testes de segurança (tests/sql/seguranca.sql)
+        run: bash scripts/bd/seguranca.sh
+      - name: Concorrência (inscrições em paralelo)
+        run: bash scripts/bd/concorrencia.sh
+      - name: Tempo real (publication e eventos de replicação)
+        run: bash scripts/bd/tempo-real.sh
+      - name: Log do Postgres (em caso de falha)
+        if: failure()
+        run: tail -n 100 "${RUNNER_TEMP:-/tmp}/barraca-bd/postgres.log" || true
+
   publicar:
     name: Publicar no GitHub Pages
-    needs: validar-testar
+    needs: [validar-testar, base-de-dados]
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     environment:

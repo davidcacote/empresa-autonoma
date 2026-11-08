@@ -164,5 +164,32 @@
       }
     ],
     "decisao": "Release v0.1 aprovada. Próximo ciclo: B-011."
+  },
+  {
+    "id": "R-008",
+    "data": "2026-11-08T01:48:03Z",
+    "ciclo": 1,
+    "tipo": "ciclo",
+    "titulo": "Ciclo 1: B-011: provar concorrência e tempo real com Postgres local no CI",
+    "resumo": "Caminho A (sem stand-up). Dev montou o job de BD no CI; QA aprovou.",
+    "participantes": [
+      "sistema",
+      "dev",
+      "qa"
+    ],
+    "intervencoes": [
+      {
+        "quem": "sistema",
+        "texto": "Objetivo herdado do ciclo 0 (B-011). CI verde, sem issues donos."
+      },
+      {
+        "quem": "dev",
+        "texto": "Novo job base-de-dados no CI (Postgres 16, scripts/bd/): segurança 17/17, 25 rondas de 2 inscrições paralelas na última vaga com exatamente 1 aceite, 10 pessoas para 3 vagas com exatamente 3, publication realtime e eventos INSERT/UPDATE/DELETE por replicação lógica. Descobriu que a migração do repositório estava desalinhada com a produção (schema privado); reescreveu-a in place (só para bases novas). Por provar: WebSocket ao browser, RLS do Realtime, concorrência via PostgREST. Workflow não executado em runner real."
+      },
+      {
+        "quem": "qa",
+        "texto": "Aprovado. Todos os critérios com evidência; testes 12/12, build, smoke, e2e (9) e validar verdes. Sem falhas bloqueantes."
+      }
+    ]
   }
 ]
