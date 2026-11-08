@@ -65,6 +65,18 @@ const ciclos = lerJson('empresa/dados/ciclos.json');
 if (Array.isArray(ciclos)) ciclos.forEach((c, i) => exigir(c, ['n', 'inicio', 'objetivo', 'resultado'], `ciclos.json[${i}]`));
 else if (ciclos) falha('ciclos.json: tem de ser uma lista');
 
+if (existsSync(join(raiz, 'empresa/dados/mercado.json'))) {
+  const mercado = lerJson('empresa/dados/mercado.json');
+  if (mercado) {
+    exigir(mercado, ['atualizado_em', 'segmentos', 'falhas', 'oportunidades'], 'mercado.json');
+    for (const lista of ['segmentos', 'falhas', 'oportunidades', 'concorrencia', 'calendario', 'fontes'])
+      if (mercado[lista] !== undefined && !Array.isArray(mercado[lista])) falha(`mercado.json: "${lista}" tem de ser uma lista`);
+    (mercado.oportunidades ?? []).forEach((o, i) => exigir(o, ['id', 'cliente', 'descricao'], `mercado.json oportunidades[${i}]`));
+    (mercado.falhas ?? []).forEach((f, i) => exigir(f, ['id', 'descricao'], `mercado.json falhas[${i}]`));
+    (mercado.fontes ?? []).forEach((f, i) => { if (f.url && !/^https?:\/\//.test(f.url)) falha(`mercado.json fontes[${i}]: URL inválido`); });
+  }
+}
+
 // 2. Nada de segredos no repositório
 const PADROES_SEGREDO = [
   /sb_secret_[A-Za-z0-9_-]{10,}/,

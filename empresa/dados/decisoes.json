@@ -98,5 +98,15 @@
     "contexto": "A migração em supabase/migrations/ criava os helpers em public, mas a produção segue a ADR-004 (schema privado); o CI com Postgres local expôs a diferença.",
     "decisao": "A migração 20261107120000 foi reescrita in place para criar tudo em privado; serve só para bases novas e nunca é aplicada à produção. O CI tem um job base-de-dados (Postgres 16) de que o deploy depende.",
     "consequencias": "Segurança, concorrência e eventos de replicação ficam provados a cada push. Risco: o job não correu ainda num runner real."
+  },
+  {
+    "id": "D-003",
+    "data": "2026-11-08",
+    "titulo": "Vendas nas reuniões, limite de ciclos por produto e portfólio",
+    "autor": "donos",
+    "estado": "aprovada",
+    "contexto": "Os donos querem que as reuniões cuidem de vendas (público-alvo, falhas, grandes oportunidades para clientes específicos) e notaram que, a um ciclo por noite, uma app pode levar mais de um mês a fechar.",
+    "decisao": "Entra a Carla Mendes (Vendas e Mercado), com dados/mercado.json e uma reunião de mercado e produto semanal. Cada item do backlog diz o segmento e a oportunidade/falha que trabalha. Cada produto tem limite de 3 ciclos para o MVP e 10 para a v1.0. Em todos os stand-ups a CEO decide se é altura de começar outro projeto; um produto novo arranca no ciclo seguinte se os donos não vetarem a issue.",
+    "consequencias": "O consumo não aumenta (continua um objetivo por noite; a reunião de mercado usa 2 agentes). A Barraca já usou 2 dos seus 10 ciclos. Um segundo produto exige a estrutura multi-app (B-018)."
   }
 ]

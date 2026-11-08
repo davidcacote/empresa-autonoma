@@ -1,7 +1,7 @@
 // Painel HQ: lê os ficheiros de empresa/dados (publicados em ./dados/) e desenha a sede.
 // Todos os dados entram por textContent: nada é interpretado como HTML.
 
-const FICHEIROS = ['empresa', 'equipa', 'reunioes', 'decisoes', 'backlog', 'ciclos', 'orcamento', 'build'];
+const FICHEIROS = ['empresa', 'equipa', 'reunioes', 'decisoes', 'backlog', 'ciclos', 'orcamento', 'build', 'mercado'];
 const fmtData = new Intl.DateTimeFormat('pt-PT', { timeZone: 'Europe/Lisbon', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
 const fmtDia = new Intl.DateTimeFormat('pt-PT', { timeZone: 'Europe/Lisbon', day: 'numeric', month: 'long', year: 'numeric' });
 
@@ -97,7 +97,7 @@ function desenharGeral(d, quem) {
     const crit = cv.criterios_v1 ?? [];
     caixaCv.replaceChildren(
       el('h2', { text: 'Caminho até à v1.0' }),
-      el('p', { class: 'intro', style: 'margin:0 0 .6rem', text: `Fase: ${cv.fase} · ${crit.filter((c) => c.feito).length} de ${crit.length} critérios · próxima revisão no ciclo ${cv.proxima_revisao_ciclo ?? '—'}` }),
+      el('p', { class: 'intro', style: 'margin:0 0 .6rem', text: `Fase: ${cv.fase} · ${crit.filter((c) => c.feito).length} de ${crit.length} critérios · ${cv.ciclos_usados ?? 0} de ${cv.limite_v1 ?? '—'} ciclos usados · próxima reunião de mercado no ciclo ${cv.proxima_revisao_ciclo ?? '—'}` }),
       el('ul', { class: 'lista-simples' }, crit.map((c) => el('li', {}, el('span', { text: c.criterio }), el('span', { 'aria-label': c.feito ? 'cumprido' : 'por cumprir', text: c.feito ? '✓' : '○' })))),
       cv.ultima_revisao ? el('p', { class: 'intro', style: 'margin:.6rem 0 0', text: `Última revisão: ${cv.ultima_revisao}` }) : null);
   }
@@ -167,6 +167,41 @@ function desenharDecisoes(d, quem) {
   )));
 }
 
+function urlSegura(u) { try { const x = new URL(u); return /^https?:$/.test(x.protocol) ? x.href : null; } catch { return null; } }
+
+function desenharMercado(d) {
+  const m = d.mercado;
+  const caixa = document.getElementById('mercado-conteudo');
+  if (!m) { caixa.replaceChildren(el('p', { class: 'vazio', text: 'Ainda não houve reunião de mercado.' })); return; }
+  const cartoes = (lista, desenhar) => el('div', { class: 'grelha-cartoes' }, (lista ?? []).map((x) => el('article', { class: 'cartao item-mercado' }, desenhar(x))));
+  const campo = (rotulo, valor) => valor ? el('p', {}, el('span', { class: 'rotulo-campo', text: `${rotulo}: ` }), String(valor)) : null;
+  const seg = new Map((m.segmentos ?? []).map((s) => [s.id, s.nome]));
+  caixa.replaceChildren(
+    m.resumo ? el('article', { class: 'cartao bloco-mercado' }, el('h2', { text: `Resumo · atualizado a ${m.atualizado_em ?? '—'}` }), el('p', { style: 'margin:0', text: m.resumo })) : null,
+    el('section', { class: 'bloco-mercado' }, el('h2', { text: 'Grandes oportunidades' }),
+      cartoes(m.oportunidades, (o) => [
+        el('div', { class: 'topo-item' }, el('span', { text: o.id }), el('span', { class: 'chip', 'data-nivel': o.tamanho, text: `tamanho ${o.tamanho ?? '?'}` })),
+        el('h3', { text: o.cliente }), el('p', { text: o.descricao }),
+        campo('Porquê agora', o.porque_agora), campo('Primeiro passo', o.primeiro_passo), campo('Backlog', o.backlog)])),
+    el('section', { class: 'bloco-mercado' }, el('h2', { text: 'Público-alvo' }),
+      cartoes([...(m.segmentos ?? [])].sort((a, b) => (a.prioridade ?? 9) - (b.prioridade ?? 9)), (s) => [
+        el('div', { class: 'topo-item' }, el('span', { text: s.id }), el('span', { text: `prioridade ${s.prioridade ?? '?'}` })),
+        el('h3', { text: s.nome }), el('p', { text: s.descricao }),
+        campo('Dor principal', s.dor_principal), campo('Dimensão', s.dimensao), campo('Como chegar', s.como_chegar)])),
+    el('section', { class: 'bloco-mercado' }, el('h2', { text: 'Falhas que travam a adoção' }),
+      cartoes(m.falhas, (f) => [
+        el('div', { class: 'topo-item' }, el('span', { text: f.id }), el('span', { class: 'chip', 'data-nivel': f.impacto, text: `impacto ${f.impacto ?? '?'}` })),
+        el('p', { text: f.descricao }),
+        campo('Segmentos', (f.segmentos ?? []).map((s) => seg.get(s) ?? s).join(', ')), campo('Sugestão', f.sugestao), campo('Backlog', f.backlog)])),
+    (m.concorrencia ?? []).length ? el('section', { class: 'bloco-mercado' }, el('h2', { text: 'Concorrência e alternativas' }),
+      cartoes(m.concorrencia, (c) => [el('h3', { text: c.nome }), el('span', { class: 'chip', text: c.tipo }), campo('Força', c.forca), campo('Fraqueza', c.fraqueza)])) : null,
+    (m.calendario ?? []).length ? el('section', { class: 'bloco-mercado cartao' }, el('h2', { text: 'Calendário' }),
+      el('ul', { class: 'calendario' }, m.calendario.map((c) => el('li', {}, el('strong', { text: c.periodo }), el('span', { text: `${c.momento}${c.oportunidade ? ' · ' + c.oportunidade : ''}` }))))) : null,
+    (m.fontes ?? []).length ? el('section', { class: 'bloco-mercado' }, el('h2', { text: 'Fontes' }),
+      el('ol', { class: 'fontes' }, m.fontes.map((f) => { const u = urlSegura(f.url); return el('li', {}, u ? el('a', { href: u, rel: 'noopener', target: '_blank', text: f.titulo || u }) : (f.titulo ?? '')); }))) : null,
+  );
+}
+
 function desenharBacklog(d) {
   const colunas = [['em_curso', 'Em curso'], ['a_fazer', 'A fazer'], ['feito', 'Feito'], ['ideia', 'Ideias']];
   const itens = [...(d.backlog ?? [])].sort((a, b) => (a.prioridade ?? 9) - (b.prioridade ?? 9));
@@ -227,6 +262,7 @@ async function iniciar() {
     const quem = membroPorId(d.equipa);
     desenharGeral(d, quem);
     desenharReunioes(d, quem);
+    desenharMercado(d);
     desenharDecisoes(d, quem);
     desenharBacklog(d);
     desenharCiclos(d, quem);

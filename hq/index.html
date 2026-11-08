@@ -24,6 +24,7 @@
     <nav class="separadores" aria-label="Secções do painel">
       <a href="#geral" data-sec="geral">Visão geral</a>
       <a href="#reunioes" data-sec="reunioes">Reuniões</a>
+      <a href="#mercado" data-sec="mercado">Mercado</a>
       <a href="#decisoes" data-sec="decisoes">Decisões</a>
       <a href="#backlog" data-sec="backlog">Backlog</a>
       <a href="#ciclos" data-sec="ciclos">Ciclos</a>
@@ -52,6 +53,12 @@
       <div id="lista-reunioes"></div>
     </section>
 
+    <section id="sec-mercado" data-sec="mercado" aria-labelledby="t-mercado" hidden>
+      <h1 id="t-mercado">Mercado</h1>
+      <p class="intro">Público-alvo, falhas que travam a adoção e oportunidades para clientes específicos. Mantido pela Carla (Vendas) com fontes públicas.</p>
+      <div id="mercado-conteudo"></div>
+    </section>
+
     <section id="sec-decisoes" data-sec="decisoes" aria-labelledby="t-decisoes" hidden>
       <h1 id="t-decisoes">Decisões</h1>
       <p class="intro">Decisões de produto e técnicas (ADR). Para vetar, mudem o estado para <code>vetada</code> em <code>empresa/dados/decisoes.json</code>.</p>
@@ -72,7 +79,7 @@
 
     <section id="sec-equipa" data-sec="equipa" aria-labelledby="t-equipa" hidden>
       <h1 id="t-equipa">Equipa</h1>
-      <p class="intro">Seis agentes Claude, cada um com um papel escrito em <code>empresa/papeis/</code>. Um orquestrador convoca as reuniões e executa o que decidem.</p>
+      <p class="intro">Sete agentes Claude, cada um com um papel escrito em <code>empresa/papeis/</code>. Um orquestrador convoca as reuniões e executa o que decidem.</p>
       <div id="lista-equipa" class="grelha-cartoes"></div>
     </section>
   </main>

@@ -1,8 +1,58 @@
 [
-  { "id": "ceo", "nome": "Marta Leal", "papel": "CEO", "cor": "#C8321E", "resumo": "Visão, prioridades, decisão final e aprovação de releases. Guardiã do orçamento.", "ficheiro": "empresa/papeis/ceo.md" },
-  { "id": "produto", "nome": "Tiago Sousa", "papel": "Produto (CPO/PM)", "cor": "#7A4BC2", "resumo": "Backlog, histórias de utilizador e critérios de aceitação testáveis.", "ficheiro": "empresa/papeis/produto.md" },
-  { "id": "cto", "nome": "Rui Matos", "papel": "CTO", "cor": "#1F5FA8", "resumo": "Arquitetura, modelo de dados, segurança (RLS) e decisões técnicas (ADR).", "ficheiro": "empresa/papeis/cto.md" },
-  { "id": "design", "nome": "Inês Carvalho", "papel": "Design (UI/UX)", "cor": "#B8336A", "resumo": "Fluxos, sistema visual, acessibilidade e microcopy.", "ficheiro": "empresa/papeis/design.md" },
-  { "id": "dev", "nome": "Bruno Teixeira", "papel": "Dev full-stack", "cor": "#1E6B4A", "resumo": "Implementa o objetivo do ciclo, com testes, em commits pequenos.", "ficheiro": "empresa/papeis/dev.md" },
-  { "id": "qa", "nome": "Sofia Nunes", "papel": "QA & DevOps", "cor": "#9A6700", "resumo": "Testes, revisão, CI/CD. Pode bloquear uma release.", "ficheiro": "empresa/papeis/qa.md" }
+  {
+    "id": "ceo",
+    "nome": "Marta Leal",
+    "papel": "CEO",
+    "cor": "#C8321E",
+    "resumo": "Visão, prioridades, decisão final e aprovação de releases. Guardiã do orçamento.",
+    "ficheiro": "empresa/papeis/ceo.md"
+  },
+  {
+    "id": "produto",
+    "nome": "Tiago Sousa",
+    "papel": "Produto (CPO/PM)",
+    "cor": "#7A4BC2",
+    "resumo": "Backlog, histórias de utilizador e critérios de aceitação testáveis.",
+    "ficheiro": "empresa/papeis/produto.md"
+  },
+  {
+    "id": "cto",
+    "nome": "Rui Matos",
+    "papel": "CTO",
+    "cor": "#1F5FA8",
+    "resumo": "Arquitetura, modelo de dados, segurança (RLS) e decisões técnicas (ADR).",
+    "ficheiro": "empresa/papeis/cto.md"
+  },
+  {
+    "id": "design",
+    "nome": "Inês Carvalho",
+    "papel": "Design (UI/UX)",
+    "cor": "#B8336A",
+    "resumo": "Fluxos, sistema visual, acessibilidade e microcopy.",
+    "ficheiro": "empresa/papeis/design.md"
+  },
+  {
+    "id": "dev",
+    "nome": "Bruno Teixeira",
+    "papel": "Dev full-stack",
+    "cor": "#1E6B4A",
+    "resumo": "Implementa o objetivo do ciclo, com testes, em commits pequenos.",
+    "ficheiro": "empresa/papeis/dev.md"
+  },
+  {
+    "id": "qa",
+    "nome": "Sofia Nunes",
+    "papel": "QA & DevOps",
+    "cor": "#9A6700",
+    "resumo": "Testes, revisão, CI/CD. Pode bloquear uma release.",
+    "ficheiro": "empresa/papeis/qa.md"
+  },
+  {
+    "id": "vendas",
+    "nome": "Carla Mendes",
+    "papel": "Vendas e Mercado",
+    "cor": "#0F7C80",
+    "resumo": "Público-alvo, concorrência, falhas que travam a adoção e oportunidades para clientes específicos.",
+    "ficheiro": "empresa/papeis/vendas.md"
+  }
 ]
