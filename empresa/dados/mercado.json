@@ -1,0 +1,206 @@
+{
+  "atualizado_em": "2026-11-08",
+  "produto": "Barraca",
+  "resumo": "A Barraca serve quem organiza voluntários em eventos locais e sazonais (comissões de festas, arraiais de paróquias e escuteiros, associações de pais) e que hoje improvisa com WhatsApp, Google Forms e papel; escolhem-nos porque o voluntário se inscreve num toque, sem conta, e a vaga atualiza à vista de todos. O que mais trava é a ponte para o hábito existente (partilhar no WhatsApp ainda não existe), o limite de só maiores de idade e a falta de forma de saber quem é quem e de reaproveitar a festa no ano seguinte. Nota de método: as pesquisas web devolveram sobretudo títulos; os factos abaixo vêm de 3 páginas lidas na íntegra (Feira da Serra, Banco Alimentar/DN, SignUpGenius) e de títulos de notícias; tudo o resto está marcado como estimativa.",
+  "segmentos": [
+    {
+      "id": "S-1",
+      "nome": "Comissões de festas, arraiais e festas de freguesia",
+      "descricao": "Grupos informais ou associações locais que montam barracas (comes e bebes, bar, bilheteira, montagem) em festas populares, arraiais de santos e festas de aldeia, com turnos que passam a madrugada. Exemplo público de arraial organizado por entidades locais: Arraial dos Navegantes nas Festas de Lisboa.",
+      "dimensao": "Estimativa: muitas centenas de festas por verão em todo o país, sem fonte numérica fiável encontrada; a validar. Facto: existem arraiais e festas de paróquia e freguesia noticiados na imprensa regional (ver fontes).",
+      "dor_principal": "Preencher a grelha de turnos de barraca sem andar a perguntar pessoa a pessoa no grupo de WhatsApp, e saber a cada momento onde faltam braços (estimativa, com base no que o produto resolve).",
+      "como_chegar": "Páginas e grupos de Facebook de festas e freguesias, e boca a boca entre coordenadores; modelo de festa pronto a copiar e demonstração pública (festa.html?f=demonstracao). Sem contacto ativo.",
+      "prioridade": 1
+    },
+    {
+      "id": "S-2",
+      "nome": "Escuteiros, paróquias e associações de pais",
+      "descricao": "Agrupamentos de escuteiros, paróquias e associações de pais que organizam arraiais, caracoladas, feiras de Natal e eventos de angariação de fundos com voluntários próprios. Exemplos públicos: arraial e caracolada dos Escuteiros de Tavira para angariar fundos; arraial do 26.º aniversário da paróquia de São José (Ferreiras).",
+      "dimensao": "Estimativa: um segmento grande e muito repetitivo (os mesmos eventos todos os anos), mas sem número verificado. Facto: o Corpo Nacional de Escutas e as paróquias organizam arraiais e eventos de fundos noticiados (ver fontes).",
+      "dor_principal": "Pais e dirigentes voluntários já sobrecarregados que precisam de uma ferramenta que qualquer pessoa use sem conta e que se repita no ano seguinte (estimativa).",
+      "como_chegar": "Conteúdo partilhável para dirigentes e presidentes de associações de pais (guia 'como organizar os turnos da feira de Natal'), e modelo duplicável de um ano para o outro.",
+      "prioridade": 2
+    },
+    {
+      "id": "S-3",
+      "nome": "Campanhas de solidariedade com equipas locais (ex.: Banco Alimentar)",
+      "descricao": "Campanhas pontuais onde muita gente dá poucas horas em lojas e armazéns. O Banco Alimentar faz duas campanhas por ano, geralmente nos últimos fins de semana de maio e novembro, e a inscrição de voluntários faz-se no site ou no Banco Alimentar da região (DN).",
+      "dimensao": "Facto: 1.878 toneladas recolhidas na campanha de 2025 noticiada pela Renascença; 2.150 toneladas em dois dias na campanha anterior (DN). Número de voluntários: não indicado nas fontes.",
+      "dor_principal": "A inscrição nacional já existe; a dor provável está na equipa local de uma loja ou de uma instituição que precisa de organizar os seus próprios turnos (estimativa, a validar).",
+      "como_chegar": "Modelo 'campanha de recolha numa loja' aberto a qualquer equipa local, sem falar em nome do Banco Alimentar.",
+      "prioridade": 3
+    },
+    {
+      "id": "S-4",
+      "nome": "Municípios, juntas e eventos desportivos ou municipais",
+      "descricao": "Autarquias e entidades públicas que recrutam voluntários para feiras e jogos. Casos públicos: a Feira da Serra de São Brás de Alportel tem programa de 70 vagas para jovens dos 14 aos 25 anos com inscrição presencial e escolha de turnos no momento da inscrição; o IPDJ procurou voluntários para o jogo Portugal-Letónia no Estádio Algarve. Existe também uma plataforma municipal de voluntariado em Portimão.",
+      "dimensao": "Estimativa: poucos clientes mas com eventos grandes; ciclos de decisão mais lentos e exigências de certificado, menores e dados pessoais.",
+      "dor_principal": "Facto (Feira da Serra): inscrição em papel e presencial, em horário de expediente, com assinatura de encarregado de educação; cada voluntário tem de ter pelo menos um turno e arranjar substituto validado se faltar.",
+      "como_chegar": "Estudo de caso público 'a Feira da Serra em 10 minutos' feito com dados públicos e ficção clara, sem tocar na organização.",
+      "prioridade": 4
+    }
+  ],
+  "concorrencia": [
+    {
+      "nome": "Grupo de WhatsApp",
+      "tipo": "alternativa",
+      "forca": "Já lá está toda a gente, zero atrito e zero custo. Estimativa: é a ferramenta por omissão das comissões (sem fonte numérica).",
+      "fraqueza": "As vagas perdem-se no meio das mensagens, ninguém vê a grelha completa e é preciso uma pessoa a fazer de secretariado. A Barraca tem de se integrar com ele em vez de o combater (B-004)."
+    },
+    {
+      "nome": "Google Forms e Google Sheets",
+      "tipo": "alternativa",
+      "forca": "Gratuito e conhecido; há formulários públicos em português para festas e jantares de Natal de associações (ex.: Jantar de Natal da AARAM).",
+      "fraqueza": "Não controla vagas por turno em tempo real, permite dois inscritos na mesma última vaga e o coordenador tem de reconciliar folhas à mão (estimativa)."
+    },
+    {
+      "nome": "Papel e inscrição presencial",
+      "tipo": "alternativa",
+      "forca": "Facto: a Feira da Serra 2026 usa formulário assinado e entrega presencial em horário de expediente; funciona para quem não usa telemóvel e dá segurança com menores.",
+      "fraqueza": "Obriga a deslocação, horários rígidos, retrabalho de transcrição e não mostra vagas ao vivo. A folha A4 da Barraca (B-007) serve a ponte."
+    },
+    {
+      "nome": "Doodle (folha de inscrições)",
+      "tipo": "alternativa",
+      "forca": "Marca conhecida de marcação de horários e, segundo a página da SignUpGenius, já tem uma funcionalidade de inscrição com limite de capacidade por sessão.",
+      "fraqueza": "Pensada para marcar reuniões e não para postos e turnos de festa. Preços, limites do plano gratuito e idioma não foram verificados (estimativa: interface menos ajustada a PT rural)."
+    },
+    {
+      "nome": "SignUpGenius",
+      "tipo": "direto",
+      "forca": "Produto americano muito estabelecido para folhas de inscrição de voluntários, com plano gratuito anunciado ('Get Started for Free').",
+      "fraqueza": "Não consegui verificar preços e limites do plano gratuito. Estimativa: origem americana, a validar quanto a idioma, anúncios e pedido de e-mail ao voluntário; é a nossa maior diferença se a Barraca for mesmo sem conta, em PT-PT e sem login."
+    },
+    {
+      "nome": "Plataformas de voluntariado (municipais e nacionais)",
+      "tipo": "alternativa",
+      "forca": "Têm confiança institucional e enquadramento legal; ex.: plataforma de voluntariado lançada em Portimão e a rede de inscrição do Banco Alimentar.",
+      "fraqueza": "Foram pensadas para recrutar e emparelhar voluntários com instituições, não para fechar a grelha de turnos de uma barraca numa noite de festa (estimativa)."
+    }
+  ],
+  "falhas": [
+    {
+      "id": "F-1",
+      "descricao": "Não há botão de partilha no WhatsApp nem pré-visualização do link: o coordenador tem de copiar o endereço à mão para o grupo onde a comissão já vive, e o link chega sem título nem imagem.",
+      "impacto": "alto",
+      "segmentos": ["S-1", "S-2", "S-3"],
+      "sugestao": "Fazer já o B-004 (texto pronto com nome, datas e link, mais meta tags Open Graph) e subir-lhe a prioridade para 1.",
+      "backlog": "B-004"
+    },
+    {
+      "id": "F-2",
+      "descricao": "A inscrição pede confirmação de maioridade, o que exclui jovens. Facto: o programa de voluntariado da Feira da Serra 2026 é para jovens dos 14 aos 25 anos; escuteiros e associações de pais também têm menores.",
+      "impacto": "alto",
+      "segmentos": ["S-2", "S-4"],
+      "sugestao": "Permitir ao organizador definir 'idade mínima' ou 'menores só com responsável' por festa e ajustar o texto de confirmação, sem recolher dados de menores.",
+      "backlog": null
+    },
+    {
+      "id": "F-3",
+      "descricao": "Só com o primeiro nome, o coordenador não sabe quem é o 'João' das 3 da manhã e não consegue avisar ninguém. Também não há lembrete do turno para o voluntário.",
+      "impacto": "alto",
+      "segmentos": ["S-1", "S-2", "S-3"],
+      "sugestao": "Campo opcional de contacto visível só na gestão (com aviso de privacidade) e, do lado do voluntário, o calendário .ics (B-006). Decisão sobre dados pessoais pertence aos donos.",
+      "backlog": "B-006"
+    },
+    {
+      "id": "F-4",
+      "descricao": "As festas repetem-se todos os anos mas cada edição obriga a recriar postos e turnos de raiz; quem organiza voluntários cansa-se de repetir.",
+      "impacto": "medio",
+      "segmentos": ["S-1", "S-2"],
+      "sugestao": "Subir o B-008 (duplicar festa e modelos de postos) de prioridade 4 para 2 e incluir modelos prontos (barraca, bar, bilheteira, montagem).",
+      "backlog": "B-008"
+    },
+    {
+      "id": "F-5",
+      "descricao": "Confiança e continuidade: quem perde o link secreto de gestão perde a festa, e não há página que explique quem responsabiliza o produto, que dados guarda e por quanto tempo. Uma comissão arrisca o nome junto da aldeia.",
+      "impacto": "alto",
+      "segmentos": ["S-1", "S-2", "S-4"],
+      "sugestao": "Página curta 'Como tratamos os dados' em PT-PT e opção de reenviar ou regenerar o link de gestão (a decidir com CTO e donos).",
+      "backlog": null
+    },
+    {
+      "id": "F-6",
+      "descricao": "Facto: o organizador da Feira da Serra recebe inscrições em papel. Muita gente da aldeia ainda olha para o papel e a grelha não pode ser afixada na sede.",
+      "impacto": "medio",
+      "segmentos": ["S-1", "S-4"],
+      "sugestao": "Fazer o B-007 (folha A4 legível a preto e branco, uma página por dia) logo a seguir ao B-004.",
+      "backlog": "B-007"
+    }
+  ],
+  "oportunidades": [
+    {
+      "id": "O-1",
+      "cliente": "Campanha do Banco Alimentar (equipas locais de loja ou instituição), campanha de novembro",
+      "descricao": "Facto (DN): a campanha realiza-se duas vezes por ano, geralmente nos últimos fins de semana de maio e novembro. Equipas locais que queiram organizar os seus turnos podiam usar a Barraca com um modelo de 'campanha de recolha' (postos: entrada, caixas, armazém), sem qualquer ligação oficial ao Banco Alimentar.",
+      "porque_agora": "Estamos a 3 semanas do fim de semana típico de novembro (data exata de 2026 não confirmada); depois há a campanha de maio.",
+      "tamanho": "alto",
+      "primeiro_passo": "Criar um modelo de festa 'Recolha de alimentos' na criação de festa e uma página de exemplo na demonstração, escrita sem usar a marca do Banco Alimentar; sem contactar ninguém.",
+      "backlog": "B-008"
+    },
+    {
+      "id": "O-2",
+      "cliente": "Feira da Serra, São Brás de Alportel (organização municipal)",
+      "descricao": "Facto: o programa de voluntariado juvenil de 2026 tinha 70 vagas, inscrição presencial de 2 a 8 de julho e escolha de turnos no ato de inscrição, com exigência de substituto validado em caso de falta. É o caso público perfeito para um estudo de caso de 'antes e depois'.",
+      "porque_agora": "A próxima edição abre inscrições provavelmente por volta de julho de 2027 (estimativa); há tempo para o produto estar pronto e para a idade mínima (F-2).",
+      "tamanho": "medio",
+      "primeiro_passo": "Fazer na demonstração uma festa fictícia 'Feira de verão' com setores promoção, organização, produção e operação e um texto 'o que a Feira da Serra podia ganhar', claramente identificado como exemplo, sem contactar a autarquia nem copiar nomes de pessoas.",
+      "backlog": null
+    },
+    {
+      "id": "O-3",
+      "cliente": "Escuteiros de Tavira (arraial e caracolada) e arraial da paróquia de São José (Ferreiras)",
+      "descricao": "Factos (imprensa regional): os Escuteiros de Tavira promovem arraiais e caracoladas para angariar fundos e a paróquia de São José, em Ferreiras, celebrou o 26.º aniversário com arraial. São eventos anuais de voluntários, com barraca e turnos.",
+      "porque_agora": "Os arraiais concentram-se no verão (estimativa); decidem-se na primavera, por isso o modelo tem de estar pronto até março.",
+      "tamanho": "medio",
+      "primeiro_passo": "Modelo de festa 'Arraial de paróquia ou agrupamento' com postos típicos (grelha, bar, caracóis, bilheteira, montagem), mais B-004 (WhatsApp) e B-007 (folha A4).",
+      "backlog": "B-004"
+    },
+    {
+      "id": "O-4",
+      "cliente": "Associações de pais e escolas: feiras de Natal e festas de fim de ano",
+      "descricao": "Estimativa: as associações de pais organizam feiras de Natal, bancas e festas com turnos de pais e usam grupos de WhatsApp e formulários Google (há formulários públicos de inscrição para festas de Natal em português). Sem número verificado.",
+      "porque_agora": "Dezembro está à porta e as feiras de Natal marcam-se em novembro (estimativa); há ainda a festa de final de ano letivo em junho.",
+      "tamanho": "medio",
+      "primeiro_passo": "Modelo 'Feira de Natal da escola' com texto pronto de partilha, e permissão de idade mínima para aguentar alunos mais velhos (F-2).",
+      "backlog": "B-004"
+    },
+    {
+      "id": "O-5",
+      "cliente": "Comissões de festas e arraiais de verão (Santos Populares e festas de freguesia)",
+      "descricao": "Facto: arraiais populares fazem parte das Festas de Lisboa (ex.: Arraial dos Navegantes). Estimativa: muitas comissões repetem a mesma grelha todos os anos, e a primeira festa que usar a Barraca fica com o trabalho feito para a seguinte.",
+      "porque_agora": "Santos Populares em junho e festas de verão em julho e agosto (estimativa); o planeamento faz-se de março a maio.",
+      "tamanho": "alto",
+      "primeiro_passo": "Subir o B-008 (duplicar festa e modelos de postos) e escrever um guia 'Montar a grelha de turnos da tua festa em 10 minutos', sem contactar comissões.",
+      "backlog": "B-008"
+    }
+  ],
+  "calendario": [
+    {"periodo": "novembro (2026)", "momento": "Campanha de recolha do Banco Alimentar (fim de semana tipicamente no fim do mês)", "oportunidade": "O-1"},
+    {"periodo": "dezembro", "momento": "Feiras de Natal de escolas, associações de pais e paróquias", "oportunidade": "O-4"},
+    {"periodo": "janeiro", "momento": "Pausa; tempo de afinar funcionalidades (idade mínima, duplicar festa)", "oportunidade": "O-5"},
+    {"periodo": "fevereiro", "momento": "Carnaval e festas de inverno locais (estimativa)", "oportunidade": "O-5"},
+    {"periodo": "março", "momento": "Início do planeamento dos arraiais de verão de escuteiros e paróquias", "oportunidade": "O-3"},
+    {"periodo": "abril", "momento": "Páscoa e comissões a marcar a grelha das festas de verão (estimativa)", "oportunidade": "O-5"},
+    {"periodo": "maio", "momento": "Campanha de maio do Banco Alimentar (último fim de semana)", "oportunidade": "O-1"},
+    {"periodo": "junho", "momento": "Santos Populares e festas de fim de ano letivo", "oportunidade": "O-5"},
+    {"periodo": "julho", "momento": "Feira da Serra: inscrições do voluntariado jovem em início de julho (base: 2026)", "oportunidade": "O-2"},
+    {"periodo": "agosto", "momento": "Festas de aldeia e de padroeiro, arraiais de verão", "oportunidade": "O-3"},
+    {"periodo": "setembro", "momento": "Regresso às aulas: associações de pais e escuteiros planeiam o ano", "oportunidade": "O-4"},
+    {"periodo": "outubro", "momento": "Balanço das festas e preparação da campanha de novembro", "oportunidade": "O-1"}
+  ],
+  "fontes": [
+    {"titulo": "Normas de Voluntariado Feira da Serra 2026 (Câmara Municipal de São Brás de Alportel)", "url": "https://feiradaserra.cm-sbras.pt/fs/wp-content/uploads/2026/07/Normas-Voluntariado-Feira-da-Serra-2026.pdf"},
+    {"titulo": "DN: Federação dos Bancos Alimentares procura voluntários para a recolha da próxima semana", "url": "https://www.dn.pt/sociedade/federao-dos-bancos-alimentares-contra-a-fome-procura-voluntrios-para-a-recolha-da-prxima-semana"},
+    {"titulo": "Renascença: Campanha do Banco Alimentar recolhe 1.878 toneladas de alimentos (2025)", "url": "https://rr.pt/noticia/pais/2025/06/02/campanha-do-banco-alimentar-recolhe-1878-toneladas-de-alimentos/427749/"},
+    {"titulo": "Renascença: Isabel Jonet, os voluntários são a base das ações de solidariedade (2026)", "url": "https://rr.pt/noticia/religiao/2026/05/23/isabel-jonet-os-voluntarios-sao-a-base-das-acoes-de-solidariedade/471824/"},
+    {"titulo": "RTP: Banco Alimentar faz nova campanha de recolha de alimentos nos dias 29 e 30 de novembro", "url": "https://www.rtp.pt/noticias/economia/banco-alimentar-faz-nova-campanha-de-recolha-de-alimentos-nos-dias-29-e-30-de-novembro_n1700592"},
+    {"titulo": "SignUpGenius: SignUpGenius vs Doodle", "url": "https://www.signupgenius.com/resources/signupgenius-vs-doodle"},
+    {"titulo": "Postal do Algarve: Portimão lança plataforma dedicada ao voluntariado", "url": "https://postal.pt/nacional/portimao-lanca-plataforma-dedicada-ao-voluntariado/"},
+    {"titulo": "Postal do Algarve: IPDJ procura voluntários para o jogo Portugal-Letónia no Estádio Algarve", "url": "https://postal.pt/sociedade/ipdj-procura-voluntarios-para-o-jogo-portugal-letonia-no-estadio-algarve/"},
+    {"titulo": "Postal do Algarve: Escuteiros de Tavira promovem arraial para angariar fundos", "url": "https://postal.pt/cultura/cultura-sul/escuteiros-de-tavira-promovem-arraial-para-angariar-fundos/"},
+    {"titulo": "Barlavento: Arraial de São José (Ferreiras) no 26.º aniversário da paróquia", "url": "https://www.barlavento.pt/arraial-sao-jose-ferreiras-26-aniversario-paroquia/"},
+    {"titulo": "EGEAC, Festas de Lisboa: Arraial dos Navegantes", "url": "https://egeac.pt/evento/arraial-dos-navegantes-outras-festas-3/"},
+    {"titulo": "Formulário Google público: Jantar de Natal AARAM (exemplo de inscrição por Google Forms)", "url": "https://docs.google.com/forms/d/e/1FAIpQLSeerpEMrl2IBnNklG89wccP9z_DZO4d-FD_fH0bJJSeISZm4A/viewform"}
+  ]
+}
