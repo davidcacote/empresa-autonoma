@@ -37,5 +37,24 @@
     "commit": "1593818",
     "proximo_objetivo": "B-018",
     "notas": "Caminho A sem especialista. Uma volta Dev (migração privado). CI verde (inclui o job base-de-dados em runner real)."
+  },
+  {
+    "n": 2,
+    "inicio": "2026-11-09T01:40:00Z",
+    "fim": "2026-11-09T01:44:21Z",
+    "tipo": "normal",
+    "objetivo": "B-018: Barraca em /barraca/ e montra do estúdio na raiz",
+    "resultado": "concluido",
+    "entregue": "apps/barraca/, build multi-produto, montra na raiz com link para o painel, redirecionamentos que preservam ?query e #hash, testes e documentos atualizados.",
+    "retro": "Correu bem: migração limpa com redirecionamentos testados. Correu mal: um link relativo partido só foi apanhado pela QA. Muda: o e2e passa a verificar links de rodapé entre produtos.",
+    "agentes": [
+      "ceo",
+      "dev",
+      "qa"
+    ],
+    "chamadas_agentes": 5,
+    "commit": "",
+    "proximo_objetivo": "B-004",
+    "notas": "Caminho B (sinal de portfólio: últimos ciclos do limite). 1 volta QA↔Dev. CEO propôs Placa Certa depois de B-004 e B-008."
   }
 ]

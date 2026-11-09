@@ -104,7 +104,7 @@ function percorrer(dir) {
 percorrer(raiz);
 
 // 3. Páginas HTML com língua definida
-for (const pagina of ['app/index.html', 'hq/index.html']) {
+for (const pagina of ['site/index.html', 'apps/barraca/index.html', 'hq/index.html']) {
   const caminho = join(raiz, pagina);
   if (!existsSync(caminho)) { falha(`${pagina}: em falta`); continue; }
   const html = readFileSync(caminho, 'utf8');

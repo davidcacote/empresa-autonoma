@@ -1,11 +1,11 @@
-// Testes da lógica pura (app/js/logica.js). Correr com: node --test tests/
+// Testes da lógica pura (apps/barraca/js/logica.js). Correr com: node --test tests/
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import {
   estadoTurno, agruparPorDiaEPosto, formatarHora, formatarIntervalo, chaveDia, rotuloDia, intervaloDatas, diasEntre,
   validarNome, slugBase, slugValido, validarFesta, montarPayloadFesta, duracaoTurnoMin, mensagemErro, resumoNomes, horaCurta,
-} from '../app/js/logica.js';
+} from '../apps/barraca/js/logica.js';
 
 const fixture = (n) => JSON.parse(readFileSync(new URL(`./fixtures/${n}.json`, import.meta.url), 'utf8'));
 const AGORA = new Date('2030-06-22T12:00:00Z');

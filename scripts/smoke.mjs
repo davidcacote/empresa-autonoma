@@ -6,9 +6,9 @@ import { chromium, iniciarServidor, simularApi, vigiarErros } from './servidor-t
 
 const PAGINAS = [
   { nome: 'inicio', url: '/' },
-  { nome: 'festa', url: '/festa.html?f=demonstracao' },
-  { nome: 'criar', url: '/criar.html' },
-  { nome: 'gerir', url: '/gerir.html?f=demonstracao#chave-de-teste-123456' },
+  { nome: 'festa', url: '/barraca/festa.html?f=demonstracao' },
+  { nome: 'criar', url: '/barraca/criar.html' },
+  { nome: 'gerir', url: '/barraca/gerir.html?f=demonstracao#chave-de-teste-123456' },
   { nome: 'hq', url: '/hq/' },
 ];
 

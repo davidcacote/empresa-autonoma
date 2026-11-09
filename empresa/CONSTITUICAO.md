@@ -34,7 +34,7 @@ demonstrável publicamente num browser, e que sirva de portfólio de qualidade
 
 ## Stack e restrições (inegociáveis, salvo ADR aprovado pelo CTO e pela CEO)
 
-- Frontend estático em `app/` (HTML, CSS, JavaScript em módulos ES). Sem passo de build obrigatório.
+- Frontend estático em `apps/<nome>/` (a Barraca em `apps/barraca/`) (HTML, CSS, JavaScript em módulos ES). Sem passo de build obrigatório.
   Bibliotecas só por CDN com versão fixa (ex.: `https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/+esm`).
 - Backend: **Supabase** (Postgres, Auth, Storage, Edge Functions). Todas as tabelas com **RLS ativo**.
   Só a chave pública (publishable/anon) aparece no frontend. Nunca segredos no repositório.

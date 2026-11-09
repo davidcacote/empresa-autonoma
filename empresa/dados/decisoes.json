@@ -118,5 +118,15 @@
     "contexto": "A CEO tinha reservado para os donos a forma de incluir grupos com jovens, e as regras pediam a aprovação deles (sem veto em 24–48 h) para começar um produto novo.",
     "decisao": "Todas as decisões de produto, prioridade, design, arquitetura e portfólio são da empresa, sem esperar pelos donos. Os donos acompanham pelo painel e podem intervir depois. Exceções: contactar pessoas ou organizações reais em nome dos donos, gastar dinheiro, e ações nas contas dos donos.",
     "consequencias": "B-021 (grupos com jovens, sem dados de menores) passa a 'a fazer' pela decisão da CEO. Um produto novo arranca no ciclo seguinte à decisão da CEO."
+  },
+  {
+    "id": "D-005",
+    "data": "2026-11-09",
+    "titulo": "Alargar o limite do MVP da Barraca para 6 ciclos",
+    "autor": "ceo",
+    "estado": "aprovada",
+    "contexto": "A Barraca atinge o limite de 3 ciclos do MVP com só 1 de 8 critérios de v1 cumpridos.",
+    "decisao": "Justificar mais 3 ciclos (uma única vez): declarar já a v1.0 deixaria o WhatsApp (F-1) e o estudo de caso em manutenção, quando são o que torna a Barraca utilizável na campanha de novembro. Limite de v1 mantém-se em 10. Placa Certa fica como candidata a seguir a B-004 e B-008.",
+    "consequencias": "limite_mvp = 6. Uma única prorrogação permitida."
   }
 ]

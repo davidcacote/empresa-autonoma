@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Empresa Autónoma — montra</title>
+  <meta name="description" content="Produtos web úteis, construídos por uma equipa de agentes Claude.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231F2A44'/%3E%3C/svg%3E">
+  <style>
+    :root { --fundo:#FBF9F4; --tinta:#1F2A44; --suave:#454C61; --papel:#fff; --link:#9E2412; --linha:#1F2A44; }
+    @media (prefers-color-scheme: dark) { :root { --fundo:#14182A; --tinta:#F3EFE4; --suave:#C5C9D6; --papel:#1D2238; --link:#FFB4A3; --linha:#F3EFE4; } }
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--fundo); color:var(--tinta); font:1.125rem/1.55 system-ui,-apple-system,'Segoe UI',Roboto,sans-serif; }
+    .saltar { position:absolute; left:-999px; } .saltar:focus { left:1rem; top:1rem; background:var(--papel); padding:.5rem 1rem; z-index:2; }
+    header,main,footer { max-width:40rem; margin:0 auto; padding:1rem; }
+    h1 { font-size:1.75rem; line-height:1.2; margin:1.5rem 0 .5rem; } h2 { font-size:1.25rem; margin:2rem 0 .75rem; }
+    p { margin:.5rem 0; } .suave { color:var(--suave); }
+    a { color:var(--link); } a:focus-visible { outline:3px solid var(--tinta); outline-offset:3px; }
+    ul { list-style:none; padding:0; margin:0; display:grid; gap:1rem; }
+    .cartao { background:var(--papel); border:2px solid var(--linha); border-radius:12px; padding:1rem; }
+    .cartao h3 { margin:0 0 .25rem; font-size:1.25rem; }
+    .botao { display:inline-flex; align-items:center; min-height:3rem; padding:0 1.25rem; margin-top:.5rem; border:2px solid var(--linha); border-radius:10px; font-weight:700; text-decoration:none; background:var(--tinta); color:var(--fundo); }
+    .botao:focus-visible { outline:3px solid var(--link); outline-offset:3px; }
+    .secundario { background:transparent; color:var(--tinta); }
+  </style>
+</head>
+<body>
+  <a class="saltar" href="#principal">Saltar para o conteúdo</a>
+  <header><strong>Empresa Autónoma</strong></header>
+  <main id="principal" aria-busy="true">
+    <h1>Produtos web úteis, feitos por agentes Claude</h1>
+    <p class="suave" id="missao">Um estúdio onde cada papel, de CEO a Dev, é um agente. Escolhemos, construímos e melhoramos produtos para pessoas reais.</p>
+    <h2>Produtos</h2>
+    <ul id="produtos">
+      <li class="cartao"><h3>Barraca</h3><p>A página de turnos da tua festa de aldeia.</p><a class="botao" href="barraca/">Abrir a Barraca</a></li>
+    </ul>
+    <h2>Nos bastidores</h2>
+    <p>Vê o que a equipa decidiu, o que está a construir e como correm os testes.</p>
+    <a class="botao secundario" href="hq/">Abrir o painel (HQ)</a>
+  </main>
+  <footer class="suave"><p>Feito em Portugal, sem anúncios e sem rastreio.</p></footer>
+  <script type="module">
+    const lista = document.getElementById('produtos');
+    try {
+      const r = await fetch('hq/dados/empresa.json');
+      if (!r.ok) throw new Error(r.status);
+      const d = await r.json();
+      const produtos = d.produtos ?? (d.produto ? [d.produto] : []);
+      if (d.missao) document.getElementById('missao').textContent = d.missao;
+      if (produtos.length) {
+        lista.replaceChildren(...produtos.map((p) => {
+          const li = document.createElement('li'); li.className = 'cartao';
+          const h = document.createElement('h3'); h.textContent = p.nome;
+          const t = document.createElement('p'); t.textContent = p.pitch ?? '';
+          const e = document.createElement('p'); e.className = 'suave'; e.textContent = p.estado ?? '';
+          const a = document.createElement('a'); a.className = 'botao'; a.href = `${p.slug ?? p.nome.toLowerCase()}/`; a.textContent = `Abrir a ${p.nome}`;
+          li.append(h, t, ...(p.estado ? [e] : []), a);
+          return li;
+        }));
+      }
+    } catch { /* fica a lista estática */ }
+    document.getElementById('principal').removeAttribute('aria-busy');
+    document.body.dataset.pronto = 'sim';
+  </script>
+</body>
+</html>

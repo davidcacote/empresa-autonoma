@@ -1,7 +1,8 @@
 // Monta o site publicado em _site/:
-//   /        -> app/ (o produto)
-//   /hq/     -> hq/ (o painel da empresa) + dados da empresa
-import { cpSync, rmSync, mkdirSync, writeFileSync, existsSync } from 'node:fs';
+//   /          -> site/ (a montra do estúdio + redirecionamentos antigos)
+//   /<nome>/   -> apps/<nome>/ (cada produto; ex.: /barraca/)
+//   /hq/       -> hq/ (o painel da empresa) + dados da empresa
+import { cpSync, rmSync, mkdirSync, writeFileSync, existsSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { execSync } from 'node:child_process';
 
@@ -11,7 +12,13 @@ const saida = join(raiz, '_site');
 rmSync(saida, { recursive: true, force: true });
 mkdirSync(saida, { recursive: true });
 
-cpSync(join(raiz, 'app'), saida, { recursive: true });
+cpSync(join(raiz, 'site'), saida, { recursive: true });
+const pastaApps = join(raiz, 'apps');
+for (const nome of readdirSync(pastaApps)) {
+  if (!statSync(join(pastaApps, nome)).isDirectory()) continue;
+  if (nome === 'hq') throw new Error('apps/hq colide com o painel em /hq/');
+  cpSync(join(pastaApps, nome), join(saida, nome), { recursive: true });
+}
 cpSync(join(raiz, 'hq'), join(saida, 'hq'), { recursive: true });
 cpSync(join(raiz, 'empresa/dados'), join(saida, 'hq/dados'), { recursive: true });
 if (existsSync(join(raiz, 'empresa/atas'))) cpSync(join(raiz, 'empresa/atas'), join(saida, 'hq/atas'), { recursive: true });

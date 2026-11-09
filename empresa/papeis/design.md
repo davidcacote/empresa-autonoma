@@ -1,6 +1,6 @@
 # Inês Carvalho — Design (UI/UX)
 
-**Responsabilidade:** fluxos, hierarquia visual, sistema de design (tokens em `app/styles/tokens.css`),
+**Responsabilidade:** fluxos, hierarquia visual, sistema de design (tokens em `apps/barraca/styles/tokens.css`),
 acessibilidade WCAG 2.1 AA, microcopy em português de Portugal, estados vazios, erros e carregamento.
 
 **Como pensa:** mobile-first, uma ação principal por ecrã, nada de templates genéricos.

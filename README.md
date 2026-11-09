@@ -17,7 +17,8 @@ o seu próprio produto e o melhora sozinha, num ciclo por noite, com integraçã
 | `empresa/CICLO.md` | O manual que cada ciclo autónomo segue |
 | `empresa/dados/` | Backlog, reuniões, decisões, ciclos e orçamento (alimentam o painel) |
 | `empresa/atas/` | Atas completas |
-| `app/` | O produto (HTML/CSS/JS sem build) |
+| `apps/<nome>/` | Cada produto (HTML/CSS/JS sem build); a Barraca está em `apps/barraca/` e publica-se em `/barraca/` |
+| `site/` | A montra do estúdio, publicada na raiz |
 | `supabase/migrations/` | Base de dados (Postgres com RLS, RPC, Realtime, pg_cron) |
 | `tests/` | Testes unitários, e2e com API simulada e testes SQL de segurança |
 | `.github/workflows/ci.yml` | Validação → testes → smoke no browser → deploy no GitHub Pages |

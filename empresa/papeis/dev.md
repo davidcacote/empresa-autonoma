@@ -1,6 +1,6 @@
 # Bruno Teixeira — Dev full-stack
 
-**Responsabilidade:** implementar o objetivo do ciclo em `app/` (e `supabase/` quando o CTO aprovar),
+**Responsabilidade:** implementar o objetivo do ciclo em `apps/<nome>/` (a Barraca está em `apps/barraca/`; e `supabase/` quando o CTO aprovar),
 com testes em `tests/`, em commits pequenos com mensagens claras em português.
 
 **Como trabalha:** lê os critérios de aceitação e a especificação de design antes de tocar no código.

@@ -28,7 +28,7 @@ async function cenario(nome, corpo, extra) {
 function afirmar(condicao, mensagem) { if (!condicao) throw new Error(mensagem); }
 
 async function abrirFesta(page) {
-  await page.goto(`${base}/festa.html?f=demonstracao`);
+  await page.goto(`${base}/barraca/festa.html?f=demonstracao`);
   await page.waitForSelector('[data-pronto="sim"]');
 }
 
@@ -100,7 +100,7 @@ await cenario('(d) nomes com HTML ficam como texto', async (page) => {
   afirmar(nomes.some((t) => t.includes('<img src=x onerror="window.__xss=1">')), 'o nome malicioso não aparece como texto');
   afirmar(nomes.some((t) => t.includes('Zé, Fátima e Rui')), 'resumo "Zé, Fátima e Rui" em falta');
   // Na página de gestão também
-  await page.goto(`${base}/gerir.html?f=demonstracao#chave-de-teste-123456`);
+  await page.goto(`${base}/barraca/gerir.html?f=demonstracao#chave-de-teste-123456`);
   await page.waitForSelector('[data-pronto="sim"]');
   afirmar(await page.locator('.turno img').count() === 0, 'há <img> na gestão');
   afirmar(await page.evaluate(() => window.__xss) === undefined, 'window.__xss definido na gestão');
@@ -108,7 +108,7 @@ await cenario('(d) nomes com HTML ficam como texto', async (page) => {
 });
 
 await cenario('(e) criar festa mostra os dois links', async (page, pedidos) => {
-  await page.goto(`${base}/criar.html`);
+  await page.goto(`${base}/barraca/criar.html`);
   await page.waitForSelector('[data-pronto="sim"]');
   await page.fill('[data-campo="nome"]', 'Festa de Teste');
   await page.fill('[data-campo="localidade"]', 'Ribeira');
@@ -122,15 +122,15 @@ await cenario('(e) criar festa mostra os dois links', async (page, pedidos) => {
   await page.locator('#sucesso').waitFor({ state: 'visible' });
   const vol = await page.locator('[data-link="voluntarios"]').getAttribute('href');
   const ger = await page.locator('[data-link="gestao"]').getAttribute('href');
-  afirmar(vol === `${base}/festa.html?f=festa-de-teste-a1b2c3`, `link de voluntários: ${vol}`);
-  afirmar(ger === `${base}/gerir.html?f=festa-de-teste-a1b2c3#chave-secreta-de-teste_0123456789`, `link de gestão: ${ger}`);
+  afirmar(vol === `${base}/barraca/festa.html?f=festa-de-teste-a1b2c3`, `link de voluntários: ${vol}`);
+  afirmar(ger === `${base}/barraca/gerir.html?f=festa-de-teste-a1b2c3#chave-secreta-de-teste_0123456789`, `link de gestão: ${ger}`);
   const envio = JSON.parse(pedidos.find((p) => p.url.endsWith('/rpc/criar_festa')).corpo).p_festa;
   afirmar(envio.postos[0].turnos[0].fim === '00:00' && envio.slug_base === 'festa-de-teste', `payload inesperado: ${JSON.stringify(envio)}`);
   afirmar((await page.locator('#sucesso').innerText()).includes('não o partilhe'), 'falta o aviso de não partilhar');
 });
 
 await cenario('(e2) criar festa com dados em falta mostra erros e não envia', async (page, pedidos) => {
-  await page.goto(`${base}/criar.html`);
+  await page.goto(`${base}/barraca/criar.html`);
   await page.waitForSelector('[data-pronto="sim"]');
   await page.click('#criar');
   await page.locator('#erros').waitFor({ state: 'visible' });
@@ -139,7 +139,7 @@ await cenario('(e2) criar festa com dados em falta mostra erros e não envia', a
 });
 
 await cenario('(f) festa inexistente mostra estado vazio com link para o início', async (page) => {
-  await page.goto(`${base}/festa.html?f=nao-existe`);
+  await page.goto(`${base}/barraca/festa.html?f=nao-existe`);
   await page.waitForSelector('[data-pronto="sim"]');
   afirmar((await page.locator('#titulo').innerText()).includes('Não encontrámos esta festa'), 'falta o título do estado vazio');
   const href = await page.getByRole('link', { name: 'Voltar ao início' }).getAttribute('href');

@@ -78,7 +78,7 @@ Depois correr `tests/sql/seguranca.sql` com `execute_sql` e `get_advisors`.
 
 ## 4. Implementação — Dev (1 agente)
 Lançar o Bruno com: papel, constituição, objetivo, critérios, especificação, e as regras:
-só escreve em `app/` e `tests/`; corre `node --test 'tests/**/*.test.mjs'`, `node scripts/build.mjs`,
+só escreve em `apps/` e `tests/`; corre `node --test 'tests/**/*.test.mjs'`, `node scripts/build.mjs`,
 `node scripts/smoke.mjs` e `for f in tests/e2e/*.e2e.mjs; do node "$f" || exit 1; done`; não há internet
 (Supabase/CDN simulados nas fixtures). Devolve: ficheiros alterados, resultado dos testes, riscos.
 
@@ -87,7 +87,7 @@ Lançar a Sofia com: papel, critérios, e o pedido para rever `git diff` e corre
 verificar critério a critério (passa/falha com evidência) e tirar screenshots (390px e 1280px) dos ecrãs alterados
 para `/tmp/qa-<n>/`. Veredicto: **aprovado** ou **bloqueado** com a lista de falhas.
 Se bloqueado: devolver ao Dev com `SendMessage` (no máximo `max_voltas_qa_dev` voltas) e voltar à QA.
-Se continuar bloqueado: `git checkout -- app tests` (descartar) e o item fica para o ciclo seguinte.
+Se continuar bloqueado: `git checkout -- apps tests` (descartar) e o item fica para o ciclo seguinte.
 
 ## 6. Release
 1. Atualizar os registos (passo 7) **antes** do commit, para irem no mesmo push.

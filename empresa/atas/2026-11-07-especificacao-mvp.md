@@ -6,7 +6,7 @@ Aprovada na reunião de fundação de 7 nov 2026. Fontes: decisão da CEO, respo
 **Barraca** — a página de turnos da tua festa de aldeia: a comissão cria, o povo inscreve-se com um toque,
 ninguém fica sozinho na grelha às 3 da manhã.
 
-## Páginas (todas em `app/`, links RELATIVOS — o site vive em `/empresa-autonoma/` no GitHub Pages)
+## Páginas (todas em `apps/barraca/`, links RELATIVOS — o site vive em `/empresa-autonoma/` no GitHub Pages)
 
 ### 1. `index.html` — início
 - Marca "Barraca" + pitch numa frase + bandeirinhas decorativas (SVG/CSS, subtis).
@@ -46,7 +46,7 @@ ninguém fica sozinho na grelha às 3 da manhã.
 - Lista de turnos por dia/posto com os inscritos e botão "Remover" em cada inscrição (`remover_inscricao`), com confirmação.
 
 ## Supabase (já criado e testado pelo CTO — NÃO alterar a BD)
-- URL e chave pública em `app/js/config.js`. Chamadas por `fetch` direto à API REST (sem supabase-js para dados):
+- URL e chave pública em `apps/barraca/js/config.js`. Chamadas por `fetch` direto à API REST (sem supabase-js para dados):
   - Ler: `GET {URL}/rest/v1/festas?slug=eq.<slug>&select=*` (lista; usar o 1.º elemento),
     `postos?festa_id=eq.<id>&select=*&order=ordem`, `turnos?festa_id=eq.<id>&select=*&order=inicio`,
     `inscricoes?festa_id=eq.<id>&select=id,turno_id,primeiro_nome,criado_em&order=criado_em`.
@@ -76,12 +76,12 @@ ninguém fica sozinho na grelha às 3 da manhã.
   verde-pinho `#1E6B4A` (livre), âmbar `#E0A100` (quase cheio, só como fundo/borda).
 - Tipografia: Fraunces (títulos) + Atkinson Hyperlegible (texto), por Google Fonts, com fallbacks (Georgia / system-ui).
 - Texto base 18px, contraste ≥7:1 no texto corrido, alvos de toque ≥48px, foco visível, `prefers-reduced-motion` respeitado.
-- Tokens em `app/styles/tokens.css`. Modo escuro é opcional nesta fase.
+- Tokens em `apps/barraca/styles/tokens.css`. Modo escuro é opcional nesta fase.
 
 ## Regras técnicas (Dev + QA)
 - Módulos ES, sem build. Nunca `innerHTML` com dados (só `textContent`/`createElement`) — o QA testa nomes com HTML.
 - Datas e horas sempre formatadas em `Europe/Lisbon` com `Intl.DateTimeFormat('pt-PT', …)`.
-- Lógica pura em `app/js/logica.js` (estado do turno, agrupar por dia e posto, formatar hora/dia, validar nome,
+- Lógica pura em `apps/barraca/js/logica.js` (estado do turno, agrupar por dia e posto, formatar hora/dia, validar nome,
   slug, montar payload de criar festa, mensagem de erro, resumo de nomes) com testes em `tests/logica.test.mjs` (`node --test`).
 - localStorage sempre dentro de try/catch (a página funciona sem ele).
 - Cada página marca `document.body.dataset.pronto = 'sim'` depois da primeira renderização (com dados, vazio ou erro).

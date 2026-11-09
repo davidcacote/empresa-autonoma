@@ -214,5 +214,36 @@
       }
     ],
     "decisao": "Continuar a Barraca. Ordem: B-018 → B-004 → B-008. Item novo B-021 (grupos com jovens) aguarda aprovação dos donos. Não começar outro projeto por agora."
+  },
+  {
+    "id": "R-010",
+    "data": "2026-11-09T01:44:21Z",
+    "ciclo": 2,
+    "tipo": "normal",
+    "titulo": "Ciclo 2: B-018 — Barraca em /barraca/ e montra na raiz",
+    "resumo": "Stand-up da CEO, implementação pelo Dev e uma volta de QA (link do rodapé partido, corrigido).",
+    "participantes": [
+      "ceo",
+      "dev",
+      "qa"
+    ],
+    "intervencoes": [
+      {
+        "quem": "ceo",
+        "texto": "Objetivo B-018: pedido dos donos (ADR-007) e pré-requisito de qualquer produto novo; tem de ser feito antes de circularem links de festas. Próximo: B-004 (WhatsApp, F-1), depois B-008 (O-1, Banco Alimentar, sugere subir a P1). Portfólio: sim como proposta (Placa Certa), mas só depois de B-004 e B-008. Barraca chega ao limite do MVP (3): recomenda justificar mais 3 ciclos, uma única vez, porque só 1 de 8 critérios de v1 está feito."
+      },
+      {
+        "quem": "dev",
+        "texto": "app/ passou para apps/barraca/; build publica cada apps/<nome>/ em /<nome>/; nova montra em site/index.html (produtos a partir de empresa.json, link para /hq/); festa/criar/gerir.html na raiz redirecionam preservando ?query e #hash; testes, smoke, e2e (novo montra.e2e) e validar atualizados; documentos atualizados."
+      },
+      {
+        "quem": "qa",
+        "texto": "1.ª revisão: bloqueado — apps/barraca/index.html:52 apontava para hq/ (404 em /barraca/hq/). Após a correção (../hq/) e nova asserção no e2e: aprovado; 12/12 unitários, build, smoke, e2e e validar verdes."
+      },
+      {
+        "quem": "sistema",
+        "texto": "1 volta QA↔Dev. Aplicada a recomendação da CEO: MVP com limite alargado a 6 ciclos (uma única vez)."
+      }
+    ]
   }
 ]
