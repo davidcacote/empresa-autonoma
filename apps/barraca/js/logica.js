@@ -82,6 +82,17 @@ export function intervaloDatas(inicio, fim) {
   return `${rotuloDia(inicio)} de ${mesDe(inicio)}${ligacao}${rotuloDia(fim)} de ${mesDe(fim)}`;
 }
 
+// ── Partilha no WhatsApp ────────────────────────────────────────────────────
+
+/** Mensagem para partilhar a festa (só o link dos voluntários, nunca o de gestão). */
+export function textoPartilha({ nome, localidade, ini, fim }, link) {
+  return `Vem ajudar na festa! 🎉\n${nome} · ${localidade}\n${intervaloDatas(ini, fim)}\n\n`
+    + `Escolhe o teu turno aqui, é só um toque e sem criar conta:\n${link}`;
+}
+
+/** Ligação wa.me que abre o WhatsApp com o texto já escrito. */
+export const ligacaoWhatsApp = (texto) => `https://wa.me/?text=${encodeURIComponent(texto)}`;
+
 // ── Estado dos turnos ───────────────────────────────────────────────────────
 
 /** Estado de um turno: forma + texto (a cor é só reforço). */

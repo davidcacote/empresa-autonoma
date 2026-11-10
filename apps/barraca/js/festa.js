@@ -6,7 +6,7 @@ import { criarIndicador } from './indicador.js';
 import { iniciarAtualizacao } from './tempo-real.js';
 import { confirmar } from './dialogos.js';
 import {
-  agruparPorDiaEPosto, intervaloDatas, mensagemErro, resumoNomes, slugValido, validarNome, chaveDia,
+  agruparPorDiaEPosto, intervaloDatas, mensagemErro, resumoNomes, slugValido, validarNome, chaveDia, textoPartilha, ligacaoWhatsApp,
 } from './logica.js';
 
 const estado = {
@@ -82,6 +82,9 @@ function desenharCabecalho() {
   $('titulo').textContent = nome;
   $('detalhes').textContent = `${localidade} · ${intervaloDatas(ini, fim)}`;
   if (descricao) { $('descricao').textContent = descricao; $('descricao').hidden = false; }
+  const link = new URL(`festa.html?f=${encodeURIComponent(estado.slug)}`, location.href).href;
+  $('partilhar').href = ligacaoWhatsApp(textoPartilha({ nome, localidade, ini, fim }, link));
+  $('partilhar').hidden = false;
   $('controlos').hidden = false;
 }
 

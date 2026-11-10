@@ -2,7 +2,7 @@
 import { criarFesta } from './api.js';
 import { h, $, preencher, marcarPronta } from './dom.js';
 import { guardarFestaCriada } from './armazem.js';
-import { chaveDia, diasEntre, rotuloDia, validarFesta, montarPayloadFesta, mensagemErro, LIMITES } from './logica.js';
+import { chaveDia, diasEntre, rotuloDia, validarFesta, montarPayloadFesta, mensagemErro, LIMITES, textoPartilha, ligacaoWhatsApp } from './logica.js';
 
 const form = $('form-festa');
 const raizPostos = $('postos');
@@ -119,7 +119,7 @@ form.addEventListener('submit', async (ev) => {
   botao.textContent = 'A criar…';
   try {
     const { slug, chave } = await criarFesta(montarPayloadFesta(dados));
-    mostrarSucesso(slug, chave, dados.nome.trim());
+    mostrarSucesso(slug, chave, dados.nome.trim(), dados);
   } catch (erro) {
     mostrarErros([{ campo: '', mensagem: mensagemErro(erro) }]);
   } finally {
@@ -129,7 +129,7 @@ form.addEventListener('submit', async (ev) => {
   }
 });
 
-function mostrarSucesso(slug, chave, nome) {
+function mostrarSucesso(slug, chave, nome, dados) {
   // Links absolutos a partir do endereço desta página (funciona em qualquer pasta do site)
   const voluntarios = new URL(`festa.html?f=${encodeURIComponent(slug)}`, location.href).href;
   const gestao = new URL(`gerir.html?f=${encodeURIComponent(slug)}`, location.href);
@@ -140,6 +140,8 @@ function mostrarSucesso(slug, chave, nome) {
     a.href = url;
     a.textContent = url;
   }
+  $('partilhar').href = ligacaoWhatsApp(textoPartilha(
+    { nome, localidade: dados.localidade.trim(), ini: dados.dataInicio, fim: dados.dataFim }, voluntarios));
   form.hidden = true;
   const painel = $('sucesso');
   painel.hidden = false;

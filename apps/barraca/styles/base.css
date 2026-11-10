@@ -99,3 +99,5 @@ textarea { resize: vertical; }
 .rodape { padding-block: var(--e6); color: var(--tinta-suave); font-size: var(--texto-pequeno); }
 .rodape a { color: var(--vermelho-escuro); }
 [hidden] { display: none !important; }
+
+.botao__icone { flex: none; }

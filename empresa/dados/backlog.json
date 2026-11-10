@@ -50,7 +50,7 @@
   {
     "id": "B-004",
     "titulo": "Partilhar a festa no WhatsApp com texto pronto",
-    "estado": "a_fazer",
+    "estado": "feito",
     "prioridade": 1,
     "estimativa": "P",
     "quem": "Coordenador(a)",
@@ -298,6 +298,24 @@
       "Nenhum nome, idade ou contacto de menores é pedido nem guardado",
       "Cada jovem ocupa uma vaga do turno; a lotação continua garantida pela base de dados",
       "O texto explica que o adulto é o responsável pelo grupo"
+    ]
+  },
+  {
+    "id": "B-022",
+    "titulo": "Pré-visualização do WhatsApp por festa (OG dinâmicas com nome e imagem og.png)",
+    "estado": "ideia",
+    "prioridade": 4,
+    "estimativa": "M",
+    "quem": "Coordenador(a)",
+    "porque": "Limitação do B-004: site estático, pré-visualização genérica e sem imagem.",
+    "criterios": [],
+    "segmento": [
+      "S-1",
+      "S-2"
+    ],
+    "mercado": [
+      "F-1",
+      "O-3"
     ]
   }
 ]

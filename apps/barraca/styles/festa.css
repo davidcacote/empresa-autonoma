@@ -52,3 +52,7 @@
 .inscritos__nome { font-weight: 700; }
 .inscritos .botao { flex: none; white-space: nowrap; }
 .inscritos__nome { min-width: 0; }
+
+/* Partilhar no WhatsApp: largura total no telemóvel */
+.cabecalho__partilhar { display: flex; width: 100%; margin-top: var(--e3); }
+@media (min-width: 40rem) { .cabecalho__partilhar { display: inline-flex; width: auto; } }

@@ -245,5 +245,36 @@
         "texto": "1 volta QA↔Dev. Aplicada a recomendação da CEO: MVP com limite alargado a 6 ciclos (uma única vez)."
       }
     ]
+  },
+  {
+    "id": "R-011",
+    "data": "2026-11-10T01:48:00Z",
+    "ciclo": 3,
+    "tipo": "normal",
+    "titulo": "Ciclo 3: B-004 — Partilhar a festa no WhatsApp",
+    "resumo": "Caminho A: Design especificou, Dev implementou, QA aprovou à primeira.",
+    "participantes": [
+      "design",
+      "dev",
+      "qa"
+    ],
+    "intervencoes": [
+      {
+        "quem": "design",
+        "texto": "Link-botão primário 'Partilhar no WhatsApp' (48px) em festa.html e no bloco de voluntários do sucesso; mensagem com nome, localidade, datas e link; wa.me sem número; OG estáticas (crawlers não executam JS), og:image omitida sem ficheiro."
+      },
+      {
+        "quem": "dev",
+        "texto": "textoPartilha e ligacaoWhatsApp em logica.js, botões, OG estáticas em festa.html, testes unitários e e2e. Tudo verde. Risco: pré-visualização genérica; og:url fixo no domínio do GitHub Pages."
+      },
+      {
+        "quem": "qa",
+        "texto": "Aprovado: 13/13, build, smoke, e2e, validar. Botão 48px, contraste ~5,3:1, sem overflow. Nota cosmética: pílula 'Atualizado às' encostada ao botão a 390px."
+      },
+      {
+        "quem": "sistema",
+        "texto": "Ciclo 3 concluído sem voltas QA↔Dev."
+      }
+    ]
   }
 ]

@@ -127,6 +127,24 @@ await cenario('(e) criar festa mostra os dois links', async (page, pedidos) => {
   const envio = JSON.parse(pedidos.find((p) => p.url.endsWith('/rpc/criar_festa')).corpo).p_festa;
   afirmar(envio.postos[0].turnos[0].fim === '00:00' && envio.slug_base === 'festa-de-teste', `payload inesperado: ${JSON.stringify(envio)}`);
   afirmar((await page.locator('#sucesso').innerText()).includes('não o partilhe'), 'falta o aviso de não partilhar');
+  const wa = await page.locator('#sucesso a#partilhar').getAttribute('href');
+  afirmar(wa.startsWith('https://wa.me/?text='), `href de partilha: ${wa}`);
+  const msg = new URL(wa).searchParams.get('text');
+  afirmar(msg.includes('Festa de Teste') && msg.includes(vol), `texto de partilha: ${msg}`);
+  afirmar(!wa.includes('gerir.html') && !decodeURIComponent(wa).includes('gerir.html') && !msg.includes('chave-secreta'), 'a partilha inclui o link de gestão');
+  afirmar(await page.locator('.link-caixa--gestao #partilhar').count() === 0, 'botão de partilha no bloco de gestão');
+});
+
+await cenario('(e3) festa tem o botão Partilhar no WhatsApp e meta Open Graph', async (page) => {
+  await abrirFesta(page);
+  const a = page.locator('a#partilhar');
+  afirmar(await a.isVisible(), 'botão de partilha invisível');
+  afirmar(await a.getAttribute('target') === '_blank' && (await a.getAttribute('rel')).includes('noopener'), 'target/rel em falta');
+  const msg = new URL(await a.getAttribute('href')).searchParams.get('text');
+  afirmar(msg.includes(`${base}/barraca/festa.html?f=demonstracao`), `link em falta: ${msg}`);
+  afirmar(!msg.includes('gerir.html'), 'link de gestão na partilha');
+  afirmar(await page.locator('meta[property="og:title"]').getAttribute('content') === 'Escolha o seu turno na festa · Barraca', 'og:title');
+  afirmar(await page.locator('meta[property="og:image"]').count() === 0, 'og:image não devia existir');
 });
 
 await cenario('(e2) criar festa com dados em falta mostra erros e não envia', async (page, pedidos) => {

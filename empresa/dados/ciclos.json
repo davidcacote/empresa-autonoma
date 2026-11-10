@@ -56,5 +56,24 @@
     "commit": "fbdd911",
     "proximo_objetivo": "B-004",
     "notas": "Caminho B (sinal de portfólio: últimos ciclos do limite). 1 volta QA↔Dev. CEO propôs Placa Certa depois de B-004 e B-008."
+  },
+  {
+    "n": 3,
+    "inicio": "2026-11-10T01:40:00Z",
+    "fim": "2026-11-10T01:48:00Z",
+    "tipo": "normal",
+    "objetivo": "B-004: partilhar a festa no WhatsApp com texto pronto",
+    "resultado": "concluido",
+    "entregue": "Botão Partilhar no WhatsApp em festa.html e no sucesso de criar.html, texto pronto com nome, datas e link, meta OG estáticas, testes unitários e e2e.",
+    "retro": "Correu bem: especificação clara e QA aprovada à primeira. Correu mal: pré-visualização do WhatsApp é genérica (site estático) e sem og:image. Muda: B-022 para OG dinâmicas por festa.",
+    "agentes": [
+      "design",
+      "dev",
+      "qa"
+    ],
+    "chamadas_agentes": 3,
+    "commit": "",
+    "proximo_objetivo": "",
+    "notas": "Caminho A com Design. Nota cosmética da QA: espaçamento da pílula 'Atualizado às'."
   }
 ]

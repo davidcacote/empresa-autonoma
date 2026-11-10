@@ -172,3 +172,18 @@ test('resumo de nomes', () => {
   assert.equal(resumoNomes(['Zé', 'Fátima', 'Rui']), 'Zé, Fátima e Rui');
   assert.equal(resumoNomes(['A', 'B', 'C', 'D']), 'A, B, C e D');
 });
+
+test('textoPartilha e ligacaoWhatsApp: texto, link e codificação', async () => {
+  const { textoPartilha, ligacaoWhatsApp } = await import('../apps/barraca/js/logica.js');
+  const link = 'https://exemplo.pt/barraca/festa.html?f=sao-joao-a1b2c3';
+  const texto = textoPartilha({ nome: 'Festa São João & Ação #1', localidade: 'Ribeira', ini: '2030-06-22', fim: '2030-06-23' }, link);
+  assert.equal(texto, `Vem ajudar na festa! 🎉\nFesta São João & Ação #1 · Ribeira\n${intervaloDatas('2030-06-22', '2030-06-23')}\n\n`
+    + `Escolhe o teu turno aqui, é só um toque e sem criar conta:\n${link}`);
+  assert.ok(!texto.includes('gerir.html'));
+  const url = ligacaoWhatsApp(texto);
+  assert.ok(url.startsWith('https://wa.me/?text='));
+  const codificado = url.slice('https://wa.me/?text='.length);
+  assert.ok(!/[&# \n]/.test(codificado), 'sem &, #, espaços ou quebras de linha por codificar');
+  assert.equal(decodeURIComponent(codificado), texto);
+  assert.equal(new URL(url).searchParams.get('text'), texto);
+});
