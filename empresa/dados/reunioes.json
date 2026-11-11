@@ -276,5 +276,36 @@
         "texto": "Ciclo 3 concluído sem voltas QA↔Dev."
       }
     ]
+  },
+  {
+    "id": "R-012",
+    "data": "2026-11-11T01:52:00Z",
+    "ciclo": 4,
+    "tipo": "normal",
+    "titulo": "Ciclo 4: B-008 — Modelos de postos",
+    "resumo": "Caminho B: CEO decidiu, Dev implementou, QA aprovou à primeira. Cópia de postos de outra festa ficou de fora.",
+    "participantes": [
+      "ceo",
+      "dev",
+      "qa"
+    ],
+    "intervencoes": [
+      {
+        "quem": "ceo",
+        "texto": "Objetivo B-008 com escopo cortado (modelos 'Festa de aldeia' e 'Recolha de alimentos' em criar.html), porque serve já a O-1 (Banco Alimentar, 29-30 nov) e a O-5. Próximo objetivo: B-007 (folha A4). Outro projeto? Sim, propõe Placa Certa: registar no stand-up do ciclo 5 e fundar no ciclo 6; a Barraca não pode passar de 6 ciclos e a CEO declara a v1.0 com ressalvas."
+      },
+      {
+        "quem": "dev",
+        "texto": "Seletor 'Começar de um modelo' + botão 'Usar modelo' (não aplica no change para não apagar postos ao navegar com setas), modelos.js puro, 5 testes unitários e e2e. 18/18 verdes. Cortou 'copiar de uma festa'. Risco: aplicar substitui os postos sem confirmação; turno-tipo 18:00–20:00 com 3 vagas escolhido por ele."
+      },
+      {
+        "quem": "qa",
+        "texto": "Aprovado, todos os critérios passam; 18/18, build, smoke, e2e, 0 erros de consola, sem overflow a 390 e 1280px. Notas: dica .dica colada ao select (cosmético); reaplicar modelo substitui edições sem confirmar."
+      },
+      {
+        "quem": "sistema",
+        "texto": "Ciclo 4 concluído sem voltas QA↔Dev."
+      }
+    ]
   }
 ]

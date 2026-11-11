@@ -2,6 +2,7 @@
 import { criarFesta } from './api.js';
 import { h, $, preencher, marcarPronta } from './dom.js';
 import { guardarFestaCriada } from './armazem.js';
+import { MODELOS, modeloPorId, postosDoModelo } from './modelos.js';
 import { chaveDia, diasEntre, rotuloDia, validarFesta, montarPayloadFesta, mensagemErro, LIMITES, textoPartilha, ligacaoWhatsApp } from './logica.js';
 
 const form = $('form-festa');
@@ -164,6 +165,27 @@ for (const botao of document.querySelectorAll('[data-copiar]')) {
     $('copiado').textContent = copiou ? 'Link copiado.' : 'Selecionámos o link: use "Copiar" no menu do telemóvel.';
   });
 }
+
+// ── Modelos de postos (só preenchem o formulário; nada é gravado) ──────────
+
+function aplicarModelo(id) {
+  const modelo = modeloPorId(id);
+  if (!modelo) { $('modelo-estado').textContent = 'Escolha um modelo da lista.'; return; }
+  raizPostos.replaceChildren();
+  for (const dados of postosDoModelo(id)) {
+    const posto = criarPosto();
+    posto.querySelector('[data-parte="nome"]').value = dados.nome;
+    const turno = posto.querySelector('.turno-form');
+    for (const [parte, valor] of Object.entries(dados.turnos[0])) turno.querySelector(`[data-parte="${parte}"]`).value = valor;
+    raizPostos.append(posto);
+  }
+  preencherDias();
+  renumerar();
+  $('modelo-estado').textContent = `Modelo "${modelo.nome}" aplicado: ${raizPostos.children.length} postos. Pode editá-los.`;
+}
+
+$('modelo').append(...MODELOS.map((m) => h('option', { value: m.id }, m.nome)));
+$('usar-modelo').addEventListener('click', () => aplicarModelo($('modelo').value));
 
 // ── Arranque ────────────────────────────────────────────────────────────────
 

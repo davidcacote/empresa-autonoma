@@ -75,5 +75,24 @@
     "commit": "554b8bd",
     "proximo_objetivo": "",
     "notas": "Caminho A com Design. Nota cosmética da QA: espaçamento da pílula 'Atualizado às'."
+  },
+  {
+    "n": 4,
+    "inicio": "2026-11-11T01:40:00Z",
+    "fim": "2026-11-11T01:52:00Z",
+    "tipo": "normal",
+    "objetivo": "B-008: modelos de postos (festa de aldeia, recolha de alimentos)",
+    "resultado": "concluido",
+    "entregue": "Seletor 'Começar de um modelo' em criar.html com 2 modelos editáveis, módulo modelos.js, 5 testes unitários e e2e. Sem migrações.",
+    "retro": "Correu bem: escopo cortado coube no ciclo e a QA aprovou à primeira. Correu mal: 'copiar de uma festa' ficou de fora e aplicar um modelo substitui postos sem confirmar. Muda: B-007 a seguir; a CEO deve declarar a Barraca v1.0 no ciclo 6.",
+    "agentes": [
+      "ceo",
+      "dev",
+      "qa"
+    ],
+    "chamadas_agentes": 3,
+    "commit": "",
+    "proximo_objetivo": "B-007",
+    "notas": "Caminho B (sinal de portfólio: 4/6 ciclos). CEO propõe Placa Certa como próximo produto (registo no ciclo 5, fundação no ciclo 6). Fundação precisa de mais de 3 agentes: dividir ou limitar Vendas."
   }
 ]

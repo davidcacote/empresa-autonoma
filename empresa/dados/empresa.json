@@ -6,10 +6,10 @@
     "nome": "Barraca",
     "slug": "barraca",
     "pitch": "A página de turnos da tua festa de aldeia: a comissão cria, o povo inscreve-se com um toque, ninguém fica sozinho na grelha às 3 da manhã.",
-    "estado": "v0.1 publicada em /barraca/ · partilha no WhatsApp (B-004) feita · próximo: B-008"
+    "estado": "v0.1 publicada em /barraca/ · partilha no WhatsApp (B-004) e modelos de postos (B-008) feitos · próximo: B-007"
   },
-  "ciclo_atual": 3,
-  "proximo_ciclo": "2026-11-11T01:39:00Z",
+  "ciclo_atual": 4,
+  "proximo_ciclo": "2026-11-12T01:39:00Z",
   "links": {
     "produto": "../barraca/",
     "demo": "../barraca/festa.html?f=demonstracao",
@@ -63,7 +63,7 @@
         "feito": false
       }
     ],
-    "ciclos_usados": 4,
+    "ciclos_usados": 5,
     "limite_mvp": 6,
     "limite_v1": 10
   }

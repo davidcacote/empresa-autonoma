@@ -13,3 +13,5 @@
 .link-gerado { display: block; margin-bottom: var(--e3); font-weight: 700; word-break: break-all; }
 .copiado { min-height: 1.5rem; font-weight: 700; color: var(--pinho); }
 .dica { color: var(--tinta-suave); font-size: var(--texto-pequeno); margin-top: calc(-1 * var(--e2)); }
+.modelo__linha { display: flex; gap: var(--e3); align-items: end; flex-wrap: wrap; }
+.modelo__linha .campo { flex: 1 1 14rem; margin-bottom: 0; }

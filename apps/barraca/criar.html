@@ -54,6 +54,19 @@
         </label>
       </fieldset>
 
+      <fieldset class="bloco modelo">
+        <legend>Postos</legend>
+        <div class="modelo__linha">
+          <label class="campo" for="modelo">
+            <span class="campo__rotulo">Começar de um modelo</span>
+            <select id="modelo"><option value="">Sem modelo</option></select>
+          </label>
+          <button type="button" id="usar-modelo" class="botao botao--secundario">Usar modelo</button>
+        </div>
+        <p class="dica">Só preenche os postos abaixo; pode mudar tudo. Nada fica guardado até carregar em "Criar festa".</p>
+        <p id="modelo-estado" class="copiado" role="status"></p>
+      </fieldset>
+
       <div id="postos"></div>
       <button type="button" id="mais-posto" class="botao botao--secundario botao--bloco">+ Adicionar posto</button>
 

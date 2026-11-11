@@ -111,13 +111,17 @@
   },
   {
     "id": "B-008",
-    "titulo": "Duplicar uma festa e modelos de postos",
-    "estado": "a_fazer",
+    "titulo": "Modelos de postos (festa de aldeia, recolha de alimentos)",
+    "estado": "feito",
     "prioridade": 2,
     "estimativa": "M",
     "quem": "Coordenador(a)",
     "porque": "A festa repete-se todos os anos; os Santos Populares planeiam-se de março a maio e um modelo \"recolha de alimentos\" serve a O-1 sem produto novo.",
-    "criterios": [],
+    "criterios": [
+      "Seletor 'Começar de um modelo' em criar.html com 2 modelos editáveis",
+      "Aplicar só preenche o formulário; nada é gravado",
+      "Operável só com teclado"
+    ],
     "segmento": [
       "S-1",
       "S-2",
@@ -317,5 +321,37 @@
       "F-1",
       "O-3"
     ]
+  },
+  {
+    "id": "B-023",
+    "titulo": "Duplicar uma festa: copiar postos e turnos a partir do slug público",
+    "estado": "ideia",
+    "prioridade": 3,
+    "estimativa": "M",
+    "quem": "Coordenador(a)",
+    "porque": "Cortado do B-008 no ciclo 4. A festa repete-se todos os anos (F-4); nunca copia inscrições nem chave de gestão.",
+    "criterios": [],
+    "segmento": [
+      "S-1",
+      "S-2"
+    ],
+    "mercado": [
+      "F-4",
+      "O-5"
+    ]
+  },
+  {
+    "id": "B-024",
+    "titulo": "Modelos: confirmar antes de substituir postos editados e acertar espaçamento da dica",
+    "estado": "ideia",
+    "prioridade": 4,
+    "estimativa": "S",
+    "quem": "Coordenador(a)",
+    "porque": "Notas não bloqueantes da QA no ciclo 4.",
+    "criterios": [],
+    "segmento": [
+      "S-1"
+    ],
+    "mercado": []
   }
 ]
