@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import {
   estadoTurno, agruparPorDiaEPosto, formatarHora, formatarIntervalo, chaveDia, rotuloDia, intervaloDatas, diasEntre,
-  validarNome, slugBase, slugValido, validarFesta, montarPayloadFesta, duracaoTurnoMin, mensagemErro, resumoNomes, horaCurta,
+  validarNome, slugBase, slugValido, validarFesta, montarPayloadFesta, duracaoTurnoMin, mensagemErro, resumoNomes, horaCurta, chaveDoFragmento,
 } from '../apps/barraca/js/logica.js';
 
 const fixture = (n) => JSON.parse(readFileSync(new URL(`./fixtures/${n}.json`, import.meta.url), 'utf8'));
@@ -186,4 +186,14 @@ test('textoPartilha e ligacaoWhatsApp: texto, link e codificação', async () =>
   assert.ok(!/[&# \n]/.test(codificado), 'sem &, #, espaços ou quebras de linha por codificar');
   assert.equal(decodeURIComponent(codificado), texto);
   assert.equal(new URL(url).searchParams.get('text'), texto);
+});
+
+test('chave do fragmento: descodifica, tolera má codificação e não altera chaves normais', () => {
+  assert.equal(chaveDoFragmento('#abc%20def'), 'abc def');
+  assert.equal(chaveDoFragmento('#chave-%C3%A7%C3%A3o'), 'chave-ção');
+  assert.equal(chaveDoFragmento('#AbC123_-x'), 'AbC123_-x');
+  assert.equal(chaveDoFragmento('abc'), 'abc');
+  assert.equal(chaveDoFragmento('#%E0%A4%A'), '');
+  assert.equal(chaveDoFragmento(''), '');
+  assert.equal(chaveDoFragmento(undefined), '');
 });

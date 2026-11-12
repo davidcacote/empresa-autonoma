@@ -191,7 +191,7 @@
   {
     "id": "B-014",
     "titulo": "gerir.html: decodeURIComponent na chave do fragmento",
-    "estado": "a_fazer",
+    "estado": "feito",
     "prioridade": 2,
     "estimativa": "P",
     "quem": "Coordenador(a)",
@@ -352,6 +352,21 @@
     "segmento": [
       "S-1"
     ],
+    "mercado": []
+  },
+  {
+    "id": "B-025",
+    "titulo": "e2e de gerir.html com chave mal codificada e mover comentário JSDoc de logica.js",
+    "estado": "ideia",
+    "prioridade": 4,
+    "estimativa": "P",
+    "quem": "Dev",
+    "porque": "Notas da QA no ciclo 5",
+    "criterios": [
+      "e2e abre gerir.html#%E0%A4%A e mostra a mensagem de chave inválida",
+      "Comentário JSDoc do slug volta para slugValido"
+    ],
+    "segmento": [],
     "mercado": []
   }
 ]

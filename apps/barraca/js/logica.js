@@ -172,6 +172,12 @@ export function slugBase(nome) {
 }
 
 /** O slug vem do endereço: só aceitamos o que o servidor pode ter gerado. */
+/** Chave de gestão a partir do fragmento (#): descodifica %XX; devolve '' se vazia ou mal codificada. */
+export function chaveDoFragmento(fragmento) {
+  const bruto = String(fragmento ?? '').replace(/^#/, '');
+  try { return decodeURIComponent(bruto); } catch { return ''; }
+}
+
 export const slugValido = (s) => typeof s === 'string' && /^[a-z0-9-]{1,80}$/i.test(s);
 
 const HORA_RE = /^([01]\d|2[0-3]):[0-5]\d$/;

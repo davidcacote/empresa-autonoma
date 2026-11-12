@@ -4,14 +4,14 @@ import { h, $, preencher, marcarPronta } from './dom.js';
 import { criarIndicador } from './indicador.js';
 import { iniciarAtualizacao } from './tempo-real.js';
 import { confirmar } from './dialogos.js';
-import { agruparPorDiaEPosto, intervaloDatas, mensagemErro, slugValido, chaveDia } from './logica.js';
+import { agruparPorDiaEPosto, intervaloDatas, mensagemErro, slugValido, chaveDia, chaveDoFragmento } from './logica.js';
 
 const estado = { slug: null, chave: null, festa: null, dados: null, dia: null, diaEscolhido: false, assinatura: '', aCarregar: false };
 const indicador = criarIndicador($('ligacao'));
 
 async function arrancar() {
   estado.slug = new URLSearchParams(location.search).get('f');
-  estado.chave = location.hash.slice(1);
+  estado.chave = chaveDoFragmento(location.hash);
   if (!slugValido(estado.slug) || !estado.chave) return mostrarProblema('chave_invalida');
 
   try {

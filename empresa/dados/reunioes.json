@@ -307,5 +307,36 @@
         "texto": "Ciclo 4 concluído sem voltas QA↔Dev."
       }
     ]
+  },
+  {
+    "id": "R-013",
+    "data": "2026-11-12T01:41:56Z",
+    "ciclo": 5,
+    "tipo": "normal",
+    "titulo": "Ciclo 5: B-014 — chave de gestão com caracteres codificados",
+    "resumo": "Caminho B: CEO escolheu B-014, Dev implementou, QA aprovou à primeira.",
+    "participantes": [
+      "ceo",
+      "dev",
+      "qa"
+    ],
+    "intervencoes": [
+      {
+        "quem": "sistema",
+        "texto": "Sinal de portfólio verificado: Barraca no ciclo 5 de 6 do limite do MVP. Stand-up com a CEO."
+      },
+      {
+        "quem": "ceo",
+        "texto": "Objetivo B-014 (P2, pequeno): bug confirmado que toca na chave de gestão, único caminho para gerir uma festa. Próximo objetivo: B-006 (.ics). Outro projeto? Sim (Barraca nos últimos 2 ciclos do limite), mas Placa Certa/Vez precisam de público-alvo fechado pela Carla; fundação proposta para o ciclo 7. Alertou para a contagem dos limites e do critério 'CI verde 7 ciclos'."
+      },
+      {
+        "quem": "dev",
+        "texto": "Nova função pura chaveDoFragmento em logica.js (decodeURIComponent em try/catch, devolve '' se inválida), usada em gerir.js; teste unitário novo. 19/19 testes, build, smoke e e2e OK. Risco: sem e2e para chave mal codificada."
+      },
+      {
+        "quem": "qa",
+        "texto": "Aprovado. 4/4 critérios com evidência. Notas menores: comentário JSDoc do slug ficou colado em chaveDoFragmento; critério 3 verificado por leitura de código e teste unitário."
+      }
+    ]
   }
 ]

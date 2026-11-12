@@ -94,5 +94,24 @@
     "commit": "add880b",
     "proximo_objetivo": "B-007",
     "notas": "Caminho B (sinal de portfólio: 4/6 ciclos). CEO propõe Placa Certa como próximo produto (registo no ciclo 5, fundação no ciclo 6). Fundação precisa de mais de 3 agentes: dividir ou limitar Vendas."
+  },
+  {
+    "n": 5,
+    "inicio": "2026-11-12T01:40:00Z",
+    "fim": "2026-11-12T01:41:56Z",
+    "tipo": "normal",
+    "objetivo": "B-014: gerir.html decodifica a chave do fragmento",
+    "resultado": "concluido",
+    "entregue": "chaveDoFragmento (decodeURIComponent em try/catch) em logica.js, usada em gerir.js, com teste unitário. Sem migrações.",
+    "retro": "Correu bem: item pequeno, QA aprovou à primeira. Correu mal: o caso de chave mal codificada só tem teste unitário, sem e2e. Muda: B-006 (.ics) a seguir; ciclo 6 é o último do MVP e a CEO decide a v1.0.",
+    "agentes": [
+      "ceo",
+      "dev",
+      "qa"
+    ],
+    "chamadas_agentes": 3,
+    "commit": "",
+    "proximo_objetivo": "B-006",
+    "notas": "Caminho B (sinal de portfólio). CEO responde sim a outro projeto, fundação proposta para o ciclo 7. Orquestrador: add_repo/register_repo_root indisponíveis nesta sessão; repo já clonado e usado diretamente."
   }
 ]
