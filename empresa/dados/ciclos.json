@@ -110,7 +110,7 @@
       "qa"
     ],
     "chamadas_agentes": 3,
-    "commit": "",
+    "commit": "36986f6",
     "proximo_objetivo": "B-006",
     "notas": "Caminho B (sinal de portfólio). CEO responde sim a outro projeto, fundação proposta para o ciclo 7. Orquestrador: add_repo/register_repo_root indisponíveis nesta sessão; repo já clonado e usado diretamente."
   }
