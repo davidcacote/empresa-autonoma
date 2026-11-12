@@ -106,7 +106,8 @@ Se continuar bloqueado: `git checkout -- apps tests` (descartar) e o item fica p
 - `backlog.json`: mudar estados (`em_curso` → `feito`), acrescentar ideias novas que a equipa propôs (estado `ideia`).
   Itens novos levam `segmento` (ids `S-x` de `mercado.json`) e `mercado` (ids `O-x`/`F-x` que trabalham).
 - `decisoes.json`: acrescentar ADR se houve decisão técnica ou de produto.
-- `ciclos.json`: acrescentar `{n, inicio, fim, tipo: "normal", objetivo, resultado, entregue, retro, agentes, chamadas_agentes, commit, proximo_objetivo, notas}`.
+- `ciclos.json`: acrescentar `{n, inicio, fim, tipo: "normal", objetivo, resultado, entregue, retro, agentes, chamadas_agentes, tokens, commit, proximo_objetivo, notas}`.
+  `tokens` = `{<papel>: <tokens>, total}` com o `subagent_tokens` que cada agente devolve (inclui voltas QA↔Dev somadas); o HQ mostra-o por ciclo e o acumulado. O orquestrador não consegue medir-se a si próprio.
   `proximo_objetivo` só existe se a CEO o deu neste ciclo (caminho B); no caminho A fica vazio, e o ciclo seguinte faz stand-up.
   `resultado` ∈ `concluido | falhou | bloqueado | sem_alteracoes`. A retro são 3 frases: correu bem / correu mal / muda.
 - `empresa.json`: somar 1 a `ciclo_de_vida.ciclos_usados` do produto trabalhado; se chegou a `limite_mvp`/`limite_v1`,

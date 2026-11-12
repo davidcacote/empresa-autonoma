@@ -218,10 +218,14 @@ function desenharBacklog(d) {
   }));
 }
 
+function fmtTokens(n) { return n >= 1000 ? `${(n / 1000).toFixed(n >= 100000 ? 0 : 1).replace('.', ',')} mil` : String(n); }
+
 function desenharCiclos(d, quem) {
   const ciclos = [...(d.ciclos ?? [])].reverse();
   const lista = document.getElementById('lista-ciclos');
   if (!ciclos.length) { lista.replaceChildren(el('li', { class: 'vazio', text: 'Ainda não correu nenhum ciclo.' })); return; }
+  const total = ciclos.reduce((t, c) => t + (c.tokens?.total ?? 0), 0);
+  if (total) lista.before(...[document.getElementById('total-tokens') ?? Object.assign(el('p', { class: 'intro' }), { id: 'total-tokens' })].map((p) => { p.textContent = `Custo acumulado (tokens dos agentes, sem o orquestrador): ${fmtTokens(total)} em ${ciclos.filter((c) => c.tokens?.total).length} ciclo(s) medido(s).`; return p; }));
   lista.replaceChildren(...ciclos.map((c) => el('li', { 'data-resultado': c.resultado },
     el('article', { class: 'cartao' },
       el('div', { class: 'cabeca', style: 'display:flex;justify-content:space-between;gap:.5rem;flex-wrap:wrap' },
@@ -232,6 +236,7 @@ function desenharCiclos(d, quem) {
       c.entregue ? el('p', {}, el('strong', { text: 'Entregue: ' }), c.entregue) : null,
       c.retro ? el('p', {}, el('strong', { text: 'Retro: ' }), c.retro) : null,
       (c.agentes ?? []).length ? el('p', { class: 'intro', style: 'margin:0', text: `Agentes: ${c.agentes.map((a) => quem(a).nome).join(', ')}${c.chamadas_agentes ? ` (${c.chamadas_agentes} chamadas)` : ''}` }) : null,
+      c.tokens?.total ? el('p', { class: 'intro', style: 'margin:0', text: `Custo (tokens dos agentes): ${fmtTokens(c.tokens.total)}${Object.entries(c.tokens).filter(([k]) => k !== 'total').length ? ' (' + Object.entries(c.tokens).filter(([k]) => k !== 'total').map(([k, v]) => `${quem(k).nome ?? k} ${fmtTokens(v)}`).join(', ') + ')' : ''}` }) : null,
       c.commit ? el('p', { class: 'intro', style: 'margin:0' }, 'Commit ', el('code', { text: String(c.commit).slice(0, 7) })) : null,
       c.notas ? el('p', { class: 'intro', style: 'margin:.4rem 0 0', text: c.notas }) : null,
     ))));
