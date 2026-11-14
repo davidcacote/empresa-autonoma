@@ -119,5 +119,30 @@
       "qa": 52257,
       "total": 187972
     }
+  },
+  {
+    "n": 6,
+    "inicio": "2026-11-14T01:40:00Z",
+    "fim": "2026-11-14T01:45:45Z",
+    "tipo": "normal",
+    "objetivo": "B-006: adicionar o meu turno ao calendário (.ics)",
+    "resultado": "concluido",
+    "entregue": "Botão 'Adicionar ao calendário' na confirmação, módulo ics.js, testes unitários e e2e. Sem migrações. Barraca declarada v1.0 com ressalvas (D-007).",
+    "retro": "Correu bem: a QA apanhou um bug real de escape que o teste escondia. Correu mal: o botão só existe logo após inscrever e falta prova em iOS/Android. Muda: ciclo 7 é fundação da Placa Certa (Carla + Dev + QA); em testes de escape, confirmar que falham antes da correção.",
+    "agentes": [
+      "ceo",
+      "dev",
+      "qa"
+    ],
+    "chamadas_agentes": 5,
+    "tokens": {
+      "ceo": 98242,
+      "dev": 84302,
+      "qa": 65886,
+      "total": 248430
+    },
+    "commit": "",
+    "proximo_objetivo": "B-026",
+    "notas": "Caminho B (limite do MVP). 1 volta QA/Dev. add_repo/register_repo_root indisponíveis; repo já clonado. Alinhar: empresa.json marca 'concorrência e tempo real' por fazer (B-011 feito só a parte SQL; tempo real em B-020)."
   }
 ]

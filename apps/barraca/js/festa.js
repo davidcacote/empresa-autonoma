@@ -5,6 +5,7 @@ import { idDispositivo, minhasInscricoes } from './armazem.js';
 import { criarIndicador } from './indicador.js';
 import { iniciarAtualizacao } from './tempo-real.js';
 import { confirmar } from './dialogos.js';
+import { criarIcs, uidInscricao, nomeFicheiroIcs } from './ics.js';
 import {
   agruparPorDiaEPosto, intervaloDatas, mensagemErro, resumoNomes, slugValido, validarNome, chaveDia, textoPartilha, ligacaoWhatsApp,
 } from './logica.js';
@@ -211,7 +212,7 @@ async function enviarInscricao(ev) {
     const r = await inscrever(turnoId, nome.valor, idDispositivo(), true);
     minhasInscricoes.adicionar({ id: r.id, slug: estado.slug, turnoId, nome: r.primeiro_nome, resumo });
     dlg.close('ok');
-    mostrarConfirmacao(`Está inscrito(a), ${r.primeiro_nome}!`, resumo);
+    mostrarConfirmacao(`Está inscrito(a), ${r.primeiro_nome}!`, resumo, eventoDoTurno(turnoId, r.id));
     limparAviso();
     await recarregar();
     renderizar(true);
@@ -237,13 +238,41 @@ function mostrarAviso(texto) {
 const limparAviso = () => { $('aviso').hidden = true; $('aviso').textContent = ''; };
 
 /** Confirmação escrita, sempre visível até haver outra ação. */
-function mostrarConfirmacao(titulo, detalhe) {
+function mostrarConfirmacao(titulo, detalhe, evento = null) {
   const el = $('confirmacao');
   preencher(el, h('span', { class: 'aviso__forma', 'aria-hidden': 'true' }, '✓'),
-    h('p', {}, h('strong', {}, titulo), detalhe ? ` ${detalhe}` : ''));
+    h('div', {},
+      h('p', {}, h('strong', {}, titulo), detalhe ? ` ${detalhe}` : ''),
+      evento && h('button', {
+        type: 'button', class: 'botao botao--secundario', dataset: { acao: 'calendario' },
+        onclick: () => descarregarIcs(evento),
+      }, 'Adicionar ao calendário')));
   el.hidden = false;
   el.scrollIntoView({ block: 'nearest' });
   el.focus({ preventScroll: true });
+}
+
+// ── Calendário (.ics) ───────────────────────────────────────────────────────
+
+/** Dados do turno para o calendário (a partir do que a página já carregou); null se o turno já não existir. */
+function eventoDoTurno(turnoId, inscricaoId) {
+  const turno = estado.dados.turnos.find((t) => t.id === turnoId);
+  const posto = estado.dados.postos.find((p) => p.id === turno?.posto_id);
+  if (!turno || !posto) return null;
+  return {
+    uid: uidInscricao(inscricaoId), festa: estado.festa.nome, posto: posto.nome,
+    localidade: estado.festa.localidade, inicio: turno.inicio, fim: turno.fim,
+  };
+}
+
+function descarregarIcs(evento) {
+  const ficheiro = new Blob([criarIcs(evento)], { type: 'text/calendar;charset=utf-8' });
+  const url = URL.createObjectURL(ficheiro);
+  const a = h('a', { href: url, download: nomeFicheiroIcs(evento.festa) });
+  document.body.append(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 10000);
 }
 
 // ── As minhas inscrições ────────────────────────────────────────────────────

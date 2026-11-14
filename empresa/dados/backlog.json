@@ -86,7 +86,7 @@
   {
     "id": "B-006",
     "titulo": "Adicionar o meu turno ao calendário (.ics)",
-    "estado": "a_fazer",
+    "estado": "feito",
     "prioridade": 3,
     "estimativa": "P",
     "quem": "Voluntário",
@@ -365,6 +365,80 @@
     "criterios": [
       "e2e abre gerir.html#%E0%A4%A e mostra a mensagem de chave inválida",
       "Comentário JSDoc do slug volta para slugValido"
+    ],
+    "segmento": [],
+    "mercado": []
+  },
+  {
+    "id": "B-026",
+    "titulo": "Fundação da Placa Certa (público-alvo, MVP e apps/placa-certa/)",
+    "estado": "a_fazer",
+    "prioridade": 1,
+    "estimativa": "M",
+    "quem": "Vendas",
+    "porque": "Decisão D-006: segundo produto do portfólio",
+    "criterios": [
+      "Ata com público-alvo e MVP: 4 modelos, 2 a 3 campos, pré-visualização A4 em direto, imprimir pelo browser, sem conta nem backend",
+      "apps/placa-certa/ publicada pelo CI partilhado (B-018)",
+      "Nenhuma tabela nova"
+    ],
+    "segmento": [
+      "S-1",
+      "S-2"
+    ],
+    "mercado": []
+  },
+  {
+    "id": "B-027",
+    "titulo": "README com estudo de caso e screenshots da Barraca",
+    "estado": "ideia",
+    "prioridade": 2,
+    "estimativa": "M",
+    "quem": "Dev",
+    "porque": "Ressalva de portfólio da v1.0; só em manutenção por decisão da CEO ou pedido dos donos",
+    "criterios": [
+      "README com estudo de caso, screenshots e demonstração ativa",
+      "Caso ficcional claramente marcado como exemplo"
+    ],
+    "segmento": [
+      "S-4"
+    ],
+    "mercado": [
+      "O-2"
+    ]
+  },
+  {
+    "id": "B-028",
+    "titulo": "Página 'Como tratamos os dados' em PT-PT",
+    "estado": "ideia",
+    "prioridade": 2,
+    "estimativa": "P",
+    "quem": "Vendas",
+    "porque": "Confiança (F-5); texto tem de bater com o que a BD guarda (IP só em hash, ADR-003); CTO valida",
+    "criterios": [
+      "Texto em PT-PT coerente com ADR-003",
+      "Validado pela CTO"
+    ],
+    "segmento": [
+      "S-1",
+      "S-2",
+      "S-4"
+    ],
+    "mercado": [
+      "F-5"
+    ]
+  },
+  {
+    "id": "B-029",
+    "titulo": "Botão .ics também em 'As minhas inscrições' e e2e de turno que atravessa a meia-noite em UTC",
+    "estado": "ideia",
+    "prioridade": 4,
+    "estimativa": "P",
+    "quem": "Dev",
+    "porque": "Notas do Dev/QA no ciclo 6: o botão só aparece logo após inscrever",
+    "criterios": [
+      "O localStorage guarda início e fim, ou procura-os em estado.dados",
+      "e2e com turno que atravessa a meia-noite em UTC"
     ],
     "segmento": [],
     "mercado": []

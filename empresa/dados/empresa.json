@@ -6,10 +6,10 @@
     "nome": "Barraca",
     "slug": "barraca",
     "pitch": "A página de turnos da tua festa de aldeia: a comissão cria, o povo inscreve-se com um toque, ninguém fica sozinho na grelha às 3 da manhã.",
-    "estado": "v0.1 publicada em /barraca/ · WhatsApp (B-004), modelos (B-008) e correção da chave de gestão (B-014) feitos · próximo: B-006"
+    "estado": "v1.0 (com ressalvas) em /barraca/ · WhatsApp, modelos, chave de gestão e calendário .ics feitos · em manutenção; próximo: fundação da Placa Certa (B-026)"
   },
-  "ciclo_atual": 5,
-  "proximo_ciclo": "2026-11-13T01:39:00Z",
+  "ciclo_atual": 6,
+  "proximo_ciclo": "2026-11-15T01:39:00Z",
   "links": {
     "produto": "../barraca/",
     "demo": "../barraca/festa.html?f=demonstracao",
@@ -26,9 +26,9 @@
   ],
   "agendamento": "Um ciclo por noite, às 01:39 (hora de Lisboa)",
   "ciclo_de_vida": {
-    "fase": "mvp",
+    "fase": "manutencao",
     "proxima_revisao_ciclo": 8,
-    "ultima_revisao": "9 nov 2026 — continuar, MVP prorrogado para 6 ciclos (D-005)",
+    "ultima_revisao": "14 nov 2026 — v1.0 declarada com ressalvas (D-007); Placa Certa arranca no ciclo 7 (D-006)",
     "criterios_v1": [
       {
         "criterio": "Jornadas completas: criar, inscrever, cancelar, gerir",
@@ -39,7 +39,7 @@
         "feito": true
       },
       {
-        "criterio": "Calendário .ics (B-006) e folha A4 (B-007)",
+        "criterio": "Calendário .ics (B-006, feito) e folha A4 (B-007)",
         "feito": false
       },
       {
@@ -63,7 +63,7 @@
         "feito": false
       }
     ],
-    "ciclos_usados": 6,
+    "ciclos_usados": 7,
     "limite_mvp": 6,
     "limite_v1": 10
   }

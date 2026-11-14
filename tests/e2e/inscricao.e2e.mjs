@@ -61,6 +61,41 @@ await cenario('(a) inscrever-se no primeiro turno livre mostra a confirmação e
   afirmar(!(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1)), 'scroll horizontal');
 });
 
+await cenario('(a2) a confirmação oferece "Adicionar ao calendário" e descarrega um .ics certo', async (page) => {
+  await abrirPrimeiroLivre(page);
+  await page.fill('#dlg-nome', 'Ana');
+  await page.check('#dlg-maior');
+  await page.click('#dlg-confirmar');
+  const botao = page.locator('#confirmacao button[data-acao="calendario"]');
+  await botao.waitFor({ state: 'visible' });
+  afirmar((await botao.innerText()) === 'Adicionar ao calendário', 'texto do botão');
+  const [descarga] = await Promise.all([page.waitForEvent('download'), botao.click()]);
+  afirmar(descarga.suggestedFilename() === 'turno-festas-de-verao-da-ribeira.ics', `ficheiro: ${descarga.suggestedFilename()}`);
+  const { readFile } = await import('node:fs/promises');
+  const ics = await readFile(await descarga.path(), 'utf8');
+  // Primeiro turno livre: Bar, sábado 22, 20h–22h em Lisboa (verão) = 19:00Z–21:00Z
+  afirmar(ics.includes('DTSTART:20300622T190000Z\r\n') && ics.includes('DTEND:20300622T210000Z\r\n'), `datas: ${ics}`);
+  afirmar(ics.includes('SUMMARY:Festas de Verão da Ribeira · Bar\r\n') && ics.includes('LOCATION:Aldeia da Ribeira\r\n'), `texto: ${ics}`);
+  afirmar(ics.includes('UID:00000000-0000-4000-8000-000000009000@barraca\r\n') && /DTSTAMP:\d{8}T\d{6}Z/.test(ics), `uid/dtstamp: ${ics}`);
+  afirmar(!ics.includes('Ana'), 'o nome do voluntário não devia estar no .ics');
+});
+
+await cenario('(a3) .ics escapa vírgulas e ponto e vírgula do nome da festa e da localidade', async (page) => {
+  await abrirPrimeiroLivre(page);
+  await page.fill('#dlg-nome', 'Ana');
+  await page.check('#dlg-maior');
+  await page.click('#dlg-confirmar');
+  const botao = page.locator('#confirmacao button[data-acao="calendario"]');
+  await botao.waitFor({ state: 'visible' });
+  const [descarga] = await Promise.all([page.waitForEvent('download'), botao.click()]);
+  const { readFile } = await import('node:fs/promises');
+  const ics = await readFile(await descarga.path(), 'utf8');
+  afirmar(ics.includes('SUMMARY:Festa\\, do Zé\\; Norte · Bar\r\n'), `summary: ${ics}`);
+  afirmar(ics.includes('LOCATION:Vila\\, Alta\\; PT\r\n'), `location: ${ics}`);
+}, (url) => (url.pathname.endsWith('/rest/v1/festas')
+  ? { body: JSON.stringify([{ id: '00000000-0000-4000-8000-000000000001', slug: 'demonstracao', nome: 'Festa, do Zé; Norte', localidade: 'Vila, Alta; PT', data_inicio: '2030-06-22', data_fim: '2030-06-23', descricao: '', demo: true }]) }
+  : null));
+
 await cenario('(b) sem a caixa de maioridade não envia', async (page, pedidos) => {
   await abrirPrimeiroLivre(page);
   await page.fill('#dlg-nome', 'Ana');

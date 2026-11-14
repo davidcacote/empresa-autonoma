@@ -128,5 +128,25 @@
     "contexto": "A Barraca atinge o limite de 3 ciclos do MVP com só 1 de 8 critérios de v1 cumpridos.",
     "decisao": "Justificar mais 3 ciclos (uma única vez): declarar já a v1.0 deixaria o WhatsApp (F-1) e o estudo de caso em manutenção, quando são o que torna a Barraca utilizável na campanha de novembro. Limite de v1 mantém-se em 10. Placa Certa fica como candidata a seguir a B-004 e B-008.",
     "consequencias": "limite_mvp = 6. Uma única prorrogação permitida."
+  },
+  {
+    "id": "D-006",
+    "data": "2026-11-14",
+    "titulo": "Placa Certa arranca no ciclo 7",
+    "autor": "ceo",
+    "estado": "aprovada",
+    "contexto": "Barraca declarada v1.0 (D-007); sinal de portfólio verificado. Placa Certa não usa backend e já era candidata em D-001 e D-005.",
+    "decisao": "O ciclo 7 é de fundação da Placa Certa (Carla + Dev + QA): público-alvo, MVP (4 modelos, 2 a 3 campos, pré-visualização A4, imprimir pelo browser) e apps/placa-certa/. Sem tabelas novas.",
+    "consequencias": "mercado.json não tem o segmento de pequenos negócios; a Carla fecha-o no ciclo 7."
+  },
+  {
+    "id": "D-007",
+    "data": "2026-11-14",
+    "titulo": "Barraca v1.0 declarada com ressalvas; passa a manutenção",
+    "autor": "ceo",
+    "estado": "aprovada",
+    "contexto": "Limite do MVP (6 ciclos, já prorrogado em D-005) atingido no ciclo 6.",
+    "decisao": "Declarar v1.0 com o que existe, pela cláusula do limite. Ressalvas: tempo real por provar (B-020), folha A4 (B-007), README/estudo de caso (B-027), donos ainda não experimentaram, CI verde 7 ciclos. Manutenção: só bugs e pedidos dos donos (B-027 e B-028 por decisão da CEO).",
+    "consequencias": "Limite de v1 (10 ciclos) fica por usar. Ponto de atenção: B-017 (Node 20 no CI)."
   }
 ]

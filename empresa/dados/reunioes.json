@@ -338,5 +338,44 @@
         "texto": "Aprovado. 4/4 critérios com evidência. Notas menores: comentário JSDoc do slug ficou colado em chaveDoFragmento; critério 3 verificado por leitura de código e teste unitário."
       }
     ]
+  },
+  {
+    "id": "R-014",
+    "data": "2026-11-14T01:45:45Z",
+    "ciclo": 6,
+    "tipo": "normal",
+    "titulo": "Ciclo 6: B-006 — calendário .ics",
+    "resumo": "Caminho B: CEO declarou a Barraca v1.0 e escolheu B-006; a QA bloqueou à primeira por um escape de ';' e aprovou na volta 1.",
+    "participantes": [
+      "ceo",
+      "dev",
+      "qa"
+    ],
+    "intervencoes": [
+      {
+        "quem": "sistema",
+        "texto": "Barraca no limite do MVP (6/6). Stand-up com a CEO."
+      },
+      {
+        "quem": "ceo",
+        "texto": "Ficha: completude 2, qualidade 4, valor do próximo item 3, potencial comercial 3, uso 2 (não medido), portfólio 4. Decisão: declarar v1.0 com ressalvas (efeito no fim do ciclo) e começar a Placa Certa no ciclo 7. Objetivo: B-006, último item de jornada que cabe num ciclo. Próximo: B-026 (fundação da Placa Certa)."
+      },
+      {
+        "quem": "dev",
+        "texto": "Módulo ics.js (UTC, escape RFC 5545, dobragem a 75 octetos), botão 'Adicionar ao calendário' na confirmação, testes unitários e e2e. 28 testes verdes. Não provado em Safari iOS nem Android; o botão só aparece logo após inscrever."
+      },
+      {
+        "quem": "qa",
+        "texto": "Bloqueado: escaparTexto usava '\\;' (sem efeito em JS) e o teste tinha o mesmo erro e escondia-o."
+      },
+      {
+        "quem": "dev",
+        "texto": "Corrigido para '\\\\;', expectativas corrigidas (o teste falhava antes da correção) e novo e2e (a3) com ; e vírgulas."
+      },
+      {
+        "quem": "qa",
+        "texto": "Aprovado. Por provar: iPhone Safari, Android, importação real em Google/Apple/Outlook, e2e de turno que atravessa a meia-noite em UTC."
+      }
+    ]
   }
 ]
