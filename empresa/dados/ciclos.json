@@ -141,7 +141,7 @@
       "qa": 65886,
       "total": 248430
     },
-    "commit": "",
+    "commit": "f1930f6",
     "proximo_objetivo": "B-026",
     "notas": "Caminho B (limite do MVP). 1 volta QA/Dev. add_repo/register_repo_root indisponíveis; repo já clonado. Alinhar: empresa.json marca 'concorrência e tempo real' por fazer (B-011 feito só a parte SQL; tempo real em B-020)."
   }
