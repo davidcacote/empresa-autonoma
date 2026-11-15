@@ -148,5 +148,15 @@
     "contexto": "Limite do MVP (6 ciclos, já prorrogado em D-005) atingido no ciclo 6.",
     "decisao": "Declarar v1.0 com o que existe, pela cláusula do limite. Ressalvas: tempo real por provar (B-020), folha A4 (B-007), README/estudo de caso (B-027), donos ainda não experimentaram, CI verde 7 ciclos. Manutenção: só bugs e pedidos dos donos (B-027 e B-028 por decisão da CEO).",
     "consequencias": "Limite de v1 (10 ciclos) fica por usar. Ponto de atenção: B-017 (Node 20 no CI)."
+  },
+  {
+    "id": "D-008",
+    "data": "2026-11-15",
+    "titulo": "Reunião de mercado do ciclo 7: Barraca em manutenção, Placa Certa continua",
+    "autor": "ceo",
+    "estado": "aprovada",
+    "contexto": "Ciclo 7 é múltiplo de 7: reunião de mercado e produto (Carla + Marta). A Carla acrescentou os segmentos S-5/S-6 e as falhas F-7 a F-9 ao mercado.json. A Marta notou que a v1.0 da Barraca (D-007) só cumpre 2 dos 8 critérios da constituição.",
+    "decisao": "Barraca mantém-se v1.0 em manutenção por exceção registada (D-007); os critérios em falta (B-007, B-015, B-016, B-027, CI verde 7 ciclos) ficam no backlog sem roubar ciclos. Placa Certa continua: ciclo 8 = B-026 (fundação), 9 = B-030, 10 = B-031. Itens novos B-030 a B-032 (B-033 e B-034 em ideia). Próximo projeto só depois da v1.0 da Placa Certa.",
+    "consequencias": "Placa Certa tem limite de 3 ciclos de MVP a contar do ciclo 8. Pendências assinaladas: B-011 marcado feito sem o critério de tempo real provado (B-020); fim de semana da recolha do Banco Alimentar estimado em 28-29 nov, sem usar a marca."
   }
 ]

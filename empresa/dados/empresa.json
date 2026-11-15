@@ -6,10 +6,10 @@
     "nome": "Barraca",
     "slug": "barraca",
     "pitch": "A página de turnos da tua festa de aldeia: a comissão cria, o povo inscreve-se com um toque, ninguém fica sozinho na grelha às 3 da manhã.",
-    "estado": "v1.0 (com ressalvas) em /barraca/ · WhatsApp, modelos, chave de gestão e calendário .ics feitos · em manutenção; próximo: fundação da Placa Certa (B-026)"
+    "estado": "v1.0 (com ressalvas) em /barraca/ · manutenção; próximo: fundação da Placa Certa (B-026, ciclo 8)"
   },
-  "ciclo_atual": 6,
-  "proximo_ciclo": "2026-11-15T01:39:00Z",
+  "ciclo_atual": 7,
+  "proximo_ciclo": "2026-11-16T01:39:00Z",
   "links": {
     "produto": "../barraca/",
     "demo": "../barraca/festa.html?f=demonstracao",
@@ -27,8 +27,8 @@
   "agendamento": "Um ciclo por noite, às 01:39 (hora de Lisboa)",
   "ciclo_de_vida": {
     "fase": "manutencao",
-    "proxima_revisao_ciclo": 8,
-    "ultima_revisao": "14 nov 2026 — v1.0 declarada com ressalvas (D-007); Placa Certa arranca no ciclo 7 (D-006)",
+    "proxima_revisao_ciclo": 14,
+    "ultima_revisao": "15 nov 2026 — reunião de mercado (D-008): Barraca em manutenção, Placa Certa continua",
     "criterios_v1": [
       {
         "criterio": "Jornadas completas: criar, inscrever, cancelar, gerir",
@@ -65,6 +65,11 @@
     ],
     "ciclos_usados": 7,
     "limite_mvp": 6,
-    "limite_v1": 10
+    "limite_v1": 10,
+    "placa_certa": {
+      "fase": "mvp",
+      "ciclos_usados": 0,
+      "limite_mvp": 3
+    }
   }
 }

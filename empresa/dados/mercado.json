@@ -1,7 +1,7 @@
 {
-  "atualizado_em": "2026-11-08",
-  "produto": "Barraca",
-  "resumo": "A Barraca serve quem organiza voluntários em eventos locais e sazonais (comissões de festas, arraiais de paróquias e escuteiros, associações de pais) e que hoje improvisa com WhatsApp, Google Forms e papel; escolhem-nos porque o voluntário se inscreve num toque, sem conta, e a vaga atualiza à vista de todos. O que mais trava é a ponte para o hábito existente (partilhar no WhatsApp ainda não existe), o limite de só maiores de idade e a falta de forma de saber quem é quem e de reaproveitar a festa no ano seguinte. Nota de método: as pesquisas web devolveram sobretudo títulos; os factos abaixo vêm de 3 páginas lidas na íntegra (Feira da Serra, Banco Alimentar/DN, SignUpGenius) e de títulos de notícias; tudo o resto está marcado como estimativa.",
+  "atualizado_em": "2026-11-15",
+  "produto": "Barraca (v1.0, manutenção) e Placa Certa (D-006, em fundação)",
+  "resumo": "A Barraca serve quem organiza voluntários em eventos locais e sazonais (comissões de festas, arraiais de paróquias e escuteiros, associações de pais) e que hoje improvisa com WhatsApp, Google Forms e papel; escolhem-nos porque o voluntário se inscreve num toque, sem conta, e a vaga atualiza à vista de todos. O que mais trava é a ponte para o hábito existente (partilhar no WhatsApp ainda não existe), o limite de só maiores de idade e a falta de forma de saber quem é quem e de reaproveitar a festa no ano seguinte. Nota de método: as pesquisas web devolveram sobretudo títulos; os factos abaixo vêm de 3 páginas lidas na íntegra (Feira da Serra, Banco Alimentar/DN, SignUpGenius) e de títulos de notícias; tudo o resto está marcado como estimativa. Ciclo 7: acrescentado o segmento da Placa Certa (gerador de placas e cartazes A4 para pequenos negócios e associações, imprimir pelo browser, sem conta). Nota de método do ciclo 7: 5 pesquisas web, de novo só com títulos e links (páginas não lidas na íntegra); por isso só são dados como facto a existência das páginas e dos diplomas citados, sem números. Métricas de uso da Barraca: sem festas reais de relevo registadas (assume-se 0).",
   "segmentos": [
     {
       "id": "S-1",
@@ -38,6 +38,26 @@
       "dor_principal": "Facto (Feira da Serra): inscrição em papel e presencial, em horário de expediente, com assinatura de encarregado de educação; cada voluntário tem de ter pelo menos um turno e arranjar substituto validado se faltar.",
       "como_chegar": "Estudo de caso público 'a Feira da Serra em 10 minutos' feito com dados públicos e ficção clara, sem tocar na organização.",
       "prioridade": 4
+    },
+    {
+      "id": "S-5",
+      "nome": "Pequenos negócios locais (café, mercearia, oficina, cabeleireiro, restaurante)",
+      "descricao": "Microempresas e ENI com loja ou balcão que precisam de placas A4 simples e a toda a hora: preços, 'Aberto/Fechado', horário, 'Volto já', 'Não aceitamos multibanco abaixo de X', avisos obrigatórios. Facto: a lei obriga a afixar preços em locais como a restauração (RR, 2017) e o Livro de Reclamações tem regras de aviso/afixação (DL 74/2017, ver fontes).",
+      "dimensao": "Estimativa: milhares de estabelecimentos por todo o país, a esmagadora maioria microempresas; sem número verificado nesta ronda (a pesquisa devolveu só títulos, p. ex. estudos InformaDB sobre empresas em 2024).",
+      "dor_principal": "Estimativa: improvisar a placa à mão, em Word ou num editor de design com conta, e gastar 15 a 30 minutos para uma folha que se muda com frequência (preço, horário, ementa do dia).",
+      "como_chegar": "Páginas modelo indexáveis por caso de uso ('placa de horário', 'aviso de preços') e boca a boca; sem contacto ativo.",
+      "prioridade": 1,
+      "produto": "Placa Certa"
+    },
+    {
+      "id": "S-6",
+      "nome": "Associações, coletividades, paróquias e comissões (cartazes de eventos e avisos)",
+      "descricao": "As mesmas entidades de S-1 e S-2 usam cartazes e placas de sede: 'Reunião sábado', 'Sala reservada', 'Peditório', 'Arraial: preços da barraca'. Liga a Placa Certa à Barraca (o mesmo cliente tem os dois problemas).",
+      "dimensao": "Estimativa: grande, ligada à economia social (a Conta Satélite da Economia Social da CASES/INE quantifica as entidades, mas os números não foram lidos nesta ronda).",
+      "dor_principal": "Estimativa: o voluntário que 'sabe de computadores' faz o cartaz; quando sai, ninguém sabe fazer outro igual.",
+      "como_chegar": "Ligação cruzada a partir da página da festa na Barraca (cartaz do arraial e tabela de preços da barraca).",
+      "prioridade": 2,
+      "produto": "Placa Certa"
     }
   ],
   "concorrencia": [
@@ -76,6 +96,24 @@
       "tipo": "alternativa",
       "forca": "Têm confiança institucional e enquadramento legal; ex.: plataforma de voluntariado lançada em Portimão e a rede de inscrição do Banco Alimentar.",
       "fraqueza": "Foram pensadas para recrutar e emparelhar voluntários com instituições, não para fechar a grelha de turnos de uma barraca numa noite de festa (estimativa)."
+    },
+    {
+      "nome": "Canva (modelos de cartaz)",
+      "tipo": "alternativa",
+      "forca": "Facto: tem página própria em PT-PT de modelos de cartaz para editar e imprimir (ver fontes). Enorme variedade de design e marca conhecida.",
+      "fraqueza": "Estimativa, a validar: pede conta, tem modelos e elementos pagos e é demasiado aberto para quem só quer 'Aberto/Fechado' em 30 segundos; o telemóvel é mais pesado do que a Placa Certa. Planos e limites não verificados."
+    },
+    {
+      "nome": "Adobe Express (modelos de cartaz)",
+      "tipo": "alternativa",
+      "forca": "Facto: tem modelos de cartaz informativo (ver fontes). Estimativa: bom nível de design.",
+      "fraqueza": "Estimativa, a validar: pede conta Adobe; interface geral e não adaptada ao avisos curtos em PT-PT."
+    },
+    {
+      "nome": "Word e à mão (placa feita no Word ou caneta e cartolina)",
+      "tipo": "alternativa",
+      "forca": "Estimativa: o que toda a gente já tem e conhece; zero custo e sem conta.",
+      "fraqueza": "Estimativa: resultado desigual, desalinhado e ilegível ao longe; cada alteração obriga a refazer."
     }
   ],
   "falhas": [
@@ -83,7 +121,11 @@
       "id": "F-1",
       "descricao": "Não há botão de partilha no WhatsApp nem pré-visualização do link: o coordenador tem de copiar o endereço à mão para o grupo onde a comissão já vive, e o link chega sem título nem imagem.",
       "impacto": "alto",
-      "segmentos": ["S-1", "S-2", "S-3"],
+      "segmentos": [
+        "S-1",
+        "S-2",
+        "S-3"
+      ],
       "sugestao": "Fazer já o B-004 (texto pronto com nome, datas e link, mais meta tags Open Graph) e subir-lhe a prioridade para 1.",
       "backlog": "B-004"
     },
@@ -91,7 +133,10 @@
       "id": "F-2",
       "descricao": "A inscrição pede confirmação de maioridade, o que exclui jovens. Facto: o programa de voluntariado da Feira da Serra 2026 é para jovens dos 14 aos 25 anos; escuteiros e associações de pais também têm menores.",
       "impacto": "alto",
-      "segmentos": ["S-2", "S-4"],
+      "segmentos": [
+        "S-2",
+        "S-4"
+      ],
       "sugestao": "Permitir ao organizador definir 'idade mínima' ou 'menores só com responsável' por festa e ajustar o texto de confirmação, sem recolher dados de menores.",
       "backlog": null
     },
@@ -99,7 +144,11 @@
       "id": "F-3",
       "descricao": "Só com o primeiro nome, o coordenador não sabe quem é o 'João' das 3 da manhã e não consegue avisar ninguém. Também não há lembrete do turno para o voluntário.",
       "impacto": "alto",
-      "segmentos": ["S-1", "S-2", "S-3"],
+      "segmentos": [
+        "S-1",
+        "S-2",
+        "S-3"
+      ],
       "sugestao": "Campo opcional de contacto visível só na gestão (com aviso de privacidade) e, do lado do voluntário, o calendário .ics (B-006). Decisão sobre dados pessoais pertence aos donos.",
       "backlog": "B-006"
     },
@@ -107,7 +156,10 @@
       "id": "F-4",
       "descricao": "As festas repetem-se todos os anos mas cada edição obriga a recriar postos e turnos de raiz; quem organiza voluntários cansa-se de repetir.",
       "impacto": "medio",
-      "segmentos": ["S-1", "S-2"],
+      "segmentos": [
+        "S-1",
+        "S-2"
+      ],
       "sugestao": "Subir o B-008 (duplicar festa e modelos de postos) de prioridade 4 para 2 e incluir modelos prontos (barraca, bar, bilheteira, montagem).",
       "backlog": "B-008"
     },
@@ -115,7 +167,11 @@
       "id": "F-5",
       "descricao": "Confiança e continuidade: quem perde o link secreto de gestão perde a festa, e não há página que explique quem responsabiliza o produto, que dados guarda e por quanto tempo. Uma comissão arrisca o nome junto da aldeia.",
       "impacto": "alto",
-      "segmentos": ["S-1", "S-2", "S-4"],
+      "segmentos": [
+        "S-1",
+        "S-2",
+        "S-4"
+      ],
       "sugestao": "Página curta 'Como tratamos os dados' em PT-PT e opção de reenviar ou regenerar o link de gestão (a decidir com CTO e donos).",
       "backlog": null
     },
@@ -123,9 +179,45 @@
       "id": "F-6",
       "descricao": "Facto: o organizador da Feira da Serra recebe inscrições em papel. Muita gente da aldeia ainda olha para o papel e a grelha não pode ser afixada na sede.",
       "impacto": "medio",
-      "segmentos": ["S-1", "S-4"],
+      "segmentos": [
+        "S-1",
+        "S-4"
+      ],
       "sugestao": "Fazer o B-007 (folha A4 legível a preto e branco, uma página por dia) logo a seguir ao B-004.",
       "backlog": "B-007"
+    },
+    {
+      "id": "F-7",
+      "descricao": "Placa Certa (ainda sem produto): se os 4 modelos não cobrirem os avisos que o comerciante realmente precisa (preços, horário, aberto/fechado, aviso), a pessoa volta ao Word. Estimativa, a validar com o Dev sem contactar ninguém.",
+      "impacto": "alto",
+      "segmentos": [
+        "S-5",
+        "S-6"
+      ],
+      "sugestao": "Escolher os 4 modelos pelos casos mais comuns: 'Aberto/Fechado', 'Horário', 'Preços/Lista', 'Aviso'. Medir a utilidade só depois de haver uso real.",
+      "backlog": "B-030"
+    },
+    {
+      "id": "F-8",
+      "descricao": "Placa Certa: o valor depende de a impressão A4 sair legível e centrada (margens, preto e branco, impressoras de escritório); se sair cortada ou com fonte pequena, perde-se a confiança.",
+      "impacto": "alto",
+      "segmentos": [
+        "S-5",
+        "S-6"
+      ],
+      "sugestao": "CSS de impressão testado em A4 vertical e horizontal, com letra grande (legível a 2 metros) e alto contraste.",
+      "backlog": "B-031"
+    },
+    {
+      "id": "F-9",
+      "descricao": "Placa Certa: sem conta nem backend, o utilizador não guarda a placa e tem de a refazer cada vez (preço novo). O reaproveitamento é o que a diferencia do papel.",
+      "impacto": "medio",
+      "segmentos": [
+        "S-5",
+        "S-6"
+      ],
+      "sugestao": "Guardar o último texto no próprio browser (localStorage, sem servidor) e opção de link com os campos no endereço.",
+      "backlog": "B-032"
     }
   ],
   "oportunidades": [
@@ -173,34 +265,179 @@
       "tamanho": "alto",
       "primeiro_passo": "Subir o B-008 (duplicar festa e modelos de postos) e escrever um guia 'Montar a grelha de turnos da tua festa em 10 minutos', sem contactar comissões.",
       "backlog": "B-008"
+    },
+    {
+      "id": "O-6",
+      "cliente": "Pequenos negócios locais com avisos obrigatórios e promocionais (cafés, restaurantes, mercearias, oficinas)",
+      "descricao": "Facto: há obrigação legal de afixar preços na restauração (RR, 2017) e regras de afixação do Livro de Reclamações (DL 74/2017). Estimativa: a necessidade de placas simples e atualizáveis é permanente e não sazonal; a Placa Certa responde sem conta.",
+      "porque_agora": "Estimativa: o fim de ano (Natal, 'horário especial') gera muitos avisos de horário em dezembro; a Placa Certa precisa de estar pronta até lá, o que é apertado.",
+      "tamanho": "alto",
+      "primeiro_passo": "Modelo 'Horário de Natal' e 'Aberto/Fechado' entre os 4 do MVP, com uma montra pública no estúdio; sem contactar ninguém.",
+      "backlog": "B-030"
+    },
+    {
+      "id": "O-7",
+      "cliente": "Comissões, associações e paróquias que já usam a Barraca (S-1 e S-2)",
+      "descricao": "Estimativa: as mesmas pessoas que organizam turnos precisam de cartazes de evento e de tabelas de preços de barraca; ligar os dois produtos aumenta o valor do portefólio e reaproveita a audiência.",
+      "porque_agora": "Estimativa: o planeamento dos arraiais é de março a maio; a Placa Certa deve estar disponível até lá.",
+      "tamanho": "medio",
+      "primeiro_passo": "Modelo 'Preços da barraca / Cartaz de evento' e, na página da festa da Barraca, uma ligação 'Imprimir cartaz' (só depois de a Placa Certa existir).",
+      "backlog": "B-033"
+    },
+    {
+      "id": "O-8",
+      "cliente": "Pessoas que procuram 'placa/aviso/cartaz para imprimir' (procura orgânica)",
+      "descricao": "Estimativa: pesquisas de cauda longa em PT-PT ('placa volto já', 'aviso horário para imprimir') têm pouca concorrência em páginas simples e rápidas; os resultados dos motores mostram sobretudo grandes editores (Canva, Adobe) e modelos em Word. Sem volumes de pesquisa verificados.",
+      "porque_agora": "Estimativa: construir páginas indexáveis desde o início é barato e acumula valor com o tempo.",
+      "tamanho": "medio",
+      "primeiro_passo": "Uma página estática por modelo, com título e descrição próprios e texto curto em PT-PT.",
+      "backlog": "B-034"
     }
   ],
   "calendario": [
-    {"periodo": "novembro (2026)", "momento": "Campanha de recolha do Banco Alimentar (fim de semana tipicamente no fim do mês)", "oportunidade": "O-1"},
-    {"periodo": "dezembro", "momento": "Feiras de Natal de escolas, associações de pais e paróquias", "oportunidade": "O-4"},
-    {"periodo": "janeiro", "momento": "Pausa; tempo de afinar funcionalidades (idade mínima, duplicar festa)", "oportunidade": "O-5"},
-    {"periodo": "fevereiro", "momento": "Carnaval e festas de inverno locais (estimativa)", "oportunidade": "O-5"},
-    {"periodo": "março", "momento": "Início do planeamento dos arraiais de verão de escuteiros e paróquias", "oportunidade": "O-3"},
-    {"periodo": "abril", "momento": "Páscoa e comissões a marcar a grelha das festas de verão (estimativa)", "oportunidade": "O-5"},
-    {"periodo": "maio", "momento": "Campanha de maio do Banco Alimentar (último fim de semana)", "oportunidade": "O-1"},
-    {"periodo": "junho", "momento": "Santos Populares e festas de fim de ano letivo", "oportunidade": "O-5"},
-    {"periodo": "julho", "momento": "Feira da Serra: inscrições do voluntariado jovem em início de julho (base: 2026)", "oportunidade": "O-2"},
-    {"periodo": "agosto", "momento": "Festas de aldeia e de padroeiro, arraiais de verão", "oportunidade": "O-3"},
-    {"periodo": "setembro", "momento": "Regresso às aulas: associações de pais e escuteiros planeiam o ano", "oportunidade": "O-4"},
-    {"periodo": "outubro", "momento": "Balanço das festas e preparação da campanha de novembro", "oportunidade": "O-1"}
+    {
+      "periodo": "novembro (2026)",
+      "momento": "Campanha de recolha do Banco Alimentar (fim de semana tipicamente no fim do mês)",
+      "oportunidade": "O-1"
+    },
+    {
+      "periodo": "dezembro",
+      "momento": "Feiras de Natal de escolas, associações de pais e paróquias",
+      "oportunidade": "O-4"
+    },
+    {
+      "periodo": "janeiro",
+      "momento": "Pausa; tempo de afinar funcionalidades (idade mínima, duplicar festa)",
+      "oportunidade": "O-5"
+    },
+    {
+      "periodo": "fevereiro",
+      "momento": "Carnaval e festas de inverno locais (estimativa)",
+      "oportunidade": "O-5"
+    },
+    {
+      "periodo": "março",
+      "momento": "Início do planeamento dos arraiais de verão de escuteiros e paróquias",
+      "oportunidade": "O-3"
+    },
+    {
+      "periodo": "abril",
+      "momento": "Páscoa e comissões a marcar a grelha das festas de verão (estimativa)",
+      "oportunidade": "O-5"
+    },
+    {
+      "periodo": "maio",
+      "momento": "Campanha de maio do Banco Alimentar (último fim de semana)",
+      "oportunidade": "O-1"
+    },
+    {
+      "periodo": "junho",
+      "momento": "Santos Populares e festas de fim de ano letivo",
+      "oportunidade": "O-5"
+    },
+    {
+      "periodo": "julho",
+      "momento": "Feira da Serra: inscrições do voluntariado jovem em início de julho (base: 2026)",
+      "oportunidade": "O-2"
+    },
+    {
+      "periodo": "agosto",
+      "momento": "Festas de aldeia e de padroeiro, arraiais de verão",
+      "oportunidade": "O-3"
+    },
+    {
+      "periodo": "setembro",
+      "momento": "Regresso às aulas: associações de pais e escuteiros planeiam o ano",
+      "oportunidade": "O-4"
+    },
+    {
+      "periodo": "outubro",
+      "momento": "Balanço das festas e preparação da campanha de novembro",
+      "oportunidade": "O-1"
+    },
+    {
+      "periodo": "dezembro (2026)",
+      "momento": "Avisos de 'horário de Natal' e 'fecho' nos pequenos negócios (estimativa)",
+      "oportunidade": "O-6"
+    },
+    {
+      "periodo": "março a maio",
+      "momento": "Cartazes e tabelas de preços para os arraiais de verão (estimativa)",
+      "oportunidade": "O-7"
+    }
   ],
   "fontes": [
-    {"titulo": "Normas de Voluntariado Feira da Serra 2026 (Câmara Municipal de São Brás de Alportel)", "url": "https://feiradaserra.cm-sbras.pt/fs/wp-content/uploads/2026/07/Normas-Voluntariado-Feira-da-Serra-2026.pdf"},
-    {"titulo": "DN: Federação dos Bancos Alimentares procura voluntários para a recolha da próxima semana", "url": "https://www.dn.pt/sociedade/federao-dos-bancos-alimentares-contra-a-fome-procura-voluntrios-para-a-recolha-da-prxima-semana"},
-    {"titulo": "Renascença: Campanha do Banco Alimentar recolhe 1.878 toneladas de alimentos (2025)", "url": "https://rr.pt/noticia/pais/2025/06/02/campanha-do-banco-alimentar-recolhe-1878-toneladas-de-alimentos/427749/"},
-    {"titulo": "Renascença: Isabel Jonet, os voluntários são a base das ações de solidariedade (2026)", "url": "https://rr.pt/noticia/religiao/2026/05/23/isabel-jonet-os-voluntarios-sao-a-base-das-acoes-de-solidariedade/471824/"},
-    {"titulo": "RTP: Banco Alimentar faz nova campanha de recolha de alimentos nos dias 29 e 30 de novembro", "url": "https://www.rtp.pt/noticias/economia/banco-alimentar-faz-nova-campanha-de-recolha-de-alimentos-nos-dias-29-e-30-de-novembro_n1700592"},
-    {"titulo": "SignUpGenius: SignUpGenius vs Doodle", "url": "https://www.signupgenius.com/resources/signupgenius-vs-doodle"},
-    {"titulo": "Postal do Algarve: Portimão lança plataforma dedicada ao voluntariado", "url": "https://postal.pt/nacional/portimao-lanca-plataforma-dedicada-ao-voluntariado/"},
-    {"titulo": "Postal do Algarve: IPDJ procura voluntários para o jogo Portugal-Letónia no Estádio Algarve", "url": "https://postal.pt/sociedade/ipdj-procura-voluntarios-para-o-jogo-portugal-letonia-no-estadio-algarve/"},
-    {"titulo": "Postal do Algarve: Escuteiros de Tavira promovem arraial para angariar fundos", "url": "https://postal.pt/cultura/cultura-sul/escuteiros-de-tavira-promovem-arraial-para-angariar-fundos/"},
-    {"titulo": "Barlavento: Arraial de São José (Ferreiras) no 26.º aniversário da paróquia", "url": "https://www.barlavento.pt/arraial-sao-jose-ferreiras-26-aniversario-paroquia/"},
-    {"titulo": "EGEAC, Festas de Lisboa: Arraial dos Navegantes", "url": "https://egeac.pt/evento/arraial-dos-navegantes-outras-festas-3/"},
-    {"titulo": "Formulário Google público: Jantar de Natal AARAM (exemplo de inscrição por Google Forms)", "url": "https://docs.google.com/forms/d/e/1FAIpQLSeerpEMrl2IBnNklG89wccP9z_DZO4d-FD_fH0bJJSeISZm4A/viewform"}
+    {
+      "titulo": "Normas de Voluntariado Feira da Serra 2026 (Câmara Municipal de São Brás de Alportel)",
+      "url": "https://feiradaserra.cm-sbras.pt/fs/wp-content/uploads/2026/07/Normas-Voluntariado-Feira-da-Serra-2026.pdf"
+    },
+    {
+      "titulo": "DN: Federação dos Bancos Alimentares procura voluntários para a recolha da próxima semana",
+      "url": "https://www.dn.pt/sociedade/federao-dos-bancos-alimentares-contra-a-fome-procura-voluntrios-para-a-recolha-da-prxima-semana"
+    },
+    {
+      "titulo": "Renascença: Campanha do Banco Alimentar recolhe 1.878 toneladas de alimentos (2025)",
+      "url": "https://rr.pt/noticia/pais/2025/06/02/campanha-do-banco-alimentar-recolhe-1878-toneladas-de-alimentos/427749/"
+    },
+    {
+      "titulo": "Renascença: Isabel Jonet, os voluntários são a base das ações de solidariedade (2026)",
+      "url": "https://rr.pt/noticia/religiao/2026/05/23/isabel-jonet-os-voluntarios-sao-a-base-das-acoes-de-solidariedade/471824/"
+    },
+    {
+      "titulo": "RTP: Banco Alimentar faz nova campanha de recolha de alimentos nos dias 29 e 30 de novembro",
+      "url": "https://www.rtp.pt/noticias/economia/banco-alimentar-faz-nova-campanha-de-recolha-de-alimentos-nos-dias-29-e-30-de-novembro_n1700592"
+    },
+    {
+      "titulo": "SignUpGenius: SignUpGenius vs Doodle",
+      "url": "https://www.signupgenius.com/resources/signupgenius-vs-doodle"
+    },
+    {
+      "titulo": "Postal do Algarve: Portimão lança plataforma dedicada ao voluntariado",
+      "url": "https://postal.pt/nacional/portimao-lanca-plataforma-dedicada-ao-voluntariado/"
+    },
+    {
+      "titulo": "Postal do Algarve: IPDJ procura voluntários para o jogo Portugal-Letónia no Estádio Algarve",
+      "url": "https://postal.pt/sociedade/ipdj-procura-voluntarios-para-o-jogo-portugal-letonia-no-estadio-algarve/"
+    },
+    {
+      "titulo": "Postal do Algarve: Escuteiros de Tavira promovem arraial para angariar fundos",
+      "url": "https://postal.pt/cultura/cultura-sul/escuteiros-de-tavira-promovem-arraial-para-angariar-fundos/"
+    },
+    {
+      "titulo": "Barlavento: Arraial de São José (Ferreiras) no 26.º aniversário da paróquia",
+      "url": "https://www.barlavento.pt/arraial-sao-jose-ferreiras-26-aniversario-paroquia/"
+    },
+    {
+      "titulo": "EGEAC, Festas de Lisboa: Arraial dos Navegantes",
+      "url": "https://egeac.pt/evento/arraial-dos-navegantes-outras-festas-3/"
+    },
+    {
+      "titulo": "Formulário Google público: Jantar de Natal AARAM (exemplo de inscrição por Google Forms)",
+      "url": "https://docs.google.com/forms/d/e/1FAIpQLSeerpEMrl2IBnNklG89wccP9z_DZO4d-FD_fH0bJJSeISZm4A/viewform"
+    },
+    {
+      "titulo": "Renascença: Na restauração os preços têm de estar afixados e bem visíveis (2017)",
+      "url": "https://rr.pt/noticia/economia/2017/08/03/na-restauracao-os-precos-tem-de-estar-afixados-e-bem-visiveis/90307/"
+    },
+    {
+      "titulo": "Decreto-Lei n.º 74/2017 (Livro de Reclamações), texto no Informador",
+      "url": "https://informador.pt/legislacao/diploma/decreto-lei-n-o-74-2017"
+    },
+    {
+      "titulo": "Canva: modelos de cartaz (PT-PT)",
+      "url": "https://www.canva.com/pt_pt/modelos/s/cartaz/?continuation=250"
+    },
+    {
+      "titulo": "Adobe Express: modelos de cartaz informativo",
+      "url": "https://www.adobe.com/br/express/templates/poster/informative"
+    },
+    {
+      "titulo": "InformaDB: Desempenho das Empresas em Portugal (2025)",
+      "url": "https://blog.informadb.pt/wp-content/uploads/2025/11/InformaDB_SE-Desempenho-das-Empresas-em-Portugal.pdf"
+    },
+    {
+      "titulo": "CASES: Conta Satélite da Economia Social 2019-2020",
+      "url": "https://cases.pt/wp-content/uploads/2023/08/Conta-Satelite-2019-2020.pdf"
+    }
   ]
 }

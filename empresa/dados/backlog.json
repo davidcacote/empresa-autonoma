@@ -442,5 +442,104 @@
     ],
     "segmento": [],
     "mercado": []
+  },
+  {
+    "id": "B-030",
+    "titulo": "Placa Certa: 4 modelos (Aberto/Fechado, Horário, Preços/Lista, Aviso) com texto em PT-PT",
+    "estado": "a_fazer",
+    "prioridade": 1,
+    "estimativa": "M",
+    "quem": "Dev",
+    "porque": "Proposta da Carla, aceite pela CEO (ciclo 7)",
+    "criterios": [
+      "4 modelos com 2 a 3 campos e texto em português de Portugal",
+      "Pré-visualização A4 em direto"
+    ],
+    "segmento": [
+      "S-5",
+      "S-6"
+    ],
+    "mercado": [
+      "F-7",
+      "O-6"
+    ]
+  },
+  {
+    "id": "B-031",
+    "titulo": "Placa Certa: CSS de impressão A4 legível a 2 m e a preto e branco",
+    "estado": "a_fazer",
+    "prioridade": 1,
+    "estimativa": "P",
+    "quem": "Dev",
+    "porque": "Proposta da Carla, aceite pela CEO (ciclo 7)",
+    "criterios": [
+      "Vertical e horizontal, sem cortes",
+      "Legível a preto e branco"
+    ],
+    "segmento": [
+      "S-5",
+      "S-6"
+    ],
+    "mercado": [
+      "F-8"
+    ]
+  },
+  {
+    "id": "B-032",
+    "titulo": "Placa Certa: lembrar o último texto no browser (localStorage), sem servidor",
+    "estado": "a_fazer",
+    "prioridade": 2,
+    "estimativa": "P",
+    "quem": "Dev",
+    "porque": "Proposta da Carla; CEO subiu para P2 (ciclo 7)",
+    "criterios": [
+      "O último texto volta ao reabrir",
+      "Funciona sem localStorage disponível"
+    ],
+    "segmento": [
+      "S-5",
+      "S-6"
+    ],
+    "mercado": [
+      "F-9"
+    ]
+  },
+  {
+    "id": "B-033",
+    "titulo": "Placa Certa: modelo 'Preços da barraca / Cartaz de evento' e ligação a partir da Barraca",
+    "estado": "ideia",
+    "prioridade": 3,
+    "estimativa": "M",
+    "quem": "Dev",
+    "porque": "Proposta da Carla; adiada pela CEO (ciclo 7)",
+    "criterios": [
+      "Depois de a Placa Certa estar publicada"
+    ],
+    "segmento": [
+      "S-6",
+      "S-1"
+    ],
+    "mercado": [
+      "O-7"
+    ]
+  },
+  {
+    "id": "B-034",
+    "titulo": "Placa Certa: uma página indexável por modelo (SEO PT-PT)",
+    "estado": "ideia",
+    "prioridade": 4,
+    "estimativa": "M",
+    "quem": "Dev",
+    "porque": "Proposta da Carla; adiada pela CEO (ciclo 7)",
+    "criterios": [
+      "Uma página por modelo com título e descrição próprios"
+    ],
+    "segmento": [
+      "S-5",
+      "S-6"
+    ],
+    "mercado": [
+      "O-8"
+    ]
   }
 ]

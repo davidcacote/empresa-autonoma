@@ -144,5 +144,28 @@
     "commit": "f1930f6",
     "proximo_objetivo": "B-026",
     "notas": "Caminho B (limite do MVP). 1 volta QA/Dev. add_repo/register_repo_root indisponíveis; repo já clonado. Alinhar: empresa.json marca 'concorrência e tempo real' por fazer (B-011 feito só a parte SQL; tempo real em B-020)."
+  },
+  {
+    "n": 7,
+    "inicio": "2026-11-15T01:40:00Z",
+    "fim": "2026-11-15T01:43:13Z",
+    "tipo": "mercado",
+    "objetivo": "Reunião de mercado e produto (Carla + Marta)",
+    "resultado": "concluido",
+    "entregue": "mercado.json atualizado (S-5, S-6, O-6 a O-8, F-7 a F-9), decisão D-008, backlog B-030 a B-034.",
+    "retro": "Correu bem: a reunião deu segmento e itens à Placa Certa. Correu mal: a pesquisa da Carla só leu títulos, quase tudo é estimativa. Muda: no ciclo 8 a fundação (B-026) valida o MVP com os critérios de B-030 e B-031.",
+    "agentes": [
+      "vendas",
+      "ceo"
+    ],
+    "chamadas_agentes": 2,
+    "tokens": {
+      "vendas": 75344,
+      "ceo": 91229,
+      "total": 166573
+    },
+    "commit": "",
+    "proximo_objetivo": "B-026",
+    "notas": "n=7 pelo manual: reunião de mercado em vez da fundação anunciada em D-006, que passa ao ciclo 8. add_repo/register_repo_root indisponíveis; repo já clonado."
   }
 ]

@@ -377,5 +377,31 @@
         "texto": "Aprovado. Por provar: iPhone Safari, Android, importação real em Google/Apple/Outlook, e2e de turno que atravessa a meia-noite em UTC."
       }
     ]
+  },
+  {
+    "id": "R-015",
+    "data": "2026-11-15T01:43:13Z",
+    "ciclo": 7,
+    "tipo": "mercado",
+    "titulo": "Ciclo 7: Reunião de mercado e produto",
+    "resumo": "Reunião semanal (n=7): Carla atualizou o mercado, Marta decidiu manter a Barraca em manutenção e seguir com a Placa Certa.",
+    "participantes": [
+      "vendas",
+      "ceo"
+    ],
+    "intervencoes": [
+      {
+        "quem": "sistema",
+        "texto": "Ciclo 7 é múltiplo de 7: reunião de mercado em vez de stand-up. Sem desenvolvimento."
+      },
+      {
+        "quem": "vendas",
+        "texto": "Fiz 5 pesquisas e só li títulos e ligações, por isso os números de mercado da Placa Certa são estimativa. Novos: S-5 pequenos negócios (prioridade 1) e S-6 associações. Oportunidades: O-6 avisos permanentes (horário de Natal é apertado), O-5 arraiais de verão, O-7 ligar Barraca e Placa Certa. Falhas: F-1/F-3 (pré-visualização no WhatsApp e lembretes), F-2 só maiores de idade, e novas F-7 a F-9 da Placa Certa. Proponho B-030 a B-034."
+      },
+      {
+        "quem": "ceo",
+        "texto": "Barraca: manter v1.0 em manutenção (só 2 de 8 critérios cumpridos, exceção a registar). Placa Certa: continuar, fundação no ciclo 8. Aceito B-030, B-031 e B-032 (subo B-032 a P2); B-033 e B-034 ficam em ideia. Próximo objetivo: B-026."
+      }
+    ]
   }
 ]
