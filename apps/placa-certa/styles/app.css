@@ -1,0 +1,26 @@
+:root { --tinta: #111; --fundo: #f4f1ea; --linha: #c9c3b6; --realce: #0b57d0; }
+* { box-sizing: border-box; }
+body { margin: 0; font: 1rem/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--tinta); background: var(--fundo); }
+.cabeca, .area { max-width: 72rem; margin: 0 auto; padding: 1rem; }
+.cabeca h1 { margin: 0; font-size: 1.75rem; }
+.cabeca p { margin: .25rem 0 0; }
+h2 { font-size: 1.15rem; margin: 0 0 .75rem; }
+.area { display: grid; gap: 1.5rem; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 56rem) { .area { grid-template-columns: minmax(0, 22rem) minmax(0, 1fr); align-items: start; } .previa { position: sticky; top: 1rem; } }
+.campo { margin-bottom: 1rem; }
+label { display: block; font-weight: 700; margin-bottom: .25rem; }
+input, select, textarea { width: 100%; font: inherit; padding: .6rem .7rem; border: 2px solid var(--tinta); border-radius: .4rem; background: #fff; color: var(--tinta); }
+textarea { resize: vertical; }
+:focus-visible { outline: 3px solid var(--realce); outline-offset: 2px; }
+.botao { font: inherit; font-weight: 700; padding: .8rem 1.5rem; min-height: 2.75rem; border: 0; border-radius: .4rem; background: var(--tinta); color: #fff; cursor: pointer; width: 100%; }
+.papel { background: #e2ded3; padding: .75rem; border-radius: .5rem; overflow: hidden; }
+.folha { container-type: inline-size; width: 100%; aspect-ratio: 210 / 297; background: #fff; color: #000; border: 1px solid var(--linha);
+  padding: 8cqw; display: flex; flex-direction: column; justify-content: center; gap: 3cqw; text-align: center; overflow: hidden; overflow-wrap: anywhere; }
+.folha p { margin: 0; }
+.folha__grande { font-size: 18cqw; font-weight: 900; line-height: 1.05; }
+.folha__titulo { font-size: 10cqw; font-weight: 800; line-height: 1.1; }
+.folha__texto { font-size: 6cqw; line-height: 1.25; }
+.folha__linha { font-size: 5.5cqw; font-weight: 700; }
+.folha__nota { font-size: 4.5cqw; }
+.folha__item { display: flex; justify-content: space-between; gap: 3cqw; font-size: 5.5cqw; font-weight: 700; text-align: left; border-bottom: .4cqw solid #000; padding-bottom: 1cqw; }
+.folha__preco { white-space: nowrap; }

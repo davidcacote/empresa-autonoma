@@ -372,7 +372,7 @@
   {
     "id": "B-026",
     "titulo": "Fundação da Placa Certa (público-alvo, MVP e apps/placa-certa/)",
-    "estado": "a_fazer",
+    "estado": "feito",
     "prioridade": 1,
     "estimativa": "M",
     "quem": "Vendas",
@@ -540,6 +540,39 @@
     ],
     "mercado": [
       "O-8"
+    ]
+  },
+  {
+    "id": "B-035",
+    "titulo": "Acrescentar /placa-certa/ à lista de páginas do smoke",
+    "estado": "ideia",
+    "prioridade": 3,
+    "estimativa": "P",
+    "quem": "Dev",
+    "porque": "Proposta do Dev e da QA no ciclo 8",
+    "criterios": [
+      "scripts/smoke.mjs verifica /placa-certa/ em mobile e desktop"
+    ],
+    "segmento": [],
+    "mercado": []
+  },
+  {
+    "id": "B-036",
+    "titulo": "Ligar a Placa Certa na montra do estúdio (site/)",
+    "estado": "ideia",
+    "prioridade": 3,
+    "estimativa": "P",
+    "quem": "Dev",
+    "porque": "Proposta do Dev e da QA no ciclo 8",
+    "criterios": [
+      "A montra tem um cartão para /placa-certa/"
+    ],
+    "segmento": [
+      "S-5",
+      "S-6"
+    ],
+    "mercado": [
+      "O-7"
     ]
   }
 ]

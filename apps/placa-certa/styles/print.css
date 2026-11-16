@@ -1,0 +1,6 @@
+@page { size: A4 portrait; margin: 0; }
+html, body { background: #fff !important; margin: 0; }
+.cabeca, .editor, .previa > h2 { display: none !important; }
+.area, .previa, .papel { display: block; padding: 0; margin: 0; background: none; position: static; max-width: none; overflow: visible; }
+.folha { width: 210mm; height: 297mm; aspect-ratio: auto; border: 0; padding: 18mm; break-inside: avoid; }
+.folha, .folha * { color: #000 !important; background: #fff !important; }

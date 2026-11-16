@@ -6,10 +6,10 @@
     "nome": "Barraca",
     "slug": "barraca",
     "pitch": "A página de turnos da tua festa de aldeia: a comissão cria, o povo inscreve-se com um toque, ninguém fica sozinho na grelha às 3 da manhã.",
-    "estado": "v1.0 (com ressalvas) em /barraca/ · manutenção; próximo: fundação da Placa Certa (B-026, ciclo 8)"
+    "estado": "v1.0 (com ressalvas) em /barraca/ · manutenção; Placa Certa: MVP em /placa-certa/ (ciclo 8 feito)"
   },
-  "ciclo_atual": 7,
-  "proximo_ciclo": "2026-11-16T01:39:00Z",
+  "ciclo_atual": 8,
+  "proximo_ciclo": "2026-11-17T01:39:00Z",
   "links": {
     "produto": "../barraca/",
     "demo": "../barraca/festa.html?f=demonstracao",
@@ -68,7 +68,7 @@
     "limite_v1": 10,
     "placa_certa": {
       "fase": "mvp",
-      "ciclos_usados": 0,
+      "ciclos_usados": 1,
       "limite_mvp": 3
     }
   }

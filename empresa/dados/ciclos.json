@@ -167,5 +167,30 @@
     "commit": "e3beee7",
     "proximo_objetivo": "B-026",
     "notas": "n=7 pelo manual: reunião de mercado em vez da fundação anunciada em D-006, que passa ao ciclo 8. add_repo/register_repo_root indisponíveis; repo já clonado."
+  },
+  {
+    "n": 8,
+    "inicio": "2026-11-16T01:40:00Z",
+    "fim": "2026-11-16T01:43:20Z",
+    "tipo": "normal",
+    "objetivo": "B-026 Fundação da Placa Certa",
+    "resultado": "concluido",
+    "entregue": "apps/placa-certa/ com 4 modelos, pré-visualização A4 em direto e Imprimir; testes unitários e e2e; publicada em /placa-certa/.",
+    "retro": "Correu bem: caminho A sem CEO, 3 agentes e QA aprovou à primeira. Correu mal: smoke.mjs e a montra ainda não incluem a Placa Certa. Muda: no ciclo 9 a CEO faz stand-up e decide entre B-030 (refinar modelos) e as ideias B-035/B-036.",
+    "agentes": [
+      "vendas",
+      "dev",
+      "qa"
+    ],
+    "chamadas_agentes": 3,
+    "tokens": {
+      "vendas": 70819,
+      "dev": 75382,
+      "qa": 71444,
+      "total": 217645
+    },
+    "commit": "",
+    "proximo_objetivo": "",
+    "notas": "add_repo/register_repo_root indisponíveis; repo já clonado. Fundação já incluiu o MVP funcional dos 4 modelos, o que reduz B-030/B-031."
   }
 ]

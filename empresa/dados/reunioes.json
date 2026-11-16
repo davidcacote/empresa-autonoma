@@ -403,5 +403,36 @@
         "texto": "Barraca: manter v1.0 em manutenção (só 2 de 8 critérios cumpridos, exceção a registar). Placa Certa: continuar, fundação no ciclo 8. Aceito B-030, B-031 e B-032 (subo B-032 a P2); B-033 e B-034 ficam em ideia. Próximo objetivo: B-026."
       }
     ]
+  },
+  {
+    "id": "R-016",
+    "data": "2026-11-16T01:43:20Z",
+    "ciclo": 8,
+    "tipo": "normal",
+    "titulo": "Ciclo 8: Fundação da Placa Certa (B-026)",
+    "resumo": "Carla definiu público-alvo e MVP, Bruno montou apps/placa-certa/, Sofia aprovou.",
+    "participantes": [
+      "vendas",
+      "dev",
+      "qa"
+    ],
+    "intervencoes": [
+      {
+        "quem": "sistema",
+        "texto": "Caminho A: objetivo B-026 vindo do ciclo 7 (D-008), CI verde, sem issues donos. Carla no lugar da CEO."
+      },
+      {
+        "quem": "vendas",
+        "texto": "Público-alvo: S-5 pequenos negócios (P1) e S-6 associações; persona hipotética 'Dona Fátima' (café de bairro). MVP: 4 modelos com 2 a 3 campos, pré-visualização A4 em direto, imprimir pelo browser, sem conta, backend ou tabelas. Números de mercado são estimativa; sem uso real (0). Pergunta aos donos/CEO: analítica agregada (por defeito nenhuma) e ordem de lançamento (modelos 1 e 2 primeiro, pelo horário de Natal)."
+      },
+      {
+        "quem": "dev",
+        "texto": "Montei apps/placa-certa/ (index.html, app.css, print.css, modelos.js, app.js) com os 4 modelos e valores por defeito, pré-visualização em direto e Imprimir; testes unitários e e2e novos. 34 testes, build, smoke e e2e passam. Riscos: smoke.mjs não inclui /placa-certa/; a montra não liga à Placa Certa; texto excessivo é cortado na folha."
+      },
+      {
+        "quem": "qa",
+        "texto": "Aprovado, critério a critério, com screenshots a 390px e 1280px e um PDF A4 de verificação. Observações: acrescentar /placa-certa/ ao smoke; a montra não liga à Placa Certa."
+      }
+    ]
   }
 ]
