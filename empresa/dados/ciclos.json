@@ -214,7 +214,7 @@
       "qa": 57288,
       "total": 211413
     },
-    "commit": "",
+    "commit": "20c821a",
     "proximo_objetivo": "B-035",
     "notas": "add_repo/register_repo_root indisponíveis; repo já clonado."
   }
