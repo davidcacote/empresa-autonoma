@@ -55,16 +55,22 @@ function desenharGeral(d, quem) {
   estado.dataset.estado = pausado ? 'pausada' : 'ativa';
   estado.textContent = pausado ? 'Pausada' : `Ativa · ciclo ${e.ciclo_atual ?? 0}`;
 
-  document.getElementById('produto').replaceChildren(
-    el('p', { class: 'rotulo', text: 'O produto' }),
-    el('h2', { text: p.nome ?? '—' }),
-    el('p', { text: p.pitch ?? '' }),
-    el('p', { class: 'rotulo', text: p.estado ?? '' }),
-    el('div', { class: 'acoes' },
-      el('a', { class: 'botao primario', href: links.demo ?? '../', text: 'Ver a festa de demonstração' }),
-      el('a', { class: 'botao', href: links.produto ?? '../', text: 'Abrir o produto' }),
-      links.repositorio ? el('a', { class: 'botao', href: links.repositorio, text: 'Código no GitHub' }) : null),
-  );
+  const produtos = Array.isArray(e.produtos) && e.produtos.length ? e.produtos : [p];
+  const cartoesProduto = produtos.map((q, i) => {
+    const principal = i === 0;
+    const slug = q.slug ?? '';
+    const hrefProduto = slug ? `../${slug}/` : (links.produto ?? '../');
+    return el('div', { class: 'produto-item' },
+      el('p', { class: 'rotulo', text: produtos.length > 1 ? `Produto ${i + 1} de ${produtos.length}` : 'O produto' }),
+      el('h2', { text: q.nome ?? '—' }),
+      el('p', { text: q.pitch ?? '' }),
+      el('p', { class: 'rotulo', text: q.estado ?? '' }),
+      el('div', { class: 'acoes' },
+        slug === 'barraca' && links.demo ? el('a', { class: 'botao primario', href: links.demo, text: 'Ver a festa de demonstração' }) : null,
+        el('a', { class: slug === 'barraca' && links.demo ? 'botao' : 'botao primario', href: hrefProduto, text: `Abrir ${q.nome ?? 'o produto'}` }),
+        principal && links.repositorio ? el('a', { class: 'botao', href: links.repositorio, text: 'Código no GitHub' }) : null));
+  });
+  document.getElementById('produto').replaceChildren(...cartoesProduto);
 
   const backlog = d.backlog ?? [];
   const feitos = backlog.filter((b) => b.estado === 'feito').length;
@@ -99,6 +105,7 @@ function desenharGeral(d, quem) {
       el('h2', { text: 'Caminho até à v1.0' }),
       el('p', { class: 'intro', style: 'margin:0 0 .6rem', text: `Fase: ${cv.fase} · ${crit.filter((c) => c.feito).length} de ${crit.length} critérios · ${cv.ciclos_usados ?? 0} de ${cv.limite_v1 ?? '—'} ciclos usados · próxima reunião de mercado no ciclo ${cv.proxima_revisao_ciclo ?? '—'}` }),
       el('ul', { class: 'lista-simples' }, crit.map((c) => el('li', {}, el('span', { text: c.criterio }), el('span', { 'aria-label': c.feito ? 'cumprido' : 'por cumprir', text: c.feito ? '✓' : '○' })))),
+      cv.placa_certa ? el('p', { class: 'intro', style: 'margin:.6rem 0 0', text: `Placa Certa: fase ${cv.placa_certa.fase} · ${cv.placa_certa.ciclos_usados ?? 0} de ${cv.placa_certa.limite_mvp ?? '—'} ciclos de MVP usados` }) : null,
       cv.ultima_revisao ? el('p', { class: 'intro', style: 'margin:.6rem 0 0', text: `Última revisão: ${cv.ultima_revisao}` }) : null);
   }
 

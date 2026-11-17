@@ -112,6 +112,7 @@ Se continuar bloqueado: `git checkout -- apps tests` (descartar) e o item fica p
   `resultado` ∈ `concluido | falhou | bloqueado | sem_alteracoes`. A retro são 3 frases: correu bem / correu mal / muda.
 - `empresa.json`: somar 1 a `ciclo_de_vida.ciclos_usados` do produto trabalhado; se chegou a `limite_mvp`/`limite_v1`,
   a CEO decide no stand-up seguinte (constituição, "Limite de ciclos por produto"). `ciclo_atual = n`, `proximo_ciclo` = próxima 01:39 de Lisboa (em UTC), `produto.estado` atualizado.
+- **Produtos no HQ e na montra:** `empresa.json` tem `produtos[]` (nome, slug, pitch, estado), que alimenta a montra (`site/index.html`) e o painel (`hq/`). Sempre que um produto nasce ou muda de fase, atualizar a sua entrada (e `ciclo_de_vida.<produto>`); não deixar só o `produto` singular.
 - Ata completa em `empresa/atas/ciclo-<n>.md`.
 - Se uma issue `donos` foi resolvida: comentar nela com o link do commit e fechá-la.
 
