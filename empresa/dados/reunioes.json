@@ -434,5 +434,40 @@
         "texto": "Aprovado, critério a critério, com screenshots a 390px e 1280px e um PDF A4 de verificação. Observações: acrescentar /placa-certa/ ao smoke; a montra não liga à Placa Certa."
       }
     ]
+  },
+  {
+    "id": "R-017",
+    "data": "2026-11-17T01:42:47Z",
+    "ciclo": 9,
+    "tipo": "normal",
+    "titulo": "Ciclo 9: B-036 cartão da Placa Certa na montra",
+    "resumo": "Marta escolheu B-036; Bruno escreveu o e2e; o orquestrador acrescentou produtos[] a empresa.json; Sofia aprovou.",
+    "participantes": [
+      "ceo",
+      "dev",
+      "qa"
+    ],
+    "intervencoes": [
+      {
+        "quem": "sistema",
+        "texto": "Caminho B (sem proximo_objetivo no ciclo 8). CI verde, sem issues donos, 0 festas reais, advisors só os 9 esperados."
+      },
+      {
+        "quem": "ceo",
+        "texto": "Objetivo B-036: pôr a Placa Certa na montra da raiz. B-030 e B-031 já cobertos pelo ciclo 8. Próximo: B-035 (smoke da Placa Certa). Outro projeto? Não, reavaliar no ciclo 14."
+      },
+      {
+        "quem": "dev",
+        "texto": "A montra já gera cartões de produtos[]; só faltava a entrada da Placa Certa em empresa.json (fora do âmbito do Dev). Escreveu o e2e B-036 (cartão, link, 44px, teclado, 200). 34/34 testes."
+      },
+      {
+        "quem": "sistema",
+        "texto": "Acrescentei produtos[] (Barraca e Placa Certa) a empresa.json."
+      },
+      {
+        "quem": "qa",
+        "texto": "Aprovado: 4 critérios passam; alvo de 48px; suites e validar.mjs verdes."
+      }
+    ]
   }
 ]

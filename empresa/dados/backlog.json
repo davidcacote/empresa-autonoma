@@ -446,7 +446,7 @@
   {
     "id": "B-030",
     "titulo": "Placa Certa: 4 modelos (Aberto/Fechado, Horário, Preços/Lista, Aviso) com texto em PT-PT",
-    "estado": "a_fazer",
+    "estado": "feito",
     "prioridade": 1,
     "estimativa": "M",
     "quem": "Dev",
@@ -467,7 +467,7 @@
   {
     "id": "B-031",
     "titulo": "Placa Certa: CSS de impressão A4 legível a 2 m e a preto e branco",
-    "estado": "a_fazer",
+    "estado": "feito",
     "prioridade": 1,
     "estimativa": "P",
     "quem": "Dev",
@@ -559,7 +559,7 @@
   {
     "id": "B-036",
     "titulo": "Ligar a Placa Certa na montra do estúdio (site/)",
-    "estado": "ideia",
+    "estado": "feito",
     "prioridade": 3,
     "estimativa": "P",
     "quem": "Dev",

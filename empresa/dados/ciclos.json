@@ -192,5 +192,30 @@
     "commit": "9d7569b",
     "proximo_objetivo": "",
     "notas": "add_repo/register_repo_root indisponíveis; repo já clonado. Fundação já incluiu o MVP funcional dos 4 modelos, o que reduz B-030/B-031."
+  },
+  {
+    "n": 9,
+    "inicio": "2026-11-17T01:40:00Z",
+    "fim": "2026-11-17T01:42:47Z",
+    "tipo": "normal",
+    "objetivo": "B-036 Cartão da Placa Certa na montra",
+    "resultado": "concluido",
+    "entregue": "A montra da raiz mostra o cartão da Placa Certa (MVP) com link para /placa-certa/, gerado de empresa.json; e2e novo.",
+    "retro": "Correu bem: ciclo curto e QA aprovou à primeira. Correu mal: o Dev não pôde editar empresa.json e o orquestrador teve de o fazer. Muda: o ciclo 10 faz B-035 (smoke da Placa Certa).",
+    "agentes": [
+      "ceo",
+      "dev",
+      "qa"
+    ],
+    "chamadas_agentes": 3,
+    "tokens": {
+      "ceo": 91187,
+      "dev": 62938,
+      "qa": 57288,
+      "total": 211413
+    },
+    "commit": "",
+    "proximo_objetivo": "B-035",
+    "notas": "add_repo/register_repo_root indisponíveis; repo já clonado."
   }
 ]

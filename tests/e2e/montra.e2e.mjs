@@ -34,6 +34,32 @@ for (const [antigo, novo] of [
 }
 
 {
+  // B-036: cartão da Placa Certa na montra, gerado da lista de produtos.
+  const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+  await simularApi(page);
+  await page.goto(base + '/');
+  await page.waitForSelector('[data-pronto="sim"]');
+  const cartao = page.locator('#produtos li').filter({ has: page.locator('h3', { hasText: /^Placa Certa$/ }) });
+  afirmar(await cartao.count() === 1, 'montra sem um (único) cartão da Placa Certa');
+  if (await cartao.count() === 1) {
+    afirmar(/MVP/.test(await cartao.innerText()), 'cartão da Placa Certa sem o estado MVP');
+    const link = cartao.locator('a');
+    afirmar(await link.getAttribute('href') === 'placa-certa/', 'link da Placa Certa não aponta para placa-certa/');
+    afirmar(/Placa Certa/.test(await link.innerText()), 'texto do link da Placa Certa não é descritivo');
+    const caixa = await link.boundingBox();
+    afirmar(caixa && caixa.height >= 44 && caixa.width >= 44, `alvo de toque da Placa Certa pequeno: ${JSON.stringify(caixa)}`);
+    await link.focus();
+    afirmar(await link.evaluate((a) => a === document.activeElement), 'link da Placa Certa não é focável por teclado');
+    const r = await page.request.get(await link.evaluate((a) => a.href));
+    afirmar(r.status() === 200, `/placa-certa/ responde ${r.status()}`);
+    await link.press('Enter');
+    await page.waitForURL(base + '/placa-certa/', { timeout: 5000 }).catch(() => {});
+    afirmar(page.url() === base + '/placa-certa/', `Enter no link levou a ${page.url()}`);
+  }
+  await page.close();
+}
+
+{
   // Links do rodapé da Barraca para fora da app (ex.: ../hq/) têm de resolver.
   const page = await browser.newPage();
   await simularApi(page);
