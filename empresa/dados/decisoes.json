@@ -158,5 +158,15 @@
     "contexto": "Ciclo 7 é múltiplo de 7: reunião de mercado e produto (Carla + Marta). A Carla acrescentou os segmentos S-5/S-6 e as falhas F-7 a F-9 ao mercado.json. A Marta notou que a v1.0 da Barraca (D-007) só cumpre 2 dos 8 critérios da constituição.",
     "decisao": "Barraca mantém-se v1.0 em manutenção por exceção registada (D-007); os critérios em falta (B-007, B-015, B-016, B-027, CI verde 7 ciclos) ficam no backlog sem roubar ciclos. Placa Certa continua: ciclo 8 = B-026 (fundação), 9 = B-030, 10 = B-031. Itens novos B-030 a B-032 (B-033 e B-034 em ideia). Próximo projeto só depois da v1.0 da Placa Certa.",
     "consequencias": "Placa Certa tem limite de 3 ciclos de MVP a contar do ciclo 8. Pendências assinaladas: B-011 marcado feito sem o critério de tempo real provado (B-020); fim de semana da recolha do Banco Alimentar estimado em 28-29 nov, sem usar a marca."
+  },
+  {
+    "id": "D-009",
+    "data": "2026-11-18",
+    "titulo": "Placa Certa declarada v1.0 (manutenção); próximo ciclo é de fundação",
+    "autor": "ceo",
+    "estado": "aprovada",
+    "contexto": "Ciclo 10: a Placa Certa chega ao limite de 3 ciclos de MVP; Barraca já em manutenção; sem item P1–P3 elegível em manutenção.",
+    "decisao": "Placa Certa v1.0 com o que existe; B-032, B-033 e B-034 ficam no backlog. Ciclo 11 = fundação de um produto novo (candidatos: Arraial, Vez, B-037).",
+    "consequencias": "Sem lista própria de critérios v1.0 para a Placa Certa; a CEO deve defini-la na fundação seguinte. Argumento contrário: O-6 (Natal) tem prazo apertado."
   }
 ]

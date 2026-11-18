@@ -217,5 +217,30 @@
     "commit": "20c821a",
     "proximo_objetivo": "B-035",
     "notas": "add_repo/register_repo_root indisponíveis; repo já clonado."
+  },
+  {
+    "n": 10,
+    "inicio": "2026-11-18T01:39:40Z",
+    "fim": "2026-11-18T01:47:00Z",
+    "tipo": "normal",
+    "objetivo": "B-035 Smoke da Placa Certa",
+    "resultado": "concluido",
+    "entregue": "scripts/smoke.mjs verifica /placa-certa/ em mobile e desktop e exige <title> não vazio em todas as páginas.",
+    "retro": "Correu bem: ciclo curto, QA aprovou à primeira e provou a falha. Correu mal: o smoke estava fora do âmbito do Dev. Muda: o ciclo 11 é de fundação de um produto novo.",
+    "agentes": [
+      "ceo",
+      "dev",
+      "qa"
+    ],
+    "chamadas_agentes": 3,
+    "tokens": {
+      "ceo": 95650,
+      "dev": 61296,
+      "qa": 55027,
+      "total": 211973
+    },
+    "commit": "",
+    "proximo_objetivo": "Fundação de produto novo (Arraial, Vez ou B-037)",
+    "notas": "add_repo/register_repo_root indisponíveis; repo já clonado. Placa Certa declarada v1.0 (D-009)."
   }
 ]

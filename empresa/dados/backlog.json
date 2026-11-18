@@ -545,7 +545,7 @@
   {
     "id": "B-035",
     "titulo": "Acrescentar /placa-certa/ à lista de páginas do smoke",
-    "estado": "ideia",
+    "estado": "feito",
     "prioridade": 3,
     "estimativa": "P",
     "quem": "Dev",
@@ -573,6 +573,41 @@
     ],
     "mercado": [
       "O-7"
+    ]
+  },
+  {
+    "id": "B-037",
+    "titulo": "Inscrição presencial com substituto validado (candidata a produto novo)",
+    "estado": "ideia",
+    "prioridade": 3,
+    "estimativa": "M",
+    "quem": "CEO",
+    "porque": "Proposta da CEO no ciclo 10",
+    "criterios": [],
+    "segmento": [
+      "S-4",
+      "S-1"
+    ],
+    "mercado": [
+      "F-6",
+      "O-2"
+    ]
+  },
+  {
+    "id": "B-038",
+    "titulo": "Modelo 'Feira de Natal de escola' com bancas e turnos",
+    "estado": "ideia",
+    "prioridade": 3,
+    "estimativa": "M",
+    "quem": "CEO",
+    "porque": "Proposta da CEO no ciclo 10",
+    "criterios": [],
+    "segmento": [
+      "S-2"
+    ],
+    "mercado": [
+      "O-4",
+      "F-4"
     ]
   }
 ]

@@ -6,10 +6,10 @@
     "nome": "Barraca",
     "slug": "barraca",
     "pitch": "A página de turnos da tua festa de aldeia: a comissão cria, o povo inscreve-se com um toque, ninguém fica sozinho na grelha às 3 da manhã.",
-    "estado": "v1.0 (com ressalvas) em /barraca/ · manutenção; Placa Certa: MVP em /placa-certa/ e na montra (ciclo 9 feito)"
+    "estado": "v1.0 (com ressalvas) em /barraca/ · manutenção; Placa Certa: v1.0 em manutenção em /placa-certa/ (ciclo 10)"
   },
-  "ciclo_atual": 9,
-  "proximo_ciclo": "2026-11-18T01:39:00Z",
+  "ciclo_atual": 10,
+  "proximo_ciclo": "2026-11-19T01:39:00Z",
   "links": {
     "produto": "../barraca/",
     "demo": "../barraca/festa.html?f=demonstracao",
@@ -67,8 +67,8 @@
     "limite_mvp": 6,
     "limite_v1": 10,
     "placa_certa": {
-      "fase": "mvp",
-      "ciclos_usados": 2,
+      "fase": "v1.0 (manutenção)",
+      "ciclos_usados": 3,
       "limite_mvp": 3
     }
   },
@@ -83,7 +83,7 @@
       "nome": "Placa Certa",
       "slug": "placa-certa",
       "pitch": "Cartazes e placas prontos a imprimir para o seu negócio, em poucos toques.",
-      "estado": "MVP"
+      "estado": "v1.0 · manutenção (ciclo 10)"
     }
   ]
 }

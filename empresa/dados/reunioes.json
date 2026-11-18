@@ -469,5 +469,36 @@
         "texto": "Aprovado: 4 critérios passam; alvo de 48px; suites e validar.mjs verdes."
       }
     ]
+  },
+  {
+    "id": "R-018",
+    "data": "2026-11-18T01:47:00Z",
+    "ciclo": 10,
+    "tipo": "normal",
+    "titulo": "Ciclo 10: B-035 smoke da Placa Certa",
+    "resumo": "Marta escolheu B-035 e declarou a Placa Certa v1.0 (manutenção); Bruno editou o smoke; Sofia aprovou.",
+    "participantes": [
+      "ceo",
+      "dev",
+      "qa"
+    ],
+    "intervencoes": [
+      {
+        "quem": "sistema",
+        "texto": "Caminho B (sinal de portfólio: Placa Certa nos últimos 2 ciclos do limite). CI verde, sem issues donos."
+      },
+      {
+        "quem": "ceo",
+        "texto": "Objetivo B-035 (pequeno, garante que /placa-certa/ responde). Outro projeto? Sim: Barraca em manutenção e Placa Certa no limite do MVP. Placa Certa passa a v1.0 (manutenção) com 3/3 ciclos; B-032, B-033 e B-034 ficam no backlog. Próximo ciclo: fundação de um produto novo (candidatos: Arraial, Vez, B-037). Ideias: B-037 inscrição presencial com substituto validado; B-038 modelo Feira de Natal de escola."
+      },
+      {
+        "quem": "dev",
+        "texto": "Acrescentou /placa-certa/ ao smoke (mobile e desktop) e uma verificação de <title> não vazio em todas as páginas. 34/34 testes, build, smoke e e2e OK. Editou scripts/smoke.mjs, fora do âmbito normal."
+      },
+      {
+        "quem": "qa",
+        "texto": "Aprovado. Provou que o smoke falha com 404 e com título vazio; nenhuma verificação enfraquecida."
+      }
+    ]
   }
 ]

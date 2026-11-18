@@ -10,6 +10,7 @@ const PAGINAS = [
   { nome: 'criar', url: '/barraca/criar.html' },
   { nome: 'gerir', url: '/barraca/gerir.html?f=demonstracao#chave-de-teste-123456' },
   { nome: 'hq', url: '/hq/' },
+  { nome: 'placa-certa', url: '/placa-certa/' },
 ];
 
 const pastaShots = process.argv.includes('--screenshots') ? process.argv[process.argv.indexOf('--screenshots') + 1] : null;
@@ -25,9 +26,10 @@ for (const vista of [{ nome: 'mobile', width: 390, height: 844 }, { nome: 'deskt
     const errosRelevantes = vigiarErros(page);
     await simularApi(page);
     const r = await page.goto(base + p.url, { waitUntil: 'domcontentloaded' });
-    if (!r || r.status() >= 400) { falhas.push(`${p.nome}: HTTP ${r?.status()}`); await page.close(); continue; }
+    if (!r || r.status() >= 400) { falhas.push(`${p.nome} (${vista.nome}): HTTP ${r?.status() ?? 'sem resposta'}`); await page.close(); continue; }
     try { await page.waitForSelector('[data-pronto="sim"]', { timeout: 15000 }); }
     catch { falhas.push(`${p.nome} (${vista.nome}): a página não ficou pronta ([data-pronto="sim"])`); }
+    if (!(await page.title()).trim()) falhas.push(`${p.nome} (${vista.nome}): a página não tem título (<title>)`);
     if (await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1))
       falhas.push(`${p.nome} (${vista.nome}): scroll horizontal`);
     const erros = errosRelevantes();
