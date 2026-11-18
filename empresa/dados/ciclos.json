@@ -241,6 +241,6 @@
     },
     "commit": "64cc7ec",
     "proximo_objetivo": "Fundação de produto novo (Arraial, Vez ou B-037)",
-    "notas": "add_repo/register_repo_root indisponíveis; repo já clonado. Placa Certa declarada v1.0 (D-009)."
+    "notas": "add_repo/register_repo_root indisponíveis; repo já clonado. Placa Certa declarada v1.0 (D-009). CI falhou no 1.º push (e2e da montra esperava MVP); corrigido numa volta, CI verde."
   }
 ]
