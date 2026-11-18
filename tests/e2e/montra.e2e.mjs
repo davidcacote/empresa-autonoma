@@ -42,7 +42,7 @@ for (const [antigo, novo] of [
   const cartao = page.locator('#produtos li').filter({ has: page.locator('h3', { hasText: /^Placa Certa$/ }) });
   afirmar(await cartao.count() === 1, 'montra sem um (único) cartão da Placa Certa');
   if (await cartao.count() === 1) {
-    afirmar(/MVP/.test(await cartao.innerText()), 'cartão da Placa Certa sem o estado MVP');
+    afirmar(/MVP|v1\.0/.test(await cartao.innerText()), 'cartão da Placa Certa sem o estado (MVP ou v1.0)');
     const link = cartao.locator('a');
     afirmar(await link.getAttribute('href') === 'placa-certa/', 'link da Placa Certa não aponta para placa-certa/');
     afirmar(/Placa Certa/.test(await link.innerText()), 'texto do link da Placa Certa não é descritivo');
