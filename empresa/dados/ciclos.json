@@ -242,5 +242,30 @@
     "commit": "64cc7ec",
     "proximo_objetivo": "Fundação de produto novo (Arraial, Vez ou B-037)",
     "notas": "add_repo/register_repo_root indisponíveis; repo já clonado. Placa Certa declarada v1.0 (D-009). CI falhou no 1.º push (e2e da montra esperava MVP); corrigido numa volta, CI verde."
+  },
+  {
+    "n": 11,
+    "inicio": "2026-11-19T01:40:00Z",
+    "fim": "2026-11-19T01:52:00Z",
+    "tipo": "normal",
+    "objetivo": "Fundação do Turno Certo (B-037)",
+    "resultado": "concluido",
+    "entregue": "apps/turno-certo/: folha de turnos de balcão com inscrição por ficha, turno cheio, falta e substituto validado, offline e impressão A4; testes e e2e; smoke e HQ atualizados.",
+    "retro": "Correu bem: a CEO escolheu um produto sem backend nem dados pessoais e a QA aprovou à primeira. Correu mal: a CEO não leu o backlog antes de escolher, e smoke e empresa.json ficaram fora do âmbito do Dev. Muda: o ciclo 12 publica a festa de exemplo e os testes de CI do Turno Certo; fundações começam pela leitura do backlog.",
+    "agentes": [
+      "ceo",
+      "dev",
+      "qa"
+    ],
+    "chamadas_agentes": 3,
+    "tokens": {
+      "ceo": 84278,
+      "dev": 92901,
+      "qa": 80157,
+      "total": 257336
+    },
+    "commit": "",
+    "proximo_objetivo": "B-039",
+    "notas": "add_repo/register_repo_root indisponíveis; repo já clonado."
   }
 ]

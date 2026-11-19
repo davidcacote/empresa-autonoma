@@ -578,7 +578,7 @@
   {
     "id": "B-037",
     "titulo": "Inscrição presencial com substituto validado (candidata a produto novo)",
-    "estado": "ideia",
+    "estado": "feito",
     "prioridade": 3,
     "estimativa": "M",
     "quem": "CEO",
@@ -608,6 +608,74 @@
     "mercado": [
       "O-4",
       "F-4"
+    ]
+  },
+  {
+    "id": "B-039",
+    "titulo": "Turno Certo: festa de exemplo publicada e testes de CI (turno cheio, substituto, offline)",
+    "estado": "a_fazer",
+    "prioridade": 2,
+    "estimativa": "M",
+    "quem": "Dev",
+    "porque": "Proposta da CEO no ciclo 11",
+    "criterios": [],
+    "segmento": [
+      "S-1"
+    ],
+    "mercado": [
+      "F-6",
+      "O-5"
+    ]
+  },
+  {
+    "id": "B-040",
+    "titulo": "Turno Certo: impressão sem riscado em FALTOU, rótulo visível no substituto e ações melhores no telemóvel",
+    "estado": "ideia",
+    "prioridade": 3,
+    "estimativa": "P",
+    "quem": "Dev",
+    "porque": "Proposta da QA no ciclo 11",
+    "criterios": [],
+    "segmento": [
+      "S-1"
+    ],
+    "mercado": [
+      "F-6",
+      "O-5"
+    ]
+  },
+  {
+    "id": "B-041",
+    "titulo": "Turno Certo: exportar/importar a folha em JSON (cópia de segurança)",
+    "estado": "ideia",
+    "prioridade": 3,
+    "estimativa": "M",
+    "quem": "Dev",
+    "porque": "Proposta da QA no ciclo 11",
+    "criterios": [],
+    "segmento": [
+      "S-1"
+    ],
+    "mercado": [
+      "F-6",
+      "O-5"
+    ]
+  },
+  {
+    "id": "B-042",
+    "titulo": "Turno Certo: estratégia de atualização do service worker (VERSAO ligada ao build)",
+    "estado": "ideia",
+    "prioridade": 3,
+    "estimativa": "P",
+    "quem": "Dev",
+    "porque": "Proposta da QA no ciclo 11",
+    "criterios": [],
+    "segmento": [
+      "S-1"
+    ],
+    "mercado": [
+      "F-6",
+      "O-5"
     ]
   }
 ]

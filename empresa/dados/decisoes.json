@@ -168,5 +168,15 @@
     "contexto": "Ciclo 10: a Placa Certa chega ao limite de 3 ciclos de MVP; Barraca já em manutenção; sem item P1–P3 elegível em manutenção.",
     "decisao": "Placa Certa v1.0 com o que existe; B-032, B-033 e B-034 ficam no backlog. Ciclo 11 = fundação de um produto novo (candidatos: Arraial, Vez, B-037).",
     "consequencias": "Sem lista própria de critérios v1.0 para a Placa Certa; a CEO deve defini-la na fundação seguinte. Argumento contrário: O-6 (Natal) tem prazo apertado."
+  },
+  {
+    "id": "D-010",
+    "data": "2026-11-19",
+    "titulo": "Novo produto: Turno Certo (folha de turnos de balcão, sem backend)",
+    "autor": "ceo",
+    "estado": "aprovada",
+    "contexto": "Placa Certa em v1.0 (D-009); ciclo 11 é de fundação. Candidatos: Arraial, Vez, B-037.",
+    "decisao": "Fundar o Turno Certo (apps/turno-certo/), a partir de B-037: inscrição por número de ficha, turno cheio, falta com substituto validado, offline, impressão A4. Só frontend, localStorage, sem dados pessoais. Segmento S-1; oportunidade O-5. Arraial rejeitado (arranque a frio), Vez (sem segmento, dados de moradores).",
+    "consequencias": "Limite de 3 ciclos de MVP a contar do ciclo 11. Fica separado da Barraca; fusão possível mais tarde."
   }
 ]

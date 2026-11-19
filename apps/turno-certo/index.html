@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Turno Certo · Folha de turnos para a sua festa</title>
+  <meta name="description" content="Folha de turnos para o balcão de inscrição de uma festa: sem internet, sem contas, com vagas a contar e substituto validado.">
+  <meta name="theme-color" content="#111111">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icone.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles/app.css">
+  <link rel="stylesheet" href="styles/print.css" media="print">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <header class="cabeca">
+    <h1>Turno Certo</h1>
+    <p>Folha de turnos para o balcão de inscrição da festa. Sem internet, sem contas.</p>
+  </header>
+  <main class="area">
+    <p id="aviso-memoria" class="aviso" role="alert" hidden>Atenção: este navegador não permite guardar dados. A folha funciona só em memória e perde-se ao fechar ou recarregar a página. Imprima a folha antes de sair.</p>
+    <p id="estado" class="estado" role="status" aria-live="polite"></p>
+
+    <section id="sec-escolha" class="cartao" aria-labelledby="t-folhas">
+      <h2 id="t-folhas">Folhas guardadas</h2>
+      <div class="campo">
+        <label for="folhas">Escolha a folha</label>
+        <select id="folhas"></select>
+      </div>
+      <div class="acoes">
+        <button type="button" id="nova" class="botao">Nova folha</button>
+        <button type="button" id="exemplo" class="botao botao--sec">Carregar festa de exemplo</button>
+      </div>
+    </section>
+
+    <section id="sec-criar" class="cartao" aria-labelledby="t-criar" hidden>
+      <h2 id="t-criar">Nova folha de festa</h2>
+      <form id="form-criar" novalidate>
+        <div class="campo"><label for="c-nome">Nome da festa</label><input id="c-nome" maxlength="60" autocomplete="off"></div>
+        <div class="campo"><label for="c-data">Data da festa</label><input id="c-data" type="date"></div>
+        <fieldset class="campo">
+          <legend>Postos de trabalho</legend>
+          <div class="par">
+            <div class="campo"><label for="c-horario">Horário do posto</label><input id="c-horario" maxlength="30" placeholder="18:00 às 20:00" autocomplete="off"></div>
+            <div class="campo"><label for="c-vagas">Vagas (1 a 30)</label><input id="c-vagas" type="number" min="1" max="30" inputmode="numeric" value="4"></div>
+          </div>
+          <button type="button" id="c-add" class="botao botao--sec">Adicionar posto à lista</button>
+          <ul id="c-lista" class="lista" aria-label="Postos a criar"></ul>
+        </fieldset>
+        <p id="c-erro" class="erro" role="alert"></p>
+        <div class="acoes">
+          <button type="submit" class="botao">Criar folha</button>
+          <button type="button" id="c-cancelar" class="botao botao--sec">Cancelar</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="sec-folha" class="cartao" aria-labelledby="t-folha" hidden>
+      <div class="topo-folha">
+        <div>
+          <h2 id="t-folha"></h2>
+          <p id="folha-data" class="data"></p>
+        </div>
+        <button type="button" id="imprimir" class="botao botao--sec">Imprimir</button>
+      </div>
+      <p id="resumo" class="resumo" aria-live="polite"></p>
+      <section aria-labelledby="t-pend" class="pendencias">
+        <h3 id="t-pend">Pendências: faltas sem substituto validado</h3>
+        <ul id="pendencias" class="lista"></ul>
+      </section>
+      <div id="postos"></div>
+      <details class="novo-posto">
+        <summary>Adicionar outro posto</summary>
+        <form id="form-posto" novalidate>
+          <div class="par">
+            <div class="campo"><label for="p-horario">Horário do posto</label><input id="p-horario" maxlength="30" autocomplete="off"></div>
+            <div class="campo"><label for="p-vagas">Vagas (1 a 30)</label><input id="p-vagas" type="number" min="1" max="30" inputmode="numeric" value="4"></div>
+          </div>
+          <button type="submit" class="botao botao--sec">Adicionar posto</button>
+        </form>
+      </details>
+    </section>
+  </main>
+</body>
+</html>

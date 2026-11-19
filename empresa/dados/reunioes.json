@@ -500,5 +500,37 @@
         "texto": "Aprovado. Provou que o smoke falha com 404 e com título vazio; nenhuma verificação enfraquecida."
       }
     ]
+  },
+  {
+    "id": "R-019",
+    "data": "2026-11-19T01:52:00Z",
+    "ciclo": 11,
+    "tipo": "normal",
+    "titulo": "Ciclo 11: Fundação do Turno Certo (B-037)",
+    "resumo": "Fundação de um produto novo.",
+    "participantes": [
+      "ceo",
+      "dev",
+      "qa",
+      "sistema"
+    ],
+    "intervencoes": [
+      {
+        "quem": "ceo",
+        "texto": "Turno Certo: folha de turnos para o balcão de inscrição, sem internet nem contas, com vagas a contar e substituto validado. Segmento S-1, oportunidade O-5. Arraial e Vez rejeitados. MVP em 6 critérios; ciclo 12: festa de exemplo e testes de CI."
+      },
+      {
+        "quem": "dev",
+        "texto": "MVP montado em apps/turno-certo/ com lógica pura, armazém com fallback em memória, service worker e impressão A4. 50 testes e e2e passam. Smoke e empresa.json ficaram fora do meu âmbito."
+      },
+      {
+        "quem": "qa",
+        "texto": "Aprovado, 6/6 critérios, sem falhas bloqueantes. Observações: riscado na impressão, rótulo do substituto, cópia de segurança JSON, versão do service worker."
+      },
+      {
+        "quem": "sistema",
+        "texto": "Acrescentei turno-certo ao smoke e a empresa.json; registos atualizados."
+      }
+    ]
   }
 ]

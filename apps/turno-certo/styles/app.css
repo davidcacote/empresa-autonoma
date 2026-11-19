@@ -1,0 +1,51 @@
+:root { --tinta: #111111; --fundo: #f4f1ea; --linha: #6b6657; --realce: #0b57d0; --erro: #a40000; --papel: #fff; }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; font: 1rem/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--tinta); background: var(--fundo); }
+.cabeca, .area { max-width: 60rem; margin: 0 auto; padding: 1rem; }
+.cabeca h1 { margin: 0; font-size: 1.75rem; }
+.cabeca p { margin: .25rem 0 0; }
+.area { display: grid; gap: 1rem; grid-template-columns: minmax(0, 1fr); }
+h2 { font-size: 1.3rem; margin: 0 0 .25rem; overflow-wrap: anywhere; }
+h3 { font-size: 1.1rem; margin: 0 0 .5rem; }
+.cartao { background: var(--papel); border: 2px solid var(--tinta); border-radius: .5rem; padding: 1rem; min-width: 0; }
+[hidden] { display: none !important; }
+.campo { margin-bottom: 1rem; min-width: 0; }
+fieldset { border: 2px solid var(--linha); border-radius: .4rem; padding: .75rem; margin: 0 0 1rem; min-width: 0; }
+legend { font-weight: 700; padding: 0 .25rem; }
+label { display: block; font-weight: 700; margin-bottom: .25rem; }
+input, select { width: 100%; font: inherit; padding: .6rem .7rem; border: 2px solid var(--tinta); border-radius: .4rem; background: #fff; color: var(--tinta); min-height: 2.75rem; }
+:focus-visible { outline: 3px solid var(--realce); outline-offset: 2px; }
+.par { display: grid; gap: 0 .75rem; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 36rem) { .par { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); } }
+.acoes { display: flex; flex-wrap: wrap; gap: .75rem; }
+.botao { font: inherit; font-weight: 700; padding: .6rem 1.1rem; min-height: 2.75rem; border: 2px solid var(--tinta); border-radius: .4rem; background: var(--tinta); color: #fff; cursor: pointer; }
+.botao--sec { background: #fff; color: var(--tinta); }
+.botao--mini { padding: .3rem .7rem; font-size: .95rem; }
+.aviso { background: #fff3c4; border: 3px solid #5c4600; border-radius: .4rem; padding: .75rem; margin: 0; font-weight: 700; }
+.estado { margin: 0; min-height: 1.5rem; font-weight: 700; }
+.estado.erro { color: var(--erro); }
+.erro { color: var(--erro); font-weight: 700; margin: 0 0 .75rem; min-height: 1.5rem; }
+.data { margin: 0 0 .5rem; }
+.topo-folha { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: space-between; align-items: flex-start; }
+.resumo { font-size: 1.15rem; font-weight: 700; margin: .5rem 0 1rem; }
+.lista { list-style: none; padding: 0; margin: .5rem 0 0; display: grid; gap: .4rem; }
+.lista li { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; justify-content: space-between; border: 1px solid var(--linha); border-radius: .3rem; padding: .4rem .6rem; overflow-wrap: anywhere; }
+.pendencias { border: 3px dashed var(--erro); border-radius: .4rem; padding: .75rem; margin-bottom: 1rem; }
+.pendencias .vazio { border: 0; padding: 0; font-weight: 700; }
+.posto { border: 3px solid var(--tinta); border-radius: .5rem; padding: .75rem; margin-bottom: 1rem; }
+.posto--falta { border-style: dashed; border-color: var(--erro); }
+.posto h3 { display: flex; flex-wrap: wrap; gap: .25rem .75rem; justify-content: space-between; }
+.contador { font-weight: 800; }
+.faltam { color: var(--erro); font-weight: 800; }
+.insc { display: grid; gap: .5rem; }
+.insc li { align-items: flex-start; }
+.insc__acoes { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; }
+.etiqueta { font-weight: 700; border: 2px solid var(--tinta); border-radius: .3rem; padding: 0 .4rem; }
+.etiqueta--falta { color: var(--erro); border-color: var(--erro); }
+.sub { display: flex; flex-wrap: wrap; gap: .4rem; align-items: flex-end; }
+.sub input { width: 8rem; }
+.form-ficha { display: flex; flex-wrap: wrap; gap: .5rem; align-items: flex-end; margin-top: .75rem; }
+.form-ficha .campo { margin: 0; flex: 1 1 10rem; }
+.novo-posto summary { cursor: pointer; font-weight: 700; min-height: 2.75rem; display: flex; align-items: center; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }

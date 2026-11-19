@@ -1,0 +1,17 @@
+@page { size: A4 portrait; margin: 14mm; }
+html, body { background: #fff !important; margin: 0; font-size: 16pt; line-height: 1.35; }
+*, *::before, *::after { color: #000 !important; background: #fff !important; box-shadow: none !important; text-shadow: none !important; }
+.cabeca, #aviso-memoria, #estado, #sec-escolha, #sec-criar, .novo-posto, #imprimir, .nao-imprimir, button, form { display: none !important; }
+.area { display: block; max-width: none; padding: 0; }
+.cartao { border: 0; padding: 0; }
+h2 { font-size: 24pt; }
+h3 { font-size: 18pt; }
+.resumo { font-size: 18pt; }
+.posto { border: 3px solid #000; break-inside: avoid; margin-bottom: 8mm; padding: 4mm; }
+.posto--falta { border: 5px double #000; }
+.faltam { font-size: 18pt; font-weight: 900; text-decoration: underline; }
+.faltam::before { content: "▲ "; }
+.pendencias { border: 3px dashed #000; }
+.lista li { border: 1px solid #000; }
+.etiqueta, .etiqueta--falta { border: 2px solid #000; }
+.etiqueta--falta { text-decoration: line-through; }

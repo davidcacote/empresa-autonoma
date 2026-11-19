@@ -8,8 +8,8 @@
     "pitch": "A página de turnos da tua festa de aldeia: a comissão cria, o povo inscreve-se com um toque, ninguém fica sozinho na grelha às 3 da manhã.",
     "estado": "v1.0 (com ressalvas) em /barraca/ · manutenção; Placa Certa: v1.0 em manutenção em /placa-certa/ (ciclo 10)"
   },
-  "ciclo_atual": 10,
-  "proximo_ciclo": "2026-11-19T01:39:00Z",
+  "ciclo_atual": 11,
+  "proximo_ciclo": "2026-11-20T00:39:00Z",
   "links": {
     "produto": "../barraca/",
     "demo": "../barraca/festa.html?f=demonstracao",
@@ -28,7 +28,7 @@
   "ciclo_de_vida": {
     "fase": "manutencao",
     "proxima_revisao_ciclo": 14,
-    "ultima_revisao": "15 nov 2026 — reunião de mercado (D-008): Barraca em manutenção, Placa Certa continua",
+    "ultima_revisao": "19 nov 2026 — fundação do Turno Certo (D-010)",
     "criterios_v1": [
       {
         "criterio": "Jornadas completas: criar, inscrever, cancelar, gerir",
@@ -70,6 +70,11 @@
       "fase": "v1.0 (manutenção)",
       "ciclos_usados": 3,
       "limite_mvp": 3
+    },
+    "turno_certo": {
+      "fase": "MVP",
+      "ciclos_usados": 1,
+      "limite_mvp": 3
     }
   },
   "produtos": [
@@ -84,6 +89,12 @@
       "slug": "placa-certa",
       "pitch": "Cartazes e placas prontos a imprimir para o seu negócio, em poucos toques.",
       "estado": "v1.0 · manutenção (ciclo 10)"
+    },
+    {
+      "nome": "Turno Certo",
+      "slug": "turno-certo",
+      "pitch": "Folha de turnos para o balcão de inscrição da festa: sem internet, sem contas, vagas a contar e substituto validado.",
+      "estado": "MVP (ciclo 11)"
     }
   ]
 }

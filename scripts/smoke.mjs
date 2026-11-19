@@ -11,6 +11,7 @@ const PAGINAS = [
   { nome: 'gerir', url: '/barraca/gerir.html?f=demonstracao#chave-de-teste-123456' },
   { nome: 'hq', url: '/hq/' },
   { nome: 'placa-certa', url: '/placa-certa/' },
+  { nome: 'turno-certo', url: '/turno-certo/' },
 ];
 
 const pastaShots = process.argv.includes('--screenshots') ? process.argv[process.argv.indexOf('--screenshots') + 1] : null;
