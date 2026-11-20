@@ -613,7 +613,7 @@
   {
     "id": "B-039",
     "titulo": "Turno Certo: festa de exemplo publicada e testes de CI (turno cheio, substituto, offline)",
-    "estado": "a_fazer",
+    "estado": "feito",
     "prioridade": 2,
     "estimativa": "M",
     "quem": "Dev",
@@ -676,6 +676,24 @@
     "mercado": [
       "F-6",
       "O-5"
+    ]
+  },
+  {
+    "id": "B-043",
+    "titulo": "Turno Certo: evitar festas de exemplo duplicadas ao carregar várias vezes",
+    "estado": "ideia",
+    "prioridade": 4,
+    "estimativa": "P",
+    "quem": "Dev",
+    "porque": "Risco do Dev no ciclo 12: cada clique em 'Carregar festa de exemplo' acrescenta outra cópia",
+    "criterios": [
+      "Carregar o exemplo duas vezes não duplica a folha"
+    ],
+    "segmento": [
+      "S-1"
+    ],
+    "mercado": [
+      "F-6"
     ]
   }
 ]

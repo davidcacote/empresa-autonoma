@@ -267,5 +267,28 @@
     "commit": "7c84a70",
     "proximo_objetivo": "B-039",
     "notas": "add_repo/register_repo_root indisponíveis; repo já clonado."
+  },
+  {
+    "n": 12,
+    "inicio": "2026-11-20T01:40:00Z",
+    "fim": "2026-11-20T01:50:00Z",
+    "tipo": "normal",
+    "objetivo": "B-039 Turno Certo: festa de exemplo e testes de CI",
+    "resultado": "concluido",
+    "entregue": "Testes novos do Turno Certo: unitário da festa de exemplo e e2e (turno cheio, substituto validado, recarregar offline). O botão e a festa já existiam no MVP.",
+    "retro": "Correu bem: caminho A sem CEO, QA aprovou à primeira com mutações. Correu mal: o item estava quase todo feito e o backlog tinha critérios vazios. Muda: ciclo 13 volta a stand-up com a CEO; a reunião de mercado é no 14.",
+    "agentes": [
+      "dev",
+      "qa"
+    ],
+    "chamadas_agentes": 2,
+    "tokens": {
+      "dev": 76172,
+      "qa": 57468,
+      "total": 133640
+    },
+    "commit": "",
+    "proximo_objetivo": "",
+    "notas": "add_repo/register_repo_root indisponíveis; repo já clonado."
   }
 ]

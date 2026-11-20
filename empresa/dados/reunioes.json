@@ -532,5 +532,32 @@
         "texto": "Acrescentei turno-certo ao smoke e a empresa.json; registos atualizados."
       }
     ]
+  },
+  {
+    "id": "R-020",
+    "data": "2026-11-20T01:50:00Z",
+    "ciclo": 12,
+    "tipo": "normal",
+    "titulo": "Ciclo 12: B-039 Turno Certo, festa de exemplo e testes",
+    "resumo": "Caminho A, sem stand-up: objetivo herdado do ciclo 11.",
+    "participantes": [
+      "dev",
+      "qa",
+      "sistema"
+    ],
+    "intervencoes": [
+      {
+        "quem": "dev",
+        "texto": "O botão e a festa de exemplo já existiam no MVP. Acrescentei só testes: unitário da festa de exemplo (turno cheio, falta, substituto) e e2e novo (botão ≥44px, turno cheio, validar substituto, recarregar offline). 51 testes e todos os e2e passam."
+      },
+      {
+        "quem": "qa",
+        "texto": "Aprovado. Mutações provaram que os testes novos falham quando o comportamento quebra. Ressalvas: contraste AA não medido, sem screenshots, mutação do sw.js não confirmada."
+      },
+      {
+        "quem": "sistema",
+        "texto": "Dev apontou riscos: o exemplo não traz substituto já validado e cada clique acrescenta outra cópia da festa."
+      }
+    ]
   }
 ]

@@ -124,3 +124,16 @@ test('armazém: localStorage quando existe, memória quando falha', () => {
   m.gravar({ folhas: [1], atual: null });
   assert.deepEqual(m.ler().folhas, [1]);
 });
+
+test('festa de exemplo para demonstração: turno cheio, falta e substituto, só fichas numéricas', () => {
+  const f = L.festaExemplo();
+  const [p0, p1] = f.postos;
+  assert.equal(L.inscrever(f, p0.id, '99').erro, 'Turno cheio.', 'o primeiro turno está cheio');
+  assert.ok(p0.inscricoes.some((i) => i.faltou && i.substituto && !i.substituto.validada), 'falta com substituto por validar');
+  assert.ok(p1.inscricoes.some((i) => i.faltou && !i.substituto), 'falta sem substituto');
+  const g = ok(L.validarSubstituto(f, p0.id, '27'));
+  assert.equal(L.pendencias(g).length, 1);
+  assert.equal(L.ocupadas(g.postos[0]), 3);
+  assert.doesNotMatch(JSON.stringify(f).replace(/"nome":"[^"]*"/, ''), /[A-Za-z]{3,}@|\d{9}/, 'sem contactos');
+  assert.equal(L.pendencias(L.festaExemplo()).length, 2, 'cada chamada devolve uma folha nova e intacta');
+});
