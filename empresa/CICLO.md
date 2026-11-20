@@ -4,7 +4,7 @@ Este ficheiro é seguido, passo a passo, pela sessão agendada que corre uma vez
 O orquestrador não é membro da equipa: convoca os agentes, passa mensagens entre eles,
 executa o que decidem (git, Supabase) e regista tudo. Não decide produto nem escreve funcionalidades.
 
-**Regra de ouro:** um objetivo pequeno por ciclo, `main` sempre verde, tudo registado no HQ.
+**Regra de ouro:** até `objetivos_por_ciclo` objetivos pequenos por ciclo (hoje 2; o segundo só se o primeiro foi aprovado e há margem), `main` sempre verde, tudo registado no HQ.
 Não pedir confirmações a ninguém: os donos podem não estar presentes. Se algo exigir uma decisão
 irreversível que possa correr mal (apagar dados reais, mudar algo fora deste repositório e do projeto
 Supabase `barraca`), não o fazer: registar como pendente para os donos.
@@ -116,12 +116,12 @@ Se continuar bloqueado: `git checkout -- apps tests` (descartar) e o item fica p
 - Ata completa em `empresa/atas/ciclo-<n>.md`.
 - Se uma issue `donos` foi resolvida: comentar nela com o link do commit e fechá-la.
 
-## 8. Orçamento (os donos querem ficar abaixo de ~80% do plano)
-- No máximo `max_agentes_por_ciclo` agentes lançados (3: CEO **ou** especialista, Dev, QA), mais as voltas QA↔Dev.
+## 8. Orçamento (teto de uso `limite_uso_alvo_pct`, hoje 90% do plano)
+- No máximo `max_agentes_por_ciclo` agentes lançados (hoje 5: CEO, ou especialista, Dev, QA e um agente extra, p. ex. um segundo especialista ou um 2.º Dev para o 2.º objetivo), mais as voltas QA↔Dev (`max_voltas_qa_dev`, hoje 3). Com 2 objetivos, repetir os passos 4–5 para o segundo, no mesmo push se ambos aprovados.
   A reunião de mercado semanal usa só 2 (Vendas e CEO).
 - CEO com `model` = `modelo_ceo`; os outros com `model` = `modelo_agentes`. O orquestrador não faz trabalho de agentes "para poupar".
 - Ler só o necessário: o orquestrador não relê ficheiros grandes nem repete testes que a QA já correu.
-- Um objetivo. Acabou → registar e terminar. Nada de "já agora".
+- No máximo `objetivos_por_ciclo` objetivos. Acabaram → registar e terminar. Nada de "já agora".
 - Se a sessão atingir um limite de uso: parar limpo, sem push de código a meio; o próximo ciclo retoma.
 - Se o backlog não tiver nada que caiba num ciclo, a CEO pode decidir um ciclo de manutenção curto
   (dívida técnica, acessibilidade, testes) ou terminar sem alterações.
