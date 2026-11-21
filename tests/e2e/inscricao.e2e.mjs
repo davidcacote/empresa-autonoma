@@ -57,6 +57,7 @@ await cenario('(a) inscrever-se no primeiro turno livre mostra a confirmação e
   afirmar(envio, 'não foi enviado nenhum pedido de inscrição');
   const corpo = JSON.parse(envio.corpo);
   afirmar(corpo.p_nome === 'Ana' && corpo.p_maior_idade === true && corpo.p_dispositivo.length >= 16, `corpo inesperado: ${envio.corpo}`);
+  await page.locator('#minhas').waitFor({ state: 'visible', timeout: 10000 }).catch(() => {});
   afirmar(await page.locator('#minhas').isVisible(), '"As minhas inscrições" não apareceu');
   afirmar(!(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1)), 'scroll horizontal');
 });

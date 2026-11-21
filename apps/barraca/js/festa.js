@@ -212,6 +212,7 @@ async function enviarInscricao(ev) {
     const r = await inscrever(turnoId, nome.valor, idDispositivo(), true);
     minhasInscricoes.adicionar({ id: r.id, slug: estado.slug, turnoId, nome: r.primeiro_nome, resumo });
     dlg.close('ok');
+    renderizar(true); // "As minhas inscrições" já pronta quando a confirmação aparece (sem esperar pela rede)
     mostrarConfirmacao(`Está inscrito(a), ${r.primeiro_nome}!`, resumo, eventoDoTurno(turnoId, r.id));
     limparAviso();
     await recarregar();

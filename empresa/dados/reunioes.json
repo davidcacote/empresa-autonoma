@@ -559,5 +559,32 @@
         "texto": "Dev apontou riscos: o exemplo não traz substituto já validado e cada clique acrescenta outra cópia da festa."
       }
     ]
+  },
+  {
+    "id": "R-021",
+    "data": "2026-11-21T01:44:22Z",
+    "ciclo": 13,
+    "tipo": "normal",
+    "titulo": "Ciclo 13: Corrigir CI vermelho: e2e instável da inscrição (Barraca)",
+    "resumo": "CI da main vermelho (e2e inscricao) tem prioridade absoluta; sem stand-up, só Dev e QA.",
+    "participantes": [
+      "dev",
+      "qa",
+      "sistema"
+    ],
+    "intervencoes": [
+      {
+        "quem": "dev",
+        "texto": "Causa: condição de corrida na app. A secção 'As minhas inscrições' só era desenhada depois do recarregamento por rede; no CI lento o e2e verificava antes. Corrigi com renderizar(true) logo após fechar o diálogo (festa.js) e uma espera por condição no e2e, sem enfraquecer asserções. 51 testes, build, smoke e todos os e2e passam; inscricao 5/5. Não consegui reproduzir a falha localmente."
+      },
+      {
+        "quem": "qa",
+        "texto": "Aprovado. Asserção mantida; 51/51 testes, build, smoke, 6 e2e e validar OK; inscricao mais 3/3. Três corridas não provam o fim da instabilidade: só o CI confirma. Contadores de ocupação ficam desatualizados por instantes até o recarregamento terminar (menor). Sem screenshots 390/1280 nem consola do browser."
+      },
+      {
+        "quem": "sistema",
+        "texto": "Segundo objetivo não iniciado: poupança de uso. Reunião de mercado no ciclo 14."
+      }
+    ]
   }
 ]

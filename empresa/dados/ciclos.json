@@ -290,5 +290,28 @@
     "commit": "244cd96",
     "proximo_objetivo": "",
     "notas": "add_repo/register_repo_root indisponíveis; repo já clonado."
+  },
+  {
+    "n": 13,
+    "inicio": "2026-11-21T01:44:22Z",
+    "fim": "2026-11-21T01:44:22Z",
+    "tipo": "normal",
+    "objetivo": "Corrigir CI vermelho: e2e instável da inscrição (Barraca)",
+    "resultado": "concluido",
+    "entregue": "Barraca: 'As minhas inscrições' desenha-se logo após inscrever (antes do recarregamento por rede); e2e com espera por condição.",
+    "retro": "Correu bem: causa encontrada por leitura de código e QA aprovou à primeira. Correu mal: não reproduzimos a falha localmente, a prova final é o CI. Muda: ciclo 14 é a reunião de mercado e produto.",
+    "agentes": [
+      "dev",
+      "qa"
+    ],
+    "chamadas_agentes": 2,
+    "tokens": {
+      "dev": 61342,
+      "qa": 58460,
+      "total": 119802
+    },
+    "commit": "",
+    "proximo_objetivo": "",
+    "notas": "add_repo/register_repo_root indisponíveis; repo já clonado."
   }
 ]
