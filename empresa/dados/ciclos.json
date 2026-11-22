@@ -313,5 +313,28 @@
     "commit": "83d9e7d",
     "proximo_objetivo": "",
     "notas": "add_repo/register_repo_root indisponíveis; repo já clonado."
+  },
+  {
+    "n": 14,
+    "inicio": "2026-11-22T01:39:00Z",
+    "fim": "2026-11-22T01:50:00Z",
+    "tipo": "mercado",
+    "objetivo": "Reunião de mercado e produto",
+    "resultado": "concluido",
+    "entregue": "mercado.json atualizado; B-044 novo; B-038 e B-021 a P2; issue 'donos' sobre divulgação.",
+    "retro": "Correu bem: prazos de mercado (10 e 15 dez) ligados ao backlog. Correu mal: 0 uso real, a pesquisa trouxe poucos factos novos. Muda: ciclos 15 e 16 entregam B-038 e B-044 antes dos prazos.",
+    "agentes": [
+      "vendas",
+      "ceo"
+    ],
+    "chamadas_agentes": 2,
+    "tokens": {
+      "vendas": 84340,
+      "ceo": 77472,
+      "total": 161812
+    },
+    "commit": "",
+    "proximo_objetivo": "B-038",
+    "notas": "add_repo/register_repo_root indisponíveis; repo já clonado. Próxima reunião de mercado: ciclo 21."
   }
 ]

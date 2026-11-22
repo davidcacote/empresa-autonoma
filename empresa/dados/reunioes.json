@@ -586,5 +586,32 @@
         "texto": "Segundo objetivo não iniciado: poupança de uso. Reunião de mercado no ciclo 14."
       }
     ]
+  },
+  {
+    "id": "R-022",
+    "data": "2026-11-22T01:50:00Z",
+    "ciclo": 14,
+    "tipo": "mercado",
+    "titulo": "Ciclo 14: Reunião de mercado e produto",
+    "resumo": "Reunião semanal (Vendas + CEO), sem desenvolvimento.",
+    "participantes": [
+      "vendas",
+      "ceo",
+      "sistema"
+    ],
+    "intervencoes": [
+      {
+        "quem": "vendas",
+        "texto": "Mercado atualizado (7 consultas). Maiores oportunidades: O-5 Arraiais 2027 (B-023/B-022 até fim de março), O-6 Placa Certa Horário de Natal (15 dez), O-1 Banco Alimentar (janela real em maio de 2027; data de novembro não confirmada). Falhas: F-10 nenhum produto divulgado (0 festas, 0 inscrições), F-2 menores (B-021), F-5 confiança e dados (B-028). Propõe novo item de Horário de Natal e subir B-038 e B-021 a P2."
+      },
+      {
+        "quem": "ceo",
+        "texto": "Os três produtos continuam em manutenção/MVP. 'Começamos outro projeto?' Não: o que trava é a distribuição, não a falta de produto. Novo B-044 (P2); B-038 e B-021 sobem a P2. Abre issue 'donos' sobre divulgação. Próximos objetivos: B-038 (ciclo 15), B-044 (ciclo 16); próxima reunião no ciclo 21."
+      },
+      {
+        "quem": "sistema",
+        "texto": "Ciclo sem desenvolvimento. Segurança: só os avisos esperados. Uso: 0 festas reais, 0 inscrições."
+      }
+    ]
   }
 ]

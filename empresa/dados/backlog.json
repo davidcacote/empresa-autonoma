@@ -285,7 +285,7 @@
     "id": "B-021",
     "titulo": "Grupos com jovens: o adulto responsável inscreve-se e indica quantos jovens leva (sem nomes de menores)",
     "estado": "a_fazer",
-    "prioridade": 3,
+    "prioridade": 2,
     "estimativa": "M",
     "quem": "Escuteiros, paróquias, escolas e associações juvenis",
     "porque": "Falha F-2: só maiores de idade exclui os 14–25 anos. Decisão da empresa (CEO, 8 nov): o adulto responsável inscreve-se e indica só quantos jovens leva, sem nomes, respeitando a regra de não guardar dados de menores.",
@@ -596,12 +596,16 @@
   {
     "id": "B-038",
     "titulo": "Modelo 'Feira de Natal de escola' com bancas e turnos",
-    "estado": "ideia",
-    "prioridade": 3,
+    "estado": "a_fazer",
+    "prioridade": 2,
     "estimativa": "M",
     "quem": "CEO",
     "porque": "Proposta da CEO no ciclo 10",
-    "criterios": [],
+    "criterios": [
+      "Modelo 'Feira de Natal de escola' com bancas e turnos, editável",
+      "Não grava nada no servidor sem a organização criar a festa",
+      "Pronto antes de 10 dez 2026"
+    ],
     "segmento": [
       "S-2"
     ],
@@ -694,6 +698,29 @@
     ],
     "mercado": [
       "F-6"
+    ]
+  },
+  {
+    "id": "B-044",
+    "titulo": "Placa Certa: variante 'Horário de Natal / fecho' pré-preenchida (24, 25, 31 dez e 1 jan)",
+    "estado": "a_fazer",
+    "prioridade": 2,
+    "estimativa": "P",
+    "quem": "Pequenos negócios e associações",
+    "porque": "Proposta da Carla, aprovada pela CEO no ciclo 14; prazo 15 dez 2026",
+    "criterios": [
+      "Entrada no seletor de modelos, sem 5.º modelo novo",
+      "Texto em PT-PT, 2 a 3 campos, A4 legível a 2 m e a preto e branco",
+      "Funciona sem conta",
+      "Teste e2e da variante"
+    ],
+    "segmento": [
+      "S-5",
+      "S-6"
+    ],
+    "mercado": [
+      "O-6",
+      "F-7"
     ]
   }
 ]

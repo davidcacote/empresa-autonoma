@@ -1,7 +1,7 @@
 {
-  "atualizado_em": "2026-11-15",
+  "atualizado_em": "2026-11-22",
   "produto": "Barraca (v1.0, manutenção) e Placa Certa (D-006, em fundação)",
-  "resumo": "A Barraca serve quem organiza voluntários em eventos locais e sazonais (comissões de festas, arraiais de paróquias e escuteiros, associações de pais) e que hoje improvisa com WhatsApp, Google Forms e papel; escolhem-nos porque o voluntário se inscreve num toque, sem conta, e a vaga atualiza à vista de todos. O que mais trava é a ponte para o hábito existente (partilhar no WhatsApp ainda não existe), o limite de só maiores de idade e a falta de forma de saber quem é quem e de reaproveitar a festa no ano seguinte. Nota de método: as pesquisas web devolveram sobretudo títulos; os factos abaixo vêm de 3 páginas lidas na íntegra (Feira da Serra, Banco Alimentar/DN, SignUpGenius) e de títulos de notícias; tudo o resto está marcado como estimativa. Ciclo 7: acrescentado o segmento da Placa Certa (gerador de placas e cartazes A4 para pequenos negócios e associações, imprimir pelo browser, sem conta). Nota de método do ciclo 7: 5 pesquisas web, de novo só com títulos e links (páginas não lidas na íntegra); por isso só são dados como facto a existência das páginas e dos diplomas citados, sem números. Métricas de uso da Barraca: sem festas reais de relevo registadas (assume-se 0).",
+  "resumo": "A Barraca serve quem organiza voluntários em eventos locais e sazonais (comissões de festas, arraiais de paróquias e escuteiros, associações de pais) e que hoje improvisa com WhatsApp, Google Forms e papel; escolhem-nos porque o voluntário se inscreve num toque, sem conta, e a vaga atualiza à vista de todos. O que mais trava é a ponte para o hábito existente (partilhar no WhatsApp ainda não existe), o limite de só maiores de idade e a falta de forma de saber quem é quem e de reaproveitar a festa no ano seguinte. Nota de método: as pesquisas web devolveram sobretudo títulos; os factos abaixo vêm de 3 páginas lidas na íntegra (Feira da Serra, Banco Alimentar/DN, SignUpGenius) e de títulos de notícias; tudo o resto está marcado como estimativa. Ciclo 7: acrescentado o segmento da Placa Certa (gerador de placas e cartazes A4 para pequenos negócios e associações, imprimir pelo browser, sem conta). Nota de método do ciclo 7: 5 pesquisas web, de novo só com títulos e links (páginas não lidas na íntegra); por isso só são dados como facto a existência das páginas e dos diplomas citados, sem números. Métricas de uso da Barraca: sem festas reais de relevo registadas (assume-se 0). Ciclo 14 (22 nov 2026): 7 consultas web (5 pesquisas e 2 páginas lidas: Renascença de 1 jun 2026 e texto da Lei 71/98). Factos novos: a campanha de maio de 2026 do Banco Alimentar recolheu 1.930 toneladas com cerca de 40 mil voluntários em mais de 2 mil superfícies comerciais; a campanha de novembro de 2025 recolheu 2.150 toneladas. A data exata da campanha de novembro de 2026 não foi encontrada (estimativa: 28 e 29 de novembro, últimos fins de semana do mês). O texto da Lei 71/98 lido não fixa idade mínima para voluntários (art. 3.º); a regulamentação não foi lida, por isso não se conclui nada sobre menores. Métricas de uso: 0 festas reais e 0 inscrições reais (produtos ainda não divulgados); portanto a maior falha de adoção deste ciclo é a distribuição, não uma funcionalidade. Falhas F-1, F-3, F-4, F-7 e F-8 reavaliadas após B-004, B-006, B-008, B-030 e B-031 estarem feitos; acrescentadas F-10 e F-11, O-9 e entradas de calendário para 2027.",
   "segmentos": [
     {
       "id": "S-1",
@@ -25,7 +25,7 @@
       "id": "S-3",
       "nome": "Campanhas de solidariedade com equipas locais (ex.: Banco Alimentar)",
       "descricao": "Campanhas pontuais onde muita gente dá poucas horas em lojas e armazéns. O Banco Alimentar faz duas campanhas por ano, geralmente nos últimos fins de semana de maio e novembro, e a inscrição de voluntários faz-se no site ou no Banco Alimentar da região (DN).",
-      "dimensao": "Facto: 1.878 toneladas recolhidas na campanha de 2025 noticiada pela Renascença; 2.150 toneladas em dois dias na campanha anterior (DN). Número de voluntários: não indicado nas fontes.",
+      "dimensao": "Facto (Renascença, 1 jun 2026): campanha de maio de 2026 com 1.930 toneladas, cerca de 40 mil voluntários e mais de duas mil superfícies comerciais. Facto: 2.150 toneladas na campanha de novembro de 2025 (DN/Renascença). Nota: a notícia indica subida de 2,5%, mas 1.930 sobre 1.878 dá cerca de 2,8%; usar só os valores absolutos.",
       "dor_principal": "A inscrição nacional já existe; a dor provável está na equipa local de uma loja ou de uma instituição que precisa de organizar os seus próprios turnos (estimativa, a validar).",
       "como_chegar": "Modelo 'campanha de recolha numa loja' aberto a qualquer equipa local, sem falar em nome do Banco Alimentar.",
       "prioridade": 3
@@ -36,7 +36,7 @@
       "descricao": "Autarquias e entidades públicas que recrutam voluntários para feiras e jogos. Casos públicos: a Feira da Serra de São Brás de Alportel tem programa de 70 vagas para jovens dos 14 aos 25 anos com inscrição presencial e escolha de turnos no momento da inscrição; o IPDJ procurou voluntários para o jogo Portugal-Letónia no Estádio Algarve. Existe também uma plataforma municipal de voluntariado em Portimão.",
       "dimensao": "Estimativa: poucos clientes mas com eventos grandes; ciclos de decisão mais lentos e exigências de certificado, menores e dados pessoais.",
       "dor_principal": "Facto (Feira da Serra): inscrição em papel e presencial, em horário de expediente, com assinatura de encarregado de educação; cada voluntário tem de ter pelo menos um turno e arranjar substituto validado se faltar.",
-      "como_chegar": "Estudo de caso público 'a Feira da Serra em 10 minutos' feito com dados públicos e ficção clara, sem tocar na organização.",
+      "como_chegar": "Estudo de caso público 'a Feira da Serra em 10 minutos' feito com dados públicos e ficção clara, sem tocar na organização. O Turno Certo (folha offline para o balcão de inscrição presencial, com substituto validado, B-037/B-039) é a resposta direta ao processo de papel da Feira da Serra; continua sem uso real.",
       "prioridade": 4
     },
     {
@@ -119,15 +119,15 @@
   "falhas": [
     {
       "id": "F-1",
-      "descricao": "Não há botão de partilha no WhatsApp nem pré-visualização do link: o coordenador tem de copiar o endereço à mão para o grupo onde a comissão já vive, e o link chega sem título nem imagem.",
+      "descricao": "B-004 está feito (texto pronto para o WhatsApp), mas o link ainda chega sem título nem imagem da festa porque a pré-visualização é genérica; para uma comissão que vive no WhatsApp, é a primeira impressão do produto.",
       "impacto": "alto",
       "segmentos": [
         "S-1",
         "S-2",
         "S-3"
       ],
-      "sugestao": "Fazer já o B-004 (texto pronto com nome, datas e link, mais meta tags Open Graph) e subir-lhe a prioridade para 1.",
-      "backlog": "B-004"
+      "sugestao": "Fazer o B-022 (Open Graph por festa com nome e imagem) e subir-lhe a prioridade de 4 para 2.",
+      "backlog": "B-022"
     },
     {
       "id": "F-2",
@@ -137,31 +137,31 @@
         "S-2",
         "S-4"
       ],
-      "sugestao": "Permitir ao organizador definir 'idade mínima' ou 'menores só com responsável' por festa e ajustar o texto de confirmação, sem recolher dados de menores.",
-      "backlog": null
+      "sugestao": "Fazer o B-021 (o adulto responsável inscreve-se e indica quantos jovens leva, sem nomes de menores) e subir-lhe a prioridade de 3 para 2. Nota legal: o texto da Lei 71/98 lido não fixa idade mínima; qualquer regra para menores deve ser validada pelos donos.",
+      "backlog": "B-021"
     },
     {
       "id": "F-3",
-      "descricao": "Só com o primeiro nome, o coordenador não sabe quem é o 'João' das 3 da manhã e não consegue avisar ninguém. Também não há lembrete do turno para o voluntário.",
+      "descricao": "O calendário .ics (B-006) está feito, mas continua a faltar saber quem é o 'João' das 3 da manhã: só há primeiro nome e nenhum contacto visível na gestão.",
       "impacto": "alto",
       "segmentos": [
         "S-1",
         "S-2",
         "S-3"
       ],
-      "sugestao": "Campo opcional de contacto visível só na gestão (com aviso de privacidade) e, do lado do voluntário, o calendário .ics (B-006). Decisão sobre dados pessoais pertence aos donos.",
+      "sugestao": "Campo opcional de contacto visível só na gestão, com aviso de privacidade (decisão sobre dados pessoais dos donos), depois de B-028.",
       "backlog": "B-006"
     },
     {
       "id": "F-4",
-      "descricao": "As festas repetem-se todos os anos mas cada edição obriga a recriar postos e turnos de raiz; quem organiza voluntários cansa-se de repetir.",
+      "descricao": "Os modelos de postos (B-008) estão feitos, mas cada ano obriga a recriar os turnos: falta duplicar a festa do ano anterior.",
       "impacto": "medio",
       "segmentos": [
         "S-1",
         "S-2"
       ],
-      "sugestao": "Subir o B-008 (duplicar festa e modelos de postos) de prioridade 4 para 2 e incluir modelos prontos (barraca, bar, bilheteira, montagem).",
-      "backlog": "B-008"
+      "sugestao": "Fazer o B-023 (duplicar uma festa a partir do slug público) antes de março de 2027.",
+      "backlog": "B-023"
     },
     {
       "id": "F-5",
@@ -172,8 +172,8 @@
         "S-2",
         "S-4"
       ],
-      "sugestao": "Página curta 'Como tratamos os dados' em PT-PT e opção de reenviar ou regenerar o link de gestão (a decidir com CTO e donos).",
-      "backlog": null
+      "sugestao": "Fazer o B-028 (página 'Como tratamos os dados' em PT-PT) e estudar a regeneração do link de gestão com o CTO e os donos.",
+      "backlog": "B-028"
     },
     {
       "id": "F-6",
@@ -188,7 +188,7 @@
     },
     {
       "id": "F-7",
-      "descricao": "Placa Certa (ainda sem produto): se os 4 modelos não cobrirem os avisos que o comerciante realmente precisa (preços, horário, aberto/fechado, aviso), a pessoa volta ao Word. Estimativa, a validar com o Dev sem contactar ninguém.",
+      "descricao": "Placa Certa: os 4 modelos (B-030) estão feitos; o risco que fica é um aviso comum não estar coberto (por exemplo, 'horário de Natal') e a pessoa voltar ao Word. Estimativa, a validar sem contactar ninguém.",
       "impacto": "alto",
       "segmentos": [
         "S-5",
@@ -199,7 +199,7 @@
     },
     {
       "id": "F-8",
-      "descricao": "Placa Certa: o valor depende de a impressão A4 sair legível e centrada (margens, preto e branco, impressoras de escritório); se sair cortada ou com fonte pequena, perde-se a confiança.",
+      "descricao": "Placa Certa: o CSS de impressão (B-031) está feito; falta apenas verificar em impressoras reais, o que ainda não aconteceu (0 utilizadores).",
       "impacto": "alto",
       "segmentos": [
         "S-5",
@@ -218,16 +218,40 @@
       ],
       "sugestao": "Guardar o último texto no próprio browser (localStorage, sem servidor) e opção de link com os campos no endereço.",
       "backlog": "B-032"
+    },
+    {
+      "id": "F-10",
+      "descricao": "Nenhum produto foi divulgado: 0 festas reais e 0 inscrições reais. Sem a prova de uso, sem estudo de caso nem exemplo público fácil de partilhar, um coordenador não tem razão para trocar o WhatsApp. É a falha que mais trava a adoção e não depende de código.",
+      "impacto": "alto",
+      "segmentos": [
+        "S-1",
+        "S-2",
+        "S-4",
+        "S-5"
+      ],
+      "sugestao": "Fazer o B-027 (README com estudo de caso e screenshots, a partir da demonstração) e pedir aos donos uma decisão sobre onde e como divulgar; a empresa não faz prospeção ativa sem autorização.",
+      "backlog": "B-027"
+    },
+    {
+      "id": "F-11",
+      "descricao": "Turno Certo (MVP): a folha vive só no dispositivo do balcão (sem servidor); se o telemóvel ou o browser perder os dados, perde-se a lista de inscritos e substitutos. Estimativa, a validar.",
+      "impacto": "medio",
+      "segmentos": [
+        "S-4",
+        "S-1"
+      ],
+      "sugestao": "Fazer o B-041 (exportar/importar a folha em JSON) e o B-042 (atualização do service worker).",
+      "backlog": "B-041"
     }
   ],
   "oportunidades": [
     {
       "id": "O-1",
       "cliente": "Campanha do Banco Alimentar (equipas locais de loja ou instituição), campanha de novembro",
-      "descricao": "Facto (DN): a campanha realiza-se duas vezes por ano, geralmente nos últimos fins de semana de maio e novembro. Equipas locais que queiram organizar os seus turnos podiam usar a Barraca com um modelo de 'campanha de recolha' (postos: entrada, caixas, armazém), sem qualquer ligação oficial ao Banco Alimentar.",
-      "porque_agora": "Estamos a 3 semanas do fim de semana típico de novembro (data exata de 2026 não confirmada); depois há a campanha de maio.",
+      "descricao": "Facto (DN): a campanha realiza-se duas vezes por ano, geralmente nos últimos fins de semana de maio e novembro. Equipas locais que queiram organizar os seus turnos podiam usar a Barraca com um modelo de 'campanha de recolha' (postos: entrada, caixas, armazém), sem qualquer ligação oficial ao Banco Alimentar. Facto novo (Renascença, 1 jun 2026): em maio de 2026 foram cerca de 40 mil voluntários em mais de 2 mil superfícies comerciais, com 1.930 toneladas.",
+      "porque_agora": "O fim de semana típico é 28 e 29 de novembro de 2026, a 6 dias (estimativa: data não confirmada por fonte). Realisticamente sem tempo para qualquer uso novo; o modelo 'Recolha de alimentos' (B-008) já existe. A janela útil é a campanha de maio de 2027 (provavelmente 29 e 30 de maio, estimativa).",
       "tamanho": "alto",
-      "primeiro_passo": "Criar um modelo de festa 'Recolha de alimentos' na criação de festa e uma página de exemplo na demonstração, escrita sem usar a marca do Banco Alimentar; sem contactar ninguém.",
+      "primeiro_passo": "Só se os donos autorizarem divulgação: partilhar o modelo 'Recolha de alimentos' e a demonstração, sem usar a marca do Banco Alimentar e sem contactar ninguém. Caso contrário, reservar para maio de 2027.",
       "backlog": "B-008"
     },
     {
@@ -236,8 +260,8 @@
       "descricao": "Facto: o programa de voluntariado juvenil de 2026 tinha 70 vagas, inscrição presencial de 2 a 8 de julho e escolha de turnos no ato de inscrição, com exigência de substituto validado em caso de falta. É o caso público perfeito para um estudo de caso de 'antes e depois'.",
       "porque_agora": "A próxima edição abre inscrições provavelmente por volta de julho de 2027 (estimativa); há tempo para o produto estar pronto e para a idade mínima (F-2).",
       "tamanho": "medio",
-      "primeiro_passo": "Fazer na demonstração uma festa fictícia 'Feira de verão' com setores promoção, organização, produção e operação e um texto 'o que a Feira da Serra podia ganhar', claramente identificado como exemplo, sem contactar a autarquia nem copiar nomes de pessoas.",
-      "backlog": null
+      "primeiro_passo": "Fazer na demonstração uma festa fictícia 'Feira de verão' com setores promoção, organização, produção e operação e um texto 'o que a Feira da Serra podia ganhar', claramente identificado como exemplo, sem contactar a autarquia nem copiar nomes de pessoas. Usar o Turno Certo (folha de balcão com substituto validado, B-037/B-039) como núcleo do exemplo.",
+      "backlog": "B-027"
     },
     {
       "id": "O-3",
@@ -252,10 +276,10 @@
       "id": "O-4",
       "cliente": "Associações de pais e escolas: feiras de Natal e festas de fim de ano",
       "descricao": "Estimativa: as associações de pais organizam feiras de Natal, bancas e festas com turnos de pais e usam grupos de WhatsApp e formulários Google (há formulários públicos de inscrição para festas de Natal em português). Sem número verificado.",
-      "porque_agora": "Dezembro está à porta e as feiras de Natal marcam-se em novembro (estimativa); há ainda a festa de final de ano letivo em junho.",
+      "porque_agora": "Dezembro está à porta: as feiras de Natal das associações de pais e das escolas já se marcam agora (estimativa); prazo realista para o modelo estar pronto, 10 de dezembro de 2026; depois, festa de final de ano letivo em junho de 2027.",
       "tamanho": "medio",
       "primeiro_passo": "Modelo 'Feira de Natal da escola' com texto pronto de partilha, e permissão de idade mínima para aguentar alunos mais velhos (F-2).",
-      "backlog": "B-004"
+      "backlog": "B-038"
     },
     {
       "id": "O-5",
@@ -270,9 +294,9 @@
       "id": "O-6",
       "cliente": "Pequenos negócios locais com avisos obrigatórios e promocionais (cafés, restaurantes, mercearias, oficinas)",
       "descricao": "Facto: há obrigação legal de afixar preços na restauração (RR, 2017) e regras de afixação do Livro de Reclamações (DL 74/2017). Estimativa: a necessidade de placas simples e atualizáveis é permanente e não sazonal; a Placa Certa responde sem conta.",
-      "porque_agora": "Estimativa: o fim de ano (Natal, 'horário especial') gera muitos avisos de horário em dezembro; a Placa Certa precisa de estar pronta até lá, o que é apertado.",
+      "porque_agora": "Estimativa: avisos de 'horário de Natal' e 'fecho' em dezembro; a Placa Certa já tem o modelo Horário (B-030), falta o texto de Natal pré-preenchido. Prazo: 15 de dezembro de 2026.",
       "tamanho": "alto",
-      "primeiro_passo": "Modelo 'Horário de Natal' e 'Aberto/Fechado' entre os 4 do MVP, com uma montra pública no estúdio; sem contactar ninguém.",
+      "primeiro_passo": "Variante 'Horário de Natal / Fecho' pré-preenchida no modelo Horário e uma montra pública, sem contactar ninguém.",
       "backlog": "B-030"
     },
     {
@@ -292,12 +316,21 @@
       "tamanho": "medio",
       "primeiro_passo": "Uma página estática por modelo, com título e descrição próprios e texto curto em PT-PT.",
       "backlog": "B-034"
+    },
+    {
+      "id": "O-9",
+      "cliente": "Balcões de inscrição presencial de feiras e festas municipais (Turno Certo)",
+      "descricao": "Facto (Feira da Serra 2026): inscrição presencial de 2 a 8 de julho, em horário de expediente, escolha de turnos no ato e substituto validado em caso de falta. O Turno Certo resolve exatamente este balcão sem internet nem contas. Estimativa: poucos clientes, ciclos de decisão lentos.",
+      "porque_agora": "Estimativa: a próxima edição abre inscrições por volta de julho de 2027; o produto tem de ter um exemplo público e a cópia de segurança (B-041) até maio de 2027.",
+      "tamanho": "medio",
+      "primeiro_passo": "Publicar o caso 'balcão de inscrição em 10 minutos' com dados fictícios e a folha de exemplo (B-039), sem contactar a autarquia.",
+      "backlog": "B-041"
     }
   ],
   "calendario": [
     {
       "periodo": "novembro (2026)",
-      "momento": "Campanha de recolha do Banco Alimentar (fim de semana tipicamente no fim do mês)",
+      "momento": "Campanha de recolha do Banco Alimentar (estimativa: 28 e 29 de novembro; data de 2026 não confirmada)",
       "oportunidade": "O-1"
     },
     {
@@ -364,6 +397,31 @@
       "periodo": "março a maio",
       "momento": "Cartazes e tabelas de preços para os arraiais de verão (estimativa)",
       "oportunidade": "O-7"
+    },
+    {
+      "periodo": "10 de dezembro de 2026",
+      "momento": "Prazo realista para o modelo 'Feira de Natal de escola' (B-038)",
+      "oportunidade": "O-4"
+    },
+    {
+      "periodo": "15 de dezembro de 2026",
+      "momento": "Prazo para o 'Horário de Natal' pré-preenchido na Placa Certa",
+      "oportunidade": "O-6"
+    },
+    {
+      "periodo": "fim de março de 2027",
+      "momento": "Duplicar festa (B-023) e Open Graph (B-022) prontos antes do planeamento dos arraiais",
+      "oportunidade": "O-5"
+    },
+    {
+      "periodo": "29 e 30 de maio de 2027 (estimativa)",
+      "momento": "Campanha de maio do Banco Alimentar",
+      "oportunidade": "O-1"
+    },
+    {
+      "periodo": "julho de 2027",
+      "momento": "Inscrições presenciais do voluntariado jovem da Feira da Serra (base: 2026) e Turno Certo com exemplo público",
+      "oportunidade": "O-9"
     }
   ],
   "fontes": [
@@ -438,6 +496,14 @@
     {
       "titulo": "CASES: Conta Satélite da Economia Social 2019-2020",
       "url": "https://cases.pt/wp-content/uploads/2023/08/Conta-Satelite-2019-2020.pdf"
+    },
+    {
+      "titulo": "Renascença: Campanha de recolha do Banco Alimentar regista subida de 2,5% (1 jun 2026)",
+      "url": "https://rr.pt/noticia/pais/2026/06/01/campanha-de-recolha-do-banco-alimentar-regista-subida-de-25/472869/"
+    },
+    {
+      "titulo": "Lei n.º 71/98 (Voluntariado), texto copiado em qsl.net (o diploma oficial está no Diário da República)",
+      "url": "https://www.qsl.net/arvm/pcivil/lei71_98.html"
     }
   ]
 }

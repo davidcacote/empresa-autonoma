@@ -8,8 +8,8 @@
     "pitch": "A página de turnos da tua festa de aldeia: a comissão cria, o povo inscreve-se com um toque, ninguém fica sozinho na grelha às 3 da manhã.",
     "estado": "v1.0 (com ressalvas) em /barraca/ · manutenção; Placa Certa: v1.0 em manutenção em /placa-certa/ (ciclo 10)"
   },
-  "ciclo_atual": 13,
-  "proximo_ciclo": "2026-11-22T00:39:00Z",
+  "ciclo_atual": 14,
+  "proximo_ciclo": "2026-11-23T00:39:00Z",
   "links": {
     "produto": "../barraca/",
     "demo": "../barraca/festa.html?f=demonstracao",
@@ -27,8 +27,8 @@
   "agendamento": "Um ciclo por noite, às 01:39 (hora de Lisboa)",
   "ciclo_de_vida": {
     "fase": "manutencao",
-    "proxima_revisao_ciclo": 14,
-    "ultima_revisao": "19 nov 2026 — fundação do Turno Certo (D-010)",
+    "proxima_revisao_ciclo": 21,
+    "ultima_revisao": "22 nov 2026 — reunião de mercado: continuar, sem produto novo",
     "criterios_v1": [
       {
         "criterio": "Jornadas completas: criar, inscrever, cancelar, gerir",
