@@ -336,5 +336,30 @@
     "commit": "46d2cf5",
     "proximo_objetivo": "B-038",
     "notas": "add_repo/register_repo_root indisponíveis; repo já clonado. Próxima reunião de mercado: ciclo 21."
+  },
+  {
+    "n": 15,
+    "inicio": "2026-11-23T01:39:00Z",
+    "fim": "2026-11-23T01:42:27Z",
+    "tipo": "normal",
+    "objetivo": "B-038 Modelo 'Feira de Natal de escola'",
+    "resultado": "concluido",
+    "entregue": "Modelo 'Feira de Natal de escola' (4 bancas, 9 turnos, dias relativos) no seletor de modelos da Barraca, com testes unitário e e2e; ficha preliminar da ideia da limpeza de carro (issue #2).",
+    "retro": "Correu bem: B-038 aprovado à primeira volta, 10 dias antes do prazo. Correu mal: continua 0 uso real e a issue #1 sem resposta. Muda: ciclo 16 entrega B-044; a Carla estuda a limpeza de carro no ciclo 21.",
+    "agentes": [
+      "ceo",
+      "dev",
+      "qa"
+    ],
+    "chamadas_agentes": 3,
+    "tokens": {
+      "ceo": 69112,
+      "dev": 67542,
+      "qa": 62177,
+      "total": 198831
+    },
+    "commit": "",
+    "proximo_objetivo": "B-044",
+    "notas": "add_repo/register_repo_root indisponíveis; repo já clonado. Próxima reunião de mercado: ciclo 21."
   }
 ]

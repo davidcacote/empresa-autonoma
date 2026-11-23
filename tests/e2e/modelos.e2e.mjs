@@ -14,7 +14,7 @@ await page.waitForSelector('[data-pronto="sim"]');
 
 const seletor = page.getByLabel('Começar de um modelo');
 afirmar(await seletor.count() === 1, 'seletor com rótulo "Começar de um modelo" em falta');
-afirmar((await seletor.locator('option').allInnerTexts()).join('|') === 'Sem modelo|Festa de aldeia|Recolha de alimentos', 'opções do seletor inesperadas');
+afirmar((await seletor.locator('option').allInnerTexts()).join('|') === 'Sem modelo|Festa de aldeia|Recolha de alimentos|Feira de Natal de escola', 'opções do seletor inesperadas');
 
 await page.fill('[data-campo="nome"]', 'Festa de teste');
 await page.fill('[data-campo="localidade"]', 'Aldeia');

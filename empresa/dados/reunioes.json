@@ -613,5 +613,37 @@
         "texto": "Ciclo sem desenvolvimento. Segurança: só os avisos esperados. Uso: 0 festas reais, 0 inscrições."
       }
     ]
+  },
+  {
+    "id": "R-023",
+    "data": "2026-11-23T01:42:27Z",
+    "ciclo": 15,
+    "tipo": "normal",
+    "titulo": "Ciclo 15: B-038 Modelo 'Feira de Natal de escola'",
+    "resumo": "Stand-up da CEO (issue 'donos' #2 aberta); Dev e QA entregam o modelo; B-044 fica para o ciclo 16.",
+    "participantes": [
+      "ceo",
+      "dev",
+      "qa",
+      "sistema"
+    ],
+    "intervencoes": [
+      {
+        "quem": "ceo",
+        "texto": "Objetivo: só B-038 (única oportunidade sazonal de S-2 com prazo duro a 10 dez; resolve F-4/O-4). B-044 (prazo 15 dez) fica para o ciclo 16. 'Começamos outro projeto?': não, por agora. Turno Certo ainda em MVP (2/3), 0 festas reais e prazos de dezembro. Ficha preliminar da ideia dos donos (limpeza de carro ao domicílio, issue #2): potencial comercial 3/5, portfólio 4/5, uso 1/5; riscos: morada é dado pessoal, sem pagamentos, só os donos contactam a empresa. A Carla estuda a concorrência no ciclo 21 e a CEO decide aí; se sim, fundação no ciclo 22."
+      },
+      {
+        "quem": "dev",
+        "texto": "Modelo 'Feira de Natal de escola' (4 bancas, 9 turnos: Bolos, Chocolate quente, Rifas, Montagem e desmontagem) com dias relativos, em modelos.js e criar.js; nada é gravado até 'Criar festa'. Teste unitário novo e e2e feira-natal. 52 testes, build, smoke, 6 e2e e validar OK. Risco: festa de um só dia põe montagem e desmontagem no mesmo dia; o dia fica vazio se o modelo for usado antes das datas."
+      },
+      {
+        "quem": "qa",
+        "texto": "Aprovado à primeira volta. Corri tudo de forma independente: 52/52, build, smoke, e2e e validar OK; 0 POSTs ao aplicar o modelo; 1 POST criar_festa ao criar; screenshots 390/1280 sem overflow. Nota: links do cabeçalho/rodapé com menos de 44px (pré-existente); contraste não medido numericamente."
+      },
+      {
+        "quem": "sistema",
+        "texto": "Segundo objetivo (B-044) não iniciado, por indicação da CEO (um objetivo por ciclo neste caminho)."
+      }
+    ]
   }
 ]

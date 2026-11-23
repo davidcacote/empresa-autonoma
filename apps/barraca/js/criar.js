@@ -175,13 +175,26 @@ function aplicarModelo(id) {
   for (const dados of postosDoModelo(id)) {
     const posto = criarPosto();
     posto.querySelector('[data-parte="nome"]').value = dados.nome;
-    const turno = posto.querySelector('.turno-form');
-    for (const [parte, valor] of Object.entries(dados.turnos[0])) turno.querySelector(`[data-parte="${parte}"]`).value = valor;
+    const caixa = posto.querySelector('.turnos-form');
+    dados.turnos.forEach((t, i) => {
+      if (i > 0) caixa.append(criarTurno());
+      const turno = caixa.children[i];
+      for (const parte of ['inicio', 'fim', 'vagas']) turno.querySelector(`[data-parte="${parte}"]`).value = t[parte];
+      turno.dataset.diaRel = t.diaRel ?? 0;
+    });
     raizPostos.append(posto);
   }
   preencherDias();
+  // Dia relativo às datas escolhidas (0 = primeiro, -1 = último); o utilizador pode mudar
+  for (const turno of raizPostos.querySelectorAll('.turno-form[data-dia-rel]')) {
+    const sel = turno.querySelector('select[data-parte="dia"]');
+    const rel = Number(turno.dataset.diaRel);
+    const opcoes = [...sel.options].map((o) => o.value).filter(Boolean);
+    if (opcoes.length) sel.value = opcoes.at(rel) ?? opcoes[0];
+    delete turno.dataset.diaRel;
+  }
   renumerar();
-  $('modelo-estado').textContent = `Modelo "${modelo.nome}" aplicado: ${raizPostos.children.length} postos. Pode editá-los.`;
+  $('modelo-estado').textContent = `Modelo "${modelo.nome}" aplicado: ${raizPostos.children.length} postos, com turnos. Pode editar tudo. Confirme os dias e as vagas.`;
 }
 
 $('modelo').append(...MODELOS.map((m) => h('option', { value: m.id }, m.nome)));

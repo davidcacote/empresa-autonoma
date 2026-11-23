@@ -3,8 +3,8 @@ import assert from 'node:assert/strict';
 import { MODELOS, modeloPorId, postosDoModelo } from '../apps/barraca/js/modelos.js';
 import { validarFesta } from '../apps/barraca/js/logica.js';
 
-test('há dois modelos com os postos pedidos', () => {
-  assert.deepEqual(MODELOS.map((m) => m.nome), ['Festa de aldeia', 'Recolha de alimentos']);
+test('há três modelos com os postos pedidos', () => {
+  assert.deepEqual(MODELOS.map((m) => m.nome), ['Festa de aldeia', 'Recolha de alimentos', 'Feira de Natal de escola']);
   assert.deepEqual(postosDoModelo('festa-de-aldeia').map((p) => p.nome), ['Bar', 'Comes e bebes', 'Bilheteira', 'Montagem']);
   assert.deepEqual(postosDoModelo('recolha-de-alimentos').map((p) => p.nome), ['Entrada', 'Caixas', 'Armazém']);
 });
@@ -33,4 +33,19 @@ test('os modelos geram uma festa válida assim que há datas e dia', () => {
 test('textos sem datas reais, marcas ou nomes de pessoas', () => {
   const texto = JSON.stringify(MODELOS);
   assert.ok(!/\d{4}-\d{2}-\d{2}|\d{1,2}\/\d{1,2}\/\d{2,4}/.test(texto));
+});
+
+test('Feira de Natal de escola: bancas, turnos de 1-2 h, lotações razoáveis, dias relativos', () => {
+  const postos = postosDoModelo('feira-de-natal-de-escola');
+  assert.deepEqual(postos.map((p) => p.nome), ['Bolos', 'Chocolate quente', 'Rifas', 'Montagem e desmontagem']);
+  for (const p of postos) {
+    assert.ok(p.turnos.length >= 2);
+    for (const t of p.turnos) {
+      const min = (h) => Number(h.slice(0, 2)) * 60 + Number(h.slice(3));
+      const dur = min(t.fim) - min(t.inicio);
+      assert.ok(dur >= 60 && dur <= 120, `duração ${dur}`);
+      assert.ok(t.vagas >= 1 && t.vagas <= 10);
+      assert.ok(Number.isInteger(t.diaRel));
+    }
+  }
 });

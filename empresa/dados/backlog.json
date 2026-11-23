@@ -596,7 +596,7 @@
   {
     "id": "B-038",
     "titulo": "Modelo 'Feira de Natal de escola' com bancas e turnos",
-    "estado": "a_fazer",
+    "estado": "feito",
     "prioridade": 2,
     "estimativa": "M",
     "quem": "CEO",
@@ -722,5 +722,57 @@
       "O-6",
       "F-7"
     ]
+  },
+  {
+    "id": "B-045",
+    "titulo": "Modelos: pré-visualização (bancas e turnos) antes de 'Usar modelo'",
+    "estado": "ideia",
+    "prioridade": 4,
+    "estimativa": "P",
+    "quem": "Coordenador(a)",
+    "porque": "Ideia do Dev (ciclo 15)",
+    "criterios": [
+      "Resumo de bancas e turnos visível antes de aplicar o modelo"
+    ],
+    "segmento": [
+      "S-2"
+    ],
+    "mercado": [
+      "F-4"
+    ]
+  },
+  {
+    "id": "B-046",
+    "titulo": "Modelos: avisar antes de substituir bancas já preenchidas",
+    "estado": "ideia",
+    "prioridade": 3,
+    "estimativa": "P",
+    "quem": "Coordenador(a)",
+    "porque": "Ideia do Dev (ciclo 15): hoje o modelo substitui as bancas sem perguntar",
+    "criterios": [
+      "Se o formulário já tem bancas, pede confirmação antes de aplicar o modelo"
+    ],
+    "segmento": [
+      "S-2"
+    ],
+    "mercado": [
+      "F-4"
+    ]
+  },
+  {
+    "id": "B-047",
+    "titulo": "Alvos de toque ≥44px nos links do cabeçalho e rodapé ('Barraca', 'Voltar ao início', 'Saltar para o formulário')",
+    "estado": "ideia",
+    "prioridade": 3,
+    "estimativa": "P",
+    "quem": "Utilizadores no telemóvel",
+    "porque": "Nota da QA (ciclo 15); ver B-015",
+    "criterios": [
+      "Links do cabeçalho/rodapé ≥44×44px"
+    ],
+    "segmento": [
+      "S-1"
+    ],
+    "mercado": []
   }
 ]
