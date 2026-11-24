@@ -41,12 +41,30 @@ export const MODELOS = [
   },
 ];
 
+// Variantes: entradas do seletor que reutilizam um modelo existente com valores pré-preenchidos (não são modelos novos).
+export const VARIANTES = [
+  {
+    id: 'horario-natal', nome: 'Horário de Natal / fecho', modelo: 'horario',
+    valores: {
+      titulo: 'Horário de Natal',
+      linhas: '24 de dezembro: 9h00 às 13h00\n25 de dezembro: Fechado\n31 de dezembro: 9h00 às 14h00\n1 de janeiro: Fechado',
+      nota: 'Boas Festas! Reabrimos a 2 de janeiro.',
+    },
+  },
+];
+
+export const varianteModeloPorId = (id) => VARIANTES.find((v) => v.id === id) ?? null;
+
+/** Id do modelo que define os campos: o próprio, ou o modelo-base de uma variante. */
+export const modeloBase = (id) => varianteModeloPorId(id)?.modelo ?? id;
+
 export const modeloPorId = (id) => MODELOS.find((m) => m.id === id) ?? null;
 
-/** Valores por defeito do modelo (objeto novo de cada vez). */
+/** Valores por defeito do modelo ou variante (objeto novo de cada vez). */
 export function valoresPorDefeito(id) {
-  const m = modeloPorId(id);
-  return m ? Object.fromEntries(m.campos.map((c) => [c.id, c.defeito])) : {};
+  const m = modeloPorId(modeloBase(id));
+  if (!m) return {};
+  return { ...Object.fromEntries(m.campos.map((c) => [c.id, c.defeito])), ...varianteModeloPorId(id)?.valores };
 }
 
 /** Corta o texto ao limite de caracteres do campo. */
@@ -70,7 +88,8 @@ export function dividirItem(linha) {
 export const horaValida = (h) => /^([01]\d|2[0-3]):[0-5]\d$/.test(String(h ?? ''));
 
 /** Blocos da folha: {tipo: 'grande'|'titulo'|'texto'|'linha'|'item'|'nota', texto | nome, preco}. */
-export function montarFolha(id, valores = {}) {
+export function montarFolha(idEntrada, valores = {}) {
+  const id = modeloBase(idEntrada);
   const m = modeloPorId(id);
   if (!m) return [];
   const v = Object.fromEntries(m.campos.map((c) => [c.id, c.tipo === 'escolha' ? valores[c.id] : limitar(valores[c.id], c.max)]));

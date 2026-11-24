@@ -645,5 +645,37 @@
         "texto": "Segundo objetivo (B-044) não iniciado, por indicação da CEO (um objetivo por ciclo neste caminho)."
       }
     ]
+  },
+  {
+    "id": "R-024",
+    "data": "2026-11-24T02:00:00Z",
+    "ciclo": 16,
+    "tipo": "normal",
+    "titulo": "Ciclo 16: B-044 Placa Certa 'Horário de Natal / fecho'",
+    "resumo": "Stand-up da CEO (issues 'donos' abertas); Dev e QA entregam a variante; B-032 fica para o ciclo 17.",
+    "participantes": [
+      "ceo",
+      "dev",
+      "qa",
+      "sistema"
+    ],
+    "intervencoes": [
+      {
+        "quem": "ceo",
+        "texto": "Objetivo: B-044 (P2, prazo 15 dez; O-6/F-7, S-5 e S-6). Próximo: B-032. 'Começamos outro projeto?': não, sem sinais novos; reavaliar no ciclo 21."
+      },
+      {
+        "quem": "dev",
+        "texto": "Variante horario-natal em VARIANTES (MODELOS continua com 4), reutiliza o modelo horario; 53 testes, build, smoke e e2e passam. Risco: as horas por defeito são exemplos que o comerciante edita."
+      },
+      {
+        "quem": "qa",
+        "texto": "Aprovado: 5 critérios passam, 53/53 testes, 7 e2e, sem transbordo, impressão a preto e branco numa página A4. Não confirmou visualmente a página impressa."
+      },
+      {
+        "quem": "sistema",
+        "texto": "Release no push do ciclo 16."
+      }
+    ]
   }
 ]

@@ -361,5 +361,30 @@
     "commit": "af1c3a8",
     "proximo_objetivo": "B-044",
     "notas": "add_repo/register_repo_root indisponíveis; repo já clonado. Próxima reunião de mercado: ciclo 21."
+  },
+  {
+    "n": 16,
+    "inicio": "2026-11-24T01:39:00Z",
+    "fim": "2026-11-24T02:00:00Z",
+    "tipo": "normal",
+    "objetivo": "B-044 Placa Certa: variante 'Horário de Natal / fecho'",
+    "resultado": "concluido",
+    "entregue": "Variante 'Horário de Natal / fecho' (24, 25, 31 dez e 1 jan, 3 campos) no seletor da Placa Certa, sem 5.º modelo; teste unitário e e2e.",
+    "retro": "Correu bem: aprovado à primeira volta, 3 semanas antes do prazo de 15 dez. Correu mal: continua 0 uso real e issues #1 e #2 sem resposta. Muda: ciclo 17 entrega B-032; reunião de mercado no ciclo 21.",
+    "agentes": [
+      "ceo",
+      "dev",
+      "qa"
+    ],
+    "chamadas_agentes": 3,
+    "tokens": {
+      "ceo": 63307,
+      "dev": 65931,
+      "qa": 65628,
+      "total": 194866
+    },
+    "commit": "",
+    "proximo_objetivo": "B-032",
+    "notas": "add_repo/register_repo_root indisponíveis; repo já clonado. Próxima reunião de mercado: ciclo 21."
   }
 ]

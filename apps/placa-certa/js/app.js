@@ -1,5 +1,5 @@
 // Placa Certa: formulário + pré-visualização A4 em direto. Tudo como texto (textContent), sem backend.
-import { MODELOS, modeloPorId, valoresPorDefeito, limitar, montarFolha } from './modelos.js';
+import { MODELOS, VARIANTES, modeloBase, modeloPorId, valoresPorDefeito, limitar, montarFolha } from './modelos.js';
 
 const $ = (id) => document.getElementById(id);
 function h(tag, attrs = {}, ...filhos) {
@@ -22,7 +22,7 @@ function desenharFolha() {
 }
 
 function desenharCampos() {
-  const m = modeloPorId(modeloId);
+  const m = modeloPorId(modeloBase(modeloId));
   $('campos').replaceChildren(...m.campos.map((c) => {
     const id = `campo-${c.id}`;
     let el;
@@ -50,7 +50,7 @@ function escolherModelo(id) {
 
 function iniciar() {
   const sel = $('modelo');
-  sel.replaceChildren(...MODELOS.map((m) => h('option', { value: m.id }, m.nome)));
+  sel.replaceChildren(...[...MODELOS, ...VARIANTES].map((m) => h('option', { value: m.id }, m.nome)));
   sel.addEventListener('change', () => escolherModelo(sel.value));
   $('imprimir').addEventListener('click', () => window.print());
   escolherModelo(modeloId);

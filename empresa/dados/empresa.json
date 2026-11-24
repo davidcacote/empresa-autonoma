@@ -8,8 +8,8 @@
     "pitch": "A página de turnos da tua festa de aldeia: a comissão cria, o povo inscreve-se com um toque, ninguém fica sozinho na grelha às 3 da manhã.",
     "estado": "v1.0 (com ressalvas) em /barraca/ · manutenção; Placa Certa: v1.0 em manutenção em /placa-certa/ (ciclo 10)"
   },
-  "ciclo_atual": 15,
-  "proximo_ciclo": "2026-11-24T00:39:00Z",
+  "ciclo_atual": 16,
+  "proximo_ciclo": "2026-11-25T00:39:00Z",
   "links": {
     "produto": "../barraca/",
     "demo": "../barraca/festa.html?f=demonstracao",
@@ -68,7 +68,7 @@
     "limite_v1": 10,
     "placa_certa": {
       "fase": "v1.0 (manutenção)",
-      "ciclos_usados": 3,
+      "ciclos_usados": 4,
       "limite_mvp": 3
     },
     "turno_certo": {

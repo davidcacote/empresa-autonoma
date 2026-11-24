@@ -27,6 +27,15 @@ afirmar((await folha.innerText()).includes('Domingo: Fechado'), 'horário por de
 await page.fill('#campo-titulo', 'Nosso horário');
 afirmar((await folha.innerText()).includes('Nosso horário'), 'edição do título não aparece na folha');
 
+await page.selectOption('#modelo', 'horario-natal');
+const txtNatal = await folha.innerText();
+for (const d of ['Horário de Natal', '24 de dezembro', '25 de dezembro', '31 de dezembro', '1 de janeiro']) afirmar(txtNatal.includes(d), `Natal: falta "${d}"`);
+afirmar(await page.locator('#campos .campo').count() === 3, 'Natal: esperados 3 campos');
+afirmar(await page.locator('#modelo option').count() === 5, 'seletor: 4 modelos + variante de Natal');
+await page.fill('#campo-nota', 'Reabrimos a 3 de janeiro.');
+afirmar((await folha.innerText()).includes('Reabrimos a 3 de janeiro.'), 'Natal: nota editável');
+afirmar(await page.evaluate(() => { const f = document.getElementById('folha'); return f.scrollHeight <= f.clientHeight + 1; }), 'Natal: texto transborda a folha');
+
 await page.selectOption('#modelo', 'precos');
 afirmar(await page.locator('.folha__item').count() === 3, 'preços: esperados 3 itens');
 afirmar((await page.locator('.folha__preco').first().innerText()) === '0,80 €', 'preço do café');

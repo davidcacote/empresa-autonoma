@@ -49,3 +49,18 @@ test('horário por defeito: título, 3 linhas e nota', () => {
   const b = montarFolha('horario', valoresPorDefeito('horario'));
   assert.deepEqual(b.map((x) => x.tipo), ['titulo', 'linha', 'linha', 'linha', 'nota']);
 });
+
+test('variante "Horário de Natal / fecho": reaproveita o horário, 3 campos, 4 datas, PT-PT', async () => {
+  const { VARIANTES, modeloBase } = await import('../apps/placa-certa/js/modelos.js');
+  assert.equal(MODELOS.length, 4);
+  assert.deepEqual(VARIANTES.map((v) => v.id), ['horario-natal']);
+  assert.equal(modeloBase('horario-natal'), 'horario');
+  assert.equal(modeloBase('aviso'), 'aviso');
+  const v = valoresPorDefeito('horario-natal');
+  assert.deepEqual(Object.keys(v), ['titulo', 'linhas', 'nota']);
+  const b = montarFolha('horario-natal', v);
+  assert.deepEqual(b.map((x) => x.tipo), ['titulo', 'linha', 'linha', 'linha', 'linha', 'nota']);
+  const t = b.map((x) => x.texto).join('\n');
+  for (const d of ['24 de dezembro', '25 de dezembro', '31 de dezembro', '1 de janeiro']) assert.ok(t.includes(d), d);
+  assert.deepEqual(valoresPorDefeito('horario').titulo, 'Horário');
+});
