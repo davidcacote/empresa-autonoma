@@ -56,6 +56,54 @@ await page.emulateMedia({ media: 'print' });
 afirmar(await page.locator('.editor').isHidden(), 'em impressão o formulário devia estar escondido');
 afirmar(await page.locator('#folha').isVisible(), 'em impressão a folha devia estar visível');
 
+// Memória do último texto (localStorage): volta ao reabrir; sem localStorage a app funciona e imprime.
+{
+  const ctx = await browser.newContext({ viewport: { width: 360, height: 740 } });
+  const pedidosExternos = [];
+  const p1 = await ctx.newPage();
+  p1.on('request', (r) => { if (!r.url().startsWith(base)) pedidosExternos.push(r.url()); });
+  const e1 = vigiarErros(p1);
+  await p1.goto(base + '/placa-certa/');
+  await p1.waitForSelector('[data-pronto="sim"]');
+  await p1.selectOption('#modelo', 'aviso');
+  await p1.fill('#campo-mensagem', 'Volto às 15h, obrigado');
+  await p1.close();
+  const p2 = await ctx.newPage();
+  const e2 = vigiarErros(p2);
+  await p2.goto(base + '/placa-certa/');
+  await p2.waitForSelector('[data-pronto="sim"]');
+  afirmar(await p2.inputValue('#modelo') === 'aviso', 'memória: modelo não voltou');
+  afirmar(await p2.inputValue('#campo-mensagem') === 'Volto às 15h, obrigado', 'memória: texto não voltou preenchido');
+  afirmar((await p2.locator('#folha').innerText()).includes('Volto às 15h, obrigado'), 'memória: folha sem o texto lembrado');
+  afirmar(e1().length === 0 && e2().length === 0, `memória: erros na consola: ${[...e1(), ...e2()].join(' | ')}`);
+  afirmar(pedidosExternos.length === 0, `memória: pedidos fora da origem: ${pedidosExternos.join(' ')}`);
+  await ctx.close();
+
+  const falhasArm = {
+    'métodos lançam (quota/modo privado)': () => { const f = () => { throw new DOMException('x', 'QuotaExceededError'); }; Storage.prototype.getItem = f; Storage.prototype.setItem = f; },
+    'acesso bloqueado': () => { Object.defineProperty(window, 'localStorage', { configurable: true, get() { throw new DOMException('x', 'SecurityError'); } }); },
+  };
+  for (const [nome, simular] of Object.entries(falhasArm)) {
+    const c = await browser.newContext({ viewport: { width: 360, height: 740 } });
+    const p = await c.newPage();
+    const e = vigiarErros(p);
+    const alertas = [];
+    p.on('dialog', (d) => { alertas.push(d.message()); d.dismiss(); });
+    await p.addInitScript(simular);
+    await p.addInitScript(() => { window.print = () => { window.__impressoes = (window.__impressoes ?? 0) + 1; }; });
+    await p.goto(base + '/placa-certa/');
+    await p.waitForSelector('[data-pronto="sim"]');
+    await p.selectOption('#modelo', 'aviso');
+    await p.fill('#campo-mensagem', 'Sem memória');
+    afirmar((await p.locator('#folha').innerText()).includes('Sem memória'), `sem localStorage (${nome}): edição não aparece`);
+    await p.click('#imprimir');
+    afirmar(await p.evaluate(() => window.__impressoes) === 1, `sem localStorage (${nome}): Imprimir deixou de funcionar`);
+    afirmar(e().length === 0, `sem localStorage (${nome}): erros na consola: ${e().join(' | ')}`);
+    afirmar(alertas.length === 0, `sem localStorage (${nome}): diálogo visível`);
+    await c.close();
+  }
+}
+
 afirmar(erros().length === 0, `erros na consola: ${erros().join(' | ')}`);
 await browser.close();
 fechar();

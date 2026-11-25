@@ -1,4 +1,5 @@
 // Placa Certa: formulário + pré-visualização A4 em direto. Tudo como texto (textContent), sem backend.
+import { carregar, guardar } from './memoria.js';
 import { MODELOS, VARIANTES, modeloBase, modeloPorId, valoresPorDefeito, limitar, montarFolha } from './modelos.js';
 
 const $ = (id) => document.getElementById(id);
@@ -36,7 +37,7 @@ function desenharCampos() {
       el = h('input', { id, name: c.id, type: 'text', maxlength: c.max });
     }
     el.value = valores[c.id] ?? '';
-    el.addEventListener('input', () => { valores[c.id] = limitar(el.value, c.max); desenharFolha(); });
+    el.addEventListener('input', () => { valores[c.id] = limitar(el.value, c.max); guardar(modeloId, valores); desenharFolha(); });
     return h('div', { class: 'campo' }, h('label', { for: id }, c.rotulo), el);
   }));
 }
@@ -46,6 +47,7 @@ function escolherModelo(id) {
   valores = valoresPorDefeito(id);
   desenharCampos();
   desenharFolha();
+  guardar(modeloId, valores);
 }
 
 function iniciar() {
@@ -53,7 +55,9 @@ function iniciar() {
   sel.replaceChildren(...[...MODELOS, ...VARIANTES].map((m) => h('option', { value: m.id }, m.nome)));
   sel.addEventListener('change', () => escolherModelo(sel.value));
   $('imprimir').addEventListener('click', () => window.print());
-  escolherModelo(modeloId);
+  const anterior = carregar();
+  if (anterior) { modeloId = anterior.modelo; valores = anterior.valores; desenharCampos(); desenharFolha(); } else escolherModelo(modeloId);
+  sel.value = modeloId;
   document.body.dataset.pronto = 'sim';
 }
 iniciar();

@@ -677,5 +677,37 @@
         "texto": "Release no push do ciclo 16."
       }
     ]
+  },
+  {
+    "id": "R-025",
+    "data": "2026-11-25T01:42:26Z",
+    "ciclo": 17,
+    "tipo": "normal",
+    "titulo": "Ciclo 17: B-032 Placa Certa lembra o último texto",
+    "resumo": "Stand-up da CEO (issues 'donos' abertas); Dev e QA entregam a memória local; próximo objetivo B-005.",
+    "participantes": [
+      "ceo",
+      "dev",
+      "qa",
+      "sistema"
+    ],
+    "intervencoes": [
+      {
+        "quem": "ceo",
+        "texto": "Objetivo: B-032 (P2, P; F-9, S-5/S-6): quem volta a imprimir não reescreve tudo. Próximo: B-005. 'Começamos outro projeto?': não, sem sinais. Alerta: Turno Certo com 2 de 3 ciclos de MVP; decidir v1.0 ou prorrogação no ciclo 21. Só um objetivo."
+      },
+      {
+        "quem": "dev",
+        "texto": "Novo memoria.js (localStorage em try/catch, sanear valida o que vem do disco) e +5 linhas em app.js; 59 testes, build, smoke e 7 e2e passam. Risco: o texto fica em claro no browser (convém referir no README); trocar de modelo perde o texto do anterior."
+      },
+      {
+        "quem": "qa",
+        "texto": "Aprovado à primeira volta: 5 critérios com evidência (e2e com e sem localStorage, 0 pedidos de rede). Sem screenshots: não houve alterações de HTML/CSS."
+      },
+      {
+        "quem": "sistema",
+        "texto": "CI da main verde no arranque; 0 festas reais; avisos Supabase só os esperados."
+      }
+    ]
   }
 ]

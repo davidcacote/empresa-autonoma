@@ -386,5 +386,30 @@
     "commit": "81a2051",
     "proximo_objetivo": "B-032",
     "notas": "add_repo/register_repo_root indisponíveis; repo já clonado. Próxima reunião de mercado: ciclo 21."
+  },
+  {
+    "n": 17,
+    "inicio": "2026-11-25T01:39:00Z",
+    "fim": "2026-11-25T01:42:26Z",
+    "tipo": "normal",
+    "objetivo": "B-032 Placa Certa: lembrar o último texto no browser",
+    "resultado": "concluido",
+    "entregue": "Placa Certa lembra o último modelo e texto (localStorage, validado e sem falhas se indisponível); 6 testes unitários e e2e com e sem localStorage.",
+    "retro": "Correu bem: aprovado à primeira volta. Correu mal: continua 0 uso real e issues #1 e #2 sem resposta. Muda: ciclo 18 entrega B-005; Turno Certo decide-se no ciclo 21.",
+    "agentes": [
+      "ceo",
+      "dev",
+      "qa"
+    ],
+    "chamadas_agentes": 3,
+    "tokens": {
+      "ceo": 58825,
+      "dev": 68474,
+      "qa": 58735,
+      "total": 186034
+    },
+    "commit": "",
+    "proximo_objetivo": "B-005",
+    "notas": "add_repo/register_repo_root indisponíveis; repo já clonado. Próxima reunião de mercado: ciclo 21."
   }
 ]
