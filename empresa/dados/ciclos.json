@@ -411,5 +411,30 @@
     "commit": "98d973f",
     "proximo_objetivo": "B-005",
     "notas": "add_repo/register_repo_root indisponíveis; repo já clonado. Próxima reunião de mercado: ciclo 21."
+  },
+  {
+    "n": 18,
+    "inicio": "2026-11-26T01:39:00Z",
+    "fim": "2026-11-26T01:45:00Z",
+    "tipo": "normal",
+    "objetivo": "B-005 Vista 'buracos por preencher' para o organizador",
+    "resultado": "concluido",
+    "entregue": "Secção 'Buracos por preencher' na gestão: turnos com vagas por proximidade, urgentes (≤48 h) destacados com texto e símbolo; 5 testes novos (64 no total).",
+    "retro": "Correu bem: aprovado à primeira volta. Correu mal: sem e2e da secção e 0 uso real; issues #1 e #2 sem resposta. Muda: ciclo 19 entrega B-021 (com CTO); B-015 no 20; mercado no 21.",
+    "agentes": [
+      "ceo",
+      "dev",
+      "qa"
+    ],
+    "chamadas_agentes": 3,
+    "tokens": {
+      "ceo": 61607,
+      "dev": 84516,
+      "qa": 68993,
+      "total": 215116
+    },
+    "commit": "",
+    "proximo_objetivo": "B-021",
+    "notas": "add_repo/register_repo_root indisponíveis; repo já clonado. Próxima reunião de mercado: ciclo 21."
   }
 ]

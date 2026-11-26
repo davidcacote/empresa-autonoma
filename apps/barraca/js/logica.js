@@ -151,6 +151,34 @@ export function agruparPorDiaEPosto(turnos, postos, agora = new Date(), inscrico
   }));
 }
 
+// ── Buracos por preencher (vista da organização) ────────────────────────────
+
+export const JANELA_URGENTE_H = 48;
+
+/**
+ * Turnos com vagas, do mais próximo no tempo para o mais distante. Ficam de fora os turnos cheios e os já
+ * terminados. É "urgente" o turno com vagas que começa nas próximas 48 h (inclusive) ou que já está a decorrer.
+ * Usa só a lotação real (vagas, ocupadas). Devolve [{turno, posto, estado, livres, urgente, intervalo, dia, resumo}].
+ */
+export function buracosPorPreencher(turnos, postos, agora = new Date()) {
+  const limite = new Date(agora).getTime() + JANELA_URGENTE_H * 3600 * 1000;
+  const ordemPostos = new Map(postos.map((p, i) => [p.id, { posto: p, ordem: p.ordem ?? i }]));
+  return turnos
+    .filter((t) => ordemPostos.has(t.posto_id))
+    .map((turno) => ({ turno, ...ordemPostos.get(turno.posto_id), estado: estadoTurno(turno, agora) }))
+    .filter(({ estado }) => estado.reservavel)
+    .sort((a, b) => new Date(a.turno.inicio) - new Date(b.turno.inicio) || a.ordem - b.ordem || String(a.turno.id).localeCompare(String(b.turno.id)))
+    .map(({ turno, posto, estado }) => {
+      const dia = chaveDia(turno.inicio);
+      return {
+        turno, posto, estado, livres: estado.livres, dia,
+        urgente: new Date(turno.inicio).getTime() <= limite,
+        intervalo: formatarIntervalo(turno.inicio, turno.fim),
+        resumo: resumoTurno(posto.nome, dia, turno.inicio, turno.fim),
+      };
+    });
+}
+
 // ── Validação (igual à do servidor) ─────────────────────────────────────────
 
 /** Nome: 1–30 caracteres, só letras, espaços, ponto, apóstrofo e hífen, a começar por letra. */

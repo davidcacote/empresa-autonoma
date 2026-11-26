@@ -709,5 +709,37 @@
         "texto": "CI da main verde no arranque; 0 festas reais; avisos Supabase só os esperados."
       }
     ]
+  },
+  {
+    "id": "R-026",
+    "data": "2026-11-26T01:45:00Z",
+    "ciclo": 18,
+    "tipo": "normal",
+    "titulo": "Ciclo 18: B-005 Buracos por preencher",
+    "resumo": "Stand-up da CEO (issues 'donos' abertas); Dev e QA entregam a vista de buracos para o organizador; próximo objetivo B-021.",
+    "participantes": [
+      "ceo",
+      "dev",
+      "qa",
+      "sistema"
+    ],
+    "intervencoes": [
+      {
+        "quem": "ceo",
+        "texto": "Objetivo: B-005 (P2, M): o coordenador vê logo os turnos mais urgentes. Próximo: B-021 (grupos com jovens, precisa da CTO); depois B-015. 'Começamos outro projeto?': não. Só um objetivo, B-005 é M. Alerta: fase e limites de ciclos da Barraca ambíguos, rever na reunião do ciclo 21."
+      },
+      {
+        "quem": "dev",
+        "texto": "Nova função buracosPorPreencher em logica.js e secção 'Buracos por preencher' em gerir.js/gerir.html/festa.css; urgente = começa em ≤48 h (inclusivo) ou a decorrer, com texto e símbolo além da cor; 5 testes novos, 64 testes, build, smoke e 7 e2e passam. Riscos: sem e2e novo para a secção; lista pode empurrar os turnos em telemóvel se houver muitos buracos."
+      },
+      {
+        "quem": "qa",
+        "texto": "Aprovado: 6 critérios com evidência (botões ≥86px de altura, sem scroll horizontal, sem alterações a SQL/RLS, pt-PT). Observações: falta e2e da secção; rótulos '(2 de 6)' podem confundir. Screenshots a 390px e 1280px."
+      },
+      {
+        "quem": "sistema",
+        "texto": "CI da main verde no arranque; add_repo/register_repo_root indisponíveis, repo já clonado; issues #1 e #2 sem resposta nova dos donos."
+      }
+    ]
   }
 ]

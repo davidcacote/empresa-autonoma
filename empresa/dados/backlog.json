@@ -73,7 +73,7 @@
   {
     "id": "B-005",
     "titulo": "Vista 'buracos por preencher' para o organizador",
-    "estado": "a_fazer",
+    "estado": "feito",
     "prioridade": 2,
     "estimativa": "M",
     "quem": "Coordenador(a)",
@@ -774,5 +774,20 @@
       "S-1"
     ],
     "mercado": []
+  },
+  {
+    "id": "B-048",
+    "titulo": "e2e da secção 'Buracos por preencher' com relógio simulado",
+    "estado": "ideia",
+    "prioridade": 3,
+    "estimativa": "P",
+    "quem": "QA & DevOps",
+    "porque": "Sugestão da QA e do Dev no ciclo 18: nenhum e2e cobre a secção nem o estado 'tudo preenchido'",
+    "segmento": [],
+    "mercado": [],
+    "criterios": [
+      "Cenário e2e com relógio fixo que mostra um turno urgente e outro não urgente",
+      "Cenário e2e sem buracos mostra 'Não há turnos com vagas'"
+    ]
   }
 ]

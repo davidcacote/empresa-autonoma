@@ -197,3 +197,61 @@ test('chave do fragmento: descodifica, tolera má codificação e não altera ch
   assert.equal(chaveDoFragmento(''), '');
   assert.equal(chaveDoFragmento(undefined), '');
 });
+
+// ── B-005: buracos por preencher ────────────────────────────────────────────
+import { buracosPorPreencher } from '../apps/barraca/js/logica.js';
+
+const H = 3600 * 1000;
+const aposAgora = (h) => new Date(AGORA.getTime() + h * H).toISOString();
+const postosB = [{ id: 'p1', nome: 'Bar', ordem: 0 }, { id: 'p2', nome: 'Bifanas', ordem: 1 }];
+const turnoB = (id, ini, dur, vagas, ocupadas, posto = 'p1') => ({ id, posto_id: posto, inicio: aposAgora(ini), fim: aposAgora(ini + dur), vagas, ocupadas });
+
+test('buracos: ordena por proximidade e exclui turnos cheios e passados', () => {
+  const turnos = [
+    turnoB('longe', 100, 2, 3, 0),
+    turnoB('cheio', 1, 2, 2, 2),
+    turnoB('passado', -5, 2, 3, 0),
+    turnoB('perto', 3, 2, 3, 1),
+    turnoB('meio', 60, 2, 4, 3),
+  ];
+  const r = buracosPorPreencher(turnos, postosB, AGORA);
+  assert.deepEqual(r.map((b) => b.turno.id), ['perto', 'meio', 'longe']);
+  assert.deepEqual(r.map((b) => b.livres), [2, 1, 3]);
+});
+
+test('buracos: limite das 48 h é inclusivo; um segundo depois já não é urgente', () => {
+  const turnos = [
+    turnoB('d', 48, 2, 3, 0),
+    { ...turnoB('e', 48, 2, 3, 0), inicio: new Date(AGORA.getTime() + 48 * H + 1000).toISOString() },
+    turnoB('c', 47, 2, 3, 0),
+  ];
+  const r = buracosPorPreencher(turnos, postosB, AGORA);
+  const urg = Object.fromEntries(r.map((b) => [b.turno.id, b.urgente]));
+  assert.deepEqual(urg, { c: true, d: true, e: false });
+});
+
+test('buracos: turno a decorrer com vagas é urgente; turno sem vagas ou terminado nunca aparece', () => {
+  const r = buracosPorPreencher([
+    turnoB('adecorrer', -1, 3, 3, 1),
+    turnoB('semvagas', 2, 2, 3, 3),
+    turnoB('sobrelotado', 2, 2, 3, 4),
+    turnoB('terminado', -4, 2, 3, 0),
+    { ...turnoB('fimagora', -2, 2, 3, 0), fim: AGORA.toISOString() },
+  ], postosB, AGORA);
+  assert.deepEqual(r.map((b) => [b.turno.id, b.urgente]), [['fimagora', true], ['adecorrer', true]]);
+});
+
+test('buracos: empate no início desempata por ordem do posto; sem turnos devolve lista vazia; não altera a entrada', () => {
+  const turnos = [turnoB('b', 5, 2, 3, 0, 'p2'), turnoB('a', 5, 2, 3, 0, 'p1'), turnoB('x', 5, 2, 3, 0, 'desconhecido')];
+  const copia = JSON.stringify(turnos);
+  assert.deepEqual(buracosPorPreencher(turnos, postosB, AGORA).map((b) => b.turno.id), ['a', 'b']);
+  assert.equal(JSON.stringify(turnos), copia);
+  assert.deepEqual(buracosPorPreencher([], postosB, AGORA), []);
+});
+
+test('buracos: o resumo e o intervalo estão em português com o fuso de Lisboa', () => {
+  const [b] = buracosPorPreencher([{ id: 't', posto_id: 'p1', inicio: '2030-06-22T17:00:00Z', fim: '2030-06-22T19:00:00Z', vagas: 3, ocupadas: 2 }], postosB, AGORA);
+  assert.equal(b.intervalo, '18h–20h');
+  assert.equal(b.resumo, 'Bar · Sábado 22 · 18h–20h');
+  assert.equal(b.estado.texto, 'Falta 1 pessoa');
+});

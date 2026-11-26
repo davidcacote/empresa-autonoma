@@ -4,7 +4,7 @@ import { h, $, preencher, marcarPronta } from './dom.js';
 import { criarIndicador } from './indicador.js';
 import { iniciarAtualizacao } from './tempo-real.js';
 import { confirmar } from './dialogos.js';
-import { agruparPorDiaEPosto, intervaloDatas, mensagemErro, slugValido, chaveDia, chaveDoFragmento } from './logica.js';
+import { buracosPorPreencher, agruparPorDiaEPosto, intervaloDatas, mensagemErro, slugValido, chaveDia, chaveDoFragmento } from './logica.js';
 
 const estado = { slug: null, chave: null, festa: null, dados: null, dia: null, diaEscolhido: false, assinatura: '', aCarregar: false };
 const indicador = criarIndicador($('ligacao'));
@@ -64,11 +64,13 @@ function renderizar(forcar = false) {
   if (!dias.some((d) => d.chave === estado.dia)) estado.diaEscolhido = false;
   if (!estado.diaEscolhido) estado.dia = (dias.find((d) => d.chave >= chaveDia(new Date())) ?? dias[0])?.chave ?? null;
 
-  const assinatura = JSON.stringify([dias, estado.dia, inscricoes.map((i) => i.id)]);
+  const buracos = buracosPorPreencher(turnos, postos, new Date());
+  const assinatura = JSON.stringify([dias, estado.dia, inscricoes.map((i) => i.id), buracos.map((b) => [b.turno.id, b.livres, b.urgente])]);
   if (!forcar && assinatura === estado.assinatura) return;
   estado.assinatura = assinatura;
 
   const foco = document.activeElement?.dataset?.foco;
+  renderizarBuracos(buracos);
   const nav = $('dias');
   nav.hidden = dias.length < 2;
   preencher(nav, dias.map((d) => h('button', {
@@ -85,9 +87,42 @@ function renderizar(forcar = false) {
   if (foco) document.querySelector(`[data-foco="${CSS.escape(foco)}"]`)?.focus();
 }
 
+function renderizarBuracos(buracos) {
+  const urgentes = buracos.filter((b) => b.urgente).length;
+  $('buracos').hidden = false;
+  preencher($('buracos'),
+    h('h2', { class: 'buracos__titulo', id: 'buracos-titulo' }, 'Buracos por preencher'),
+    h('p', { class: 'buracos__resumo' }, buracos.length === 0
+      ? 'Não há turnos com vagas. Está tudo preenchido.'
+      : `${buracos.length === 1 ? '1 turno com vagas' : `${buracos.length} turnos com vagas`}, do mais próximo para o mais distante.`
+        + (urgentes ? ` ${urgentes === 1 ? '1 começa' : `${urgentes} começam`} nas próximas 48 horas.` : '')),
+    buracos.length ? h('ul', { class: 'buracos__lista' }, buracos.map(itemBuraco)) : null);
+}
+
+function itemBuraco({ turno, estado: e, urgente, resumo }) {
+  return h('li', { class: 'buraco-item' },
+    h('button', {
+      type: 'button', class: `buraco${urgente ? ' buraco--urgente' : ''}`, dataset: { foco: `buraco-${turno.id}` },
+      'aria-label': `${urgente ? 'Urgente, nas próximas 48 horas. ' : ''}${resumo}. ${e.texto}. Ver o turno`,
+      onclick: () => irParaTurno(turno),
+    },
+      urgente ? h('span', { class: 'buraco__urgente' }, h('span', { 'aria-hidden': 'true' }, '▲ '), 'Urgente · próximas 48 h') : null,
+      h('span', { class: 'buraco__resumo' }, resumo),
+      h('span', { class: 'buraco__vagas' }, `${e.texto} (${turno.ocupadas} de ${turno.vagas})`)));
+}
+
+function irParaTurno(turno) {
+  estado.dia = chaveDia(turno.inicio);
+  estado.diaEscolhido = true;
+  renderizar(true);
+  const alvo = document.getElementById(`turno-${turno.id}`);
+  alvo?.scrollIntoView({ block: 'center' });
+  alvo?.focus();
+}
+
 function cartaoTurno({ turno, estado: e, intervalo, resumo }) {
   const inscritos = estado.dados.inscricoes.filter((i) => i.turno_id === turno.id);
-  return h('li', { class: `turno turno--${e.tipo}` },
+  return h('li', { class: `turno turno--${e.tipo}`, id: `turno-${turno.id}`, tabindex: '-1' },
     h('div', { class: 'turno__topo' },
       h('p', { class: 'turno__hora' }, intervalo),
       h('p', { class: 'estado' }, h('span', { class: 'estado__forma', 'aria-hidden': 'true' }, e.simbolo), `${turno.ocupadas} de ${turno.vagas} · ${e.texto}`)),
