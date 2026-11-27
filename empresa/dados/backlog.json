@@ -204,14 +204,15 @@
   {
     "id": "B-015",
     "titulo": "Alvos de toque com pelo menos 44px em todos os links",
-    "estado": "a_fazer",
+    "estado": "feito",
     "prioridade": 3,
     "estimativa": "P",
     "quem": "Utilizadores no telemóvel",
     "porque": "Ressalva 2 da QA: link 'Barraca' do cabeçalho (20px) e 'saltar para o conteúdo' (43px)",
     "criterios": [
       "Todos os elementos interativos medem ≥44×44px (verificado por script Playwright)"
-    ]
+    ],
+    "notas": "Apps feitas no ciclo 19. Falta o link \"Saltar para o conteúdo\" da montra (site/index.html, 194×28px): ver B-050."
   },
   {
     "id": "B-016",
@@ -762,7 +763,7 @@
   {
     "id": "B-047",
     "titulo": "Alvos de toque ≥44px nos links do cabeçalho e rodapé ('Barraca', 'Voltar ao início', 'Saltar para o formulário')",
-    "estado": "ideia",
+    "estado": "feito",
     "prioridade": 3,
     "estimativa": "P",
     "quem": "Utilizadores no telemóvel",
@@ -778,7 +779,7 @@
   {
     "id": "B-048",
     "titulo": "e2e da secção 'Buracos por preencher' com relógio simulado",
-    "estado": "ideia",
+    "estado": "feito",
     "prioridade": 3,
     "estimativa": "P",
     "quem": "QA & DevOps",
@@ -789,5 +790,38 @@
       "Cenário e2e com relógio fixo que mostra um turno urgente e outro não urgente",
       "Cenário e2e sem buracos mostra 'Não há turnos com vagas'"
     ]
+  },
+  {
+    "id": "B-049",
+    "titulo": "Montra (site/index.html): 'Saltar para o conteúdo' com ≥44px e incluí-la no e2e de alvos de toque",
+    "estado": "a_fazer",
+    "prioridade": 3,
+    "estimativa": "P",
+    "quem": "Utilizadores no telemóvel",
+    "porque": "Resto do B-015 (ciclo 19): o Dev só escreve em apps/ e tests/",
+    "criterios": [
+      "'.saltar' da montra mede ≥44px",
+      "'/' acrescentada a tests/e2e/alvos-toque.e2e.mjs"
+    ],
+    "segmento": [
+      "S-1"
+    ],
+    "mercado": []
+  },
+  {
+    "id": "B-050",
+    "titulo": "Espaçamento da nota 'Só preenche os postos abaixo…' em criar.html (1280px)",
+    "estado": "ideia",
+    "prioridade": 5,
+    "estimativa": "P",
+    "quem": "Organizadores",
+    "porque": "Observação da QA no ciclo 19: nota colada ao select 'Começar de um modelo'",
+    "criterios": [
+      "Espaço visível entre o select e a nota"
+    ],
+    "segmento": [
+      "S-1"
+    ],
+    "mercado": []
   }
 ]

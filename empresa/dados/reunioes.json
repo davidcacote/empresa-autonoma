@@ -741,5 +741,37 @@
         "texto": "CI da main verde no arranque; add_repo/register_repo_root indisponíveis, repo já clonado; issues #1 e #2 sem resposta nova dos donos."
       }
     ]
+  },
+  {
+    "id": "R-027",
+    "data": "2026-11-27T01:50:00Z",
+    "ciclo": 19,
+    "tipo": "normal",
+    "titulo": "Ciclo 19: B-015 alvos de toque e B-048 e2e dos buracos",
+    "resumo": "Stand-up da CEO (issues 'donos' abertas); B-021 adiado por falta de acesso ao Supabase neste ciclo; Dev e QA entregam B-015 (apps) e B-048.",
+    "participantes": [
+      "ceo",
+      "dev",
+      "qa",
+      "sistema"
+    ],
+    "intervencoes": [
+      {
+        "quem": "ceo",
+        "texto": "Objetivo: B-021 (grupos com jovens, P2), com migração aditiva (permite_jovens, jovens, inscrever_com_jovens, definir_permite_jovens) e 13 critérios; segundo objetivo B-015. Próximo: B-048. 'Começamos outro projeto?': não. Alerta: fase e limites da Barraca ambíguos (ciclos_usados 9, limite_v1 10), clarificar no ciclo 21."
+      },
+      {
+        "quem": "sistema",
+        "texto": "As ferramentas do conector Supabase não estavam disponíveis neste ciclo, por isso a migração do B-021 não pôde ser aplicada; entregar o código sem a migração partiria a produção. B-021 fica para o ciclo 20 (especificação em empresa/atas/ciclo-19.md). Entraram B-015 e B-048, só frontend. A migração da CEO traz instruções 'revoke', proibidas pelo manual: ao aplicar, omitir."
+      },
+      {
+        "quem": "dev",
+        "texto": "B-015: .saltar, .cabecalho__marca, .rodape a e .publica a com mínimo 44px (base.css, festa.css); novo e2e alvos-toque (7 páginas, 390px). B-048: novo e2e buracos com relógio fixo (urgente/não urgente e 'Não há turnos com vagas'). 64 testes, build, smoke e 9 e2e passam. Risco: 'Saltar para o conteúdo' da montra (site/) fora do âmbito."
+      },
+      {
+        "quem": "qa",
+        "texto": "Aprovado à primeira volta. O e2e de alvos falha com o CSS antigo e passa com o novo; B-048 verificado; nenhum teste enfraquecido; screenshots 390/1280px sem regressão. Observação menor: nota colada ao select em criar.html (1280px)."
+      }
+    ]
   }
 ]
