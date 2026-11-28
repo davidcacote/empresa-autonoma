@@ -8,8 +8,8 @@
     "pitch": "A página de turnos da tua festa de aldeia: a comissão cria, o povo inscreve-se com um toque, ninguém fica sozinho na grelha às 3 da manhã.",
     "estado": "v1.0 (com ressalvas) em /barraca/ · manutenção; Placa Certa: v1.0 em manutenção em /placa-certa/ (ciclo 10)"
   },
-  "ciclo_atual": 19,
-  "proximo_ciclo": "2026-11-28T01:39:00Z",
+  "ciclo_atual": 20,
+  "proximo_ciclo": "2026-11-29T01:39:00Z",
   "links": {
     "produto": "../barraca/",
     "demo": "../barraca/festa.html?f=demonstracao",
@@ -40,7 +40,7 @@
       },
       {
         "criterio": "Calendário .ics (B-006, feito) e folha A4 (B-007)",
-        "feito": false
+        "feito": true
       },
       {
         "criterio": "Concorrência e tempo real provados no CI (B-011)",
@@ -63,7 +63,7 @@
         "feito": false
       }
     ],
-    "ciclos_usados": 10,
+    "ciclos_usados": 11,
     "limite_mvp": 6,
     "limite_v1": 10,
     "placa_certa": {

@@ -99,7 +99,7 @@
   {
     "id": "B-007",
     "titulo": "Folha A4 da grelha para afixar na sede",
-    "estado": "a_fazer",
+    "estado": "feito",
     "prioridade": 3,
     "estimativa": "P",
     "quem": "Coordenador(a)",
@@ -823,5 +823,22 @@
       "S-1"
     ],
     "mercado": []
+  },
+  {
+    "id": "B-051",
+    "titulo": "Folha A4: texto de vagas mais claro ('1 inscrito de 4 vagas') e nota de privacidade junto ao botão",
+    "estado": "ideia",
+    "prioridade": 4,
+    "estimativa": "P",
+    "quem": "Coordenador(a)",
+    "porque": "Proposto pela QA no ciclo 20: 'Livre · 1 de 4 vagas' pode confundir; a folha mostra só primeiros nomes, como a página pública",
+    "criterios": [
+      "Texto 'n inscritos de m vagas'",
+      "Nota curta ao lado do botão Imprimir"
+    ],
+    "segmento": "S-1",
+    "mercado": [
+      "F-6"
+    ]
   }
 ]

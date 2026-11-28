@@ -1,0 +1,25 @@
+/* Folha A4 (B-007): escondida no ecrã; na impressão só ela aparece. Preto sobre branco, letra grande. */
+.impressao { display: none; }
+.botao-imprimir { margin-top: var(--e3); min-height: 2.75rem; }
+
+@page { size: A4 portrait; margin: 14mm; }
+
+@media print {
+  html, body { background: #fff !important; color: #000 !important; }
+  body > *:not(#impressao) { display: none !important; }
+  .impressao { display: block; font: 14pt/1.35 var(--fonte-texto); color: #000; background: #fff; }
+  .imp-dia { break-after: page; page-break-after: always; }
+  .imp-dia:last-child { break-after: auto; page-break-after: auto; }
+  .imp-dia__cab { border-bottom: 3pt solid #000; margin-bottom: 8pt; padding-bottom: 6pt; break-after: avoid; }
+  .imp-festa { margin: 0; font: 800 26pt/1.1 var(--fonte-titulo); }
+  .imp-festa__detalhes { margin: 2pt 0 0; font-size: 14pt; }
+  .imp-dia__titulo { margin: 8pt 0 0; font: 800 22pt/1.1 var(--fonte-texto); }
+  .imp-posto { margin-top: 10pt; }
+  .imp-posto__titulo { margin: 0 0 4pt; font: 800 18pt/1.2 var(--fonte-texto); border-bottom: 1.5pt solid #000; break-after: avoid; }
+  .imp-turnos { list-style: none; margin: 0; padding: 0; }
+  .imp-turno { break-inside: avoid; page-break-inside: avoid; padding: 5pt 0; border-bottom: 1pt dashed #000; }
+  .imp-turno p { margin: 0; }
+  .imp-turno__hora { font-weight: 800; font-size: 16pt; }
+  .imp-turno__estado { font-weight: 700; }
+  .imp-turno__nomes { font-size: 14pt; }
+}

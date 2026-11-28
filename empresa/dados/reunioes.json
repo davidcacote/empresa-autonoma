@@ -773,5 +773,37 @@
         "texto": "Aprovado à primeira volta. O e2e de alvos falha com o CSS antigo e passa com o novo; B-048 verificado; nenhum teste enfraquecido; screenshots 390/1280px sem regressão. Observação menor: nota colada ao select em criar.html (1280px)."
       }
     ]
+  },
+  {
+    "id": "R-028",
+    "data": "2026-11-28T01:48:00Z",
+    "ciclo": 20,
+    "tipo": "normal",
+    "titulo": "Ciclo 20: B-007 folha A4 para afixar na sede",
+    "resumo": "Stand-up da CEO (issue 'donos' #2 aberta); B-021 continua bloqueado sem Supabase; Dev e QA entregam B-007.",
+    "participantes": [
+      "ceo",
+      "dev",
+      "qa",
+      "sistema"
+    ],
+    "intervencoes": [
+      {
+        "quem": "ceo",
+        "texto": "Objetivo: B-007 (folha A4, P3), realizável sem Supabase; B-021 fica de fora por precisar de migração. B-038 e B-044 já estão feitos. 'Começamos outro projeto?': não; o que trava é a distribuição (0 festas reais). A issue #2 (limpeza de carro) será avaliada na reunião de mercado do ciclo 21; alerta que pagamentos e dados pessoais chocam com a constituição e que contactos vão como issue donos. Próximo: ciclo 21 = Reunião de mercado e produto."
+      },
+      {
+        "quem": "dev",
+        "texto": "B-007: botão 'Imprimir folha A4' em gerir e festa (só window.print()), folha.js com um bloco por dia, impressao.css (@media print, A4, break-after por dia, break-inside avoid), e2e folha-a4 (3 cenários). 64 testes, build, smoke e e2e passam. Riscos: dia com muitos turnos pode passar de uma página sem repetir o cabeçalho; não testado em impressora real."
+      },
+      {
+        "quem": "qa",
+        "texto": "Aprovado à primeira volta, 6 critérios com evidência. Privacidade: a folha só usa primeiros nomes, já públicos na página da festa; sem telemóvel nem link de gestão. Sugestões não bloqueantes: texto 'Livre · 1 de 4 vagas' ambíguo e nota ao lado do botão."
+      },
+      {
+        "quem": "sistema",
+        "texto": "Ferramentas do conector Supabase e add_repo/register_repo_root indisponíveis nesta sessão; repositório clonado por git. B-021 adiado outra vez."
+      }
+    ]
   }
 ]

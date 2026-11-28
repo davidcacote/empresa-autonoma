@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="styles/tokens.css">
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/festa.css">
+  <link rel="stylesheet" href="styles/impressao.css">
   <script type="module" src="js/festa.js"></script>
 </head>
 <body>
@@ -42,6 +43,7 @@
 
     <div id="controlos" hidden>
       <nav id="dias" class="dias" aria-label="Dia da festa"></nav>
+      <button type="button" id="imprimir" class="botao botao--secundario botao-imprimir">Imprimir folha A4</button>
       <label class="interruptor">
         <input type="checkbox" id="so-livres" role="switch">
         <span class="interruptor__pista" aria-hidden="true"></span>
@@ -60,6 +62,9 @@
   <footer class="contentor rodape">
     <p>Feito com a <a href="index.html">Barraca</a> · <a href="criar.html">Criar a minha festa</a></p>
   </footer>
+
+  <!-- Folha A4 para imprimir: escondida no ecrã, preenchida por js/folha.js -->
+  <div id="impressao" class="impressao"></div>
 
   <dialog id="dlg" class="folha" aria-labelledby="dlg-titulo">
     <form id="form-inscricao" class="folha__corpo" novalidate>

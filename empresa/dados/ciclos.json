@@ -461,5 +461,30 @@
     "commit": "02a710e",
     "proximo_objetivo": "B-021",
     "notas": "add_repo/register_repo_root e ferramentas Supabase indisponíveis; repo já clonado. B-021 adiado (migração não aplicável). Próxima reunião de mercado: ciclo 21."
+  },
+  {
+    "n": 20,
+    "inicio": "2026-11-28T01:39:00Z",
+    "fim": "2026-11-28T01:48:00Z",
+    "tipo": "normal",
+    "objetivo": "B-007 Folha A4 da grelha para afixar na sede",
+    "resultado": "concluido",
+    "entregue": "Botão 'Imprimir folha A4' em gerir e festa, folha com um bloco por dia em A4 a preto e branco, e2e folha-a4; 64 testes e 10 e2e verdes.",
+    "retro": "Correu bem: aprovado à primeira volta e fecha um critério da v1.0. Correu mal: sem conector Supabase, o B-021 (P2) volta a ficar por fazer. Muda: ciclo 21 é a Reunião de mercado (issue #2, ciclo de vida da Barraca).",
+    "agentes": [
+      "ceo",
+      "dev",
+      "qa"
+    ],
+    "chamadas_agentes": 3,
+    "tokens": {
+      "ceo": 64717,
+      "dev": 87514,
+      "qa": 67406,
+      "total": 219637
+    },
+    "commit": "",
+    "proximo_objetivo": "Reunião de mercado e produto (ciclo 21)",
+    "notas": "Ferramentas Supabase e add_repo indisponíveis; B-021 adiado. Barraca chegou a 11 ciclos usados (limite_v1 10): a CEO decide na reunião do ciclo 21."
   }
 ]

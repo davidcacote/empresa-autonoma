@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="styles/tokens.css">
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/festa.css">
+  <link rel="stylesheet" href="styles/impressao.css">
   <script type="module" src="js/gerir.js"></script>
 </head>
 <body>
@@ -34,6 +35,7 @@
     <section id="buracos" class="buracos" aria-labelledby="buracos-titulo" hidden></section>
     <div id="controlos" hidden>
       <nav id="dias" class="dias" aria-label="Dia da festa"></nav>
+      <button type="button" id="imprimir" class="botao botao--secundario botao-imprimir">Imprimir folha A4</button>
     </div>
     <div id="conteudo" tabindex="-1"></div>
   </main>
@@ -41,5 +43,8 @@
   <footer class="contentor rodape">
     <p>Este link é só seu: quem o tiver pode remover inscrições. <a href="index.html">Início</a></p>
   </footer>
+
+  <!-- Folha A4 para imprimir: escondida no ecrã, preenchida por js/folha.js -->
+  <div id="impressao" class="impressao"></div>
 </body>
 </html>

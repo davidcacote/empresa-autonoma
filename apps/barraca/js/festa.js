@@ -1,6 +1,7 @@
 // Página pública da festa: turnos por dia e posto, inscrição, "as minhas inscrições".
 import { carregarFesta, carregarDados, inscrever, cancelarInscricao } from './api.js';
 import { h, $, preencher, marcarPronta } from './dom.js';
+import { desenharFolha, ligarImpressao } from './folha.js';
 import { idDispositivo, minhasInscricoes } from './armazem.js';
 import { criarIndicador } from './indicador.js';
 import { iniciarAtualizacao } from './tempo-real.js';
@@ -111,10 +112,16 @@ function renderizar(forcar = false) {
 
   const focoAnterior = document.activeElement?.dataset?.foco;
   const jaInscritos = new Set(minhas.map((m) => m.turnoId));
+  desenharFolha(dadosFolha(), dias);
   desenharDias(dias);
   desenharPostos(dias.find((d) => d.chave === estado.dia), jaInscritos);
   desenharMinhas(minhas);
   if (focoAnterior) document.querySelector(`[data-foco="${CSS.escape(focoAnterior)}"]`)?.focus();
+}
+
+function dadosFolha() {
+  const { nome, localidade, data_inicio: ini, data_fim: fim } = estado.festa;
+  return { nome, localidade, intervalo: intervaloDatas(ini, fim) };
 }
 
 function desenharDias(dias) {
@@ -169,6 +176,7 @@ const textoErro = $('dlg-erro');
 let botaoOrigem = null;
 
 function preparar() {
+  ligarImpressao();
   $('so-livres').addEventListener('change', (ev) => { estado.soLivres = ev.target.checked; renderizar(); });
   $('form-inscricao').addEventListener('submit', enviarInscricao);
   $('dlg-cancelar').addEventListener('click', () => dlg.close());

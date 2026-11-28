@@ -1,6 +1,7 @@
 // Gestão pela organização: lista de inscritos por turno, com "Remover" (link secreto em #chave).
 import { carregarFesta, carregarDados, verificarChave, removerInscricao } from './api.js';
 import { h, $, preencher, marcarPronta } from './dom.js';
+import { desenharFolha, ligarImpressao } from './folha.js';
 import { criarIndicador } from './indicador.js';
 import { iniciarAtualizacao } from './tempo-real.js';
 import { confirmar } from './dialogos.js';
@@ -31,6 +32,7 @@ async function arrancar() {
   $('ligacao').hidden = false;
   $('controlos').hidden = false;
   indicador.sucesso();
+  ligarImpressao();
   renderizar(true);
   marcarPronta();
   iniciarAtualizacao({ festaId: estado.festa.id, recarregar, aMudarModo: (m) => indicador.modo(m) });
@@ -70,6 +72,7 @@ function renderizar(forcar = false) {
   estado.assinatura = assinatura;
 
   const foco = document.activeElement?.dataset?.foco;
+  desenharFolha({ nome: estado.festa.nome, localidade: estado.festa.localidade, intervalo: intervaloDatas(estado.festa.data_inicio, estado.festa.data_fim) }, dias);
   renderizarBuracos(buracos);
   const nav = $('dias');
   nav.hidden = dias.length < 2;
